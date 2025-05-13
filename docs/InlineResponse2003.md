@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[KvStoreDetails]**](KvStoreDetails.md) |  | [optional] 
+**data** | [**[DdosProtectionRule]**](DdosProtectionRule.md) |  | [optional] 
 **meta** | [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 

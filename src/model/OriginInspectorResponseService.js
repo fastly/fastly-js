@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The OriginInspectorResponseService model module.
  * @module model/OriginInspectorResponseService
- * @version 10.0.0
+ * @version 11.0.0
  */
 class OriginInspectorResponseService {
     /**

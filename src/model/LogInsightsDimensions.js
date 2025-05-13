@@ -23,7 +23,7 @@ import DimensionUrl from './DimensionUrl';
 /**
  * The LogInsightsDimensions model module.
  * @module model/LogInsightsDimensions
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LogInsightsDimensions {
     /**

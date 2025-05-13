@@ -16,7 +16,7 @@ import PopCoordinates from './PopCoordinates';
 /**
  * The Pop model module.
  * @module model/Pop
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Pop {
     /**
@@ -183,6 +183,24 @@ Pop['RegionEnum'] = {
     "EU-West": "EU-West",
 
     /**
+     * value: "MX-North"
+     * @const
+     */
+    "MX-North": "MX-North",
+
+    /**
+     * value: "MX-Central"
+     * @const
+     */
+    "MX-Central": "MX-Central",
+
+    /**
+     * value: "MX-South"
+     * @const
+     */
+    "MX-South": "MX-South",
+
+    /**
      * value: "Middle-East"
      * @const
      */
@@ -309,7 +327,13 @@ Pop['StatsRegionEnum'] = {
      * value: "asia_southkorea"
      * @const
      */
-    "asia_southkorea": "asia_southkorea"
+    "asia_southkorea": "asia_southkorea",
+
+    /**
+     * value: "mexico"
+     * @const
+     */
+    "mexico": "mexico"
 };
 
 
@@ -349,6 +373,12 @@ Pop['BillingRegionEnum'] = {
      * @const
      */
     "India": "India",
+
+    /**
+     * value: "Mexico"
+     * @const
+     */
+    "Mexico": "Mexico",
 
     /**
      * value: "North America"

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductBrotliCompression**](ProductBrotliCompressionApi.md#disableProductBrotliCompression) | **DELETE** /enabled-products/v1/brotli_compression/services/{service_id} | Disable product
 [**enableProductBrotliCompression**](ProductBrotliCompressionApi.md#enableProductBrotliCompression) | **PUT** /enabled-products/v1/brotli_compression/services/{service_id} | Enable product
 [**getProductBrotliCompression**](ProductBrotliCompressionApi.md#getProductBrotliCompression) | **GET** /enabled-products/v1/brotli_compression/services/{service_id} | Get product enablement status
+[**getServicesProductBrotliCompression**](ProductBrotliCompressionApi.md#getServicesProductBrotliCompression) | **GET** /enabled-products/v1/brotli_compression/services | Get services with product enabled
 
 
 ## `disableProductBrotliCompression`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BrotliCompressionResponseBodyEnable**](BrotliCompressionResponseBodyEnable.md)
+
+
+## `getServicesProductBrotliCompression`
+
+```javascript
+getServicesProductBrotliCompression()
+```
+
+Get all the services which have the Brotli Compression product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductBrotliCompression()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**BrotliCompressionResponseBodyGetAllServices**](BrotliCompressionResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

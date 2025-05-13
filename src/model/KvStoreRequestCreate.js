@@ -15,13 +15,13 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreRequestCreate model module.
  * @module model/KvStoreRequestCreate
- * @version 10.0.0
+ * @version 11.0.0
  */
 class KvStoreRequestCreate {
     /**
      * Constructs a new <code>KvStoreRequestCreate</code>.
      * @alias module:model/KvStoreRequestCreate
-     * @param name {String} A human-readable name for the store. Refer to https://www.fastly.com/documentation/guides/concepts/edge-state/data-stores/#limitations-and-constraints for constraints on the KV store name.
+     * @param name {String} A human-readable name for the store. Refer to https://docs.fastly.com/products/compute-resource-limits#kv-store for limitations on the KV store name.
      */
     constructor(name) { 
         
@@ -59,7 +59,7 @@ class KvStoreRequestCreate {
 }
 
 /**
- * A human-readable name for the store. Refer to https://www.fastly.com/documentation/guides/concepts/edge-state/data-stores/#limitations-and-constraints for constraints on the KV store name.
+ * A human-readable name for the store. Refer to https://docs.fastly.com/products/compute-resource-limits#kv-store for limitations on the KV store name.
  * @member {String} name
  */
 KvStoreRequestCreate.prototype['name'] = undefined;

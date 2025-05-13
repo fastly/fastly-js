@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductImageOptimizer**](ProductImageOptimizerApi.md#disableProductImageOptimizer) | **DELETE** /enabled-products/v1/image_optimizer/services/{service_id} | Disable product
 [**enableProductImageOptimizer**](ProductImageOptimizerApi.md#enableProductImageOptimizer) | **PUT** /enabled-products/v1/image_optimizer/services/{service_id} | Enable product
 [**getProductImageOptimizer**](ProductImageOptimizerApi.md#getProductImageOptimizer) | **GET** /enabled-products/v1/image_optimizer/services/{service_id} | Get product enablement status
+[**getServicesProductImageOptimizer**](ProductImageOptimizerApi.md#getServicesProductImageOptimizer) | **GET** /enabled-products/v1/image_optimizer/services | Get services with product enabled
 
 
 ## `disableProductImageOptimizer`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImageOptimizerResponseBodyEnable**](ImageOptimizerResponseBodyEnable.md)
+
+
+## `getServicesProductImageOptimizer`
+
+```javascript
+getServicesProductImageOptimizer()
+```
+
+Get all the services which have the Image Optimizer product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductImageOptimizer()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ImageOptimizerResponseBodyGetAllServices**](ImageOptimizerResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

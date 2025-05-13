@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiAcceleratorResponseCustomerCustomer model module.
  * @module model/AiAcceleratorResponseCustomerCustomer
- * @version 10.0.0
+ * @version 11.0.0
  */
 class AiAcceleratorResponseCustomerCustomer {
     /**

@@ -19,7 +19,7 @@ import Results from './Results';
 /**
  * The HistoricalStatsByServiceResponse model module.
  * @module model/HistoricalStatsByServiceResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class HistoricalStatsByServiceResponse {
     /**

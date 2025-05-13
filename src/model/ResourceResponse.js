@@ -19,7 +19,7 @@ import TypeResource from './TypeResource';
 /**
  * The ResourceResponse model module.
  * @module model/ResourceResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ResourceResponse {
     /**
@@ -100,7 +100,7 @@ class ResourceResponse {
 ResourceResponse.prototype['resource_id'] = undefined;
 
 /**
- * The name of the resource link.
+ * The name of the resource link. Note this is separate from the resource store name and might not match the store name.
  * @member {String} name
  */
 ResourceResponse.prototype['name'] = undefined;
@@ -160,7 +160,7 @@ ResourceResponse.prototype['resource_type'] = undefined;
  */
 Resource.prototype['resource_id'] = undefined;
 /**
- * The name of the resource link.
+ * The name of the resource link. Note this is separate from the resource store name and might not match the store name.
  * @member {String} name
  */
 Resource.prototype['name'] = undefined;

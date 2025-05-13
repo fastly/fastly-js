@@ -14,13 +14,14 @@
 import ApiClient from "../ApiClient";
 import NgwafRequestEnable from '../model/NgwafRequestEnable';
 import NgwafRequestUpdateConfiguration from '../model/NgwafRequestUpdateConfiguration';
+import NgwafResponseBodyGetAllServices from '../model/NgwafResponseBodyGetAllServices';
 import NgwafResponseConfigure from '../model/NgwafResponseConfigure';
 import NgwafResponseEnable from '../model/NgwafResponseEnable';
 
 /**
 * ProductNgwaf service.
 * @module api/ProductNgwafApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ProductNgwafApi {
 
@@ -269,6 +270,57 @@ export default class ProductNgwafApi {
      */
     getProductNgwafConfiguration(options = {}) {
       return this.getProductNgwafConfigurationWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Get all the services which have the Next-Gen WAF product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NgwafResponseBodyGetAllServices} and HTTP response
+     */
+    getServicesProductNgwafWithHttpInfo(options = {}) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = NgwafResponseBodyGetAllServices;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/ngwaf/services', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Get all the services which have the Next-Gen WAF product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NgwafResponseBodyGetAllServices}
+     */
+    getServicesProductNgwaf(options = {}) {
+      return this.getServicesProductNgwafWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

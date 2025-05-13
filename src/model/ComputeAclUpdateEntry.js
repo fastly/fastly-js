@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclUpdateEntry model module.
  * @module model/ComputeAclUpdateEntry
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ComputeAclUpdateEntry {
     /**
@@ -64,7 +64,7 @@ class ComputeAclUpdateEntry {
 }
 
 /**
- * One of \"create\" or \"update\", indicating that the rest of this entry is to be added to/updated in the ACL.
+ * One of \"create\", \"update\", or \"delete\" indicating the operation to perform on the update.
  * @member {String} op
  */
 ComputeAclUpdateEntry.prototype['op'] = undefined;
@@ -76,7 +76,7 @@ ComputeAclUpdateEntry.prototype['op'] = undefined;
 ComputeAclUpdateEntry.prototype['prefix'] = undefined;
 
 /**
- * The action taken on the IP address, either \"block\" or \"allow\".
+ * The action taken on the IP address, one of \"BLOCK\" or \"ALLOW\". If using the \"delete\" operation, no action should be specified.
  * @member {String} action
  */
 ComputeAclUpdateEntry.prototype['action'] = undefined;

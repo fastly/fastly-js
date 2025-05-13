@@ -18,7 +18,7 @@ import ResourceResponse from '../model/ResourceResponse';
 /**
 * Resource service.
 * @module api/ResourceApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ResourceApi {
 
@@ -44,7 +44,7 @@ export default class ResourceApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.resource_id] - The ID of the underlying linked resource.
-     * @param {String} [options.name] - The name of the resource link.
+     * @param {String} [options.name] - The name of the resource link. Note this is separate from the resource store name and might not match the store name.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceResponse} and HTTP response
      */
     createResourceWithHttpInfo(options = {}) {
@@ -99,7 +99,7 @@ export default class ResourceApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.resource_id] - The ID of the underlying linked resource.
-     * @param {String} [options.name] - The name of the resource link.
+     * @param {String} [options.name] - The name of the resource link. Note this is separate from the resource store name and might not match the store name.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceResponse}
      */
     createResource(options = {}) {
@@ -325,7 +325,7 @@ export default class ResourceApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @param {String} [options.resource_id] - The ID of the underlying linked resource.
-     * @param {String} [options.name] - The name of the resource link.
+     * @param {String} [options.name] - The name of the resource link. Note this is separate from the resource store name and might not match the store name.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceResponse} and HTTP response
      */
     updateResourceWithHttpInfo(options = {}) {
@@ -386,7 +386,7 @@ export default class ResourceApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @param {String} [options.resource_id] - The ID of the underlying linked resource.
-     * @param {String} [options.name] - The name of the resource link.
+     * @param {String} [options.name] - The name of the resource link. Note this is separate from the resource store name and might not match the store name.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceResponse}
      */
     updateResource(options = {}) {

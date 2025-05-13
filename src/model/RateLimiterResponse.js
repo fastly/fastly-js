@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The RateLimiterResponse model module.
  * @module model/RateLimiterResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class RateLimiterResponse {
     /**
@@ -126,7 +126,7 @@ class RateLimiterResponse {
 RateLimiterResponse.prototype['name'] = undefined;
 
 /**
- * The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+ * The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
  * @member {String} uri_dictionary_name
  */
 RateLimiterResponse.prototype['uri_dictionary_name'] = undefined;
@@ -233,7 +233,7 @@ RateLimiterResponse.prototype['id'] = undefined;
  */
 RateLimiter.prototype['name'] = undefined;
 /**
- * The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+ * The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
  * @member {String} uri_dictionary_name
  */
 RateLimiter.prototype['uri_dictionary_name'] = undefined;

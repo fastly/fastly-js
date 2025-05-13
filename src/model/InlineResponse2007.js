@@ -11,12 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
+import PaginationCursorMeta from './PaginationCursorMeta';
+import SecretStoreResponse from './SecretStoreResponse';
 
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse2007 {
     /**
@@ -48,7 +49,10 @@ class InlineResponse2007 {
             obj = obj || new InlineResponse2007();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
+                obj['data'] = ApiClient.convertToType(data['data'], [SecretStoreResponse]);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -58,9 +62,14 @@ class InlineResponse2007 {
 }
 
 /**
- * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
+ * @member {Array.<module:model/SecretStoreResponse>} data
  */
 InlineResponse2007.prototype['data'] = undefined;
+
+/**
+ * @member {module:model/PaginationCursorMeta} meta
+ */
+InlineResponse2007.prototype['meta'] = undefined;
 
 
 

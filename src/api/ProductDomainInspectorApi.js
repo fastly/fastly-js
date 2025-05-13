@@ -13,11 +13,12 @@
 
 import ApiClient from "../ApiClient";
 import DomainInspectorResponseBodyEnable from '../model/DomainInspectorResponseBodyEnable';
+import DomainInspectorResponseBodyGetAllServices from '../model/DomainInspectorResponseBodyGetAllServices';
 
 /**
 * ProductDomainInspector service.
 * @module api/ProductDomainInspectorApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ProductDomainInspectorApi {
 
@@ -206,6 +207,57 @@ export default class ProductDomainInspectorApi {
      */
     getProductDomainInspector(options = {}) {
       return this.getProductDomainInspectorWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Get all the services which have the Domain Inspector product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainInspectorResponseBodyGetAllServices} and HTTP response
+     */
+    getServicesProductDomainInspectorWithHttpInfo(options = {}) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DomainInspectorResponseBodyGetAllServices;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/domain_inspector/services', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Get all the services which have the Domain Inspector product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainInspectorResponseBodyGetAllServices}
+     */
+    getServicesProductDomainInspector(options = {}) {
+      return this.getServicesProductDomainInspectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

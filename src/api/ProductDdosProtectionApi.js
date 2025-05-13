@@ -13,13 +13,14 @@
 
 import ApiClient from "../ApiClient";
 import DdosProtectionRequestUpdateConfiguration from '../model/DdosProtectionRequestUpdateConfiguration';
+import DdosProtectionResponseBodyGetAllServices from '../model/DdosProtectionResponseBodyGetAllServices';
 import DdosProtectionResponseConfigure from '../model/DdosProtectionResponseConfigure';
 import DdosProtectionResponseEnable from '../model/DdosProtectionResponseEnable';
 
 /**
 * ProductDdosProtection service.
 * @module api/ProductDdosProtectionApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ProductDdosProtectionApi {
 
@@ -98,7 +99,7 @@ export default class ProductDdosProtectionApi {
     }
 
     /**
-     * Enable the DDoS Protection product on a service.
+     * Enable the DDoS Protection product on a service in 'log' mode.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DdosProtectionResponseEnable} and HTTP response
@@ -143,7 +144,7 @@ export default class ProductDdosProtectionApi {
     }
 
     /**
-     * Enable the DDoS Protection product on a service.
+     * Enable the DDoS Protection product on a service in 'log' mode.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DdosProtectionResponseEnable}
@@ -266,6 +267,57 @@ export default class ProductDdosProtectionApi {
      */
     getProductDdosProtectionConfiguration(options = {}) {
       return this.getProductDdosProtectionConfigurationWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Get all the services which have the DDoS Protection product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DdosProtectionResponseBodyGetAllServices} and HTTP response
+     */
+    getServicesProductDdosProtectionWithHttpInfo(options = {}) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DdosProtectionResponseBodyGetAllServices;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/ddos_protection/services', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Get all the services which have the DDoS Protection product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DdosProtectionResponseBodyGetAllServices}
+     */
+    getServicesProductDdosProtection(options = {}) {
+      return this.getServicesProductDdosProtectionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

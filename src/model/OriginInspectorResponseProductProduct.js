@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorResponseProductProduct model module.
  * @module model/OriginInspectorResponseProductProduct
- * @version 10.0.0
+ * @version 11.0.0
  */
 class OriginInspectorResponseProductProduct {
     /**

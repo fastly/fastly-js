@@ -12,12 +12,12 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2004 from '../model/InlineResponse2004';
+import InlineResponse2006 from '../model/InlineResponse2006';
 
 /**
 * KvStoreItem service.
 * @module api/KvStoreItemApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class KvStoreItemApi {
 
@@ -181,7 +181,7 @@ export default class KvStoreItemApi {
      * @param {Number} [options.limit=100]
      * @param {String} [options.prefix]
      * @param {module:model/String} [options.consistency='strong']
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     kvStoreListItemKeysWithHttpInfo(options = {}) {
       let postBody = null;
@@ -209,7 +209,7 @@ export default class KvStoreItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2006;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -234,7 +234,7 @@ export default class KvStoreItemApi {
      * @param {Number} [options.limit=100]
      * @param {String} [options.prefix]
      * @param {module:model/String} [options.consistency='strong']
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     kvStoreListItemKeys(options = {}) {
       return this.kvStoreListItemKeysWithHttpInfo(options)

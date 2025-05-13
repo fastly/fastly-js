@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 computeAclUpdateAcls({ acl_id, [compute_acl_update] })
 ```
 
-Update an ACL.
+Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
 
 ### Example
 

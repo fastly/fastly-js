@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Usagemetric model module.
  * @module model/Usagemetric
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Usagemetric {
     /**

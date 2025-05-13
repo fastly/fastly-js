@@ -22,7 +22,7 @@ import ComputeAclUpdate from '../model/ComputeAclUpdate';
 /**
 * AclsInCompute service.
 * @module api/AclsInComputeApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class AclsInComputeApi {
 
@@ -392,7 +392,7 @@ export default class AclsInComputeApi {
     }
 
     /**
-     * Update an ACL.
+     * Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
      * @param {Object} options
      * @param {String} options.acl_id
      * @param {module:model/ComputeAclUpdate} [options.compute_acl_update]
@@ -438,7 +438,7 @@ export default class AclsInComputeApi {
     }
 
     /**
-     * Update an ACL.
+     * Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
      * @param {Object} options
      * @param {String} options.acl_id
      * @param {module:model/ComputeAclUpdate} [options.compute_acl_update]

@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The ImageOptimizerResponseService model module.
  * @module model/ImageOptimizerResponseService
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ImageOptimizerResponseService {
     /**

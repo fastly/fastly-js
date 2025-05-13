@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductOriginInspector**](ProductOriginInspectorApi.md#disableProductOriginInspector) | **DELETE** /enabled-products/v1/origin_inspector/services/{service_id} | Disable product
 [**enableProductOriginInspector**](ProductOriginInspectorApi.md#enableProductOriginInspector) | **PUT** /enabled-products/v1/origin_inspector/services/{service_id} | Enable product
 [**getProductOriginInspector**](ProductOriginInspectorApi.md#getProductOriginInspector) | **GET** /enabled-products/v1/origin_inspector/services/{service_id} | Get product enablement status
+[**getServicesProductOriginInspector**](ProductOriginInspectorApi.md#getServicesProductOriginInspector) | **GET** /enabled-products/v1/origin_inspector/services | Get services with product enabled
 
 
 ## `disableProductOriginInspector`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OriginInspectorResponseBodyEnable**](OriginInspectorResponseBodyEnable.md)
+
+
+## `getServicesProductOriginInspector`
+
+```javascript
+getServicesProductOriginInspector()
+```
+
+Get all the services which have the Origin Inspector product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductOriginInspector()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**OriginInspectorResponseBodyGetAllServices**](OriginInspectorResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

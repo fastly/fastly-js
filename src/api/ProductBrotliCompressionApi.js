@@ -13,11 +13,12 @@
 
 import ApiClient from "../ApiClient";
 import BrotliCompressionResponseBodyEnable from '../model/BrotliCompressionResponseBodyEnable';
+import BrotliCompressionResponseBodyGetAllServices from '../model/BrotliCompressionResponseBodyGetAllServices';
 
 /**
 * ProductBrotliCompression service.
 * @module api/ProductBrotliCompressionApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ProductBrotliCompressionApi {
 
@@ -206,6 +207,57 @@ export default class ProductBrotliCompressionApi {
      */
     getProductBrotliCompression(options = {}) {
       return this.getProductBrotliCompressionWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Get all the services which have the Brotli Compression product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BrotliCompressionResponseBodyGetAllServices} and HTTP response
+     */
+    getServicesProductBrotliCompressionWithHttpInfo(options = {}) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = BrotliCompressionResponseBodyGetAllServices;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/brotli_compression/services', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Get all the services which have the Brotli Compression product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BrotliCompressionResponseBodyGetAllServices}
+     */
+    getServicesProductBrotliCompression(options = {}) {
+      return this.getServicesProductBrotliCompressionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

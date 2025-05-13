@@ -11,13 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import KvStoreDetails from './KvStoreDetails';
+import DdosProtectionRule from './DdosProtectionRule';
 import PaginationCursorMeta from './PaginationCursorMeta';
 
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse2003 {
     /**
@@ -49,7 +49,7 @@ class InlineResponse2003 {
             obj = obj || new InlineResponse2003();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [KvStoreDetails]);
+                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionRule]);
             }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
@@ -62,7 +62,7 @@ class InlineResponse2003 {
 }
 
 /**
- * @member {Array.<module:model/KvStoreDetails>} data
+ * @member {Array.<module:model/DdosProtectionRule>} data
  */
 InlineResponse2003.prototype['data'] = undefined;
 

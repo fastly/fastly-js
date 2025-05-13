@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductFanout**](ProductFanoutApi.md#disableProductFanout) | **DELETE** /enabled-products/v1/fanout/services/{service_id} | Disable product
 [**enableProductFanout**](ProductFanoutApi.md#enableProductFanout) | **PUT** /enabled-products/v1/fanout/services/{service_id} | Enable product
 [**getProductFanout**](ProductFanoutApi.md#getProductFanout) | **GET** /enabled-products/v1/fanout/services/{service_id} | Get product enablement status
+[**getServicesProductFanout**](ProductFanoutApi.md#getServicesProductFanout) | **GET** /enabled-products/v1/fanout/services | Get services with product enabled
 
 
 ## `disableProductFanout`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FanoutResponseBodyEnable**](FanoutResponseBodyEnable.md)
+
+
+## `getServicesProductFanout`
+
+```javascript
+getServicesProductFanout()
+```
+
+Get all the services which have the Fanout product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductFanout()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**FanoutResponseBodyGetAllServices**](FanoutResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 10.0.0
+ * @version 11.0.0
  */
 class Backend {
     /**
@@ -99,6 +99,9 @@ class Backend {
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
+            }
+            if (data.hasOwnProperty('prefer_ipv6')) {
+                obj['prefer_ipv6'] = ApiClient.convertToType(data['prefer_ipv6'], 'Boolean');
             }
             if (data.hasOwnProperty('request_condition')) {
                 obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
@@ -265,6 +268,12 @@ Backend.prototype['override_host'] = undefined;
  * @member {Number} port
  */
 Backend.prototype['port'] = undefined;
+
+/**
+ * Prefer IPv6 connections for DNS hostname lookups.
+ * @member {Boolean} prefer_ipv6
+ */
+Backend.prototype['prefer_ipv6'] = undefined;
 
 /**
  * Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.

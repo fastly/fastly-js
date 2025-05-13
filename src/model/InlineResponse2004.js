@@ -11,12 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import PaginationCursorMeta from './PaginationCursorMeta';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 10.0.0
+ * @version 11.0.0
  */
 class InlineResponse2004 {
     /**
@@ -47,11 +46,8 @@ class InlineResponse2004 {
         if (data) {
             obj = obj || new InlineResponse2004();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('expires_at')) {
+                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
             }
         }
         return obj;
@@ -61,14 +57,10 @@ class InlineResponse2004 {
 }
 
 /**
- * @member {Array.<String>} data
+ * Time-stamp (GMT) when the domain_ownership validation will expire.
+ * @member {String} expires_at
  */
-InlineResponse2004.prototype['data'] = undefined;
-
-/**
- * @member {module:model/PaginationCursorMeta} meta
- */
-InlineResponse2004.prototype['meta'] = undefined;
+InlineResponse2004.prototype['expires_at'] = undefined;
 
 
 

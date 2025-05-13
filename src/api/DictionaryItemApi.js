@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * DictionaryItem service.
 * @module api/DictionaryItemApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class DictionaryItemApi {
 
@@ -327,7 +327,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {Number} [options.page] - Current page.
-     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {Number} [options.per_page=100] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryItemResponse>} and HTTP response
@@ -386,7 +386,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {Number} [options.page] - Current page.
-     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {Number} [options.per_page=100] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryItemResponse>}

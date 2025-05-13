@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductLogExplorerInsights**](ProductLogExplorerInsightsApi.md#disableProductLogExplorerInsights) | **DELETE** /enabled-products/v1/log_explorer_insights/services/{service_id} | Disable product
 [**enableProductLogExplorerInsights**](ProductLogExplorerInsightsApi.md#enableProductLogExplorerInsights) | **PUT** /enabled-products/v1/log_explorer_insights/services/{service_id} | Enable product
 [**getProductLogExplorerInsights**](ProductLogExplorerInsightsApi.md#getProductLogExplorerInsights) | **GET** /enabled-products/v1/log_explorer_insights/services/{service_id} | Get product enablement status
+[**getServicesProductLogExplorerInsights**](ProductLogExplorerInsightsApi.md#getServicesProductLogExplorerInsights) | **GET** /enabled-products/v1/log_explorer_insights/services | Get services with product enabled
 
 
 ## `disableProductLogExplorerInsights`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LogExplorerInsightsResponseBodyEnable**](LogExplorerInsightsResponseBodyEnable.md)
+
+
+## `getServicesProductLogExplorerInsights`
+
+```javascript
+getServicesProductLogExplorerInsights()
+```
+
+Get all the services which have the Log Explorer & Insights product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductLogExplorerInsights()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**LogExplorerInsightsResponseBodyGetAllServices**](LogExplorerInsightsResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -10,7 +10,7 @@ const apiInstance = new Fastly.DictionaryInfoApi();
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**getDictionaryInfo**](DictionaryInfoApi.md#getDictionaryInfo) | **GET** /service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info | Get edge dictionary metadata
+[**getDictionaryInfo**](DictionaryInfoApi.md#getDictionaryInfo) | **GET** /service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info | Get dictionary metadata
 
 
 ## `getDictionaryInfo`

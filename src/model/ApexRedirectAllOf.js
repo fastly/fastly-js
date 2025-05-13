@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApexRedirectAllOf model module.
  * @module model/ApexRedirectAllOf
- * @version 10.0.0
+ * @version 11.0.0
  */
 class ApexRedirectAllOf {
     /**

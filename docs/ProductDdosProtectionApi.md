@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**enableProductDdosProtection**](ProductDdosProtectionApi.md#enableProductDdosProtection) | **PUT** /enabled-products/v1/ddos_protection/services/{service_id} | Enable product
 [**getProductDdosProtection**](ProductDdosProtectionApi.md#getProductDdosProtection) | **GET** /enabled-products/v1/ddos_protection/services/{service_id} | Get product enablement status
 [**getProductDdosProtectionConfiguration**](ProductDdosProtectionApi.md#getProductDdosProtectionConfiguration) | **GET** /enabled-products/v1/ddos_protection/services/{service_id}/configuration | Get configuration
+[**getServicesProductDdosProtection**](ProductDdosProtectionApi.md#getServicesProductDdosProtection) | **GET** /enabled-products/v1/ddos_protection/services | Get services with product enabled
 [**setProductDdosProtectionConfiguration**](ProductDdosProtectionApi.md#setProductDdosProtectionConfiguration) | **PATCH** /enabled-products/v1/ddos_protection/services/{service_id}/configuration | Update configuration
 
 
@@ -58,7 +59,7 @@ null (empty response body)
 enableProductDdosProtection({ service_id })
 ```
 
-Enable the DDoS Protection product on a service.
+Enable the DDoS Protection product on a service in 'log' mode.
 
 ### Example
 
@@ -155,6 +156,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DdosProtectionResponseConfigure**](DdosProtectionResponseConfigure.md)
+
+
+## `getServicesProductDdosProtection`
+
+```javascript
+getServicesProductDdosProtection()
+```
+
+Get all the services which have the DDoS Protection product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductDdosProtection()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**DdosProtectionResponseBodyGetAllServices**](DdosProtectionResponseBodyGetAllServices.md)
 
 
 ## `setProductDdosProtectionConfiguration`

@@ -17,7 +17,7 @@ import AiAcceleratorResponseBodyEnable from '../model/AiAcceleratorResponseBodyE
 /**
 * ProductAiAccelerator service.
 * @module api/ProductAiAcceleratorApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ProductAiAcceleratorApi {
 

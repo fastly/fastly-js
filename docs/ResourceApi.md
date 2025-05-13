@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
 **resource_id** | **String** | The ID of the underlying linked resource. | [optional]
-**name** | **String** | The name of the resource link. | [optional]
+**name** | **String** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | [optional]
 
 ### Return type
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **id** | **String** | An alphanumeric string identifying the resource link. |
 **resource_id** | **String** | The ID of the underlying linked resource. | [optional]
-**name** | **String** | The name of the resource link. | [optional]
+**name** | **String** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | [optional]
 
 ### Return type
 

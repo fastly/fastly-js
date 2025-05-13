@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductWebsockets**](ProductWebsocketsApi.md#disableProductWebsockets) | **DELETE** /enabled-products/v1/websockets/services/{service_id} | Disable product
 [**enableProductWebsockets**](ProductWebsocketsApi.md#enableProductWebsockets) | **PUT** /enabled-products/v1/websockets/services/{service_id} | Enable product
 [**getProductWebsockets**](ProductWebsocketsApi.md#getProductWebsockets) | **GET** /enabled-products/v1/websockets/services/{service_id} | Get product enablement status
+[**getServicesProductWebsockets**](ProductWebsocketsApi.md#getServicesProductWebsockets) | **GET** /enabled-products/v1/websockets/services | Get services with product enabled
 
 
 ## `disableProductWebsockets`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WebsocketsResponseBodyEnable**](WebsocketsResponseBodyEnable.md)
+
+
+## `getServicesProductWebsockets`
+
+```javascript
+getServicesProductWebsockets()
+```
+
+Get all the services which have the Websockets product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductWebsockets()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**WebsocketsResponseBodyGetAllServices**](WebsocketsResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

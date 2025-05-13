@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**enableProductNgwaf**](ProductNgwafApi.md#enableProductNgwaf) | **PUT** /enabled-products/v1/ngwaf/services/{service_id} | Enable product
 [**getProductNgwaf**](ProductNgwafApi.md#getProductNgwaf) | **GET** /enabled-products/v1/ngwaf/services/{service_id} | Get product enablement status
 [**getProductNgwafConfiguration**](ProductNgwafApi.md#getProductNgwafConfiguration) | **GET** /enabled-products/v1/ngwaf/services/{service_id}/configuration | Get configuration
+[**getServicesProductNgwaf**](ProductNgwafApi.md#getServicesProductNgwaf) | **GET** /enabled-products/v1/ngwaf/services | Get services with product enabled
 [**setProductNgwafConfiguration**](ProductNgwafApi.md#setProductNgwafConfiguration) | **PATCH** /enabled-products/v1/ngwaf/services/{service_id}/configuration | Update configuration
 
 
@@ -157,6 +158,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NgwafResponseConfigure**](NgwafResponseConfigure.md)
+
+
+## `getServicesProductNgwaf`
+
+```javascript
+getServicesProductNgwaf()
+```
+
+Get all the services which have the Next-Gen WAF product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductNgwaf()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**NgwafResponseBodyGetAllServices**](NgwafResponseBodyGetAllServices.md)
 
 
 ## `setProductNgwafConfiguration`

@@ -19,7 +19,7 @@ import RelationshipUserUser from './RelationshipUserUser';
 /**
  * The RelationshipsForStar model module.
  * @module model/RelationshipsForStar
- * @version 10.0.0
+ * @version 11.0.0
  */
 class RelationshipsForStar {
     /**

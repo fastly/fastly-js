@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RateLimiter model module.
  * @module model/RateLimiter
- * @version 10.0.0
+ * @version 11.0.0
  */
 class RateLimiter {
     /**
@@ -96,7 +96,7 @@ class RateLimiter {
 RateLimiter.prototype['name'] = undefined;
 
 /**
- * The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+ * The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
  * @member {String} uri_dictionary_name
  */
 RateLimiter.prototype['uri_dictionary_name'] = undefined;

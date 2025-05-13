@@ -16,7 +16,7 @@ import BrotliCompressionResponseProductProduct from './BrotliCompressionResponse
 /**
  * The BrotliCompressionResponseProduct model module.
  * @module model/BrotliCompressionResponseProduct
- * @version 10.0.0
+ * @version 11.0.0
  */
 class BrotliCompressionResponseProduct {
     /**

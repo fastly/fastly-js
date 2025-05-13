@@ -16,7 +16,7 @@ import Results from './Results';
 /**
  * The HistoricalStatsByServiceResponseAllOf model module.
  * @module model/HistoricalStatsByServiceResponseAllOf
- * @version 10.0.0
+ * @version 11.0.0
  */
 class HistoricalStatsByServiceResponseAllOf {
     /**

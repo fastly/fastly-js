@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `createBackend`
 
 ```javascript
-createBackend({ service_id, version_id, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][tcp_keepalive_enable, ][tcp_keepalive_interval, ][tcp_keepalive_probes, ][tcp_keepalive_time, ][use_ssl, ][weight] })
+createBackend({ service_id, version_id, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][prefer_ipv6, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][tcp_keepalive_enable, ][tcp_keepalive_interval, ][tcp_keepalive_probes, ][tcp_keepalive_time, ][use_ssl, ][weight] })
 ```
 
 Create a backend for a particular service and version.
@@ -49,6 +49,7 @@ const options = {
   name: "name_example",
   override_host: "override_host_example",
   port: 56,
+  prefer_ipv6: true,
   request_condition: "request_condition_example",
   share_key: "share_key_example",
   shield: "shield_example",
@@ -101,6 +102,7 @@ Name | Type | Description  | Notes
 **name** | **String** | The name of the backend. | [optional]
 **override_host** | **String** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional]
 **port** | **Number** | Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request. | [optional]
+**prefer_ipv6** | **Boolean** | Prefer IPv6 connections for DNS hostname lookups. | [optional]
 **request_condition** | **String** | Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests. | [optional]
 **share_key** | **String** | Value that when shared across backends will enable those backends to share the same health check. | [optional]
 **shield** | **String** | Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional]
@@ -242,7 +244,7 @@ Name | Type | Description  | Notes
 ## `updateBackend`
 
 ```javascript
-updateBackend({ service_id, version_id, backend_name, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][tcp_keepalive_enable, ][tcp_keepalive_interval, ][tcp_keepalive_probes, ][tcp_keepalive_time, ][use_ssl, ][weight] })
+updateBackend({ service_id, version_id, backend_name, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][prefer_ipv6, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][tcp_keepalive_enable, ][tcp_keepalive_interval, ][tcp_keepalive_probes, ][tcp_keepalive_time, ][use_ssl, ][weight] })
 ```
 
 Update the backend for a particular service and version.
@@ -272,6 +274,7 @@ const options = {
   name: "name_example",
   override_host: "override_host_example",
   port: 56,
+  prefer_ipv6: true,
   request_condition: "request_condition_example",
   share_key: "share_key_example",
   shield: "shield_example",
@@ -325,6 +328,7 @@ Name | Type | Description  | Notes
 **name** | **String** | The name of the backend. | [optional]
 **override_host** | **String** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional]
 **port** | **Number** | Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request. | [optional]
+**prefer_ipv6** | **Boolean** | Prefer IPv6 connections for DNS hostname lookups. | [optional]
 **request_condition** | **String** | Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests. | [optional]
 **share_key** | **String** | Value that when shared across backends will enable those backends to share the same health check. | [optional]
 **shield** | **String** | Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional]

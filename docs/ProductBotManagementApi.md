@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductBotManagement**](ProductBotManagementApi.md#disableProductBotManagement) | **DELETE** /enabled-products/v1/bot_management/services/{service_id} | Disable product
 [**enableProductBotManagement**](ProductBotManagementApi.md#enableProductBotManagement) | **PUT** /enabled-products/v1/bot_management/services/{service_id} | Enable product
 [**getProductBotManagement**](ProductBotManagementApi.md#getProductBotManagement) | **GET** /enabled-products/v1/bot_management/services/{service_id} | Get product enablement status
+[**getServicesProductBotManagement**](ProductBotManagementApi.md#getServicesProductBotManagement) | **GET** /enabled-products/v1/bot_management/services | Get services with product enabled
 
 
 ## `disableProductBotManagement`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BotManagementResponseBodyEnable**](BotManagementResponseBodyEnable.md)
+
+
+## `getServicesProductBotManagement`
+
+```javascript
+getServicesProductBotManagement()
+```
+
+Get all the services which have the Bot Management product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductBotManagement()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**BotManagementResponseBodyGetAllServices**](BotManagementResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

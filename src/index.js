@@ -50,14 +50,25 @@ import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
 import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
 import BotManagementResponseBodyEnable from './model/BotManagementResponseBodyEnable';
+import BotManagementResponseBodyGetAllServices from './model/BotManagementResponseBodyGetAllServices';
+import BotManagementResponseCustomer from './model/BotManagementResponseCustomer';
+import BotManagementResponseCustomerCustomer from './model/BotManagementResponseCustomerCustomer';
+import BotManagementResponseEnabledServices from './model/BotManagementResponseEnabledServices';
 import BotManagementResponseLinks from './model/BotManagementResponseLinks';
+import BotManagementResponseLinksGetAllServices from './model/BotManagementResponseLinksGetAllServices';
+import BotManagementResponseLinksGetAllServicesLinks from './model/BotManagementResponseLinksGetAllServicesLinks';
 import BotManagementResponseLinksLinks from './model/BotManagementResponseLinksLinks';
 import BotManagementResponseProduct from './model/BotManagementResponseProduct';
 import BotManagementResponseProductProduct from './model/BotManagementResponseProductProduct';
 import BotManagementResponseService from './model/BotManagementResponseService';
 import BotManagementResponseServiceService from './model/BotManagementResponseServiceService';
 import BrotliCompressionResponseBodyEnable from './model/BrotliCompressionResponseBodyEnable';
+import BrotliCompressionResponseBodyGetAllServices from './model/BrotliCompressionResponseBodyGetAllServices';
+import BrotliCompressionResponseCustomer from './model/BrotliCompressionResponseCustomer';
+import BrotliCompressionResponseEnabledServices from './model/BrotliCompressionResponseEnabledServices';
 import BrotliCompressionResponseLinks from './model/BrotliCompressionResponseLinks';
+import BrotliCompressionResponseLinksGetAllServices from './model/BrotliCompressionResponseLinksGetAllServices';
+import BrotliCompressionResponseLinksGetAllServicesLinks from './model/BrotliCompressionResponseLinksGetAllServicesLinks';
 import BrotliCompressionResponseLinksLinks from './model/BrotliCompressionResponseLinksLinks';
 import BrotliCompressionResponseProduct from './model/BrotliCompressionResponseProduct';
 import BrotliCompressionResponseProductProduct from './model/BrotliCompressionResponseProductProduct';
@@ -70,7 +81,6 @@ import BulkUpdateConfigStoreItemAllOf from './model/BulkUpdateConfigStoreItemAll
 import BulkUpdateConfigStoreListRequest from './model/BulkUpdateConfigStoreListRequest';
 import BulkUpdateDictionaryItem from './model/BulkUpdateDictionaryItem';
 import BulkUpdateDictionaryListRequest from './model/BulkUpdateDictionaryListRequest';
-import BulkWafActiveRules from './model/BulkWafActiveRules';
 import CacheSetting from './model/CacheSetting';
 import CacheSettingResponse from './model/CacheSettingResponse';
 import ClientKey from './model/ClientKey';
@@ -111,16 +121,35 @@ import DashboardItemPropertyVisualization from './model/DashboardItemPropertyVis
 import DashboardItemPropertyVisualizationPropertyConfig from './model/DashboardItemPropertyVisualizationPropertyConfig';
 import DashboardPropertyCreatedBy from './model/DashboardPropertyCreatedBy';
 import DashboardPropertyUpdatedBy from './model/DashboardPropertyUpdatedBy';
+import DdosProtectionAction from './model/DdosProtectionAction';
+import DdosProtectionAttributeStats from './model/DdosProtectionAttributeStats';
+import DdosProtectionAttributeValue from './model/DdosProtectionAttributeValue';
+import DdosProtectionError from './model/DdosProtectionError';
+import DdosProtectionErrorErrors from './model/DdosProtectionErrorErrors';
+import DdosProtectionEvent from './model/DdosProtectionEvent';
+import DdosProtectionEventAllOf from './model/DdosProtectionEventAllOf';
+import DdosProtectionNotAuthenticated from './model/DdosProtectionNotAuthenticated';
+import DdosProtectionNotFound from './model/DdosProtectionNotFound';
 import DdosProtectionRequestUpdateConfiguration from './model/DdosProtectionRequestUpdateConfiguration';
+import DdosProtectionResponseBodyGetAllServices from './model/DdosProtectionResponseBodyGetAllServices';
 import DdosProtectionResponseConfiguration from './model/DdosProtectionResponseConfiguration';
 import DdosProtectionResponseConfigurationConfiguration from './model/DdosProtectionResponseConfigurationConfiguration';
 import DdosProtectionResponseConfigure from './model/DdosProtectionResponseConfigure';
+import DdosProtectionResponseCustomer from './model/DdosProtectionResponseCustomer';
 import DdosProtectionResponseEnable from './model/DdosProtectionResponseEnable';
+import DdosProtectionResponseEnabledServices from './model/DdosProtectionResponseEnabledServices';
 import DdosProtectionResponseLinks from './model/DdosProtectionResponseLinks';
+import DdosProtectionResponseLinksGetAllServices from './model/DdosProtectionResponseLinksGetAllServices';
+import DdosProtectionResponseLinksGetAllServicesLinks from './model/DdosProtectionResponseLinksGetAllServicesLinks';
 import DdosProtectionResponseLinksLinks from './model/DdosProtectionResponseLinksLinks';
 import DdosProtectionResponseProduct from './model/DdosProtectionResponseProduct';
 import DdosProtectionResponseProductProduct from './model/DdosProtectionResponseProductProduct';
 import DdosProtectionResponseService from './model/DdosProtectionResponseService';
+import DdosProtectionRule from './model/DdosProtectionRule';
+import DdosProtectionRuleAllOf from './model/DdosProtectionRuleAllOf';
+import DdosProtectionTrafficAttribute from './model/DdosProtectionTrafficAttribute';
+import DdosProtectionTrafficStats from './model/DdosProtectionTrafficStats';
+import DdosProtectionTrafficStatsAllOf from './model/DdosProtectionTrafficStatsAllOf';
 import DefaultSettings from './model/DefaultSettings';
 import DefaultSettingsError from './model/DefaultSettingsError';
 import DefaultSettingsResponse from './model/DefaultSettingsResponse';
@@ -153,7 +182,12 @@ import DomainInspectorEntryDimensions from './model/DomainInspectorEntryDimensio
 import DomainInspectorMeasurements from './model/DomainInspectorMeasurements';
 import DomainInspectorRealtimeEntry from './model/DomainInspectorRealtimeEntry';
 import DomainInspectorResponseBodyEnable from './model/DomainInspectorResponseBodyEnable';
+import DomainInspectorResponseBodyGetAllServices from './model/DomainInspectorResponseBodyGetAllServices';
+import DomainInspectorResponseCustomer from './model/DomainInspectorResponseCustomer';
+import DomainInspectorResponseEnabledServices from './model/DomainInspectorResponseEnabledServices';
 import DomainInspectorResponseLinks from './model/DomainInspectorResponseLinks';
+import DomainInspectorResponseLinksGetAllServices from './model/DomainInspectorResponseLinksGetAllServices';
+import DomainInspectorResponseLinksGetAllServicesLinks from './model/DomainInspectorResponseLinksGetAllServicesLinks';
 import DomainInspectorResponseLinksLinks from './model/DomainInspectorResponseLinksLinks';
 import DomainInspectorResponseProduct from './model/DomainInspectorResponseProduct';
 import DomainInspectorResponseProductProduct from './model/DomainInspectorResponseProductProduct';
@@ -170,7 +204,12 @@ import EventData from './model/EventData';
 import EventResponse from './model/EventResponse';
 import EventsResponse from './model/EventsResponse';
 import FanoutResponseBodyEnable from './model/FanoutResponseBodyEnable';
+import FanoutResponseBodyGetAllServices from './model/FanoutResponseBodyGetAllServices';
+import FanoutResponseCustomer from './model/FanoutResponseCustomer';
+import FanoutResponseEnabledServices from './model/FanoutResponseEnabledServices';
 import FanoutResponseLinks from './model/FanoutResponseLinks';
+import FanoutResponseLinksGetAllServices from './model/FanoutResponseLinksGetAllServices';
+import FanoutResponseLinksGetAllServicesLinks from './model/FanoutResponseLinksGetAllServicesLinks';
 import FanoutResponseLinksLinks from './model/FanoutResponseLinksLinks';
 import FanoutResponseProduct from './model/FanoutResponseProduct';
 import FanoutResponseProductProduct from './model/FanoutResponseProductProduct';
@@ -228,17 +267,18 @@ import IamServiceGroupAllOf from './model/IamServiceGroupAllOf';
 import IamUserGroup from './model/IamUserGroup';
 import IamUserGroupAllOf from './model/IamUserGroupAllOf';
 import ImageOptimizerResponseBodyEnable from './model/ImageOptimizerResponseBodyEnable';
+import ImageOptimizerResponseBodyGetAllServices from './model/ImageOptimizerResponseBodyGetAllServices';
+import ImageOptimizerResponseCustomer from './model/ImageOptimizerResponseCustomer';
+import ImageOptimizerResponseEnabledServices from './model/ImageOptimizerResponseEnabledServices';
 import ImageOptimizerResponseLinks from './model/ImageOptimizerResponseLinks';
+import ImageOptimizerResponseLinksGetAllServices from './model/ImageOptimizerResponseLinksGetAllServices';
+import ImageOptimizerResponseLinksGetAllServicesLinks from './model/ImageOptimizerResponseLinksGetAllServicesLinks';
 import ImageOptimizerResponseLinksLinks from './model/ImageOptimizerResponseLinksLinks';
 import ImageOptimizerResponseProduct from './model/ImageOptimizerResponseProduct';
 import ImageOptimizerResponseProductProduct from './model/ImageOptimizerResponseProductProduct';
 import ImageOptimizerResponseService from './model/ImageOptimizerResponseService';
 import IncludedWithTlsConfiguration from './model/IncludedWithTlsConfiguration';
 import IncludedWithTlsConfigurationItem from './model/IncludedWithTlsConfigurationItem';
-import IncludedWithWafActiveRuleItem from './model/IncludedWithWafActiveRuleItem';
-import IncludedWithWafExclusionItem from './model/IncludedWithWafExclusionItem';
-import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallVersionItem';
-import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
 import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineResponse200 from './model/InlineResponse200';
@@ -249,6 +289,8 @@ import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
+import InlineResponse2008 from './model/InlineResponse2008';
+import InlineResponse2009 from './model/InlineResponse2009';
 import InlineResponse201 from './model/InlineResponse201';
 import InlineResponse400 from './model/InlineResponse400';
 import Invitation from './model/Invitation';
@@ -271,8 +313,19 @@ import ListCustomerAddressesResponse from './model/ListCustomerAddressesResponse
 import ListDashboardsResponse from './model/ListDashboardsResponse';
 import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
 import Listinvoices from './model/Listinvoices';
+import LogAggregationsFilterFieldItem from './model/LogAggregationsFilterFieldItem';
+import LogAggregationsGetResponse from './model/LogAggregationsGetResponse';
+import LogAggregationsGetResponseMeta from './model/LogAggregationsGetResponseMeta';
+import LogAggregationsGetResponseMetaFilters from './model/LogAggregationsGetResponseMetaFilters';
+import LogAggregationsResult from './model/LogAggregationsResult';
+import LogAggregationsValueField from './model/LogAggregationsValueField';
 import LogExplorerInsightsResponseBodyEnable from './model/LogExplorerInsightsResponseBodyEnable';
+import LogExplorerInsightsResponseBodyGetAllServices from './model/LogExplorerInsightsResponseBodyGetAllServices';
+import LogExplorerInsightsResponseCustomer from './model/LogExplorerInsightsResponseCustomer';
+import LogExplorerInsightsResponseEnabledServices from './model/LogExplorerInsightsResponseEnabledServices';
 import LogExplorerInsightsResponseLinks from './model/LogExplorerInsightsResponseLinks';
+import LogExplorerInsightsResponseLinksGetAllServices from './model/LogExplorerInsightsResponseLinksGetAllServices';
+import LogExplorerInsightsResponseLinksGetAllServicesLinks from './model/LogExplorerInsightsResponseLinksGetAllServicesLinks';
 import LogExplorerInsightsResponseLinksLinks from './model/LogExplorerInsightsResponseLinksLinks';
 import LogExplorerInsightsResponseProduct from './model/LogExplorerInsightsResponseProduct';
 import LogExplorerInsightsResponseProductProduct from './model/LogExplorerInsightsResponseProductProduct';
@@ -285,6 +338,13 @@ import LogInsightsMetaFilter from './model/LogInsightsMetaFilter';
 import LogInsightsValues from './model/LogInsightsValues';
 import LogPropertyServiceId from './model/LogPropertyServiceId';
 import LogRecord from './model/LogRecord';
+import LogTimeseriesFilterFieldItem from './model/LogTimeseriesFilterFieldItem';
+import LogTimeseriesGetResponse from './model/LogTimeseriesGetResponse';
+import LogTimeseriesGetResponseMeta from './model/LogTimeseriesGetResponseMeta';
+import LogTimeseriesGetResponseMetaFilters from './model/LogTimeseriesGetResponseMetaFilters';
+import LogTimeseriesResult from './model/LogTimeseriesResult';
+import LogTimeseriesResultDimensions from './model/LogTimeseriesResultDimensions';
+import LogTimeseriesValueField from './model/LogTimeseriesValueField';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblobAdditional from './model/LoggingAzureblobAdditional';
 import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
@@ -376,11 +436,16 @@ import MutualAuthenticationsResponse from './model/MutualAuthenticationsResponse
 import MutualAuthenticationsResponseAllOf from './model/MutualAuthenticationsResponseAllOf';
 import NgwafRequestEnable from './model/NgwafRequestEnable';
 import NgwafRequestUpdateConfiguration from './model/NgwafRequestUpdateConfiguration';
+import NgwafResponseBodyGetAllServices from './model/NgwafResponseBodyGetAllServices';
 import NgwafResponseConfiguration from './model/NgwafResponseConfiguration';
 import NgwafResponseConfigurationConfiguration from './model/NgwafResponseConfigurationConfiguration';
 import NgwafResponseConfigure from './model/NgwafResponseConfigure';
+import NgwafResponseCustomer from './model/NgwafResponseCustomer';
 import NgwafResponseEnable from './model/NgwafResponseEnable';
+import NgwafResponseEnabledServices from './model/NgwafResponseEnabledServices';
 import NgwafResponseLinks from './model/NgwafResponseLinks';
+import NgwafResponseLinksGetAllServices from './model/NgwafResponseLinksGetAllServices';
+import NgwafResponseLinksGetAllServicesLinks from './model/NgwafResponseLinksGetAllServicesLinks';
 import NgwafResponseLinksLinks from './model/NgwafResponseLinksLinks';
 import NgwafResponseProduct from './model/NgwafResponseProduct';
 import NgwafResponseProductProduct from './model/NgwafResponseProductProduct';
@@ -401,7 +466,12 @@ import OriginInspectorHistoricalMetaFilters from './model/OriginInspectorHistori
 import OriginInspectorMeasurements from './model/OriginInspectorMeasurements';
 import OriginInspectorRealtimeEntry from './model/OriginInspectorRealtimeEntry';
 import OriginInspectorResponseBodyEnable from './model/OriginInspectorResponseBodyEnable';
+import OriginInspectorResponseBodyGetAllServices from './model/OriginInspectorResponseBodyGetAllServices';
+import OriginInspectorResponseCustomer from './model/OriginInspectorResponseCustomer';
+import OriginInspectorResponseEnabledServices from './model/OriginInspectorResponseEnabledServices';
 import OriginInspectorResponseLinks from './model/OriginInspectorResponseLinks';
+import OriginInspectorResponseLinksGetAllServices from './model/OriginInspectorResponseLinksGetAllServices';
+import OriginInspectorResponseLinksGetAllServicesLinks from './model/OriginInspectorResponseLinksGetAllServicesLinks';
 import OriginInspectorResponseLinksLinks from './model/OriginInspectorResponseLinksLinks';
 import OriginInspectorResponseProduct from './model/OriginInspectorResponseProduct';
 import OriginInspectorResponseProductProduct from './model/OriginInspectorResponseProductProduct';
@@ -465,12 +535,6 @@ import RelationshipMemberTlsConfiguration from './model/RelationshipMemberTlsCon
 import RelationshipMemberTlsDomain from './model/RelationshipMemberTlsDomain';
 import RelationshipMemberTlsPrivateKey from './model/RelationshipMemberTlsPrivateKey';
 import RelationshipMemberTlsSubscription from './model/RelationshipMemberTlsSubscription';
-import RelationshipMemberWafActiveRule from './model/RelationshipMemberWafActiveRule';
-import RelationshipMemberWafFirewall from './model/RelationshipMemberWafFirewall';
-import RelationshipMemberWafFirewallVersion from './model/RelationshipMemberWafFirewallVersion';
-import RelationshipMemberWafRule from './model/RelationshipMemberWafRule';
-import RelationshipMemberWafRuleRevision from './model/RelationshipMemberWafRuleRevision';
-import RelationshipMemberWafTag from './model/RelationshipMemberWafTag';
 import RelationshipMutualAuthentication from './model/RelationshipMutualAuthentication';
 import RelationshipMutualAuthenticationMutualAuthentication from './model/RelationshipMutualAuthenticationMutualAuthentication';
 import RelationshipMutualAuthentications from './model/RelationshipMutualAuthentications';
@@ -516,21 +580,6 @@ import RelationshipTlsSubscriptionTlsSubscription from './model/RelationshipTlsS
 import RelationshipTlsSubscriptions from './model/RelationshipTlsSubscriptions';
 import RelationshipUser from './model/RelationshipUser';
 import RelationshipUserUser from './model/RelationshipUserUser';
-import RelationshipWafActiveRules from './model/RelationshipWafActiveRules';
-import RelationshipWafActiveRulesWafActiveRules from './model/RelationshipWafActiveRulesWafActiveRules';
-import RelationshipWafFirewall from './model/RelationshipWafFirewall';
-import RelationshipWafFirewallVersion from './model/RelationshipWafFirewallVersion';
-import RelationshipWafFirewallVersionWafFirewallVersion from './model/RelationshipWafFirewallVersionWafFirewallVersion';
-import RelationshipWafFirewallVersions from './model/RelationshipWafFirewallVersions';
-import RelationshipWafFirewallWafFirewall from './model/RelationshipWafFirewallWafFirewall';
-import RelationshipWafRule from './model/RelationshipWafRule';
-import RelationshipWafRuleRevision from './model/RelationshipWafRuleRevision';
-import RelationshipWafRuleRevisionWafRuleRevisions from './model/RelationshipWafRuleRevisionWafRuleRevisions';
-import RelationshipWafRuleRevisions from './model/RelationshipWafRuleRevisions';
-import RelationshipWafRuleWafRule from './model/RelationshipWafRuleWafRule';
-import RelationshipWafRules from './model/RelationshipWafRules';
-import RelationshipWafTags from './model/RelationshipWafTags';
-import RelationshipWafTagsWafTags from './model/RelationshipWafTagsWafTags';
 import RelationshipsForInvitation from './model/RelationshipsForInvitation';
 import RelationshipsForMutualAuthentication from './model/RelationshipsForMutualAuthentication';
 import RelationshipsForStar from './model/RelationshipsForStar';
@@ -540,10 +589,6 @@ import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfigu
 import RelationshipsForTlsDomain from './model/RelationshipsForTlsDomain';
 import RelationshipsForTlsPrivateKey from './model/RelationshipsForTlsPrivateKey';
 import RelationshipsForTlsSubscription from './model/RelationshipsForTlsSubscription';
-import RelationshipsForWafActiveRule from './model/RelationshipsForWafActiveRule';
-import RelationshipsForWafExclusion from './model/RelationshipsForWafExclusion';
-import RelationshipsForWafFirewallVersion from './model/RelationshipsForWafFirewallVersion';
-import RelationshipsForWafRule from './model/RelationshipsForWafRule';
 import RequestSettingsAdditional from './model/RequestSettingsAdditional';
 import RequestSettingsResponse from './model/RequestSettingsResponse';
 import RequestSettingsResponseAllOf from './model/RequestSettingsResponseAllOf';
@@ -561,8 +606,6 @@ import SchemasUserResponseReadOnly from './model/SchemasUserResponseReadOnly';
 import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
-import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
-import SchemasWafFirewallVersionData from './model/SchemasWafFirewallVersionData';
 import Secret from './model/Secret';
 import SecretResponse from './model/SecretResponse';
 import SecretStore from './model/SecretStore';
@@ -719,13 +762,6 @@ import TypeTlsDomain from './model/TypeTlsDomain';
 import TypeTlsPrivateKey from './model/TypeTlsPrivateKey';
 import TypeTlsSubscription from './model/TypeTlsSubscription';
 import TypeUser from './model/TypeUser';
-import TypeWafActiveRule from './model/TypeWafActiveRule';
-import TypeWafExclusion from './model/TypeWafExclusion';
-import TypeWafFirewall from './model/TypeWafFirewall';
-import TypeWafFirewallVersion from './model/TypeWafFirewallVersion';
-import TypeWafRule from './model/TypeWafRule';
-import TypeWafRuleRevision from './model/TypeWafRuleRevision';
-import TypeWafTag from './model/TypeWafTag';
 import UpdateBillingAddressRequest from './model/UpdateBillingAddressRequest';
 import UpdateBillingAddressRequestData from './model/UpdateBillingAddressRequestData';
 import UpdateDashboardRequest from './model/UpdateDashboardRequest';
@@ -761,71 +797,13 @@ import VersionDetail from './model/VersionDetail';
 import VersionDetailSettings from './model/VersionDetailSettings';
 import VersionResponse from './model/VersionResponse';
 import VersionResponseAllOf from './model/VersionResponseAllOf';
-import WafActiveRule from './model/WafActiveRule';
-import WafActiveRuleCreationResponse from './model/WafActiveRuleCreationResponse';
-import WafActiveRuleData from './model/WafActiveRuleData';
-import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
-import WafActiveRuleResponse from './model/WafActiveRuleResponse';
-import WafActiveRuleResponseData from './model/WafActiveRuleResponseData';
-import WafActiveRuleResponseDataAllOf from './model/WafActiveRuleResponseDataAllOf';
-import WafActiveRuleResponseDataAttributes from './model/WafActiveRuleResponseDataAttributes';
-import WafActiveRuleResponseDataAttributesAllOf from './model/WafActiveRuleResponseDataAttributesAllOf';
-import WafActiveRuleResponseDataRelationships from './model/WafActiveRuleResponseDataRelationships';
-import WafActiveRulesResponse from './model/WafActiveRulesResponse';
-import WafActiveRulesResponseAllOf from './model/WafActiveRulesResponseAllOf';
-import WafExclusion from './model/WafExclusion';
-import WafExclusionData from './model/WafExclusionData';
-import WafExclusionDataAttributes from './model/WafExclusionDataAttributes';
-import WafExclusionResponse from './model/WafExclusionResponse';
-import WafExclusionResponseData from './model/WafExclusionResponseData';
-import WafExclusionResponseDataAllOf from './model/WafExclusionResponseDataAllOf';
-import WafExclusionResponseDataAttributes from './model/WafExclusionResponseDataAttributes';
-import WafExclusionResponseDataAttributesAllOf from './model/WafExclusionResponseDataAttributesAllOf';
-import WafExclusionResponseDataRelationships from './model/WafExclusionResponseDataRelationships';
-import WafExclusionsResponse from './model/WafExclusionsResponse';
-import WafExclusionsResponseAllOf from './model/WafExclusionsResponseAllOf';
-import WafFirewall from './model/WafFirewall';
-import WafFirewallData from './model/WafFirewallData';
-import WafFirewallDataAttributes from './model/WafFirewallDataAttributes';
-import WafFirewallResponse from './model/WafFirewallResponse';
-import WafFirewallResponseData from './model/WafFirewallResponseData';
-import WafFirewallResponseDataAllOf from './model/WafFirewallResponseDataAllOf';
-import WafFirewallResponseDataAttributes from './model/WafFirewallResponseDataAttributes';
-import WafFirewallResponseDataAttributesAllOf from './model/WafFirewallResponseDataAttributesAllOf';
-import WafFirewallVersion from './model/WafFirewallVersion';
-import WafFirewallVersionData from './model/WafFirewallVersionData';
-import WafFirewallVersionDataAttributes from './model/WafFirewallVersionDataAttributes';
-import WafFirewallVersionResponse from './model/WafFirewallVersionResponse';
-import WafFirewallVersionResponseData from './model/WafFirewallVersionResponseData';
-import WafFirewallVersionResponseDataAllOf from './model/WafFirewallVersionResponseDataAllOf';
-import WafFirewallVersionResponseDataAttributes from './model/WafFirewallVersionResponseDataAttributes';
-import WafFirewallVersionResponseDataAttributesAllOf from './model/WafFirewallVersionResponseDataAttributesAllOf';
-import WafFirewallVersionsResponse from './model/WafFirewallVersionsResponse';
-import WafFirewallVersionsResponseAllOf from './model/WafFirewallVersionsResponseAllOf';
-import WafFirewallsResponse from './model/WafFirewallsResponse';
-import WafFirewallsResponseAllOf from './model/WafFirewallsResponseAllOf';
-import WafRule from './model/WafRule';
-import WafRuleAttributes from './model/WafRuleAttributes';
-import WafRuleResponse from './model/WafRuleResponse';
-import WafRuleResponseData from './model/WafRuleResponseData';
-import WafRuleResponseDataAllOf from './model/WafRuleResponseDataAllOf';
-import WafRuleRevision from './model/WafRuleRevision';
-import WafRuleRevisionAttributes from './model/WafRuleRevisionAttributes';
-import WafRuleRevisionOrLatest from './model/WafRuleRevisionOrLatest';
-import WafRuleRevisionResponse from './model/WafRuleRevisionResponse';
-import WafRuleRevisionResponseData from './model/WafRuleRevisionResponseData';
-import WafRuleRevisionResponseDataAllOf from './model/WafRuleRevisionResponseDataAllOf';
-import WafRuleRevisionsResponse from './model/WafRuleRevisionsResponse';
-import WafRuleRevisionsResponseAllOf from './model/WafRuleRevisionsResponseAllOf';
-import WafRulesResponse from './model/WafRulesResponse';
-import WafRulesResponseAllOf from './model/WafRulesResponseAllOf';
-import WafTag from './model/WafTag';
-import WafTagAttributes from './model/WafTagAttributes';
-import WafTagsResponse from './model/WafTagsResponse';
-import WafTagsResponseAllOf from './model/WafTagsResponseAllOf';
-import WafTagsResponseDataItem from './model/WafTagsResponseDataItem';
 import WebsocketsResponseBodyEnable from './model/WebsocketsResponseBodyEnable';
+import WebsocketsResponseBodyGetAllServices from './model/WebsocketsResponseBodyGetAllServices';
+import WebsocketsResponseCustomer from './model/WebsocketsResponseCustomer';
+import WebsocketsResponseEnabledServices from './model/WebsocketsResponseEnabledServices';
 import WebsocketsResponseLinks from './model/WebsocketsResponseLinks';
+import WebsocketsResponseLinksGetAllServices from './model/WebsocketsResponseLinksGetAllServices';
+import WebsocketsResponseLinksGetAllServicesLinks from './model/WebsocketsResponseLinksGetAllServicesLinks';
 import WebsocketsResponseLinksLinks from './model/WebsocketsResponseLinksLinks';
 import WebsocketsResponseProduct from './model/WebsocketsResponseProduct';
 import WebsocketsResponseProductProduct from './model/WebsocketsResponseProductProduct';
@@ -848,6 +826,7 @@ import ContactApi from './api/ContactApi';
 import ContentApi from './api/ContentApi';
 import CustomerApi from './api/CustomerApi';
 import CustomerAddressesApi from './api/CustomerAddressesApi';
+import DdosProtectionApi from './api/DdosProtectionApi';
 import DictionaryApi from './api/DictionaryApi';
 import DictionaryInfoApi from './api/DictionaryInfoApi';
 import DictionaryItemApi from './api/DictionaryItemApi';
@@ -904,7 +883,9 @@ import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
 import ObjectStorageAccessKeysApi from './api/ObjectStorageAccessKeysApi';
+import ObservabilityAggregationsForLogsApi from './api/ObservabilityAggregationsForLogsApi';
 import ObservabilityCustomDashboardsApi from './api/ObservabilityCustomDashboardsApi';
+import ObservabilityTimeseriesForLogsApi from './api/ObservabilityTimeseriesForLogsApi';
 import OriginInspectorHistoricalApi from './api/OriginInspectorHistoricalApi';
 import OriginInspectorRealtimeApi from './api/OriginInspectorRealtimeApi';
 import PackageApi from './api/PackageApi';
@@ -953,13 +934,6 @@ import UserApi from './api/UserApi';
 import VclApi from './api/VclApi';
 import VclDiffApi from './api/VclDiffApi';
 import VersionApi from './api/VersionApi';
-import WafActiveRulesApi from './api/WafActiveRulesApi';
-import WafExclusionsApi from './api/WafExclusionsApi';
-import WafFirewallVersionsApi from './api/WafFirewallVersionsApi';
-import WafFirewallsApi from './api/WafFirewallsApi';
-import WafRuleRevisionsApi from './api/WafRuleRevisionsApi';
-import WafRulesApi from './api/WafRulesApi';
-import WafTagsApi from './api/WafTagsApi';
 import WholePlatformDdosHistoricalApi from './api/WholePlatformDdosHistoricalApi';
 
 
@@ -996,7 +970,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 10.0.0
+* @version 11.0.0
 */
 export {
     /**
@@ -1234,10 +1208,46 @@ export {
     BotManagementResponseBodyEnable,
 
     /**
+     * The BotManagementResponseBodyGetAllServices model constructor.
+     * @property {module:model/BotManagementResponseBodyGetAllServices}
+     */
+    BotManagementResponseBodyGetAllServices,
+
+    /**
+     * The BotManagementResponseCustomer model constructor.
+     * @property {module:model/BotManagementResponseCustomer}
+     */
+    BotManagementResponseCustomer,
+
+    /**
+     * The BotManagementResponseCustomerCustomer model constructor.
+     * @property {module:model/BotManagementResponseCustomerCustomer}
+     */
+    BotManagementResponseCustomerCustomer,
+
+    /**
+     * The BotManagementResponseEnabledServices model constructor.
+     * @property {module:model/BotManagementResponseEnabledServices}
+     */
+    BotManagementResponseEnabledServices,
+
+    /**
      * The BotManagementResponseLinks model constructor.
      * @property {module:model/BotManagementResponseLinks}
      */
     BotManagementResponseLinks,
+
+    /**
+     * The BotManagementResponseLinksGetAllServices model constructor.
+     * @property {module:model/BotManagementResponseLinksGetAllServices}
+     */
+    BotManagementResponseLinksGetAllServices,
+
+    /**
+     * The BotManagementResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/BotManagementResponseLinksGetAllServicesLinks}
+     */
+    BotManagementResponseLinksGetAllServicesLinks,
 
     /**
      * The BotManagementResponseLinksLinks model constructor.
@@ -1276,10 +1286,40 @@ export {
     BrotliCompressionResponseBodyEnable,
 
     /**
+     * The BrotliCompressionResponseBodyGetAllServices model constructor.
+     * @property {module:model/BrotliCompressionResponseBodyGetAllServices}
+     */
+    BrotliCompressionResponseBodyGetAllServices,
+
+    /**
+     * The BrotliCompressionResponseCustomer model constructor.
+     * @property {module:model/BrotliCompressionResponseCustomer}
+     */
+    BrotliCompressionResponseCustomer,
+
+    /**
+     * The BrotliCompressionResponseEnabledServices model constructor.
+     * @property {module:model/BrotliCompressionResponseEnabledServices}
+     */
+    BrotliCompressionResponseEnabledServices,
+
+    /**
      * The BrotliCompressionResponseLinks model constructor.
      * @property {module:model/BrotliCompressionResponseLinks}
      */
     BrotliCompressionResponseLinks,
+
+    /**
+     * The BrotliCompressionResponseLinksGetAllServices model constructor.
+     * @property {module:model/BrotliCompressionResponseLinksGetAllServices}
+     */
+    BrotliCompressionResponseLinksGetAllServices,
+
+    /**
+     * The BrotliCompressionResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/BrotliCompressionResponseLinksGetAllServicesLinks}
+     */
+    BrotliCompressionResponseLinksGetAllServicesLinks,
 
     /**
      * The BrotliCompressionResponseLinksLinks model constructor.
@@ -1352,12 +1392,6 @@ export {
      * @property {module:model/BulkUpdateDictionaryListRequest}
      */
     BulkUpdateDictionaryListRequest,
-
-    /**
-     * The BulkWafActiveRules model constructor.
-     * @property {module:model/BulkWafActiveRules}
-     */
-    BulkWafActiveRules,
 
     /**
      * The CacheSetting model constructor.
@@ -1600,10 +1634,70 @@ export {
     DashboardPropertyUpdatedBy,
 
     /**
+     * The DdosProtectionAction model constructor.
+     * @property {module:model/DdosProtectionAction}
+     */
+    DdosProtectionAction,
+
+    /**
+     * The DdosProtectionAttributeStats model constructor.
+     * @property {module:model/DdosProtectionAttributeStats}
+     */
+    DdosProtectionAttributeStats,
+
+    /**
+     * The DdosProtectionAttributeValue model constructor.
+     * @property {module:model/DdosProtectionAttributeValue}
+     */
+    DdosProtectionAttributeValue,
+
+    /**
+     * The DdosProtectionError model constructor.
+     * @property {module:model/DdosProtectionError}
+     */
+    DdosProtectionError,
+
+    /**
+     * The DdosProtectionErrorErrors model constructor.
+     * @property {module:model/DdosProtectionErrorErrors}
+     */
+    DdosProtectionErrorErrors,
+
+    /**
+     * The DdosProtectionEvent model constructor.
+     * @property {module:model/DdosProtectionEvent}
+     */
+    DdosProtectionEvent,
+
+    /**
+     * The DdosProtectionEventAllOf model constructor.
+     * @property {module:model/DdosProtectionEventAllOf}
+     */
+    DdosProtectionEventAllOf,
+
+    /**
+     * The DdosProtectionNotAuthenticated model constructor.
+     * @property {module:model/DdosProtectionNotAuthenticated}
+     */
+    DdosProtectionNotAuthenticated,
+
+    /**
+     * The DdosProtectionNotFound model constructor.
+     * @property {module:model/DdosProtectionNotFound}
+     */
+    DdosProtectionNotFound,
+
+    /**
      * The DdosProtectionRequestUpdateConfiguration model constructor.
      * @property {module:model/DdosProtectionRequestUpdateConfiguration}
      */
     DdosProtectionRequestUpdateConfiguration,
+
+    /**
+     * The DdosProtectionResponseBodyGetAllServices model constructor.
+     * @property {module:model/DdosProtectionResponseBodyGetAllServices}
+     */
+    DdosProtectionResponseBodyGetAllServices,
 
     /**
      * The DdosProtectionResponseConfiguration model constructor.
@@ -1624,16 +1718,40 @@ export {
     DdosProtectionResponseConfigure,
 
     /**
+     * The DdosProtectionResponseCustomer model constructor.
+     * @property {module:model/DdosProtectionResponseCustomer}
+     */
+    DdosProtectionResponseCustomer,
+
+    /**
      * The DdosProtectionResponseEnable model constructor.
      * @property {module:model/DdosProtectionResponseEnable}
      */
     DdosProtectionResponseEnable,
 
     /**
+     * The DdosProtectionResponseEnabledServices model constructor.
+     * @property {module:model/DdosProtectionResponseEnabledServices}
+     */
+    DdosProtectionResponseEnabledServices,
+
+    /**
      * The DdosProtectionResponseLinks model constructor.
      * @property {module:model/DdosProtectionResponseLinks}
      */
     DdosProtectionResponseLinks,
+
+    /**
+     * The DdosProtectionResponseLinksGetAllServices model constructor.
+     * @property {module:model/DdosProtectionResponseLinksGetAllServices}
+     */
+    DdosProtectionResponseLinksGetAllServices,
+
+    /**
+     * The DdosProtectionResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/DdosProtectionResponseLinksGetAllServicesLinks}
+     */
+    DdosProtectionResponseLinksGetAllServicesLinks,
 
     /**
      * The DdosProtectionResponseLinksLinks model constructor.
@@ -1658,6 +1776,36 @@ export {
      * @property {module:model/DdosProtectionResponseService}
      */
     DdosProtectionResponseService,
+
+    /**
+     * The DdosProtectionRule model constructor.
+     * @property {module:model/DdosProtectionRule}
+     */
+    DdosProtectionRule,
+
+    /**
+     * The DdosProtectionRuleAllOf model constructor.
+     * @property {module:model/DdosProtectionRuleAllOf}
+     */
+    DdosProtectionRuleAllOf,
+
+    /**
+     * The DdosProtectionTrafficAttribute model constructor.
+     * @property {module:model/DdosProtectionTrafficAttribute}
+     */
+    DdosProtectionTrafficAttribute,
+
+    /**
+     * The DdosProtectionTrafficStats model constructor.
+     * @property {module:model/DdosProtectionTrafficStats}
+     */
+    DdosProtectionTrafficStats,
+
+    /**
+     * The DdosProtectionTrafficStatsAllOf model constructor.
+     * @property {module:model/DdosProtectionTrafficStatsAllOf}
+     */
+    DdosProtectionTrafficStatsAllOf,
 
     /**
      * The DefaultSettings model constructor.
@@ -1852,10 +2000,40 @@ export {
     DomainInspectorResponseBodyEnable,
 
     /**
+     * The DomainInspectorResponseBodyGetAllServices model constructor.
+     * @property {module:model/DomainInspectorResponseBodyGetAllServices}
+     */
+    DomainInspectorResponseBodyGetAllServices,
+
+    /**
+     * The DomainInspectorResponseCustomer model constructor.
+     * @property {module:model/DomainInspectorResponseCustomer}
+     */
+    DomainInspectorResponseCustomer,
+
+    /**
+     * The DomainInspectorResponseEnabledServices model constructor.
+     * @property {module:model/DomainInspectorResponseEnabledServices}
+     */
+    DomainInspectorResponseEnabledServices,
+
+    /**
      * The DomainInspectorResponseLinks model constructor.
      * @property {module:model/DomainInspectorResponseLinks}
      */
     DomainInspectorResponseLinks,
+
+    /**
+     * The DomainInspectorResponseLinksGetAllServices model constructor.
+     * @property {module:model/DomainInspectorResponseLinksGetAllServices}
+     */
+    DomainInspectorResponseLinksGetAllServices,
+
+    /**
+     * The DomainInspectorResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/DomainInspectorResponseLinksGetAllServicesLinks}
+     */
+    DomainInspectorResponseLinksGetAllServicesLinks,
 
     /**
      * The DomainInspectorResponseLinksLinks model constructor.
@@ -1954,10 +2132,40 @@ export {
     FanoutResponseBodyEnable,
 
     /**
+     * The FanoutResponseBodyGetAllServices model constructor.
+     * @property {module:model/FanoutResponseBodyGetAllServices}
+     */
+    FanoutResponseBodyGetAllServices,
+
+    /**
+     * The FanoutResponseCustomer model constructor.
+     * @property {module:model/FanoutResponseCustomer}
+     */
+    FanoutResponseCustomer,
+
+    /**
+     * The FanoutResponseEnabledServices model constructor.
+     * @property {module:model/FanoutResponseEnabledServices}
+     */
+    FanoutResponseEnabledServices,
+
+    /**
      * The FanoutResponseLinks model constructor.
      * @property {module:model/FanoutResponseLinks}
      */
     FanoutResponseLinks,
+
+    /**
+     * The FanoutResponseLinksGetAllServices model constructor.
+     * @property {module:model/FanoutResponseLinksGetAllServices}
+     */
+    FanoutResponseLinksGetAllServices,
+
+    /**
+     * The FanoutResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/FanoutResponseLinksGetAllServicesLinks}
+     */
+    FanoutResponseLinksGetAllServicesLinks,
 
     /**
      * The FanoutResponseLinksLinks model constructor.
@@ -2302,10 +2510,40 @@ export {
     ImageOptimizerResponseBodyEnable,
 
     /**
+     * The ImageOptimizerResponseBodyGetAllServices model constructor.
+     * @property {module:model/ImageOptimizerResponseBodyGetAllServices}
+     */
+    ImageOptimizerResponseBodyGetAllServices,
+
+    /**
+     * The ImageOptimizerResponseCustomer model constructor.
+     * @property {module:model/ImageOptimizerResponseCustomer}
+     */
+    ImageOptimizerResponseCustomer,
+
+    /**
+     * The ImageOptimizerResponseEnabledServices model constructor.
+     * @property {module:model/ImageOptimizerResponseEnabledServices}
+     */
+    ImageOptimizerResponseEnabledServices,
+
+    /**
      * The ImageOptimizerResponseLinks model constructor.
      * @property {module:model/ImageOptimizerResponseLinks}
      */
     ImageOptimizerResponseLinks,
+
+    /**
+     * The ImageOptimizerResponseLinksGetAllServices model constructor.
+     * @property {module:model/ImageOptimizerResponseLinksGetAllServices}
+     */
+    ImageOptimizerResponseLinksGetAllServices,
+
+    /**
+     * The ImageOptimizerResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/ImageOptimizerResponseLinksGetAllServicesLinks}
+     */
+    ImageOptimizerResponseLinksGetAllServicesLinks,
 
     /**
      * The ImageOptimizerResponseLinksLinks model constructor.
@@ -2342,30 +2580,6 @@ export {
      * @property {module:model/IncludedWithTlsConfigurationItem}
      */
     IncludedWithTlsConfigurationItem,
-
-    /**
-     * The IncludedWithWafActiveRuleItem model constructor.
-     * @property {module:model/IncludedWithWafActiveRuleItem}
-     */
-    IncludedWithWafActiveRuleItem,
-
-    /**
-     * The IncludedWithWafExclusionItem model constructor.
-     * @property {module:model/IncludedWithWafExclusionItem}
-     */
-    IncludedWithWafExclusionItem,
-
-    /**
-     * The IncludedWithWafFirewallVersionItem model constructor.
-     * @property {module:model/IncludedWithWafFirewallVersionItem}
-     */
-    IncludedWithWafFirewallVersionItem,
-
-    /**
-     * The IncludedWithWafRuleItem model constructor.
-     * @property {module:model/IncludedWithWafRuleItem}
-     */
-    IncludedWithWafRuleItem,
 
     /**
      * The InlineObject model constructor.
@@ -2426,6 +2640,18 @@ export {
      * @property {module:model/InlineResponse2007}
      */
     InlineResponse2007,
+
+    /**
+     * The InlineResponse2008 model constructor.
+     * @property {module:model/InlineResponse2008}
+     */
+    InlineResponse2008,
+
+    /**
+     * The InlineResponse2009 model constructor.
+     * @property {module:model/InlineResponse2009}
+     */
+    InlineResponse2009,
 
     /**
      * The InlineResponse201 model constructor.
@@ -2560,16 +2786,82 @@ export {
     Listinvoices,
 
     /**
+     * The LogAggregationsFilterFieldItem model constructor.
+     * @property {module:model/LogAggregationsFilterFieldItem}
+     */
+    LogAggregationsFilterFieldItem,
+
+    /**
+     * The LogAggregationsGetResponse model constructor.
+     * @property {module:model/LogAggregationsGetResponse}
+     */
+    LogAggregationsGetResponse,
+
+    /**
+     * The LogAggregationsGetResponseMeta model constructor.
+     * @property {module:model/LogAggregationsGetResponseMeta}
+     */
+    LogAggregationsGetResponseMeta,
+
+    /**
+     * The LogAggregationsGetResponseMetaFilters model constructor.
+     * @property {module:model/LogAggregationsGetResponseMetaFilters}
+     */
+    LogAggregationsGetResponseMetaFilters,
+
+    /**
+     * The LogAggregationsResult model constructor.
+     * @property {module:model/LogAggregationsResult}
+     */
+    LogAggregationsResult,
+
+    /**
+     * The LogAggregationsValueField model constructor.
+     * @property {module:model/LogAggregationsValueField}
+     */
+    LogAggregationsValueField,
+
+    /**
      * The LogExplorerInsightsResponseBodyEnable model constructor.
      * @property {module:model/LogExplorerInsightsResponseBodyEnable}
      */
     LogExplorerInsightsResponseBodyEnable,
 
     /**
+     * The LogExplorerInsightsResponseBodyGetAllServices model constructor.
+     * @property {module:model/LogExplorerInsightsResponseBodyGetAllServices}
+     */
+    LogExplorerInsightsResponseBodyGetAllServices,
+
+    /**
+     * The LogExplorerInsightsResponseCustomer model constructor.
+     * @property {module:model/LogExplorerInsightsResponseCustomer}
+     */
+    LogExplorerInsightsResponseCustomer,
+
+    /**
+     * The LogExplorerInsightsResponseEnabledServices model constructor.
+     * @property {module:model/LogExplorerInsightsResponseEnabledServices}
+     */
+    LogExplorerInsightsResponseEnabledServices,
+
+    /**
      * The LogExplorerInsightsResponseLinks model constructor.
      * @property {module:model/LogExplorerInsightsResponseLinks}
      */
     LogExplorerInsightsResponseLinks,
+
+    /**
+     * The LogExplorerInsightsResponseLinksGetAllServices model constructor.
+     * @property {module:model/LogExplorerInsightsResponseLinksGetAllServices}
+     */
+    LogExplorerInsightsResponseLinksGetAllServices,
+
+    /**
+     * The LogExplorerInsightsResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/LogExplorerInsightsResponseLinksGetAllServicesLinks}
+     */
+    LogExplorerInsightsResponseLinksGetAllServicesLinks,
 
     /**
      * The LogExplorerInsightsResponseLinksLinks model constructor.
@@ -2642,6 +2934,48 @@ export {
      * @property {module:model/LogRecord}
      */
     LogRecord,
+
+    /**
+     * The LogTimeseriesFilterFieldItem model constructor.
+     * @property {module:model/LogTimeseriesFilterFieldItem}
+     */
+    LogTimeseriesFilterFieldItem,
+
+    /**
+     * The LogTimeseriesGetResponse model constructor.
+     * @property {module:model/LogTimeseriesGetResponse}
+     */
+    LogTimeseriesGetResponse,
+
+    /**
+     * The LogTimeseriesGetResponseMeta model constructor.
+     * @property {module:model/LogTimeseriesGetResponseMeta}
+     */
+    LogTimeseriesGetResponseMeta,
+
+    /**
+     * The LogTimeseriesGetResponseMetaFilters model constructor.
+     * @property {module:model/LogTimeseriesGetResponseMetaFilters}
+     */
+    LogTimeseriesGetResponseMetaFilters,
+
+    /**
+     * The LogTimeseriesResult model constructor.
+     * @property {module:model/LogTimeseriesResult}
+     */
+    LogTimeseriesResult,
+
+    /**
+     * The LogTimeseriesResultDimensions model constructor.
+     * @property {module:model/LogTimeseriesResultDimensions}
+     */
+    LogTimeseriesResultDimensions,
+
+    /**
+     * The LogTimeseriesValueField model constructor.
+     * @property {module:model/LogTimeseriesValueField}
+     */
+    LogTimeseriesValueField,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -3190,6 +3524,12 @@ export {
     NgwafRequestUpdateConfiguration,
 
     /**
+     * The NgwafResponseBodyGetAllServices model constructor.
+     * @property {module:model/NgwafResponseBodyGetAllServices}
+     */
+    NgwafResponseBodyGetAllServices,
+
+    /**
      * The NgwafResponseConfiguration model constructor.
      * @property {module:model/NgwafResponseConfiguration}
      */
@@ -3208,16 +3548,40 @@ export {
     NgwafResponseConfigure,
 
     /**
+     * The NgwafResponseCustomer model constructor.
+     * @property {module:model/NgwafResponseCustomer}
+     */
+    NgwafResponseCustomer,
+
+    /**
      * The NgwafResponseEnable model constructor.
      * @property {module:model/NgwafResponseEnable}
      */
     NgwafResponseEnable,
 
     /**
+     * The NgwafResponseEnabledServices model constructor.
+     * @property {module:model/NgwafResponseEnabledServices}
+     */
+    NgwafResponseEnabledServices,
+
+    /**
      * The NgwafResponseLinks model constructor.
      * @property {module:model/NgwafResponseLinks}
      */
     NgwafResponseLinks,
+
+    /**
+     * The NgwafResponseLinksGetAllServices model constructor.
+     * @property {module:model/NgwafResponseLinksGetAllServices}
+     */
+    NgwafResponseLinksGetAllServices,
+
+    /**
+     * The NgwafResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/NgwafResponseLinksGetAllServicesLinks}
+     */
+    NgwafResponseLinksGetAllServicesLinks,
 
     /**
      * The NgwafResponseLinksLinks model constructor.
@@ -3340,10 +3704,40 @@ export {
     OriginInspectorResponseBodyEnable,
 
     /**
+     * The OriginInspectorResponseBodyGetAllServices model constructor.
+     * @property {module:model/OriginInspectorResponseBodyGetAllServices}
+     */
+    OriginInspectorResponseBodyGetAllServices,
+
+    /**
+     * The OriginInspectorResponseCustomer model constructor.
+     * @property {module:model/OriginInspectorResponseCustomer}
+     */
+    OriginInspectorResponseCustomer,
+
+    /**
+     * The OriginInspectorResponseEnabledServices model constructor.
+     * @property {module:model/OriginInspectorResponseEnabledServices}
+     */
+    OriginInspectorResponseEnabledServices,
+
+    /**
      * The OriginInspectorResponseLinks model constructor.
      * @property {module:model/OriginInspectorResponseLinks}
      */
     OriginInspectorResponseLinks,
+
+    /**
+     * The OriginInspectorResponseLinksGetAllServices model constructor.
+     * @property {module:model/OriginInspectorResponseLinksGetAllServices}
+     */
+    OriginInspectorResponseLinksGetAllServices,
+
+    /**
+     * The OriginInspectorResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/OriginInspectorResponseLinksGetAllServicesLinks}
+     */
+    OriginInspectorResponseLinksGetAllServicesLinks,
 
     /**
      * The OriginInspectorResponseLinksLinks model constructor.
@@ -3724,42 +4118,6 @@ export {
     RelationshipMemberTlsSubscription,
 
     /**
-     * The RelationshipMemberWafActiveRule model constructor.
-     * @property {module:model/RelationshipMemberWafActiveRule}
-     */
-    RelationshipMemberWafActiveRule,
-
-    /**
-     * The RelationshipMemberWafFirewall model constructor.
-     * @property {module:model/RelationshipMemberWafFirewall}
-     */
-    RelationshipMemberWafFirewall,
-
-    /**
-     * The RelationshipMemberWafFirewallVersion model constructor.
-     * @property {module:model/RelationshipMemberWafFirewallVersion}
-     */
-    RelationshipMemberWafFirewallVersion,
-
-    /**
-     * The RelationshipMemberWafRule model constructor.
-     * @property {module:model/RelationshipMemberWafRule}
-     */
-    RelationshipMemberWafRule,
-
-    /**
-     * The RelationshipMemberWafRuleRevision model constructor.
-     * @property {module:model/RelationshipMemberWafRuleRevision}
-     */
-    RelationshipMemberWafRuleRevision,
-
-    /**
-     * The RelationshipMemberWafTag model constructor.
-     * @property {module:model/RelationshipMemberWafTag}
-     */
-    RelationshipMemberWafTag,
-
-    /**
      * The RelationshipMutualAuthentication model constructor.
      * @property {module:model/RelationshipMutualAuthentication}
      */
@@ -4030,96 +4388,6 @@ export {
     RelationshipUserUser,
 
     /**
-     * The RelationshipWafActiveRules model constructor.
-     * @property {module:model/RelationshipWafActiveRules}
-     */
-    RelationshipWafActiveRules,
-
-    /**
-     * The RelationshipWafActiveRulesWafActiveRules model constructor.
-     * @property {module:model/RelationshipWafActiveRulesWafActiveRules}
-     */
-    RelationshipWafActiveRulesWafActiveRules,
-
-    /**
-     * The RelationshipWafFirewall model constructor.
-     * @property {module:model/RelationshipWafFirewall}
-     */
-    RelationshipWafFirewall,
-
-    /**
-     * The RelationshipWafFirewallVersion model constructor.
-     * @property {module:model/RelationshipWafFirewallVersion}
-     */
-    RelationshipWafFirewallVersion,
-
-    /**
-     * The RelationshipWafFirewallVersionWafFirewallVersion model constructor.
-     * @property {module:model/RelationshipWafFirewallVersionWafFirewallVersion}
-     */
-    RelationshipWafFirewallVersionWafFirewallVersion,
-
-    /**
-     * The RelationshipWafFirewallVersions model constructor.
-     * @property {module:model/RelationshipWafFirewallVersions}
-     */
-    RelationshipWafFirewallVersions,
-
-    /**
-     * The RelationshipWafFirewallWafFirewall model constructor.
-     * @property {module:model/RelationshipWafFirewallWafFirewall}
-     */
-    RelationshipWafFirewallWafFirewall,
-
-    /**
-     * The RelationshipWafRule model constructor.
-     * @property {module:model/RelationshipWafRule}
-     */
-    RelationshipWafRule,
-
-    /**
-     * The RelationshipWafRuleRevision model constructor.
-     * @property {module:model/RelationshipWafRuleRevision}
-     */
-    RelationshipWafRuleRevision,
-
-    /**
-     * The RelationshipWafRuleRevisionWafRuleRevisions model constructor.
-     * @property {module:model/RelationshipWafRuleRevisionWafRuleRevisions}
-     */
-    RelationshipWafRuleRevisionWafRuleRevisions,
-
-    /**
-     * The RelationshipWafRuleRevisions model constructor.
-     * @property {module:model/RelationshipWafRuleRevisions}
-     */
-    RelationshipWafRuleRevisions,
-
-    /**
-     * The RelationshipWafRuleWafRule model constructor.
-     * @property {module:model/RelationshipWafRuleWafRule}
-     */
-    RelationshipWafRuleWafRule,
-
-    /**
-     * The RelationshipWafRules model constructor.
-     * @property {module:model/RelationshipWafRules}
-     */
-    RelationshipWafRules,
-
-    /**
-     * The RelationshipWafTags model constructor.
-     * @property {module:model/RelationshipWafTags}
-     */
-    RelationshipWafTags,
-
-    /**
-     * The RelationshipWafTagsWafTags model constructor.
-     * @property {module:model/RelationshipWafTagsWafTags}
-     */
-    RelationshipWafTagsWafTags,
-
-    /**
      * The RelationshipsForInvitation model constructor.
      * @property {module:model/RelationshipsForInvitation}
      */
@@ -4172,30 +4440,6 @@ export {
      * @property {module:model/RelationshipsForTlsSubscription}
      */
     RelationshipsForTlsSubscription,
-
-    /**
-     * The RelationshipsForWafActiveRule model constructor.
-     * @property {module:model/RelationshipsForWafActiveRule}
-     */
-    RelationshipsForWafActiveRule,
-
-    /**
-     * The RelationshipsForWafExclusion model constructor.
-     * @property {module:model/RelationshipsForWafExclusion}
-     */
-    RelationshipsForWafExclusion,
-
-    /**
-     * The RelationshipsForWafFirewallVersion model constructor.
-     * @property {module:model/RelationshipsForWafFirewallVersion}
-     */
-    RelationshipsForWafFirewallVersion,
-
-    /**
-     * The RelationshipsForWafRule model constructor.
-     * @property {module:model/RelationshipsForWafRule}
-     */
-    RelationshipsForWafRule,
 
     /**
      * The RequestSettingsAdditional model constructor.
@@ -4298,18 +4542,6 @@ export {
      * @property {module:model/SchemasVersionResponse}
      */
     SchemasVersionResponse,
-
-    /**
-     * The SchemasWafFirewallVersion model constructor.
-     * @property {module:model/SchemasWafFirewallVersion}
-     */
-    SchemasWafFirewallVersion,
-
-    /**
-     * The SchemasWafFirewallVersionData model constructor.
-     * @property {module:model/SchemasWafFirewallVersionData}
-     */
-    SchemasWafFirewallVersionData,
 
     /**
      * The Secret model constructor.
@@ -5248,48 +5480,6 @@ export {
     TypeUser,
 
     /**
-     * The TypeWafActiveRule model constructor.
-     * @property {module:model/TypeWafActiveRule}
-     */
-    TypeWafActiveRule,
-
-    /**
-     * The TypeWafExclusion model constructor.
-     * @property {module:model/TypeWafExclusion}
-     */
-    TypeWafExclusion,
-
-    /**
-     * The TypeWafFirewall model constructor.
-     * @property {module:model/TypeWafFirewall}
-     */
-    TypeWafFirewall,
-
-    /**
-     * The TypeWafFirewallVersion model constructor.
-     * @property {module:model/TypeWafFirewallVersion}
-     */
-    TypeWafFirewallVersion,
-
-    /**
-     * The TypeWafRule model constructor.
-     * @property {module:model/TypeWafRule}
-     */
-    TypeWafRule,
-
-    /**
-     * The TypeWafRuleRevision model constructor.
-     * @property {module:model/TypeWafRuleRevision}
-     */
-    TypeWafRuleRevision,
-
-    /**
-     * The TypeWafTag model constructor.
-     * @property {module:model/TypeWafTag}
-     */
-    TypeWafTag,
-
-    /**
      * The UpdateBillingAddressRequest model constructor.
      * @property {module:model/UpdateBillingAddressRequest}
      */
@@ -5500,394 +5690,46 @@ export {
     VersionResponseAllOf,
 
     /**
-     * The WafActiveRule model constructor.
-     * @property {module:model/WafActiveRule}
-     */
-    WafActiveRule,
-
-    /**
-     * The WafActiveRuleCreationResponse model constructor.
-     * @property {module:model/WafActiveRuleCreationResponse}
-     */
-    WafActiveRuleCreationResponse,
-
-    /**
-     * The WafActiveRuleData model constructor.
-     * @property {module:model/WafActiveRuleData}
-     */
-    WafActiveRuleData,
-
-    /**
-     * The WafActiveRuleDataAttributes model constructor.
-     * @property {module:model/WafActiveRuleDataAttributes}
-     */
-    WafActiveRuleDataAttributes,
-
-    /**
-     * The WafActiveRuleResponse model constructor.
-     * @property {module:model/WafActiveRuleResponse}
-     */
-    WafActiveRuleResponse,
-
-    /**
-     * The WafActiveRuleResponseData model constructor.
-     * @property {module:model/WafActiveRuleResponseData}
-     */
-    WafActiveRuleResponseData,
-
-    /**
-     * The WafActiveRuleResponseDataAllOf model constructor.
-     * @property {module:model/WafActiveRuleResponseDataAllOf}
-     */
-    WafActiveRuleResponseDataAllOf,
-
-    /**
-     * The WafActiveRuleResponseDataAttributes model constructor.
-     * @property {module:model/WafActiveRuleResponseDataAttributes}
-     */
-    WafActiveRuleResponseDataAttributes,
-
-    /**
-     * The WafActiveRuleResponseDataAttributesAllOf model constructor.
-     * @property {module:model/WafActiveRuleResponseDataAttributesAllOf}
-     */
-    WafActiveRuleResponseDataAttributesAllOf,
-
-    /**
-     * The WafActiveRuleResponseDataRelationships model constructor.
-     * @property {module:model/WafActiveRuleResponseDataRelationships}
-     */
-    WafActiveRuleResponseDataRelationships,
-
-    /**
-     * The WafActiveRulesResponse model constructor.
-     * @property {module:model/WafActiveRulesResponse}
-     */
-    WafActiveRulesResponse,
-
-    /**
-     * The WafActiveRulesResponseAllOf model constructor.
-     * @property {module:model/WafActiveRulesResponseAllOf}
-     */
-    WafActiveRulesResponseAllOf,
-
-    /**
-     * The WafExclusion model constructor.
-     * @property {module:model/WafExclusion}
-     */
-    WafExclusion,
-
-    /**
-     * The WafExclusionData model constructor.
-     * @property {module:model/WafExclusionData}
-     */
-    WafExclusionData,
-
-    /**
-     * The WafExclusionDataAttributes model constructor.
-     * @property {module:model/WafExclusionDataAttributes}
-     */
-    WafExclusionDataAttributes,
-
-    /**
-     * The WafExclusionResponse model constructor.
-     * @property {module:model/WafExclusionResponse}
-     */
-    WafExclusionResponse,
-
-    /**
-     * The WafExclusionResponseData model constructor.
-     * @property {module:model/WafExclusionResponseData}
-     */
-    WafExclusionResponseData,
-
-    /**
-     * The WafExclusionResponseDataAllOf model constructor.
-     * @property {module:model/WafExclusionResponseDataAllOf}
-     */
-    WafExclusionResponseDataAllOf,
-
-    /**
-     * The WafExclusionResponseDataAttributes model constructor.
-     * @property {module:model/WafExclusionResponseDataAttributes}
-     */
-    WafExclusionResponseDataAttributes,
-
-    /**
-     * The WafExclusionResponseDataAttributesAllOf model constructor.
-     * @property {module:model/WafExclusionResponseDataAttributesAllOf}
-     */
-    WafExclusionResponseDataAttributesAllOf,
-
-    /**
-     * The WafExclusionResponseDataRelationships model constructor.
-     * @property {module:model/WafExclusionResponseDataRelationships}
-     */
-    WafExclusionResponseDataRelationships,
-
-    /**
-     * The WafExclusionsResponse model constructor.
-     * @property {module:model/WafExclusionsResponse}
-     */
-    WafExclusionsResponse,
-
-    /**
-     * The WafExclusionsResponseAllOf model constructor.
-     * @property {module:model/WafExclusionsResponseAllOf}
-     */
-    WafExclusionsResponseAllOf,
-
-    /**
-     * The WafFirewall model constructor.
-     * @property {module:model/WafFirewall}
-     */
-    WafFirewall,
-
-    /**
-     * The WafFirewallData model constructor.
-     * @property {module:model/WafFirewallData}
-     */
-    WafFirewallData,
-
-    /**
-     * The WafFirewallDataAttributes model constructor.
-     * @property {module:model/WafFirewallDataAttributes}
-     */
-    WafFirewallDataAttributes,
-
-    /**
-     * The WafFirewallResponse model constructor.
-     * @property {module:model/WafFirewallResponse}
-     */
-    WafFirewallResponse,
-
-    /**
-     * The WafFirewallResponseData model constructor.
-     * @property {module:model/WafFirewallResponseData}
-     */
-    WafFirewallResponseData,
-
-    /**
-     * The WafFirewallResponseDataAllOf model constructor.
-     * @property {module:model/WafFirewallResponseDataAllOf}
-     */
-    WafFirewallResponseDataAllOf,
-
-    /**
-     * The WafFirewallResponseDataAttributes model constructor.
-     * @property {module:model/WafFirewallResponseDataAttributes}
-     */
-    WafFirewallResponseDataAttributes,
-
-    /**
-     * The WafFirewallResponseDataAttributesAllOf model constructor.
-     * @property {module:model/WafFirewallResponseDataAttributesAllOf}
-     */
-    WafFirewallResponseDataAttributesAllOf,
-
-    /**
-     * The WafFirewallVersion model constructor.
-     * @property {module:model/WafFirewallVersion}
-     */
-    WafFirewallVersion,
-
-    /**
-     * The WafFirewallVersionData model constructor.
-     * @property {module:model/WafFirewallVersionData}
-     */
-    WafFirewallVersionData,
-
-    /**
-     * The WafFirewallVersionDataAttributes model constructor.
-     * @property {module:model/WafFirewallVersionDataAttributes}
-     */
-    WafFirewallVersionDataAttributes,
-
-    /**
-     * The WafFirewallVersionResponse model constructor.
-     * @property {module:model/WafFirewallVersionResponse}
-     */
-    WafFirewallVersionResponse,
-
-    /**
-     * The WafFirewallVersionResponseData model constructor.
-     * @property {module:model/WafFirewallVersionResponseData}
-     */
-    WafFirewallVersionResponseData,
-
-    /**
-     * The WafFirewallVersionResponseDataAllOf model constructor.
-     * @property {module:model/WafFirewallVersionResponseDataAllOf}
-     */
-    WafFirewallVersionResponseDataAllOf,
-
-    /**
-     * The WafFirewallVersionResponseDataAttributes model constructor.
-     * @property {module:model/WafFirewallVersionResponseDataAttributes}
-     */
-    WafFirewallVersionResponseDataAttributes,
-
-    /**
-     * The WafFirewallVersionResponseDataAttributesAllOf model constructor.
-     * @property {module:model/WafFirewallVersionResponseDataAttributesAllOf}
-     */
-    WafFirewallVersionResponseDataAttributesAllOf,
-
-    /**
-     * The WafFirewallVersionsResponse model constructor.
-     * @property {module:model/WafFirewallVersionsResponse}
-     */
-    WafFirewallVersionsResponse,
-
-    /**
-     * The WafFirewallVersionsResponseAllOf model constructor.
-     * @property {module:model/WafFirewallVersionsResponseAllOf}
-     */
-    WafFirewallVersionsResponseAllOf,
-
-    /**
-     * The WafFirewallsResponse model constructor.
-     * @property {module:model/WafFirewallsResponse}
-     */
-    WafFirewallsResponse,
-
-    /**
-     * The WafFirewallsResponseAllOf model constructor.
-     * @property {module:model/WafFirewallsResponseAllOf}
-     */
-    WafFirewallsResponseAllOf,
-
-    /**
-     * The WafRule model constructor.
-     * @property {module:model/WafRule}
-     */
-    WafRule,
-
-    /**
-     * The WafRuleAttributes model constructor.
-     * @property {module:model/WafRuleAttributes}
-     */
-    WafRuleAttributes,
-
-    /**
-     * The WafRuleResponse model constructor.
-     * @property {module:model/WafRuleResponse}
-     */
-    WafRuleResponse,
-
-    /**
-     * The WafRuleResponseData model constructor.
-     * @property {module:model/WafRuleResponseData}
-     */
-    WafRuleResponseData,
-
-    /**
-     * The WafRuleResponseDataAllOf model constructor.
-     * @property {module:model/WafRuleResponseDataAllOf}
-     */
-    WafRuleResponseDataAllOf,
-
-    /**
-     * The WafRuleRevision model constructor.
-     * @property {module:model/WafRuleRevision}
-     */
-    WafRuleRevision,
-
-    /**
-     * The WafRuleRevisionAttributes model constructor.
-     * @property {module:model/WafRuleRevisionAttributes}
-     */
-    WafRuleRevisionAttributes,
-
-    /**
-     * The WafRuleRevisionOrLatest model constructor.
-     * @property {module:model/WafRuleRevisionOrLatest}
-     */
-    WafRuleRevisionOrLatest,
-
-    /**
-     * The WafRuleRevisionResponse model constructor.
-     * @property {module:model/WafRuleRevisionResponse}
-     */
-    WafRuleRevisionResponse,
-
-    /**
-     * The WafRuleRevisionResponseData model constructor.
-     * @property {module:model/WafRuleRevisionResponseData}
-     */
-    WafRuleRevisionResponseData,
-
-    /**
-     * The WafRuleRevisionResponseDataAllOf model constructor.
-     * @property {module:model/WafRuleRevisionResponseDataAllOf}
-     */
-    WafRuleRevisionResponseDataAllOf,
-
-    /**
-     * The WafRuleRevisionsResponse model constructor.
-     * @property {module:model/WafRuleRevisionsResponse}
-     */
-    WafRuleRevisionsResponse,
-
-    /**
-     * The WafRuleRevisionsResponseAllOf model constructor.
-     * @property {module:model/WafRuleRevisionsResponseAllOf}
-     */
-    WafRuleRevisionsResponseAllOf,
-
-    /**
-     * The WafRulesResponse model constructor.
-     * @property {module:model/WafRulesResponse}
-     */
-    WafRulesResponse,
-
-    /**
-     * The WafRulesResponseAllOf model constructor.
-     * @property {module:model/WafRulesResponseAllOf}
-     */
-    WafRulesResponseAllOf,
-
-    /**
-     * The WafTag model constructor.
-     * @property {module:model/WafTag}
-     */
-    WafTag,
-
-    /**
-     * The WafTagAttributes model constructor.
-     * @property {module:model/WafTagAttributes}
-     */
-    WafTagAttributes,
-
-    /**
-     * The WafTagsResponse model constructor.
-     * @property {module:model/WafTagsResponse}
-     */
-    WafTagsResponse,
-
-    /**
-     * The WafTagsResponseAllOf model constructor.
-     * @property {module:model/WafTagsResponseAllOf}
-     */
-    WafTagsResponseAllOf,
-
-    /**
-     * The WafTagsResponseDataItem model constructor.
-     * @property {module:model/WafTagsResponseDataItem}
-     */
-    WafTagsResponseDataItem,
-
-    /**
      * The WebsocketsResponseBodyEnable model constructor.
      * @property {module:model/WebsocketsResponseBodyEnable}
      */
     WebsocketsResponseBodyEnable,
 
     /**
+     * The WebsocketsResponseBodyGetAllServices model constructor.
+     * @property {module:model/WebsocketsResponseBodyGetAllServices}
+     */
+    WebsocketsResponseBodyGetAllServices,
+
+    /**
+     * The WebsocketsResponseCustomer model constructor.
+     * @property {module:model/WebsocketsResponseCustomer}
+     */
+    WebsocketsResponseCustomer,
+
+    /**
+     * The WebsocketsResponseEnabledServices model constructor.
+     * @property {module:model/WebsocketsResponseEnabledServices}
+     */
+    WebsocketsResponseEnabledServices,
+
+    /**
      * The WebsocketsResponseLinks model constructor.
      * @property {module:model/WebsocketsResponseLinks}
      */
     WebsocketsResponseLinks,
+
+    /**
+     * The WebsocketsResponseLinksGetAllServices model constructor.
+     * @property {module:model/WebsocketsResponseLinksGetAllServices}
+     */
+    WebsocketsResponseLinksGetAllServices,
+
+    /**
+     * The WebsocketsResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/WebsocketsResponseLinksGetAllServicesLinks}
+     */
+    WebsocketsResponseLinksGetAllServicesLinks,
 
     /**
      * The WebsocketsResponseLinksLinks model constructor.
@@ -6020,6 +5862,12 @@ export {
     * @property {module:api/CustomerAddressesApi}
     */
     CustomerAddressesApi,
+
+    /**
+    * The DdosProtectionApi service constructor.
+    * @property {module:api/DdosProtectionApi}
+    */
+    DdosProtectionApi,
 
     /**
     * The DictionaryApi service constructor.
@@ -6358,10 +6206,22 @@ export {
     ObjectStorageAccessKeysApi,
 
     /**
+    * The ObservabilityAggregationsForLogsApi service constructor.
+    * @property {module:api/ObservabilityAggregationsForLogsApi}
+    */
+    ObservabilityAggregationsForLogsApi,
+
+    /**
     * The ObservabilityCustomDashboardsApi service constructor.
     * @property {module:api/ObservabilityCustomDashboardsApi}
     */
     ObservabilityCustomDashboardsApi,
+
+    /**
+    * The ObservabilityTimeseriesForLogsApi service constructor.
+    * @property {module:api/ObservabilityTimeseriesForLogsApi}
+    */
+    ObservabilityTimeseriesForLogsApi,
 
     /**
     * The OriginInspectorHistoricalApi service constructor.
@@ -6650,48 +6510,6 @@ export {
     * @property {module:api/VersionApi}
     */
     VersionApi,
-
-    /**
-    * The WafActiveRulesApi service constructor.
-    * @property {module:api/WafActiveRulesApi}
-    */
-    WafActiveRulesApi,
-
-    /**
-    * The WafExclusionsApi service constructor.
-    * @property {module:api/WafExclusionsApi}
-    */
-    WafExclusionsApi,
-
-    /**
-    * The WafFirewallVersionsApi service constructor.
-    * @property {module:api/WafFirewallVersionsApi}
-    */
-    WafFirewallVersionsApi,
-
-    /**
-    * The WafFirewallsApi service constructor.
-    * @property {module:api/WafFirewallsApi}
-    */
-    WafFirewallsApi,
-
-    /**
-    * The WafRuleRevisionsApi service constructor.
-    * @property {module:api/WafRuleRevisionsApi}
-    */
-    WafRuleRevisionsApi,
-
-    /**
-    * The WafRulesApi service constructor.
-    * @property {module:api/WafRulesApi}
-    */
-    WafRulesApi,
-
-    /**
-    * The WafTagsApi service constructor.
-    * @property {module:api/WafTagsApi}
-    */
-    WafTagsApi,
 
     /**
     * The WholePlatformDdosHistoricalApi service constructor.

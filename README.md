@@ -143,19 +143,24 @@ Class | Method | Description
 *Fastly.CustomerAddressesApi* | [**createCustomerAddress**](docs/CustomerAddressesApi.md#createCustomerAddress) | Creates an address associated with a customer account.
 *Fastly.CustomerAddressesApi* | [**listCustomerAddresses**](docs/CustomerAddressesApi.md#listCustomerAddresses) | Return the list of addresses associated with a customer account.
 *Fastly.CustomerAddressesApi* | [**updateCustomerAddress**](docs/CustomerAddressesApi.md#updateCustomerAddress) | Updates an address associated with a customer account.
-*Fastly.DictionaryApi* | [**createDictionary**](docs/DictionaryApi.md#createDictionary) | Create an edge dictionary
-*Fastly.DictionaryApi* | [**deleteDictionary**](docs/DictionaryApi.md#deleteDictionary) | Delete an edge dictionary
-*Fastly.DictionaryApi* | [**getDictionary**](docs/DictionaryApi.md#getDictionary) | Get an edge dictionary
-*Fastly.DictionaryApi* | [**listDictionaries**](docs/DictionaryApi.md#listDictionaries) | List edge dictionaries
-*Fastly.DictionaryApi* | [**updateDictionary**](docs/DictionaryApi.md#updateDictionary) | Update an edge dictionary
-*Fastly.DictionaryInfoApi* | [**getDictionaryInfo**](docs/DictionaryInfoApi.md#getDictionaryInfo) | Get edge dictionary metadata
-*Fastly.DictionaryItemApi* | [**bulkUpdateDictionaryItem**](docs/DictionaryItemApi.md#bulkUpdateDictionaryItem) | Update multiple entries in an edge dictionary
-*Fastly.DictionaryItemApi* | [**createDictionaryItem**](docs/DictionaryItemApi.md#createDictionaryItem) | Create an entry in an edge dictionary
-*Fastly.DictionaryItemApi* | [**deleteDictionaryItem**](docs/DictionaryItemApi.md#deleteDictionaryItem) | Delete an item from an edge dictionary
-*Fastly.DictionaryItemApi* | [**getDictionaryItem**](docs/DictionaryItemApi.md#getDictionaryItem) | Get an item from an edge dictionary
-*Fastly.DictionaryItemApi* | [**listDictionaryItems**](docs/DictionaryItemApi.md#listDictionaryItems) | List items in an edge dictionary
-*Fastly.DictionaryItemApi* | [**updateDictionaryItem**](docs/DictionaryItemApi.md#updateDictionaryItem) | Update an entry in an edge dictionary
-*Fastly.DictionaryItemApi* | [**upsertDictionaryItem**](docs/DictionaryItemApi.md#upsertDictionaryItem) | Insert or update an entry in an edge dictionary
+*Fastly.DdosProtectionApi* | [**ddosProtectionEventGet**](docs/DdosProtectionApi.md#ddosProtectionEventGet) | Get event by ID
+*Fastly.DdosProtectionApi* | [**ddosProtectionEventList**](docs/DdosProtectionApi.md#ddosProtectionEventList) | Get events
+*Fastly.DdosProtectionApi* | [**ddosProtectionEventRuleList**](docs/DdosProtectionApi.md#ddosProtectionEventRuleList) | Get all rules for an event
+*Fastly.DdosProtectionApi* | [**ddosProtectionRuleGet**](docs/DdosProtectionApi.md#ddosProtectionRuleGet) | Get a rule by ID
+*Fastly.DdosProtectionApi* | [**ddosProtectionTrafficStatsRuleGet**](docs/DdosProtectionApi.md#ddosProtectionTrafficStatsRuleGet) | Get traffic stats for a rule
+*Fastly.DictionaryApi* | [**createDictionary**](docs/DictionaryApi.md#createDictionary) | Create a dictionary
+*Fastly.DictionaryApi* | [**deleteDictionary**](docs/DictionaryApi.md#deleteDictionary) | Delete a dictionary
+*Fastly.DictionaryApi* | [**getDictionary**](docs/DictionaryApi.md#getDictionary) | Get a dictionary
+*Fastly.DictionaryApi* | [**listDictionaries**](docs/DictionaryApi.md#listDictionaries) | List dictionaries
+*Fastly.DictionaryApi* | [**updateDictionary**](docs/DictionaryApi.md#updateDictionary) | Update a dictionary
+*Fastly.DictionaryInfoApi* | [**getDictionaryInfo**](docs/DictionaryInfoApi.md#getDictionaryInfo) | Get dictionary metadata
+*Fastly.DictionaryItemApi* | [**bulkUpdateDictionaryItem**](docs/DictionaryItemApi.md#bulkUpdateDictionaryItem) | Update multiple entries in a dictionary
+*Fastly.DictionaryItemApi* | [**createDictionaryItem**](docs/DictionaryItemApi.md#createDictionaryItem) | Create an entry in a dictionary
+*Fastly.DictionaryItemApi* | [**deleteDictionaryItem**](docs/DictionaryItemApi.md#deleteDictionaryItem) | Delete an item from a dictionary
+*Fastly.DictionaryItemApi* | [**getDictionaryItem**](docs/DictionaryItemApi.md#getDictionaryItem) | Get an item from a dictionary
+*Fastly.DictionaryItemApi* | [**listDictionaryItems**](docs/DictionaryItemApi.md#listDictionaryItems) | List items in a dictionary
+*Fastly.DictionaryItemApi* | [**updateDictionaryItem**](docs/DictionaryItemApi.md#updateDictionaryItem) | Update an entry in a dictionary
+*Fastly.DictionaryItemApi* | [**upsertDictionaryItem**](docs/DictionaryItemApi.md#upsertDictionaryItem) | Insert or update an entry in a dictionary
 *Fastly.DiffApi* | [**diffServiceVersions**](docs/DiffApi.md#diffServiceVersions) | Diff two service versions
 *Fastly.DirectorApi* | [**createDirector**](docs/DirectorApi.md#createDirector) | Create a director
 *Fastly.DirectorApi* | [**deleteDirector**](docs/DirectorApi.md#deleteDirector) | Delete a director
@@ -401,11 +406,13 @@ Class | Method | Description
 *Fastly.ObjectStorageAccessKeysApi* | [**deleteAccessKey**](docs/ObjectStorageAccessKeysApi.md#deleteAccessKey) | Delete an access key
 *Fastly.ObjectStorageAccessKeysApi* | [**getAccessKey**](docs/ObjectStorageAccessKeysApi.md#getAccessKey) | Get an access key
 *Fastly.ObjectStorageAccessKeysApi* | [**listAccessKeys**](docs/ObjectStorageAccessKeysApi.md#listAccessKeys) | List access keys
+*Fastly.ObservabilityAggregationsForLogsApi* | [**logAggregationsGet**](docs/ObservabilityAggregationsForLogsApi.md#logAggregationsGet) | Retrieve aggregated log results
 *Fastly.ObservabilityCustomDashboardsApi* | [**createDashboard**](docs/ObservabilityCustomDashboardsApi.md#createDashboard) | Create a new dashboard
 *Fastly.ObservabilityCustomDashboardsApi* | [**deleteDashboard**](docs/ObservabilityCustomDashboardsApi.md#deleteDashboard) | Delete an existing dashboard
 *Fastly.ObservabilityCustomDashboardsApi* | [**getDashboard**](docs/ObservabilityCustomDashboardsApi.md#getDashboard) | Retrieve a dashboard by ID
 *Fastly.ObservabilityCustomDashboardsApi* | [**listDashboards**](docs/ObservabilityCustomDashboardsApi.md#listDashboards) | List all custom dashboards
 *Fastly.ObservabilityCustomDashboardsApi* | [**updateDashboard**](docs/ObservabilityCustomDashboardsApi.md#updateDashboard) | Update an existing dashboard
+*Fastly.ObservabilityTimeseriesForLogsApi* | [**logTimeseriesGet**](docs/ObservabilityTimeseriesForLogsApi.md#logTimeseriesGet) | Retrieve log data as time series
 *Fastly.OriginInspectorHistoricalApi* | [**getOriginInspectorHistorical**](docs/OriginInspectorHistoricalApi.md#getOriginInspectorHistorical) | Get historical origin data for a service
 *Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLast120Seconds) | Get real-time origin data for the last 120 seconds
 *Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLastMaxEntries) | Get a limited number of real-time origin data entries
@@ -424,30 +431,38 @@ Class | Method | Description
 *Fastly.ProductBotManagementApi* | [**disableProductBotManagement**](docs/ProductBotManagementApi.md#disableProductBotManagement) | Disable product
 *Fastly.ProductBotManagementApi* | [**enableProductBotManagement**](docs/ProductBotManagementApi.md#enableProductBotManagement) | Enable product
 *Fastly.ProductBotManagementApi* | [**getProductBotManagement**](docs/ProductBotManagementApi.md#getProductBotManagement) | Get product enablement status
+*Fastly.ProductBotManagementApi* | [**getServicesProductBotManagement**](docs/ProductBotManagementApi.md#getServicesProductBotManagement) | Get services with product enabled
 *Fastly.ProductBrotliCompressionApi* | [**disableProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#disableProductBrotliCompression) | Disable product
 *Fastly.ProductBrotliCompressionApi* | [**enableProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#enableProductBrotliCompression) | Enable product
 *Fastly.ProductBrotliCompressionApi* | [**getProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#getProductBrotliCompression) | Get product enablement status
+*Fastly.ProductBrotliCompressionApi* | [**getServicesProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#getServicesProductBrotliCompression) | Get services with product enabled
 *Fastly.ProductDdosProtectionApi* | [**disableProductDdosProtection**](docs/ProductDdosProtectionApi.md#disableProductDdosProtection) | Disable product
 *Fastly.ProductDdosProtectionApi* | [**enableProductDdosProtection**](docs/ProductDdosProtectionApi.md#enableProductDdosProtection) | Enable product
 *Fastly.ProductDdosProtectionApi* | [**getProductDdosProtection**](docs/ProductDdosProtectionApi.md#getProductDdosProtection) | Get product enablement status
 *Fastly.ProductDdosProtectionApi* | [**getProductDdosProtectionConfiguration**](docs/ProductDdosProtectionApi.md#getProductDdosProtectionConfiguration) | Get configuration
+*Fastly.ProductDdosProtectionApi* | [**getServicesProductDdosProtection**](docs/ProductDdosProtectionApi.md#getServicesProductDdosProtection) | Get services with product enabled
 *Fastly.ProductDdosProtectionApi* | [**setProductDdosProtectionConfiguration**](docs/ProductDdosProtectionApi.md#setProductDdosProtectionConfiguration) | Update configuration
 *Fastly.ProductDomainInspectorApi* | [**disableProductDomainInspector**](docs/ProductDomainInspectorApi.md#disableProductDomainInspector) | Disable product
 *Fastly.ProductDomainInspectorApi* | [**enableProductDomainInspector**](docs/ProductDomainInspectorApi.md#enableProductDomainInspector) | Enable product
 *Fastly.ProductDomainInspectorApi* | [**getProductDomainInspector**](docs/ProductDomainInspectorApi.md#getProductDomainInspector) | Get product enablement status
+*Fastly.ProductDomainInspectorApi* | [**getServicesProductDomainInspector**](docs/ProductDomainInspectorApi.md#getServicesProductDomainInspector) | Get services with product enabled
 *Fastly.ProductFanoutApi* | [**disableProductFanout**](docs/ProductFanoutApi.md#disableProductFanout) | Disable product
 *Fastly.ProductFanoutApi* | [**enableProductFanout**](docs/ProductFanoutApi.md#enableProductFanout) | Enable product
 *Fastly.ProductFanoutApi* | [**getProductFanout**](docs/ProductFanoutApi.md#getProductFanout) | Get product enablement status
+*Fastly.ProductFanoutApi* | [**getServicesProductFanout**](docs/ProductFanoutApi.md#getServicesProductFanout) | Get services with product enabled
 *Fastly.ProductImageOptimizerApi* | [**disableProductImageOptimizer**](docs/ProductImageOptimizerApi.md#disableProductImageOptimizer) | Disable product
 *Fastly.ProductImageOptimizerApi* | [**enableProductImageOptimizer**](docs/ProductImageOptimizerApi.md#enableProductImageOptimizer) | Enable product
 *Fastly.ProductImageOptimizerApi* | [**getProductImageOptimizer**](docs/ProductImageOptimizerApi.md#getProductImageOptimizer) | Get product enablement status
+*Fastly.ProductImageOptimizerApi* | [**getServicesProductImageOptimizer**](docs/ProductImageOptimizerApi.md#getServicesProductImageOptimizer) | Get services with product enabled
 *Fastly.ProductLogExplorerInsightsApi* | [**disableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#disableProductLogExplorerInsights) | Disable product
 *Fastly.ProductLogExplorerInsightsApi* | [**enableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#enableProductLogExplorerInsights) | Enable product
 *Fastly.ProductLogExplorerInsightsApi* | [**getProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#getProductLogExplorerInsights) | Get product enablement status
+*Fastly.ProductLogExplorerInsightsApi* | [**getServicesProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#getServicesProductLogExplorerInsights) | Get services with product enabled
 *Fastly.ProductNgwafApi* | [**disableProductNgwaf**](docs/ProductNgwafApi.md#disableProductNgwaf) | Disable product
 *Fastly.ProductNgwafApi* | [**enableProductNgwaf**](docs/ProductNgwafApi.md#enableProductNgwaf) | Enable product
 *Fastly.ProductNgwafApi* | [**getProductNgwaf**](docs/ProductNgwafApi.md#getProductNgwaf) | Get product enablement status
 *Fastly.ProductNgwafApi* | [**getProductNgwafConfiguration**](docs/ProductNgwafApi.md#getProductNgwafConfiguration) | Get configuration
+*Fastly.ProductNgwafApi* | [**getServicesProductNgwaf**](docs/ProductNgwafApi.md#getServicesProductNgwaf) | Get services with product enabled
 *Fastly.ProductNgwafApi* | [**setProductNgwafConfiguration**](docs/ProductNgwafApi.md#setProductNgwafConfiguration) | Update configuration
 *Fastly.ProductObjectStorageApi* | [**disableProductObjectStorage**](docs/ProductObjectStorageApi.md#disableProductObjectStorage) | Disable product
 *Fastly.ProductObjectStorageApi* | [**enableObjectStorage**](docs/ProductObjectStorageApi.md#enableObjectStorage) | Enable product
@@ -455,9 +470,11 @@ Class | Method | Description
 *Fastly.ProductOriginInspectorApi* | [**disableProductOriginInspector**](docs/ProductOriginInspectorApi.md#disableProductOriginInspector) | Disable product
 *Fastly.ProductOriginInspectorApi* | [**enableProductOriginInspector**](docs/ProductOriginInspectorApi.md#enableProductOriginInspector) | Enable product
 *Fastly.ProductOriginInspectorApi* | [**getProductOriginInspector**](docs/ProductOriginInspectorApi.md#getProductOriginInspector) | Get product enablement status
+*Fastly.ProductOriginInspectorApi* | [**getServicesProductOriginInspector**](docs/ProductOriginInspectorApi.md#getServicesProductOriginInspector) | Get services with product enabled
 *Fastly.ProductWebsocketsApi* | [**disableProductWebsockets**](docs/ProductWebsocketsApi.md#disableProductWebsockets) | Disable product
 *Fastly.ProductWebsocketsApi* | [**enableProductWebsockets**](docs/ProductWebsocketsApi.md#enableProductWebsockets) | Enable product
 *Fastly.ProductWebsocketsApi* | [**getProductWebsockets**](docs/ProductWebsocketsApi.md#getProductWebsockets) | Get product enablement status
+*Fastly.ProductWebsocketsApi* | [**getServicesProductWebsockets**](docs/ProductWebsocketsApi.md#getServicesProductWebsockets) | Get services with product enabled
 *Fastly.PublicIpListApi* | [**listFastlyIps**](docs/PublicIpListApi.md#listFastlyIps) | List Fastly&#39;s public IPs
 *Fastly.PublishApi* | [**publish**](docs/PublishApi.md#publish) | Send messages to Fanout subscribers
 *Fastly.PurgeApi* | [**bulkPurgeTag**](docs/PurgeApi.md#bulkPurgeTag) | Purge multiple surrogate key tags
@@ -606,35 +623,6 @@ Class | Method | Description
 *Fastly.VersionApi* | [**lockServiceVersion**](docs/VersionApi.md#lockServiceVersion) | Lock a service version
 *Fastly.VersionApi* | [**updateServiceVersion**](docs/VersionApi.md#updateServiceVersion) | Update a service version
 *Fastly.VersionApi* | [**validateServiceVersion**](docs/VersionApi.md#validateServiceVersion) | Validate a service version
-*Fastly.WafActiveRulesApi* | [**bulkDeleteWafActiveRules**](docs/WafActiveRulesApi.md#bulkDeleteWafActiveRules) | Delete multiple active rules from a WAF
-*Fastly.WafActiveRulesApi* | [**bulkUpdateWafActiveRules**](docs/WafActiveRulesApi.md#bulkUpdateWafActiveRules) | Update multiple active rules
-*Fastly.WafActiveRulesApi* | [**createWafActiveRule**](docs/WafActiveRulesApi.md#createWafActiveRule) | Add a rule to a WAF as an active rule
-*Fastly.WafActiveRulesApi* | [**createWafActiveRulesTag**](docs/WafActiveRulesApi.md#createWafActiveRulesTag) | Create active rules by tag
-*Fastly.WafActiveRulesApi* | [**deleteWafActiveRule**](docs/WafActiveRulesApi.md#deleteWafActiveRule) | Delete an active rule
-*Fastly.WafActiveRulesApi* | [**getWafActiveRule**](docs/WafActiveRulesApi.md#getWafActiveRule) | Get an active WAF rule object
-*Fastly.WafActiveRulesApi* | [**listWafActiveRules**](docs/WafActiveRulesApi.md#listWafActiveRules) | List active rules on a WAF
-*Fastly.WafActiveRulesApi* | [**updateWafActiveRule**](docs/WafActiveRulesApi.md#updateWafActiveRule) | Update an active rule
-*Fastly.WafExclusionsApi* | [**createWafRuleExclusion**](docs/WafExclusionsApi.md#createWafRuleExclusion) | Create a WAF rule exclusion
-*Fastly.WafExclusionsApi* | [**deleteWafRuleExclusion**](docs/WafExclusionsApi.md#deleteWafRuleExclusion) | Delete a WAF rule exclusion
-*Fastly.WafExclusionsApi* | [**getWafRuleExclusion**](docs/WafExclusionsApi.md#getWafRuleExclusion) | Get a WAF rule exclusion
-*Fastly.WafExclusionsApi* | [**listWafRuleExclusions**](docs/WafExclusionsApi.md#listWafRuleExclusions) | List WAF rule exclusions
-*Fastly.WafExclusionsApi* | [**updateWafRuleExclusion**](docs/WafExclusionsApi.md#updateWafRuleExclusion) | Update a WAF rule exclusion
-*Fastly.WafFirewallVersionsApi* | [**cloneWafFirewallVersion**](docs/WafFirewallVersionsApi.md#cloneWafFirewallVersion) | Clone a firewall version
-*Fastly.WafFirewallVersionsApi* | [**createWafFirewallVersion**](docs/WafFirewallVersionsApi.md#createWafFirewallVersion) | Create a firewall version
-*Fastly.WafFirewallVersionsApi* | [**deployActivateWafFirewallVersion**](docs/WafFirewallVersionsApi.md#deployActivateWafFirewallVersion) | Deploy or activate a firewall version
-*Fastly.WafFirewallVersionsApi* | [**getWafFirewallVersion**](docs/WafFirewallVersionsApi.md#getWafFirewallVersion) | Get a firewall version
-*Fastly.WafFirewallVersionsApi* | [**listWafFirewallVersions**](docs/WafFirewallVersionsApi.md#listWafFirewallVersions) | List firewall versions
-*Fastly.WafFirewallVersionsApi* | [**updateWafFirewallVersion**](docs/WafFirewallVersionsApi.md#updateWafFirewallVersion) | Update a firewall version
-*Fastly.WafFirewallsApi* | [**createWafFirewall**](docs/WafFirewallsApi.md#createWafFirewall) | Create a firewall
-*Fastly.WafFirewallsApi* | [**deleteWafFirewall**](docs/WafFirewallsApi.md#deleteWafFirewall) | Delete a firewall
-*Fastly.WafFirewallsApi* | [**getWafFirewall**](docs/WafFirewallsApi.md#getWafFirewall) | Get a firewall
-*Fastly.WafFirewallsApi* | [**listWafFirewalls**](docs/WafFirewallsApi.md#listWafFirewalls) | List firewalls
-*Fastly.WafFirewallsApi* | [**updateWafFirewall**](docs/WafFirewallsApi.md#updateWafFirewall) | Update a firewall
-*Fastly.WafRuleRevisionsApi* | [**getWafRuleRevision**](docs/WafRuleRevisionsApi.md#getWafRuleRevision) | Get a revision of a rule
-*Fastly.WafRuleRevisionsApi* | [**listWafRuleRevisions**](docs/WafRuleRevisionsApi.md#listWafRuleRevisions) | List revisions for a rule
-*Fastly.WafRulesApi* | [**getWafRule**](docs/WafRulesApi.md#getWafRule) | Get a rule
-*Fastly.WafRulesApi* | [**listWafRules**](docs/WafRulesApi.md#listWafRules) | List available WAF rules
-*Fastly.WafTagsApi* | [**listWafTags**](docs/WafTagsApi.md#listWafTags) | List tags
 *Fastly.WholePlatformDdosHistoricalApi* | [**getPlatformDdosHistorical**](docs/WholePlatformDdosHistoricalApi.md#getPlatformDdosHistorical) | Get historical DDoS metrics for the entire Fastly platform
 
 
@@ -649,6 +637,8 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/domains/v1/tools/status`](https://www.fastly.com/documentation/reference/api/) (GET)
+- [`/domains/v1/tools/suggest`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/domains/v1/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/domains/v1`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/notifications/integration-types`](https://developer.fastly.com/reference/api/observability/notification) (GET)

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorMeasurements model module.
  * @module model/OriginInspectorMeasurements
- * @version 10.0.0
+ * @version 11.0.0
  */
 class OriginInspectorMeasurements {
     /**

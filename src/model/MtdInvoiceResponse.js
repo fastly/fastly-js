@@ -17,7 +17,7 @@ import Mtdlineitems from './Mtdlineitems';
 /**
  * The MtdInvoiceResponse model module.
  * @module model/MtdInvoiceResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class MtdInvoiceResponse {
     /**

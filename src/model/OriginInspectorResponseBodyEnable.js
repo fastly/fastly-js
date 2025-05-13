@@ -21,7 +21,7 @@ import OriginInspectorResponseService from './OriginInspectorResponseService';
 /**
  * The OriginInspectorResponseBodyEnable model module.
  * @module model/OriginInspectorResponseBodyEnable
- * @version 10.0.0
+ * @version 11.0.0
  */
 class OriginInspectorResponseBodyEnable {
     /**

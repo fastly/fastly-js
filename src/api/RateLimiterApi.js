@@ -18,7 +18,7 @@ import RateLimiterResponse from '../model/RateLimiterResponse';
 /**
 * RateLimiter service.
 * @module api/RateLimiterApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class RateLimiterApi {
 
@@ -44,7 +44,7 @@ export default class RateLimiterApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {String} [options.uri_dictionary_name] - The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
@@ -117,7 +117,7 @@ export default class RateLimiterApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {String} [options.uri_dictionary_name] - The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
@@ -322,7 +322,7 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {String} [options.uri_dictionary_name] - The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
@@ -389,7 +389,7 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {String} [options.uri_dictionary_name] - The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.

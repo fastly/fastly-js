@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The RequestSettingsResponse model module.
  * @module model/RequestSettingsResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class RequestSettingsResponse {
     /**

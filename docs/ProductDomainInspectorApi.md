@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disableProductDomainInspector**](ProductDomainInspectorApi.md#disableProductDomainInspector) | **DELETE** /enabled-products/v1/domain_inspector/services/{service_id} | Disable product
 [**enableProductDomainInspector**](ProductDomainInspectorApi.md#enableProductDomainInspector) | **PUT** /enabled-products/v1/domain_inspector/services/{service_id} | Enable product
 [**getProductDomainInspector**](ProductDomainInspectorApi.md#getProductDomainInspector) | **GET** /enabled-products/v1/domain_inspector/services/{service_id} | Get product enablement status
+[**getServicesProductDomainInspector**](ProductDomainInspectorApi.md#getServicesProductDomainInspector) | **GET** /enabled-products/v1/domain_inspector/services | Get services with product enabled
 
 
 ## `disableProductDomainInspector`
@@ -118,6 +119,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DomainInspectorResponseBodyEnable**](DomainInspectorResponseBodyEnable.md)
+
+
+## `getServicesProductDomainInspector`
+
+```javascript
+getServicesProductDomainInspector()
+```
+
+Get all the services which have the Domain Inspector product enabled.
+
+### Example
+
+```javascript
+apiInstance.getServicesProductDomainInspector()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**DomainInspectorResponseBodyGetAllServices**](DomainInspectorResponseBodyGetAllServices.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

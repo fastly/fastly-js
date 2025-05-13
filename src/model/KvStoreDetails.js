@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreDetails model module.
  * @module model/KvStoreDetails
- * @version 10.0.0
+ * @version 11.0.0
  */
 class KvStoreDetails {
     /**

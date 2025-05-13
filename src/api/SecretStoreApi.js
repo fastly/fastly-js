@@ -13,7 +13,7 @@
 
 import ApiClient from "../ApiClient";
 import ClientKey from '../model/ClientKey';
-import InlineResponse2005 from '../model/InlineResponse2005';
+import InlineResponse2007 from '../model/InlineResponse2007';
 import SecretStore from '../model/SecretStore';
 import SecretStoreResponse from '../model/SecretStoreResponse';
 import SigningKey from '../model/SigningKey';
@@ -21,7 +21,7 @@ import SigningKey from '../model/SigningKey';
 /**
 * SecretStore service.
 * @module api/SecretStoreApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class SecretStoreApi {
 
@@ -267,7 +267,7 @@ export default class SecretStoreApi {
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
      * @param {String} [options.name] - Returns a one-element array containing the details for the named secret store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
     getSecretStoresWithHttpInfo(options = {}) {
       let postBody = null;
@@ -289,7 +289,7 @@ export default class SecretStoreApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2005;
+      let returnType = InlineResponse2007;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -312,7 +312,7 @@ export default class SecretStoreApi {
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
      * @param {String} [options.name] - Returns a one-element array containing the details for the named secret store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
     getSecretStores(options = {}) {
       return this.getSecretStoresWithHttpInfo(options)

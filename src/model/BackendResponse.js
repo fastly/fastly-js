@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class BackendResponse {
     /**
@@ -111,6 +111,9 @@ class BackendResponse {
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
+            }
+            if (data.hasOwnProperty('prefer_ipv6')) {
+                obj['prefer_ipv6'] = ApiClient.convertToType(data['prefer_ipv6'], 'Boolean');
             }
             if (data.hasOwnProperty('request_condition')) {
                 obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
@@ -295,6 +298,12 @@ BackendResponse.prototype['override_host'] = undefined;
  * @member {Number} port
  */
 BackendResponse.prototype['port'] = undefined;
+
+/**
+ * Prefer IPv6 connections for DNS hostname lookups.
+ * @member {Boolean} prefer_ipv6
+ */
+BackendResponse.prototype['prefer_ipv6'] = undefined;
 
 /**
  * Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
@@ -525,6 +534,11 @@ Backend.prototype['override_host'] = undefined;
  * @member {Number} port
  */
 Backend.prototype['port'] = undefined;
+/**
+ * Prefer IPv6 connections for DNS hostname lookups.
+ * @member {Boolean} prefer_ipv6
+ */
+Backend.prototype['prefer_ipv6'] = undefined;
 /**
  * Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
  * @member {String} request_condition

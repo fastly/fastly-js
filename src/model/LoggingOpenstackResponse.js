@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingOpenstackResponse model module.
  * @module model/LoggingOpenstackResponse
- * @version 10.0.0
+ * @version 11.0.0
  */
 class LoggingOpenstackResponse {
     /**

@@ -13,11 +13,12 @@
 
 import ApiClient from "../ApiClient";
 import BotManagementResponseBodyEnable from '../model/BotManagementResponseBodyEnable';
+import BotManagementResponseBodyGetAllServices from '../model/BotManagementResponseBodyGetAllServices';
 
 /**
 * ProductBotManagement service.
 * @module api/ProductBotManagementApi
-* @version 10.0.0
+* @version 11.0.0
 */
 export default class ProductBotManagementApi {
 
@@ -206,6 +207,57 @@ export default class ProductBotManagementApi {
      */
     getProductBotManagement(options = {}) {
       return this.getProductBotManagementWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Get all the services which have the Bot Management product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BotManagementResponseBodyGetAllServices} and HTTP response
+     */
+    getServicesProductBotManagementWithHttpInfo(options = {}) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = BotManagementResponseBodyGetAllServices;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/bot_management/services', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Get all the services which have the Bot Management product enabled.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BotManagementResponseBodyGetAllServices}
+     */
+    getServicesProductBotManagement(options = {}) {
+      return this.getServicesProductBotManagementWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
