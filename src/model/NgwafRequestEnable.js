@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NgwafRequestEnable model module.
  * @module model/NgwafRequestEnable
- * @version 11.0.0
+ * @version 12.0.0
  */
 class NgwafRequestEnable {
     /**

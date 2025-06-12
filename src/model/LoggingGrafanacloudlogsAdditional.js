@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGrafanacloudlogsAdditional model module.
  * @module model/LoggingGrafanacloudlogsAdditional
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingGrafanacloudlogsAdditional {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionAttributesRate model module.
  * @module model/DimensionAttributesRate
- * @version 11.0.0
+ * @version 12.0.0
  */
 class DimensionAttributesRate {
     /**

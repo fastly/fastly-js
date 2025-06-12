@@ -21,7 +21,7 @@ import ServiceResponse from '../model/ServiceResponse';
 /**
 * Service service.
 * @module api/ServiceApi
-* @version 11.0.0
+* @version 12.0.0
 */
 export default class ServiceApi {
 
@@ -225,6 +225,7 @@ export default class ServiceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} [options.version] - Number identifying a version of the service.
+     * @param {Boolean} [options.filter_versions_active] - Limits the versions array to the active versions. Accepts `true` or `false` (defaults to false).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceDetail} and HTTP response
      */
     getServiceDetailWithHttpInfo(options = {}) {
@@ -240,7 +241,8 @@ export default class ServiceApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
-        'version': options['version']
+        'version': options['version'],
+        'filter[versions.active]': options['filter_versions_active']
       };
       let headerParams = {
       };
@@ -272,6 +274,7 @@ export default class ServiceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} [options.version] - Number identifying a version of the service.
+     * @param {Boolean} [options.filter_versions_active] - Limits the versions array to the active versions. Accepts `true` or `false` (defaults to false).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceDetail}
      */
     getServiceDetail(options = {}) {

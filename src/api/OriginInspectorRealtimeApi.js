@@ -17,7 +17,7 @@ import OriginInspector from '../model/OriginInspector';
 /**
 * OriginInspectorRealtime service.
 * @module api/OriginInspectorRealtimeApi
-* @version 11.0.0
+* @version 12.0.0
 */
 export default class OriginInspectorRealtimeApi {
 

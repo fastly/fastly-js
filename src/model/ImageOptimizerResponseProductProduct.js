@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImageOptimizerResponseProductProduct model module.
  * @module model/ImageOptimizerResponseProductProduct
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ImageOptimizerResponseProductProduct {
     /**

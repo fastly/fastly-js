@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 11.0.0
+ * @version 12.0.0
  */
 class Backend {
     /**
@@ -270,7 +270,7 @@ Backend.prototype['override_host'] = undefined;
 Backend.prototype['port'] = undefined;
 
 /**
- * Prefer IPv6 connections for DNS hostname lookups.
+ * Prefer IPv6 connections to origins for hostname backends.
  * @member {Boolean} prefer_ipv6
  */
 Backend.prototype['prefer_ipv6'] = undefined;

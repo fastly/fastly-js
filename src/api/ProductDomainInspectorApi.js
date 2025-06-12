@@ -18,7 +18,7 @@ import DomainInspectorResponseBodyGetAllServices from '../model/DomainInspectorR
 /**
 * ProductDomainInspector service.
 * @module api/ProductDomainInspectorApi
-* @version 11.0.0
+* @version 12.0.0
 */
 export default class ProductDomainInspectorApi {
 

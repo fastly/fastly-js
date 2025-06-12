@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The LogExplorerInsightsResponseCustomer model module.
  * @module model/LogExplorerInsightsResponseCustomer
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LogExplorerInsightsResponseCustomer {
     /**

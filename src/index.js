@@ -970,7 +970,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 11.0.0
+* @version 12.0.0
 */
 export {
     /**

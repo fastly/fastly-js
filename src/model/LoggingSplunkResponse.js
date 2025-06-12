@@ -22,7 +22,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingSplunkResponse model module.
  * @module model/LoggingSplunkResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingSplunkResponse {
     /**
@@ -370,12 +370,6 @@ LoggingSplunkResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

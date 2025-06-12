@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingFtpResponse model module.
  * @module model/LoggingFtpResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingFtpResponse {
     /**
@@ -425,12 +425,6 @@ LoggingFtpResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

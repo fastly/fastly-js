@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingScalyrResponse model module.
  * @module model/LoggingScalyrResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingScalyrResponse {
     /**
@@ -271,12 +271,6 @@ LoggingScalyrResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

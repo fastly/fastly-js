@@ -16,7 +16,7 @@ import BotManagementResponseLinksLinks from './BotManagementResponseLinksLinks';
 /**
  * The BotManagementResponseLinks model module.
  * @module model/BotManagementResponseLinks
- * @version 11.0.0
+ * @version 12.0.0
  */
 class BotManagementResponseLinks {
     /**

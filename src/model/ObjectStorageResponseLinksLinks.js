@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageResponseLinksLinks model module.
  * @module model/ObjectStorageResponseLinksLinks
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ObjectStorageResponseLinksLinks {
     /**

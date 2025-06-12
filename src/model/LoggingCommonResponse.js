@@ -17,7 +17,7 @@ import LoggingCommonResponseAllOf1 from './LoggingCommonResponseAllOf1';
 /**
  * The LoggingCommonResponse model module.
  * @module model/LoggingCommonResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingCommonResponse {
     /**
@@ -151,12 +151,6 @@ LoggingCommonResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

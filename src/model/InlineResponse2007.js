@@ -17,7 +17,7 @@ import SecretStoreResponse from './SecretStoreResponse';
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 11.0.0
+ * @version 12.0.0
  */
 class InlineResponse2007 {
     /**

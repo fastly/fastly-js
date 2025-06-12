@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Vcl model module.
  * @module model/Vcl
- * @version 11.0.0
+ * @version 12.0.0
  */
 class Vcl {
     /**

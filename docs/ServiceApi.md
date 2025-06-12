@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 ## `getServiceDetail`
 
 ```javascript
-getServiceDetail({ service_id, [version] })
+getServiceDetail({ service_id, [version, ][filter_versions_active] })
 ```
 
 List detailed information on a specified service.
@@ -145,6 +145,7 @@ List detailed information on a specified service.
 const options = {
   service_id: "service_id_example", // required
   version: 56,
+  filter_versions_active: true,
 };
 
 apiInstance.getServiceDetail(options)
@@ -162,6 +163,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version** | **Number** | Number identifying a version of the service. | [optional]
+**filter_versions_active** | **Boolean** | Limits the versions array to the active versions. Accepts `true` or `false` (defaults to false). | [optional]
 
 ### Return type
 

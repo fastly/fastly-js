@@ -19,7 +19,7 @@ import Usagemetric from '../model/Usagemetric';
 /**
 * BillingUsageMetrics service.
 * @module api/BillingUsageMetricsApi
-* @version 11.0.0
+* @version 12.0.0
 */
 export default class BillingUsageMetricsApi {
 

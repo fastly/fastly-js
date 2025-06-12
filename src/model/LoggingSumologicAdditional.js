@@ -16,7 +16,7 @@ import LoggingMessageType from './LoggingMessageType';
 /**
  * The LoggingSumologicAdditional model module.
  * @module model/LoggingSumologicAdditional
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingSumologicAdditional {
     /**

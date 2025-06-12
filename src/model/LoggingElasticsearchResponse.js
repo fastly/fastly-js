@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingElasticsearchResponse model module.
  * @module model/LoggingElasticsearchResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingElasticsearchResponse {
     /**
@@ -403,12 +403,6 @@ LoggingElasticsearchResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

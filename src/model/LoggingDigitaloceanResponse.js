@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingDigitaloceanResponse model module.
  * @module model/LoggingDigitaloceanResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingDigitaloceanResponse {
     /**
@@ -395,12 +395,6 @@ LoggingDigitaloceanResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

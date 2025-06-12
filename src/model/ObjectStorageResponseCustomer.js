@@ -16,7 +16,7 @@ import AiAcceleratorResponseCustomerCustomer from './AiAcceleratorResponseCustom
 /**
  * The ObjectStorageResponseCustomer model module.
  * @module model/ObjectStorageResponseCustomer
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ObjectStorageResponseCustomer {
     /**

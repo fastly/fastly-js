@@ -16,7 +16,7 @@ import Dashboard from './Dashboard';
 /**
  * The ListDashboardsResponse model module.
  * @module model/ListDashboardsResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ListDashboardsResponse {
     /**

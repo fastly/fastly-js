@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclListMeta model module.
  * @module model/ComputeAclListMeta
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ComputeAclListMeta {
     /**

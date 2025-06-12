@@ -16,7 +16,7 @@ import AiAcceleratorResponseCustomerCustomer from './AiAcceleratorResponseCustom
 /**
  * The AiAcceleratorResponseCustomer model module.
  * @module model/AiAcceleratorResponseCustomer
- * @version 11.0.0
+ * @version 12.0.0
  */
 class AiAcceleratorResponseCustomer {
     /**

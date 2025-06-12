@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingSumologicResponse model module.
  * @module model/LoggingSumologicResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingSumologicResponse {
     /**
@@ -252,12 +252,6 @@ LoggingSumologicResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsBulkCertificateResponseAttributesAllOf model module.
  * @module model/TlsBulkCertificateResponseAttributesAllOf
- * @version 11.0.0
+ * @version 12.0.0
  */
 class TlsBulkCertificateResponseAttributesAllOf {
     /**

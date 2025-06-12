@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionResponseConfigurationConfiguration model module.
  * @module model/DdosProtectionResponseConfigurationConfiguration
- * @version 11.0.0
+ * @version 12.0.0
  */
 class DdosProtectionResponseConfigurationConfiguration {
     /**

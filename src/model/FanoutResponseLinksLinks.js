@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FanoutResponseLinksLinks model module.
  * @module model/FanoutResponseLinksLinks
- * @version 11.0.0
+ * @version 12.0.0
  */
 class FanoutResponseLinksLinks {
     /**

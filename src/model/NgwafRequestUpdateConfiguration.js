@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NgwafRequestUpdateConfiguration model module.
  * @module model/NgwafRequestUpdateConfiguration
- * @version 11.0.0
+ * @version 12.0.0
  */
 class NgwafRequestUpdateConfiguration {
     /**

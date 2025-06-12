@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGooglePubsubResponse model module.
  * @module model/LoggingGooglePubsubResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingGooglePubsubResponse {
     /**
@@ -305,12 +305,6 @@ LoggingGooglePubsubResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

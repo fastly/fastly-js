@@ -16,7 +16,7 @@ import WebsocketsResponseLinksGetAllServicesLinks from './WebsocketsResponseLink
 /**
  * The WebsocketsResponseLinksGetAllServices model module.
  * @module model/WebsocketsResponseLinksGetAllServices
- * @version 11.0.0
+ * @version 12.0.0
  */
 class WebsocketsResponseLinksGetAllServices {
     /**

@@ -16,7 +16,7 @@ import LogAggregationsGetResponseMetaFilters from './LogAggregationsGetResponseM
 /**
  * The LogAggregationsGetResponseMeta model module.
  * @module model/LogAggregationsGetResponseMeta
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LogAggregationsGetResponseMeta {
     /**

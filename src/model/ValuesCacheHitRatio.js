@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesCacheHitRatio model module.
  * @module model/ValuesCacheHitRatio
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ValuesCacheHitRatio {
     /**

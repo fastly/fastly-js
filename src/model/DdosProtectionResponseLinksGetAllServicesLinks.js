@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionResponseLinksGetAllServicesLinks model module.
  * @module model/DdosProtectionResponseLinksGetAllServicesLinks
- * @version 11.0.0
+ * @version 12.0.0
  */
 class DdosProtectionResponseLinksGetAllServicesLinks {
     /**

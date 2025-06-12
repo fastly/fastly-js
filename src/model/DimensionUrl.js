@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionUrl model module.
  * @module model/DimensionUrl
- * @version 11.0.0
+ * @version 12.0.0
  */
 class DimensionUrl {
     /**

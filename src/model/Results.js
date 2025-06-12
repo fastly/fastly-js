@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 11.0.0
+ * @version 12.0.0
  */
 class Results {
     /**
@@ -2443,7 +2443,7 @@ Results.prototype['ngwaf_requests_total_count'] = undefined;
 Results.prototype['ngwaf_requests_unknown_count'] = undefined;
 
 /**
- * Count of Edge WAF requests allowed.
+ * Count of Next-Gen WAF (Edge WAF & Core WAF) requests allowed.
  * @member {Number} ngwaf_requests_allowed_count
  */
 Results.prototype['ngwaf_requests_allowed_count'] = undefined;
@@ -2455,7 +2455,7 @@ Results.prototype['ngwaf_requests_allowed_count'] = undefined;
 Results.prototype['ngwaf_requests_logged_count'] = undefined;
 
 /**
- * Count of Edge WAF requests blocked.
+ * Count of Next-Gen WAF (Edge WAF & Core WAF) requests blocked.
  * @member {Number} ngwaf_requests_blocked_count
  */
 Results.prototype['ngwaf_requests_blocked_count'] = undefined;

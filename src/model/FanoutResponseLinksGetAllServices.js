@@ -16,7 +16,7 @@ import FanoutResponseLinksGetAllServicesLinks from './FanoutResponseLinksGetAllS
 /**
  * The FanoutResponseLinksGetAllServices model module.
  * @module model/FanoutResponseLinksGetAllServices
- * @version 11.0.0
+ * @version 12.0.0
  */
 class FanoutResponseLinksGetAllServices {
     /**

@@ -23,7 +23,7 @@ import DdosProtectionResponseService from './DdosProtectionResponseService';
 /**
  * The DdosProtectionResponseConfigure model module.
  * @module model/DdosProtectionResponseConfigure
- * @version 11.0.0
+ * @version 12.0.0
  */
 class DdosProtectionResponseConfigure {
     /**

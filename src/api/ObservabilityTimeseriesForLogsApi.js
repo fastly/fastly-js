@@ -17,7 +17,7 @@ import LogTimeseriesGetResponse from '../model/LogTimeseriesGetResponse';
 /**
 * ObservabilityTimeseriesForLogs service.
 * @module api/ObservabilityTimeseriesForLogsApi
-* @version 11.0.0
+* @version 12.0.0
 */
 export default class ObservabilityTimeseriesForLogsApi {
 

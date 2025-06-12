@@ -16,7 +16,7 @@ import ObjectStorageResponseLinksLinks from './ObjectStorageResponseLinksLinks';
 /**
  * The ObjectStorageResponseLinks model module.
  * @module model/ObjectStorageResponseLinks
- * @version 11.0.0
+ * @version 12.0.0
  */
 class ObjectStorageResponseLinks {
     /**

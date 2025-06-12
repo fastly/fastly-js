@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingSftpAdditional model module.
  * @module model/LoggingSftpAdditional
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingSftpAdditional {
     /**

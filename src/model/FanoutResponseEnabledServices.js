@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FanoutResponseEnabledServices model module.
  * @module model/FanoutResponseEnabledServices
- * @version 11.0.0
+ * @version 12.0.0
  */
 class FanoutResponseEnabledServices {
     /**

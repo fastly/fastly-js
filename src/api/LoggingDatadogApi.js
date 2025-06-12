@@ -18,7 +18,7 @@ import LoggingDatadogResponse from '../model/LoggingDatadogResponse';
 /**
 * LoggingDatadog service.
 * @module api/LoggingDatadogApi
-* @version 11.0.0
+* @version 12.0.0
 */
 export default class LoggingDatadogApi {
 

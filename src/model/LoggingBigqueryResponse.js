@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingBigqueryResponse model module.
  * @module model/LoggingBigqueryResponse
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingBigqueryResponse {
     /**
@@ -336,12 +336,6 @@ LoggingBigqueryResponse['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

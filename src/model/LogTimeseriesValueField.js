@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogTimeseriesValueField model module.
  * @module model/LogTimeseriesValueField
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LogTimeseriesValueField {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BrotliCompressionResponseLinksGetAllServicesLinks model module.
  * @module model/BrotliCompressionResponseLinksGetAllServicesLinks
- * @version 11.0.0
+ * @version 12.0.0
  */
 class BrotliCompressionResponseLinksGetAllServicesLinks {
     /**

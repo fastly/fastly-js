@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingS3Response model module.
  * @module model/LoggingS3Response
- * @version 11.0.0
+ * @version 12.0.0
  */
 class LoggingS3Response {
     /**
@@ -483,12 +483,6 @@ LoggingS3Response['PlacementEnum'] = {
      * @const
      */
     "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug",
 
     /**
      * value: "null"

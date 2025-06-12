@@ -26,13 +26,6 @@ export default class LoggingPlacement {
 
     
         /**
-         * value: "waf_debug"
-         * @const
-         */
-        "waf_debug" = "waf_debug";
-
-    
-        /**
          * value: "null"
          * @const
          */
