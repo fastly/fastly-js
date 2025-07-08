@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGooglePubsubAdditional model module.
  * @module model/LoggingGooglePubsubAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingGooglePubsubAdditional {
     /**
@@ -69,7 +69,7 @@ class LoggingGooglePubsubAdditional {
 LoggingGooglePubsubAdditional.prototype['topic'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */

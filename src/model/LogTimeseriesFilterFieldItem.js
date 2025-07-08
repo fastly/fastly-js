@@ -16,7 +16,7 @@ import LogTimeseriesValueField from './LogTimeseriesValueField';
 /**
  * The LogTimeseriesFilterFieldItem model module.
  * @module model/LogTimeseriesFilterFieldItem
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LogTimeseriesFilterFieldItem {
     /**

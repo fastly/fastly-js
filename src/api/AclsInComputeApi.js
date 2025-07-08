@@ -22,7 +22,7 @@ import ComputeAclUpdate from '../model/ComputeAclUpdate';
 /**
 * AclsInCompute service.
 * @module api/AclsInComputeApi
-* @version 12.0.0
+* @version 12.1.0
 */
 export default class AclsInComputeApi {
 

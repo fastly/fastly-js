@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCsrDataAttributes model module.
  * @module model/TlsCsrDataAttributes
- * @version 12.0.0
+ * @version 12.1.0
  */
 class TlsCsrDataAttributes {
     /**
@@ -80,6 +80,9 @@ class TlsCsrDataAttributes {
             }
             if (data.hasOwnProperty('key_type')) {
                 obj['key_type'] = ApiClient.convertToType(data['key_type'], 'String');
+            }
+            if (data.hasOwnProperty('relationships.tls_private_key.id')) {
+                obj['relationships.tls_private_key.id'] = ApiClient.convertToType(data['relationships.tls_private_key.id'], 'String');
             }
         }
         return obj;
@@ -153,6 +156,12 @@ TlsCsrDataAttributes.prototype['email'] = undefined;
  * @member {module:model/TlsCsrDataAttributes.KeyTypeEnum} key_type
  */
 TlsCsrDataAttributes.prototype['key_type'] = undefined;
+
+/**
+ * Optional. An alphanumeric string identifying the private key you've uploaded for use with your TLS certificate. If left blank, Fastly will create and manage a key for you.
+ * @member {String} relationships.tls_private_key.id
+ */
+TlsCsrDataAttributes.prototype['relationships.tls_private_key.id'] = undefined;
 
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingBigqueryAdditional model module.
  * @module model/LoggingBigqueryAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingBigqueryAdditional {
     /**
@@ -78,7 +78,7 @@ class LoggingBigqueryAdditional {
 LoggingBigqueryAdditional.prototype['name'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce JSON that matches the schema of your BigQuery table.
  * @member {String} format
  */
 LoggingBigqueryAdditional.prototype['format'] = undefined;

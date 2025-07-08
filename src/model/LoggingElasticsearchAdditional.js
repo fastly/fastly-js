@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingElasticsearchAdditional model module.
  * @module model/LoggingElasticsearchAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingElasticsearchAdditional {
     /**
@@ -102,7 +102,7 @@ LoggingElasticsearchAdditional.prototype['user'] = undefined;
 LoggingElasticsearchAdditional.prototype['password'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Elasticsearch can ingest.
  * @member {String} format
  */
 LoggingElasticsearchAdditional.prototype['format'] = undefined;

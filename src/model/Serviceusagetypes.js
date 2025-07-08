@@ -16,7 +16,7 @@ import Serviceusagetype from './Serviceusagetype';
 /**
  * The Serviceusagetypes model module.
  * @module model/Serviceusagetypes
- * @version 12.0.0
+ * @version 12.1.0
  */
 class Serviceusagetypes {
     /**

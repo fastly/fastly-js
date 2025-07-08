@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGrafanacloudlogsAdditional model module.
  * @module model/LoggingGrafanacloudlogsAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingGrafanacloudlogsAdditional {
     /**
@@ -69,7 +69,7 @@ class LoggingGrafanacloudlogsAdditional {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  */
 LoggingGrafanacloudlogsAdditional.prototype['format'] = undefined;

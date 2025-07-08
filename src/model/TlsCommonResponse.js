@@ -17,7 +17,7 @@ import TlsCommonResponseAllOf1 from './TlsCommonResponseAllOf1';
 /**
  * The TlsCommonResponse model module.
  * @module model/TlsCommonResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class TlsCommonResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCertificateBlobResponse model module.
  * @module model/TlsCertificateBlobResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class TlsCertificateBlobResponse {
     /**

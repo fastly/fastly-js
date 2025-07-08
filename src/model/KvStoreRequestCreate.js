@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreRequestCreate model module.
  * @module model/KvStoreRequestCreate
- * @version 12.0.0
+ * @version 12.1.0
  */
 class KvStoreRequestCreate {
     /**

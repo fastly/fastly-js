@@ -16,7 +16,7 @@ import LogTimeseriesResultDimensions from './LogTimeseriesResultDimensions';
 /**
  * The LogTimeseriesResult model module.
  * @module model/LogTimeseriesResult
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LogTimeseriesResult {
     /**

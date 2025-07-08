@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebsocketsResponseLinksLinks model module.
  * @module model/WebsocketsResponseLinksLinks
- * @version 12.0.0
+ * @version 12.1.0
  */
 class WebsocketsResponseLinksLinks {
     /**

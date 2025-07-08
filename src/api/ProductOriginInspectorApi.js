@@ -18,7 +18,7 @@ import OriginInspectorResponseBodyGetAllServices from '../model/OriginInspectorR
 /**
 * ProductOriginInspector service.
 * @module api/ProductOriginInspectorApi
-* @version 12.0.0
+* @version 12.1.0
 */
 export default class ProductOriginInspectorApi {
 

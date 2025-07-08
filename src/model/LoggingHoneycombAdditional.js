@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingHoneycombAdditional model module.
  * @module model/LoggingHoneycombAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingHoneycombAdditional {
     /**
@@ -63,7 +63,7 @@ class LoggingHoneycombAdditional {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Honeycomb can ingest.
  * @member {String} format
  */
 LoggingHoneycombAdditional.prototype['format'] = undefined;

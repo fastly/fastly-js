@@ -11,14 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsPrivateKey from './RelationshipTlsPrivateKey';
 import TlsCsrDataAttributes from './TlsCsrDataAttributes';
 import TypeTlsCsr from './TypeTlsCsr';
 
 /**
  * The TlsCsrData model module.
  * @module model/TlsCsrData
- * @version 12.0.0
+ * @version 12.1.0
  */
 class TlsCsrData {
     /**
@@ -55,9 +54,6 @@ class TlsCsrData {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsCsrDataAttributes.constructFromObject(data['attributes']);
             }
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipTlsPrivateKey.constructFromObject(data['relationships']);
-            }
         }
         return obj;
     }
@@ -74,11 +70,6 @@ TlsCsrData.prototype['type'] = undefined;
  * @member {module:model/TlsCsrDataAttributes} attributes
  */
 TlsCsrData.prototype['attributes'] = undefined;
-
-/**
- * @member {module:model/RelationshipTlsPrivateKey} relationships
- */
-TlsCsrData.prototype['relationships'] = undefined;
 
 
 

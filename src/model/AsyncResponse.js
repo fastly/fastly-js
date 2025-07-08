@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AsyncResponse model module.
  * @module model/AsyncResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class AsyncResponse {
     /**

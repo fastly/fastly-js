@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolAdditional model module.
  * @module model/PoolAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class PoolAdditional {
     /**
@@ -148,7 +148,7 @@ PoolAdditional.prototype['comment'] = undefined;
 PoolAdditional.prototype['type'] = undefined;
 
 /**
- * The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+ * The hostname to [override the Host header](https://www.fastly.com/documentation/guides/full-site-delivery/domains-and-origins/specifying-an-override-host/). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
  * @member {String} override_host
  * @default 'null'
  */

@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The WebsocketsResponseService model module.
  * @module model/WebsocketsResponseService
- * @version 12.0.0
+ * @version 12.1.0
  */
 class WebsocketsResponseService {
     /**

@@ -21,7 +21,7 @@ import SigningKey from '../model/SigningKey';
 /**
 * SecretStore service.
 * @module api/SecretStoreApi
-* @version 12.0.0
+* @version 12.1.0
 */
 export default class SecretStoreApi {
 

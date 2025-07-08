@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingCommon model module.
  * @module model/LoggingCommon
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingCommon {
     /**
@@ -58,6 +58,9 @@ class LoggingCommon {
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
+            if (data.hasOwnProperty('log_processing_region')) {
+                obj['log_processing_region'] = ApiClient.convertToType(data['log_processing_region'], 'String');
+            }
         }
         return obj;
     }
@@ -84,11 +87,18 @@ LoggingCommon.prototype['placement'] = undefined;
 LoggingCommon.prototype['response_condition'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+ * @member {module:model/LoggingCommon.LogProcessingRegionEnum} log_processing_region
+ * @default 'none'
+ */
+LoggingCommon.prototype['log_processing_region'] = undefined;
 
 
 
@@ -112,6 +122,33 @@ LoggingCommon['PlacementEnum'] = {
      * @const
      */
     "null": "null"
+};
+
+
+/**
+ * Allowed values for the <code>log_processing_region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingCommon['LogProcessingRegionEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "eu"
+     * @const
+     */
+    "eu": "eu",
+
+    /**
+     * value: "us"
+     * @const
+     */
+    "us": "us"
 };
 
 

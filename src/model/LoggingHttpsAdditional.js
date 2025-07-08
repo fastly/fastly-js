@@ -16,7 +16,7 @@ import LoggingMessageType from './LoggingMessageType';
 /**
  * The LoggingHttpsAdditional model module.
  * @module model/LoggingHttpsAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingHttpsAdditional {
     /**
@@ -144,7 +144,7 @@ LoggingHttpsAdditional.prototype['method'] = undefined;
 LoggingHttpsAdditional.prototype['json_format'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */

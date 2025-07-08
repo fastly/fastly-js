@@ -19,7 +19,7 @@ import SecretResponse from '../model/SecretResponse';
 /**
 * SecretStoreItem service.
 * @module api/SecretStoreItemApi
-* @version 12.0.0
+* @version 12.1.0
 */
 export default class SecretStoreItemApi {
 

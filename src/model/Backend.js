@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 12.0.0
+ * @version 12.1.0
  */
 class Backend {
     /**
@@ -270,7 +270,7 @@ Backend.prototype['override_host'] = undefined;
 Backend.prototype['port'] = undefined;
 
 /**
- * Prefer IPv6 connections to origins for hostname backends.
+ * Prefer IPv6 connections to origins for hostname backends. Default is 'false' for Delivery services and 'true' for Compute services.
  * @member {Boolean} prefer_ipv6
  */
 Backend.prototype['prefer_ipv6'] = undefined;
@@ -288,7 +288,7 @@ Backend.prototype['request_condition'] = undefined;
 Backend.prototype['share_key'] = undefined;
 
 /**
- * Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+ * Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/).
  * @member {String} shield
  */
 Backend.prototype['shield'] = undefined;

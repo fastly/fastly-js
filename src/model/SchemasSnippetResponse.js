@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class SchemasSnippetResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesDdos model module.
  * @module model/ValuesDdos
- * @version 12.0.0
+ * @version 12.1.0
  */
 class ValuesDdos {
     /**

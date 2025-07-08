@@ -21,7 +21,7 @@ import ImageOptimizerResponseService from './ImageOptimizerResponseService';
 /**
  * The ImageOptimizerResponseBodyEnable model module.
  * @module model/ImageOptimizerResponseBodyEnable
- * @version 12.0.0
+ * @version 12.1.0
  */
 class ImageOptimizerResponseBodyEnable {
     /**

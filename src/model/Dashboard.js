@@ -18,7 +18,7 @@ import DashboardPropertyUpdatedBy from './DashboardPropertyUpdatedBy';
 /**
  * The Dashboard model module.
  * @module model/Dashboard
- * @version 12.0.0
+ * @version 12.1.0
  */
 class Dashboard {
     /**

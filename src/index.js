@@ -294,10 +294,12 @@ import InlineResponse2009 from './model/InlineResponse2009';
 import InlineResponse201 from './model/InlineResponse201';
 import InlineResponse400 from './model/InlineResponse400';
 import Invitation from './model/Invitation';
+import InvitationCreateData from './model/InvitationCreateData';
+import InvitationCreateDataAllOf from './model/InvitationCreateDataAllOf';
+import InvitationCreateResponse from './model/InvitationCreateResponse';
+import InvitationCreateResponseAllOf from './model/InvitationCreateResponseAllOf';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
-import InvitationResponse from './model/InvitationResponse';
-import InvitationResponseAllOf from './model/InvitationResponseAllOf';
 import InvitationResponseData from './model/InvitationResponseData';
 import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
 import InvitationsResponse from './model/InvitationsResponse';
@@ -970,7 +972,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 12.0.0
+* @version 12.1.0
 */
 export {
     /**
@@ -2672,6 +2674,30 @@ export {
     Invitation,
 
     /**
+     * The InvitationCreateData model constructor.
+     * @property {module:model/InvitationCreateData}
+     */
+    InvitationCreateData,
+
+    /**
+     * The InvitationCreateDataAllOf model constructor.
+     * @property {module:model/InvitationCreateDataAllOf}
+     */
+    InvitationCreateDataAllOf,
+
+    /**
+     * The InvitationCreateResponse model constructor.
+     * @property {module:model/InvitationCreateResponse}
+     */
+    InvitationCreateResponse,
+
+    /**
+     * The InvitationCreateResponseAllOf model constructor.
+     * @property {module:model/InvitationCreateResponseAllOf}
+     */
+    InvitationCreateResponseAllOf,
+
+    /**
      * The InvitationData model constructor.
      * @property {module:model/InvitationData}
      */
@@ -2682,18 +2708,6 @@ export {
      * @property {module:model/InvitationDataAttributes}
      */
     InvitationDataAttributes,
-
-    /**
-     * The InvitationResponse model constructor.
-     * @property {module:model/InvitationResponse}
-     */
-    InvitationResponse,
-
-    /**
-     * The InvitationResponseAllOf model constructor.
-     * @property {module:model/InvitationResponseAllOf}
-     */
-    InvitationResponseAllOf,
 
     /**
      * The InvitationResponseData model constructor.

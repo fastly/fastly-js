@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolResponsePostAllOf model module.
  * @module model/PoolResponsePostAllOf
- * @version 12.0.0
+ * @version 12.1.0
  */
 class PoolResponsePostAllOf {
     /**

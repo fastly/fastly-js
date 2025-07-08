@@ -16,7 +16,7 @@ import Invoicelineitems from './Invoicelineitems';
 /**
  * The Invoice model module.
  * @module model/Invoice
- * @version 12.0.0
+ * @version 12.1.0
  */
 class Invoice {
     /**

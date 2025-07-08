@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import InvitationData from './InvitationData';
+import InvitationCreateData from './InvitationCreateData';
 
 /**
  * The Invitation model module.
  * @module model/Invitation
- * @version 12.0.0
+ * @version 12.1.0
  */
 class Invitation {
     /**
@@ -48,7 +48,7 @@ class Invitation {
             obj = obj || new Invitation();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = InvitationData.constructFromObject(data['data']);
+                obj['data'] = InvitationCreateData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class Invitation {
 }
 
 /**
- * @member {module:model/InvitationData} data
+ * @member {module:model/InvitationCreateData} data
  */
 Invitation.prototype['data'] = undefined;
 

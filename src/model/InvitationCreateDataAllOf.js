@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import InvitationResponseData from './InvitationResponseData';
+import RelationshipServiceInvitationsCreate from './RelationshipServiceInvitationsCreate';
 
 /**
- * The InvitationResponseAllOf model module.
- * @module model/InvitationResponseAllOf
- * @version 12.0.0
+ * The InvitationCreateDataAllOf model module.
+ * @module model/InvitationCreateDataAllOf
+ * @version 12.1.0
  */
-class InvitationResponseAllOf {
+class InvitationCreateDataAllOf {
     /**
-     * Constructs a new <code>InvitationResponseAllOf</code>.
-     * @alias module:model/InvitationResponseAllOf
+     * Constructs a new <code>InvitationCreateDataAllOf</code>.
+     * @alias module:model/InvitationCreateDataAllOf
      */
     constructor() { 
         
-        InvitationResponseAllOf.initialize(this);
+        InvitationCreateDataAllOf.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class InvitationResponseAllOf {
     }
 
     /**
-     * Constructs a <code>InvitationResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InvitationCreateDataAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InvitationResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/InvitationResponseAllOf} The populated <code>InvitationResponseAllOf</code> instance.
+     * @param {module:model/InvitationCreateDataAllOf} obj Optional instance to populate.
+     * @return {module:model/InvitationCreateDataAllOf} The populated <code>InvitationCreateDataAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InvitationResponseAllOf();
+            obj = obj || new InvitationCreateDataAllOf();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = InvitationResponseData.constructFromObject(data['data']);
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = RelationshipServiceInvitationsCreate.constructFromObject(data['relationships']);
             }
         }
         return obj;
@@ -58,14 +58,14 @@ class InvitationResponseAllOf {
 }
 
 /**
- * @member {module:model/InvitationResponseData} data
+ * @member {module:model/RelationshipServiceInvitationsCreate} relationships
  */
-InvitationResponseAllOf.prototype['data'] = undefined;
+InvitationCreateDataAllOf.prototype['relationships'] = undefined;
 
 
 
 
 
 
-export default InvitationResponseAllOf;
+export default InvitationCreateDataAllOf;
 

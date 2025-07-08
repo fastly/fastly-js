@@ -17,7 +17,7 @@ import ComputeAclListMeta from './ComputeAclListMeta';
 /**
  * The ComputeAclList model module.
  * @module model/ComputeAclList
- * @version 12.0.0
+ * @version 12.1.0
  */
 class ComputeAclList {
     /**

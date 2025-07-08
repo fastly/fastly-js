@@ -17,7 +17,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The IamUserGroup model module.
  * @module model/IamUserGroup
- * @version 12.0.0
+ * @version 12.1.0
  */
 class IamUserGroup {
     /**

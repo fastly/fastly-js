@@ -16,7 +16,7 @@ import ObjectStorageResponseProductProduct from './ObjectStorageResponseProductP
 /**
  * The ObjectStorageResponseProduct model module.
  * @module model/ObjectStorageResponseProduct
- * @version 12.0.0
+ * @version 12.1.0
  */
 class ObjectStorageResponseProduct {
     /**

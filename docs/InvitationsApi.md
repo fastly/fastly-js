@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvitationResponse**](InvitationResponse.md)
+[**InvitationCreateResponse**](InvitationCreateResponse.md)
 
 
 ## `deleteInvitation`

@@ -12,13 +12,12 @@
 
 import ApiClient from '../ApiClient';
 import InvitationDataAttributes from './InvitationDataAttributes';
-import RelationshipServiceInvitationsCreate from './RelationshipServiceInvitationsCreate';
 import TypeInvitation from './TypeInvitation';
 
 /**
  * The InvitationData model module.
  * @module model/InvitationData
- * @version 12.0.0
+ * @version 12.1.0
  */
 class InvitationData {
     /**
@@ -55,9 +54,6 @@ class InvitationData {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = InvitationDataAttributes.constructFromObject(data['attributes']);
             }
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipServiceInvitationsCreate.constructFromObject(data['relationships']);
-            }
         }
         return obj;
     }
@@ -74,11 +70,6 @@ InvitationData.prototype['type'] = undefined;
  * @member {module:model/InvitationDataAttributes} attributes
  */
 InvitationData.prototype['attributes'] = undefined;
-
-/**
- * @member {module:model/RelationshipServiceInvitationsCreate} relationships
- */
-InvitationData.prototype['relationships'] = undefined;
 
 
 

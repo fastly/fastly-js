@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingCommonResponseAllOf model module.
  * @module model/LoggingCommonResponseAllOf
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingCommonResponseAllOf {
     /**
@@ -58,6 +58,9 @@ class LoggingCommonResponseAllOf {
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
+            if (data.hasOwnProperty('log_processing_region')) {
+                obj['log_processing_region'] = ApiClient.convertToType(data['log_processing_region'], 'String');
+            }
         }
         return obj;
     }
@@ -84,11 +87,18 @@ LoggingCommonResponseAllOf.prototype['placement'] = undefined;
 LoggingCommonResponseAllOf.prototype['response_condition'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingCommonResponseAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+ * @member {module:model/LoggingCommonResponseAllOf.LogProcessingRegionEnum} log_processing_region
+ * @default 'none'
+ */
+LoggingCommonResponseAllOf.prototype['log_processing_region'] = undefined;
 
 
 
@@ -112,6 +122,33 @@ LoggingCommonResponseAllOf['PlacementEnum'] = {
      * @const
      */
     "null": "null"
+};
+
+
+/**
+ * Allowed values for the <code>log_processing_region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingCommonResponseAllOf['LogProcessingRegionEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "eu"
+     * @const
+     */
+    "eu": "eu",
+
+    /**
+     * value: "us"
+     * @const
+     */
+    "us": "us"
 };
 
 

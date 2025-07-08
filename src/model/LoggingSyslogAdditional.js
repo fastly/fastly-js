@@ -17,7 +17,7 @@ import LoggingUseTlsString from './LoggingUseTlsString';
 /**
  * The LoggingSyslogAdditional model module.
  * @module model/LoggingSyslogAdditional
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingSyslogAdditional {
     /**

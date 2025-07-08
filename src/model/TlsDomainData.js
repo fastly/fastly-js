@@ -17,7 +17,7 @@ import TypeTlsDomain from './TypeTlsDomain';
 /**
  * The TlsDomainData model module.
  * @module model/TlsDomainData
- * @version 12.0.0
+ * @version 12.1.0
  */
 class TlsDomainData {
     /**

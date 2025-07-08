@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingFtpResponse model module.
  * @module model/LoggingFtpResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingFtpResponse {
     /**
@@ -75,6 +75,9 @@ class LoggingFtpResponse {
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('log_processing_region')) {
+                obj['log_processing_region'] = ApiClient.convertToType(data['log_processing_region'], 'String');
             }
             if (data.hasOwnProperty('format_version')) {
                 obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
@@ -159,11 +162,18 @@ LoggingFtpResponse.prototype['placement'] = undefined;
 LoggingFtpResponse.prototype['response_condition'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingFtpResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+ * @member {module:model/LoggingFtpResponse.LogProcessingRegionEnum} log_processing_region
+ * @default 'none'
+ */
+LoggingFtpResponse.prototype['log_processing_region'] = undefined;
 
 /**
  * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
@@ -301,11 +311,17 @@ LoggingCommonResponse.prototype['placement'] = undefined;
  */
 LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+ * @member {module:model/LoggingCommonResponse.LogProcessingRegionEnum} log_processing_region
+ * @default 'none'
+ */
+LoggingCommonResponse.prototype['log_processing_region'] = undefined;
 /**
  * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
@@ -431,6 +447,33 @@ LoggingFtpResponse['PlacementEnum'] = {
      * @const
      */
     "null": "null"
+};
+
+
+/**
+ * Allowed values for the <code>log_processing_region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingFtpResponse['LogProcessingRegionEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "eu"
+     * @const
+     */
+    "eu": "eu",
+
+    /**
+     * value: "us"
+     * @const
+     */
+    "us": "us"
 };
 
 

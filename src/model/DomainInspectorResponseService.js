@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The DomainInspectorResponseService model module.
  * @module model/DomainInspectorResponseService
- * @version 12.0.0
+ * @version 12.1.0
  */
 class DomainInspectorResponseService {
     /**

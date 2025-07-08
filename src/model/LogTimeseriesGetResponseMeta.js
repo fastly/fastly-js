@@ -16,7 +16,7 @@ import LogTimeseriesGetResponseMetaFilters from './LogTimeseriesGetResponseMetaF
 /**
  * The LogTimeseriesGetResponseMeta model module.
  * @module model/LogTimeseriesGetResponseMeta
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LogTimeseriesGetResponseMeta {
     /**

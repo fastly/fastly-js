@@ -21,7 +21,7 @@ import BrotliCompressionResponseService from './BrotliCompressionResponseService
 /**
  * The BrotliCompressionResponseBodyEnable model module.
  * @module model/BrotliCompressionResponseBodyEnable
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BrotliCompressionResponseBodyEnable {
     /**

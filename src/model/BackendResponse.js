@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BackendResponse {
     /**
@@ -300,7 +300,7 @@ BackendResponse.prototype['override_host'] = undefined;
 BackendResponse.prototype['port'] = undefined;
 
 /**
- * Prefer IPv6 connections to origins for hostname backends.
+ * Prefer IPv6 connections to origins for hostname backends. Default is 'false' for Delivery services and 'true' for Compute services.
  * @member {Boolean} prefer_ipv6
  */
 BackendResponse.prototype['prefer_ipv6'] = undefined;
@@ -318,7 +318,7 @@ BackendResponse.prototype['request_condition'] = undefined;
 BackendResponse.prototype['share_key'] = undefined;
 
 /**
- * Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+ * Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/).
  * @member {String} shield
  */
 BackendResponse.prototype['shield'] = undefined;
@@ -535,7 +535,7 @@ Backend.prototype['override_host'] = undefined;
  */
 Backend.prototype['port'] = undefined;
 /**
- * Prefer IPv6 connections to origins for hostname backends.
+ * Prefer IPv6 connections to origins for hostname backends. Default is 'false' for Delivery services and 'true' for Compute services.
  * @member {Boolean} prefer_ipv6
  */
 Backend.prototype['prefer_ipv6'] = undefined;
@@ -550,7 +550,7 @@ Backend.prototype['request_condition'] = undefined;
  */
 Backend.prototype['share_key'] = undefined;
 /**
- * Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+ * Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/).
  * @member {String} shield
  */
 Backend.prototype['shield'] = undefined;

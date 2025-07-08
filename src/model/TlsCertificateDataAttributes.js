@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCertificateDataAttributes model module.
  * @module model/TlsCertificateDataAttributes
- * @version 12.0.0
+ * @version 12.1.0
  */
 class TlsCertificateDataAttributes {
     /**
@@ -52,6 +52,9 @@ class TlsCertificateDataAttributes {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('allow_untrusted_root')) {
+                obj['allow_untrusted_root'] = ApiClient.convertToType(data['allow_untrusted_root'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -70,6 +73,12 @@ TlsCertificateDataAttributes.prototype['cert_blob'] = undefined;
  * @member {String} name
  */
 TlsCertificateDataAttributes.prototype['name'] = undefined;
+
+/**
+ * Indicates that the supplied certificate was not signed by a trusted CA.
+ * @member {Boolean} allow_untrusted_root
+ */
+TlsCertificateDataAttributes.prototype['allow_untrusted_root'] = undefined;
 
 
 

@@ -22,7 +22,7 @@ import BrotliCompressionResponseProductProduct from './BrotliCompressionResponse
 /**
  * The BrotliCompressionResponseBodyGetAllServices model module.
  * @module model/BrotliCompressionResponseBodyGetAllServices
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BrotliCompressionResponseBodyGetAllServices {
     /**

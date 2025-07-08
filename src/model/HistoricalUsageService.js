@@ -16,7 +16,7 @@ import HistoricalUsageData from './HistoricalUsageData';
 /**
  * The HistoricalUsageService model module.
  * @module model/HistoricalUsageService
- * @version 12.0.0
+ * @version 12.1.0
  */
 class HistoricalUsageService {
     /**

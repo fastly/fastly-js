@@ -16,7 +16,7 @@ import DomainInspectorRealtimeEntry from './DomainInspectorRealtimeEntry';
 /**
  * The DomainInspector model module.
  * @module model/DomainInspector
- * @version 12.0.0
+ * @version 12.1.0
  */
 class DomainInspector {
     /**

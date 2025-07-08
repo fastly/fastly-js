@@ -16,7 +16,7 @@ import ComputeAclUpdateEntry from './ComputeAclUpdateEntry';
 /**
  * The ComputeAclUpdate model module.
  * @module model/ComputeAclUpdate
- * @version 12.0.0
+ * @version 12.1.0
  */
 class ComputeAclUpdate {
     /**

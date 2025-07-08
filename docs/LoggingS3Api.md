@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `createLogAwsS3`
 
 ```javascript
-createLogAwsS3({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption, ][file_max_bytes] })
+createLogAwsS3({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][log_processing_region, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption, ][file_max_bytes] })
 ```
 
 Create a S3 for a particular service and version.
@@ -35,6 +35,7 @@ const options = {
   placement: "none",
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  log_processing_region: "none",
   format_version: 1,
   message_type: "classic",
   timestamp_format: "timestamp_format_example",
@@ -73,7 +74,8 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "null"]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format** | **String** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**log_processing_region** | **String** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [one of: "none", "eu", "us"]
 **format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | A timestamp format | [optional]
@@ -216,7 +218,7 @@ Name | Type | Description  | Notes
 ## `updateLogAwsS3`
 
 ```javascript
-updateLogAwsS3({ service_id, version_id, logging_s3_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption, ][file_max_bytes] })
+updateLogAwsS3({ service_id, version_id, logging_s3_name, [name, ][placement, ][response_condition, ][format, ][log_processing_region, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption, ][file_max_bytes] })
 ```
 
 Update the S3 for a particular service and version.
@@ -232,6 +234,7 @@ const options = {
   placement: "none",
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  log_processing_region: "none",
   format_version: 1,
   message_type: "classic",
   timestamp_format: "timestamp_format_example",
@@ -271,7 +274,8 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "null"]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format** | **String** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**log_processing_region** | **String** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [one of: "none", "eu", "us"]
 **format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | A timestamp format | [optional]

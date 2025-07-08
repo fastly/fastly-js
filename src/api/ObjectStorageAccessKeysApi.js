@@ -18,7 +18,7 @@ import AccessKeyResponse from '../model/AccessKeyResponse';
 /**
 * ObjectStorageAccessKeys service.
 * @module api/ObjectStorageAccessKeysApi
-* @version 12.0.0
+* @version 12.1.0
 */
 export default class ObjectStorageAccessKeysApi {
 

@@ -20,7 +20,7 @@ import TypeInvitation from './TypeInvitation';
 /**
  * The InvitationResponseData model module.
  * @module model/InvitationResponseData
- * @version 12.0.0
+ * @version 12.1.0
  */
 class InvitationResponseData {
     /**
@@ -61,11 +61,11 @@ class InvitationResponseData {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForInvitation.constructFromObject(data['relationships']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = RelationshipsForInvitation.constructFromObject(data['relationships']);
             }
         }
         return obj;
@@ -85,14 +85,14 @@ InvitationResponseData.prototype['type'] = undefined;
 InvitationResponseData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/RelationshipsForInvitation} relationships
- */
-InvitationResponseData.prototype['relationships'] = undefined;
-
-/**
  * @member {String} id
  */
 InvitationResponseData.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/RelationshipsForInvitation} relationships
+ */
+InvitationResponseData.prototype['relationships'] = undefined;
 
 
 // Implement InvitationData interface:
@@ -104,10 +104,6 @@ InvitationData.prototype['type'] = undefined;
  * @member {module:model/InvitationDataAttributes} attributes
  */
 InvitationData.prototype['attributes'] = undefined;
-/**
- * @member {module:model/RelationshipServiceInvitationsCreate} relationships
- */
-InvitationData.prototype['relationships'] = undefined;
 // Implement InvitationResponseDataAllOf interface:
 /**
  * @member {String} id

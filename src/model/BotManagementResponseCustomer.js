@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The BotManagementResponseCustomer model module.
  * @module model/BotManagementResponseCustomer
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BotManagementResponseCustomer {
     /**

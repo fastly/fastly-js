@@ -16,7 +16,7 @@ import BillingAddressVerificationErrorResponseErrors from './BillingAddressVerif
 /**
  * The BillingAddressVerificationErrorResponse model module.
  * @module model/BillingAddressVerificationErrorResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BillingAddressVerificationErrorResponse {
     /**

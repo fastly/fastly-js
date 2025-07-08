@@ -17,7 +17,7 @@ import ConfigStoreItem from './ConfigStoreItem';
 /**
  * The BulkUpdateConfigStoreItem model module.
  * @module model/BulkUpdateConfigStoreItem
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BulkUpdateConfigStoreItem {
     /**

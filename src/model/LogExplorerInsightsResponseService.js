@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The LogExplorerInsightsResponseService model module.
  * @module model/LogExplorerInsightsResponseService
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LogExplorerInsightsResponseService {
     /**

@@ -21,7 +21,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The BotManagementResponseBodyEnable model module.
  * @module model/BotManagementResponseBodyEnable
- * @version 12.0.0
+ * @version 12.1.0
  */
 class BotManagementResponseBodyEnable {
     /**

@@ -12,24 +12,24 @@
 
 import ApiClient from '../ApiClient';
 import Invitation from './Invitation';
-import InvitationResponseAllOf from './InvitationResponseAllOf';
+import InvitationCreateResponseAllOf from './InvitationCreateResponseAllOf';
 import InvitationResponseData from './InvitationResponseData';
 
 /**
- * The InvitationResponse model module.
- * @module model/InvitationResponse
- * @version 12.0.0
+ * The InvitationCreateResponse model module.
+ * @module model/InvitationCreateResponse
+ * @version 12.1.0
  */
-class InvitationResponse {
+class InvitationCreateResponse {
     /**
-     * Constructs a new <code>InvitationResponse</code>.
-     * @alias module:model/InvitationResponse
+     * Constructs a new <code>InvitationCreateResponse</code>.
+     * @alias module:model/InvitationCreateResponse
      * @implements module:model/Invitation
-     * @implements module:model/InvitationResponseAllOf
+     * @implements module:model/InvitationCreateResponseAllOf
      */
     constructor() { 
-        Invitation.initialize(this);InvitationResponseAllOf.initialize(this);
-        InvitationResponse.initialize(this);
+        Invitation.initialize(this);InvitationCreateResponseAllOf.initialize(this);
+        InvitationCreateResponse.initialize(this);
     }
 
     /**
@@ -41,17 +41,17 @@ class InvitationResponse {
     }
 
     /**
-     * Constructs a <code>InvitationResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InvitationCreateResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InvitationResponse} obj Optional instance to populate.
-     * @return {module:model/InvitationResponse} The populated <code>InvitationResponse</code> instance.
+     * @param {module:model/InvitationCreateResponse} obj Optional instance to populate.
+     * @return {module:model/InvitationCreateResponse} The populated <code>InvitationCreateResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InvitationResponse();
+            obj = obj || new InvitationCreateResponse();
             Invitation.constructFromObject(data, obj);
-            InvitationResponseAllOf.constructFromObject(data, obj);
+            InvitationCreateResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = InvitationResponseData.constructFromObject(data['data']);
@@ -66,22 +66,22 @@ class InvitationResponse {
 /**
  * @member {module:model/InvitationResponseData} data
  */
-InvitationResponse.prototype['data'] = undefined;
+InvitationCreateResponse.prototype['data'] = undefined;
 
 
 // Implement Invitation interface:
 /**
- * @member {module:model/InvitationData} data
+ * @member {module:model/InvitationCreateData} data
  */
 Invitation.prototype['data'] = undefined;
-// Implement InvitationResponseAllOf interface:
+// Implement InvitationCreateResponseAllOf interface:
 /**
  * @member {module:model/InvitationResponseData} data
  */
-InvitationResponseAllOf.prototype['data'] = undefined;
+InvitationCreateResponseAllOf.prototype['data'] = undefined;
 
 
 
 
-export default InvitationResponse;
+export default InvitationCreateResponse;
 

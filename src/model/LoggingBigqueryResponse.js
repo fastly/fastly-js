@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingBigqueryResponse model module.
  * @module model/LoggingBigqueryResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LoggingBigqueryResponse {
     /**
@@ -72,6 +72,9 @@ class LoggingBigqueryResponse {
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('log_processing_region')) {
+                obj['log_processing_region'] = ApiClient.convertToType(data['log_processing_region'], 'String');
             }
             if (data.hasOwnProperty('format_version')) {
                 obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
@@ -138,10 +141,17 @@ LoggingBigqueryResponse.prototype['placement'] = undefined;
 LoggingBigqueryResponse.prototype['response_condition'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce JSON that matches the schema of your BigQuery table.
  * @member {String} format
  */
 LoggingBigqueryResponse.prototype['format'] = undefined;
+
+/**
+ * The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+ * @member {module:model/LoggingBigqueryResponse.LogProcessingRegionEnum} log_processing_region
+ * @default 'none'
+ */
+LoggingBigqueryResponse.prototype['log_processing_region'] = undefined;
 
 /**
  * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
@@ -238,11 +248,17 @@ LoggingCommonResponse.prototype['placement'] = undefined;
  */
 LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+ * @member {module:model/LoggingCommonResponse.LogProcessingRegionEnum} log_processing_region
+ * @default 'none'
+ */
+LoggingCommonResponse.prototype['log_processing_region'] = undefined;
 /**
  * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
@@ -272,7 +288,7 @@ LoggingGcsCommon.prototype['account_name'] = undefined;
  */
 LoggingBigqueryAdditional.prototype['name'] = undefined;
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce JSON that matches the schema of your BigQuery table.
  * @member {String} format
  */
 LoggingBigqueryAdditional.prototype['format'] = undefined;
@@ -342,6 +358,33 @@ LoggingBigqueryResponse['PlacementEnum'] = {
      * @const
      */
     "null": "null"
+};
+
+
+/**
+ * Allowed values for the <code>log_processing_region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingBigqueryResponse['LogProcessingRegionEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "eu"
+     * @const
+     */
+    "eu": "eu",
+
+    /**
+     * value: "us"
+     * @const
+     */
+    "us": "us"
 };
 
 

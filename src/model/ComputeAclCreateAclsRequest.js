@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclCreateAclsRequest model module.
  * @module model/ComputeAclCreateAclsRequest
- * @version 12.0.0
+ * @version 12.1.0
  */
 class ComputeAclCreateAclsRequest {
     /**

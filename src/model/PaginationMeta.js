@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaginationMeta model module.
  * @module model/PaginationMeta
- * @version 12.0.0
+ * @version 12.1.0
  */
 class PaginationMeta {
     /**

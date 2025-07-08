@@ -17,7 +17,7 @@ import LogTimeseriesResult from './LogTimeseriesResult';
 /**
  * The LogTimeseriesGetResponse model module.
  * @module model/LogTimeseriesGetResponse
- * @version 12.0.0
+ * @version 12.1.0
  */
 class LogTimeseriesGetResponse {
     /**

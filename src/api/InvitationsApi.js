@@ -13,13 +13,13 @@
 
 import ApiClient from "../ApiClient";
 import Invitation from '../model/Invitation';
-import InvitationResponse from '../model/InvitationResponse';
+import InvitationCreateResponse from '../model/InvitationCreateResponse';
 import InvitationsResponse from '../model/InvitationsResponse';
 
 /**
 * Invitations service.
 * @module api/InvitationsApi
-* @version 12.0.0
+* @version 12.1.0
 */
 export default class InvitationsApi {
 
@@ -43,7 +43,7 @@ export default class InvitationsApi {
      * Create an invitation.
      * @param {Object} options
      * @param {module:model/Invitation} [options.invitation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationCreateResponse} and HTTP response
      */
     createInvitationWithHttpInfo(options = {}) {
       let postBody = options['invitation'];
@@ -62,7 +62,7 @@ export default class InvitationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = InvitationResponse;
+      let returnType = InvitationCreateResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -83,7 +83,7 @@ export default class InvitationsApi {
      * Create an invitation.
      * @param {Object} options
      * @param {module:model/Invitation} [options.invitation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationCreateResponse}
      */
     createInvitation(options = {}) {
       return this.createInvitationWithHttpInfo(options)
