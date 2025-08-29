@@ -30,6 +30,9 @@ import AiAcceleratorResponseProductProduct from './model/AiAcceleratorResponsePr
 import ApexRedirect from './model/ApexRedirect';
 import ApexRedirectAllOf from './model/ApexRedirectAllOf';
 import AsyncResponse from './model/AsyncResponse';
+import AttackReport from './model/AttackReport';
+import AttackSignal from './model/AttackSignal';
+import AttackSource from './model/AttackSource';
 import AutomationToken from './model/AutomationToken';
 import AutomationTokenCreateRequest from './model/AutomationTokenCreateRequest';
 import AutomationTokenCreateRequestAttributes from './model/AutomationTokenCreateRequestAttributes';
@@ -121,14 +124,15 @@ import DashboardItemPropertyVisualization from './model/DashboardItemPropertyVis
 import DashboardItemPropertyVisualizationPropertyConfig from './model/DashboardItemPropertyVisualizationPropertyConfig';
 import DashboardPropertyCreatedBy from './model/DashboardPropertyCreatedBy';
 import DashboardPropertyUpdatedBy from './model/DashboardPropertyUpdatedBy';
-import DdosProtectionAction from './model/DdosProtectionAction';
 import DdosProtectionAttributeStats from './model/DdosProtectionAttributeStats';
 import DdosProtectionAttributeValue from './model/DdosProtectionAttributeValue';
 import DdosProtectionError from './model/DdosProtectionError';
 import DdosProtectionErrorErrors from './model/DdosProtectionErrorErrors';
 import DdosProtectionEvent from './model/DdosProtectionEvent';
 import DdosProtectionEventAllOf from './model/DdosProtectionEventAllOf';
+import DdosProtectionInvalidRequest from './model/DdosProtectionInvalidRequest';
 import DdosProtectionNotAuthenticated from './model/DdosProtectionNotAuthenticated';
+import DdosProtectionNotAuthorized from './model/DdosProtectionNotAuthorized';
 import DdosProtectionNotFound from './model/DdosProtectionNotFound';
 import DdosProtectionRequestUpdateConfiguration from './model/DdosProtectionRequestUpdateConfiguration';
 import DdosProtectionResponseBodyGetAllServices from './model/DdosProtectionResponseBodyGetAllServices';
@@ -147,7 +151,7 @@ import DdosProtectionResponseProductProduct from './model/DdosProtectionResponse
 import DdosProtectionResponseService from './model/DdosProtectionResponseService';
 import DdosProtectionRule from './model/DdosProtectionRule';
 import DdosProtectionRuleAllOf from './model/DdosProtectionRuleAllOf';
-import DdosProtectionTrafficAttribute from './model/DdosProtectionTrafficAttribute';
+import DdosProtectionRulePatch from './model/DdosProtectionRulePatch';
 import DdosProtectionTrafficStats from './model/DdosProtectionTrafficStats';
 import DdosProtectionTrafficStatsAllOf from './model/DdosProtectionTrafficStatsAllOf';
 import DefaultSettings from './model/DefaultSettings';
@@ -311,9 +315,12 @@ import KvStoreBatchResponseErrors from './model/KvStoreBatchResponseErrors';
 import KvStoreDetails from './model/KvStoreDetails';
 import KvStoreRequestCreate from './model/KvStoreRequestCreate';
 import KvStoreUpsertBatch from './model/KvStoreUpsertBatch';
+import ListAttackReport from './model/ListAttackReport';
+import ListAttackReportMeta from './model/ListAttackReportMeta';
 import ListCustomerAddressesResponse from './model/ListCustomerAddressesResponse';
 import ListDashboardsResponse from './model/ListDashboardsResponse';
 import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
+import ListSignalReport from './model/ListSignalReport';
 import Listinvoices from './model/Listinvoices';
 import LogAggregationsFilterFieldItem from './model/LogAggregationsFilterFieldItem';
 import LogAggregationsGetResponse from './model/LogAggregationsGetResponse';
@@ -340,13 +347,6 @@ import LogInsightsMetaFilter from './model/LogInsightsMetaFilter';
 import LogInsightsValues from './model/LogInsightsValues';
 import LogPropertyServiceId from './model/LogPropertyServiceId';
 import LogRecord from './model/LogRecord';
-import LogTimeseriesFilterFieldItem from './model/LogTimeseriesFilterFieldItem';
-import LogTimeseriesGetResponse from './model/LogTimeseriesGetResponse';
-import LogTimeseriesGetResponseMeta from './model/LogTimeseriesGetResponseMeta';
-import LogTimeseriesGetResponseMetaFilters from './model/LogTimeseriesGetResponseMetaFilters';
-import LogTimeseriesResult from './model/LogTimeseriesResult';
-import LogTimeseriesResultDimensions from './model/LogTimeseriesResultDimensions';
-import LogTimeseriesValueField from './model/LogTimeseriesValueField';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblobAdditional from './model/LoggingAzureblobAdditional';
 import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
@@ -653,6 +653,7 @@ import Serviceusagetype from './model/Serviceusagetype';
 import Serviceusagetypes from './model/Serviceusagetypes';
 import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
+import SignalReport from './model/SignalReport';
 import SigningKey from './model/SigningKey';
 import Snippet from './model/Snippet';
 import SnippetResponse from './model/SnippetResponse';
@@ -665,6 +666,9 @@ import Stats from './model/Stats';
 import SudoGenericTokenError from './model/SudoGenericTokenError';
 import SudoRequest from './model/SudoRequest';
 import SudoResponse from './model/SudoResponse';
+import TimeseriesGetResponse from './model/TimeseriesGetResponse';
+import TimeseriesMeta from './model/TimeseriesMeta';
+import TimeseriesResult from './model/TimeseriesResult';
 import Timestamps from './model/Timestamps';
 import TimestampsNoDelete from './model/TimestampsNoDelete';
 import TlsActivation from './model/TlsActivation';
@@ -743,6 +747,7 @@ import TokenCreatedResponseAllOf from './model/TokenCreatedResponseAllOf';
 import TokenResponse from './model/TokenResponse';
 import TokenResponseAllOf from './model/TokenResponseAllOf';
 import TokensAdditionalProps from './model/TokensAdditionalProps';
+import TopWorkspace from './model/TopWorkspace';
 import TypeBillingAddress from './model/TypeBillingAddress';
 import TypeContact from './model/TypeContact';
 import TypeCustomer from './model/TypeCustomer';
@@ -884,10 +889,11 @@ import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import NgwafReportsApi from './api/NgwafReportsApi';
 import ObjectStorageAccessKeysApi from './api/ObjectStorageAccessKeysApi';
 import ObservabilityAggregationsForLogsApi from './api/ObservabilityAggregationsForLogsApi';
 import ObservabilityCustomDashboardsApi from './api/ObservabilityCustomDashboardsApi';
-import ObservabilityTimeseriesForLogsApi from './api/ObservabilityTimeseriesForLogsApi';
+import ObservabilityTimeseriesApi from './api/ObservabilityTimeseriesApi';
 import OriginInspectorHistoricalApi from './api/OriginInspectorHistoricalApi';
 import OriginInspectorRealtimeApi from './api/OriginInspectorRealtimeApi';
 import PackageApi from './api/PackageApi';
@@ -972,7 +978,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 12.1.0
+* @version 13.0.0
 */
 export {
     /**
@@ -1088,6 +1094,24 @@ export {
      * @property {module:model/AsyncResponse}
      */
     AsyncResponse,
+
+    /**
+     * The AttackReport model constructor.
+     * @property {module:model/AttackReport}
+     */
+    AttackReport,
+
+    /**
+     * The AttackSignal model constructor.
+     * @property {module:model/AttackSignal}
+     */
+    AttackSignal,
+
+    /**
+     * The AttackSource model constructor.
+     * @property {module:model/AttackSource}
+     */
+    AttackSource,
 
     /**
      * The AutomationToken model constructor.
@@ -1636,12 +1660,6 @@ export {
     DashboardPropertyUpdatedBy,
 
     /**
-     * The DdosProtectionAction model constructor.
-     * @property {module:model/DdosProtectionAction}
-     */
-    DdosProtectionAction,
-
-    /**
      * The DdosProtectionAttributeStats model constructor.
      * @property {module:model/DdosProtectionAttributeStats}
      */
@@ -1678,10 +1696,22 @@ export {
     DdosProtectionEventAllOf,
 
     /**
+     * The DdosProtectionInvalidRequest model constructor.
+     * @property {module:model/DdosProtectionInvalidRequest}
+     */
+    DdosProtectionInvalidRequest,
+
+    /**
      * The DdosProtectionNotAuthenticated model constructor.
      * @property {module:model/DdosProtectionNotAuthenticated}
      */
     DdosProtectionNotAuthenticated,
+
+    /**
+     * The DdosProtectionNotAuthorized model constructor.
+     * @property {module:model/DdosProtectionNotAuthorized}
+     */
+    DdosProtectionNotAuthorized,
 
     /**
      * The DdosProtectionNotFound model constructor.
@@ -1792,10 +1822,10 @@ export {
     DdosProtectionRuleAllOf,
 
     /**
-     * The DdosProtectionTrafficAttribute model constructor.
-     * @property {module:model/DdosProtectionTrafficAttribute}
+     * The DdosProtectionRulePatch model constructor.
+     * @property {module:model/DdosProtectionRulePatch}
      */
-    DdosProtectionTrafficAttribute,
+    DdosProtectionRulePatch,
 
     /**
      * The DdosProtectionTrafficStats model constructor.
@@ -2776,6 +2806,18 @@ export {
     KvStoreUpsertBatch,
 
     /**
+     * The ListAttackReport model constructor.
+     * @property {module:model/ListAttackReport}
+     */
+    ListAttackReport,
+
+    /**
+     * The ListAttackReportMeta model constructor.
+     * @property {module:model/ListAttackReportMeta}
+     */
+    ListAttackReportMeta,
+
+    /**
      * The ListCustomerAddressesResponse model constructor.
      * @property {module:model/ListCustomerAddressesResponse}
      */
@@ -2792,6 +2834,12 @@ export {
      * @property {module:model/ListEomInvoicesResponse}
      */
     ListEomInvoicesResponse,
+
+    /**
+     * The ListSignalReport model constructor.
+     * @property {module:model/ListSignalReport}
+     */
+    ListSignalReport,
 
     /**
      * The Listinvoices model constructor.
@@ -2948,48 +2996,6 @@ export {
      * @property {module:model/LogRecord}
      */
     LogRecord,
-
-    /**
-     * The LogTimeseriesFilterFieldItem model constructor.
-     * @property {module:model/LogTimeseriesFilterFieldItem}
-     */
-    LogTimeseriesFilterFieldItem,
-
-    /**
-     * The LogTimeseriesGetResponse model constructor.
-     * @property {module:model/LogTimeseriesGetResponse}
-     */
-    LogTimeseriesGetResponse,
-
-    /**
-     * The LogTimeseriesGetResponseMeta model constructor.
-     * @property {module:model/LogTimeseriesGetResponseMeta}
-     */
-    LogTimeseriesGetResponseMeta,
-
-    /**
-     * The LogTimeseriesGetResponseMetaFilters model constructor.
-     * @property {module:model/LogTimeseriesGetResponseMetaFilters}
-     */
-    LogTimeseriesGetResponseMetaFilters,
-
-    /**
-     * The LogTimeseriesResult model constructor.
-     * @property {module:model/LogTimeseriesResult}
-     */
-    LogTimeseriesResult,
-
-    /**
-     * The LogTimeseriesResultDimensions model constructor.
-     * @property {module:model/LogTimeseriesResultDimensions}
-     */
-    LogTimeseriesResultDimensions,
-
-    /**
-     * The LogTimeseriesValueField model constructor.
-     * @property {module:model/LogTimeseriesValueField}
-     */
-    LogTimeseriesValueField,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -4828,6 +4834,12 @@ export {
     SettingsResponse,
 
     /**
+     * The SignalReport model constructor.
+     * @property {module:model/SignalReport}
+     */
+    SignalReport,
+
+    /**
      * The SigningKey model constructor.
      * @property {module:model/SigningKey}
      */
@@ -4898,6 +4910,24 @@ export {
      * @property {module:model/SudoResponse}
      */
     SudoResponse,
+
+    /**
+     * The TimeseriesGetResponse model constructor.
+     * @property {module:model/TimeseriesGetResponse}
+     */
+    TimeseriesGetResponse,
+
+    /**
+     * The TimeseriesMeta model constructor.
+     * @property {module:model/TimeseriesMeta}
+     */
+    TimeseriesMeta,
+
+    /**
+     * The TimeseriesResult model constructor.
+     * @property {module:model/TimeseriesResult}
+     */
+    TimeseriesResult,
 
     /**
      * The Timestamps model constructor.
@@ -5366,6 +5396,12 @@ export {
      * @property {module:model/TokensAdditionalProps}
      */
     TokensAdditionalProps,
+
+    /**
+     * The TopWorkspace model constructor.
+     * @property {module:model/TopWorkspace}
+     */
+    TopWorkspace,
 
     /**
      * The TypeBillingAddress model constructor.
@@ -6214,6 +6250,12 @@ export {
     MutualAuthenticationApi,
 
     /**
+    * The NgwafReportsApi service constructor.
+    * @property {module:api/NgwafReportsApi}
+    */
+    NgwafReportsApi,
+
+    /**
     * The ObjectStorageAccessKeysApi service constructor.
     * @property {module:api/ObjectStorageAccessKeysApi}
     */
@@ -6232,10 +6274,10 @@ export {
     ObservabilityCustomDashboardsApi,
 
     /**
-    * The ObservabilityTimeseriesForLogsApi service constructor.
-    * @property {module:api/ObservabilityTimeseriesForLogsApi}
+    * The ObservabilityTimeseriesApi service constructor.
+    * @property {module:api/ObservabilityTimeseriesApi}
     */
-    ObservabilityTimeseriesForLogsApi,
+    ObservabilityTimeseriesApi,
 
     /**
     * The OriginInspectorHistoricalApi service constructor.

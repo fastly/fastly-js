@@ -16,7 +16,7 @@ import BotManagementResponseLinksGetAllServicesLinks from './BotManagementRespon
 /**
  * The BotManagementResponseLinksGetAllServices model module.
  * @module model/BotManagementResponseLinksGetAllServices
- * @version 12.1.0
+ * @version 13.0.0
  */
 class BotManagementResponseLinksGetAllServices {
     /**

@@ -11,22 +11,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import LogTimeseriesGetResponseMeta from './LogTimeseriesGetResponseMeta';
-import LogTimeseriesResult from './LogTimeseriesResult';
+import TimeseriesMeta from './TimeseriesMeta';
+import TimeseriesResult from './TimeseriesResult';
 
 /**
- * The LogTimeseriesGetResponse model module.
- * @module model/LogTimeseriesGetResponse
- * @version 12.1.0
+ * The TimeseriesGetResponse model module.
+ * @module model/TimeseriesGetResponse
+ * @version 13.0.0
  */
-class LogTimeseriesGetResponse {
+class TimeseriesGetResponse {
     /**
-     * Constructs a new <code>LogTimeseriesGetResponse</code>.
-     * @alias module:model/LogTimeseriesGetResponse
+     * Constructs a new <code>TimeseriesGetResponse</code>.
+     * @alias module:model/TimeseriesGetResponse
      */
     constructor() { 
         
-        LogTimeseriesGetResponse.initialize(this);
+        TimeseriesGetResponse.initialize(this);
     }
 
     /**
@@ -38,21 +38,21 @@ class LogTimeseriesGetResponse {
     }
 
     /**
-     * Constructs a <code>LogTimeseriesGetResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TimeseriesGetResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LogTimeseriesGetResponse} obj Optional instance to populate.
-     * @return {module:model/LogTimeseriesGetResponse} The populated <code>LogTimeseriesGetResponse</code> instance.
+     * @param {module:model/TimeseriesGetResponse} obj Optional instance to populate.
+     * @return {module:model/TimeseriesGetResponse} The populated <code>TimeseriesGetResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new LogTimeseriesGetResponse();
+            obj = obj || new TimeseriesGetResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [LogTimeseriesResult]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TimeseriesResult]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = LogTimeseriesGetResponseMeta.constructFromObject(data['meta']);
+                obj['meta'] = TimeseriesMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -62,19 +62,19 @@ class LogTimeseriesGetResponse {
 }
 
 /**
- * @member {Array.<module:model/LogTimeseriesResult>} data
+ * @member {Array.<module:model/TimeseriesResult>} data
  */
-LogTimeseriesGetResponse.prototype['data'] = undefined;
+TimeseriesGetResponse.prototype['data'] = undefined;
 
 /**
- * @member {module:model/LogTimeseriesGetResponseMeta} meta
+ * @member {module:model/TimeseriesMeta} meta
  */
-LogTimeseriesGetResponse.prototype['meta'] = undefined;
+TimeseriesGetResponse.prototype['meta'] = undefined;
 
 
 
 
 
 
-export default LogTimeseriesGetResponse;
+export default TimeseriesGetResponse;
 

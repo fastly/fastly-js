@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingBigqueryResponse model module.
  * @module model/LoggingBigqueryResponse
- * @version 12.1.0
+ * @version 13.0.0
  */
 class LoggingBigqueryResponse {
     /**

@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The FanoutResponseCustomer model module.
  * @module model/FanoutResponseCustomer
- * @version 12.1.0
+ * @version 13.0.0
  */
 class FanoutResponseCustomer {
     /**

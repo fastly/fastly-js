@@ -19,7 +19,7 @@ import TlsActivationsResponse from '../model/TlsActivationsResponse';
 /**
 * TlsActivations service.
 * @module api/TlsActivationsApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class TlsActivationsApi {
 

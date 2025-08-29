@@ -1,10 +1,11 @@
-# Fastly.LogTimeseriesGetResponseMetaFilters
+# Fastly.TimeseriesGetResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter_fields** | [**[LogTimeseriesFilterFieldItem]**](LogTimeseriesFilterFieldItem.md) |  | [optional] 
+**data** | [**[TimeseriesResult]**](TimeseriesResult.md) |  | [optional] 
+**meta** | [**TimeseriesMeta**](TimeseriesMeta.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

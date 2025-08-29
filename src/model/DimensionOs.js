@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionOs model module.
  * @module model/DimensionOs
- * @version 12.1.0
+ * @version 13.0.0
  */
 class DimensionOs {
     /**

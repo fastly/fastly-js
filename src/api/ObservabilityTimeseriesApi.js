@@ -12,18 +12,18 @@
 
 
 import ApiClient from "../ApiClient";
-import LogTimeseriesGetResponse from '../model/LogTimeseriesGetResponse';
+import TimeseriesGetResponse from '../model/TimeseriesGetResponse';
 
 /**
-* ObservabilityTimeseriesForLogs service.
-* @module api/ObservabilityTimeseriesForLogsApi
-* @version 12.1.0
+* ObservabilityTimeseries service.
+* @module api/ObservabilityTimeseriesApi
+* @version 13.0.0
 */
-export default class ObservabilityTimeseriesForLogsApi {
+export default class ObservabilityTimeseriesApi {
 
     /**
-    * Constructs a new ObservabilityTimeseriesForLogsApi. 
-    * @alias module:api/ObservabilityTimeseriesForLogsApi
+    * Constructs a new ObservabilityTimeseriesApi. 
+    * @alias module:api/ObservabilityTimeseriesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -38,34 +38,30 @@ export default class ObservabilityTimeseriesForLogsApi {
 
 
     /**
-     * Retrieves log data as time series.
+     * Retrieves observability data as a time series.
      * @param {Object} options
-     * @param {String} options.source
-     * @param {String} options.service_id
-     * @param {String} options.start
-     * @param {String} options.end
-     * @param {module:model/String} options.granularity
+     * @param {module:model/String} options.source
+     * @param {String} options.from
+     * @param {String} options.to
+     * @param {String} options.granularity
      * @param {String} options.series
+     * @param {String} [options.dimensions]
      * @param {String} [options.filter]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogTimeseriesGetResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TimeseriesGetResponse} and HTTP response
      */
-    logTimeseriesGetWithHttpInfo(options = {}) {
+    timeseriesGetWithHttpInfo(options = {}) {
       let postBody = null;
       // Verify the required parameter 'source' is set.
       if (options['source'] === undefined || options['source'] === null) {
         throw new Error("Missing the required parameter 'source'.");
       }
-      // Verify the required parameter 'service_id' is set.
-      if (options['service_id'] === undefined || options['service_id'] === null) {
-        throw new Error("Missing the required parameter 'service_id'.");
+      // Verify the required parameter 'from' is set.
+      if (options['from'] === undefined || options['from'] === null) {
+        throw new Error("Missing the required parameter 'from'.");
       }
-      // Verify the required parameter 'start' is set.
-      if (options['start'] === undefined || options['start'] === null) {
-        throw new Error("Missing the required parameter 'start'.");
-      }
-      // Verify the required parameter 'end' is set.
-      if (options['end'] === undefined || options['end'] === null) {
-        throw new Error("Missing the required parameter 'end'.");
+      // Verify the required parameter 'to' is set.
+      if (options['to'] === undefined || options['to'] === null) {
+        throw new Error("Missing the required parameter 'to'.");
       }
       // Verify the required parameter 'granularity' is set.
       if (options['granularity'] === undefined || options['granularity'] === null) {
@@ -82,10 +78,10 @@ export default class ObservabilityTimeseriesForLogsApi {
       };
       let queryParams = {
         'source': options['source'],
-        'service_id': options['service_id'],
-        'start': options['start'],
-        'end': options['end'],
+        'from': options['from'],
+        'to': options['to'],
         'granularity': options['granularity'],
+        'dimensions': options['dimensions'],
         'filter': options['filter'],
         'series': options['series']
       };
@@ -97,7 +93,7 @@ export default class ObservabilityTimeseriesForLogsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = LogTimeseriesGetResponse;
+      let returnType = TimeseriesGetResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -115,19 +111,19 @@ export default class ObservabilityTimeseriesForLogsApi {
     }
 
     /**
-     * Retrieves log data as time series.
+     * Retrieves observability data as a time series.
      * @param {Object} options
-     * @param {String} options.source
-     * @param {String} options.service_id
-     * @param {String} options.start
-     * @param {String} options.end
-     * @param {module:model/String} options.granularity
+     * @param {module:model/String} options.source
+     * @param {String} options.from
+     * @param {String} options.to
+     * @param {String} options.granularity
      * @param {String} options.series
+     * @param {String} [options.dimensions]
      * @param {String} [options.filter]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogTimeseriesGetResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TimeseriesGetResponse}
      */
-    logTimeseriesGet(options = {}) {
-      return this.logTimeseriesGetWithHttpInfo(options)
+    timeseriesGet(options = {}) {
+      return this.timeseriesGetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

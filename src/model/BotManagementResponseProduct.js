@@ -16,7 +16,7 @@ import BotManagementResponseProductProduct from './BotManagementResponseProductP
 /**
  * The BotManagementResponseProduct model module.
  * @module model/BotManagementResponseProduct
- * @version 12.1.0
+ * @version 13.0.0
  */
 class BotManagementResponseProduct {
     /**

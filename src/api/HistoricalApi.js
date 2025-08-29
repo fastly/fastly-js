@@ -22,7 +22,7 @@ import HistoricalUsageServiceResponse from '../model/HistoricalUsageServiceRespo
 /**
 * Historical service.
 * @module api/HistoricalApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class HistoricalApi {
 
@@ -49,6 +49,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.services] - Limit the query to only the specified, comma-separated list of services. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsByServiceResponse} and HTTP response
      */
     getHistStatsWithHttpInfo(options = {}) {
@@ -62,7 +63,8 @@ export default class HistoricalApi {
         'from': options['from'],
         'to': options['to'],
         'by': options['by'],
-        'region': options['region']
+        'region': options['region'],
+        'services': options['services']
       };
       let headerParams = {
       };
@@ -96,6 +98,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.services] - Limit the query to only the specified, comma-separated list of services. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsByServiceResponse}
      */
     getHistStats(options = {}) {

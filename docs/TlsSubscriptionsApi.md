@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ## `createTlsSub`
 
 ```javascript
-createTlsSub({ , [force, ][tls_subscription] })
+createTlsSub({ , [tls_subscription] })
 ```
 
 Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
@@ -70,7 +70,6 @@ Create a new TLS subscription. This response includes a list of possible challen
 
 ```javascript
 const options = {
-  force: true,
   tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"certainly"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
@@ -87,7 +86,6 @@ apiInstance.createTlsSub(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
 **tls_subscription** | [**TlsSubscription**](TlsSubscription.md) |  | [optional]
 
 ### Return type

@@ -19,7 +19,7 @@ import KvStoreRequestCreate from '../model/KvStoreRequestCreate';
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class KvStoreApi {
 
@@ -216,6 +216,7 @@ export default class KvStoreApi {
      * @param {Object} options
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
+     * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     kvStoreListWithHttpInfo(options = {}) {
@@ -227,7 +228,8 @@ export default class KvStoreApi {
       };
       let queryParams = {
         'cursor': options['cursor'],
-        'limit': options['limit']
+        'limit': options['limit'],
+        'name': options['name']
       };
       let headerParams = {
       };
@@ -259,6 +261,7 @@ export default class KvStoreApi {
      * @param {Object} options
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
+     * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     kvStoreList(options = {}) {

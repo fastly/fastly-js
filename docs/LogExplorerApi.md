@@ -25,7 +25,7 @@ Retrieves log records.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
+  service_id: 1jlmtMz1ncwA0KC3TBGD0X, // required
   start: "start_example", // required
   end: "end_example", // required
   limit: 3.4,

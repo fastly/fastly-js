@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesRequests model module.
  * @module model/ValuesRequests
- * @version 12.1.0
+ * @version 13.0.0
  */
 class ValuesRequests {
     /**

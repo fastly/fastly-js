@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesRate model module.
  * @module model/ValuesRate
- * @version 12.1.0
+ * @version 13.0.0
  */
 class ValuesRate {
     /**

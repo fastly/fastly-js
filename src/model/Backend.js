@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 12.1.0
+ * @version 13.0.0
  */
 class Backend {
     /**
@@ -174,7 +174,7 @@ Backend.prototype['address'] = undefined;
 Backend.prototype['auto_loadbalance'] = undefined;
 
 /**
- * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+ * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
  * @member {Number} between_bytes_timeout
  */
 Backend.prototype['between_bytes_timeout'] = undefined;
@@ -351,20 +351,23 @@ Backend.prototype['tcp_keepalive_enable'] = undefined;
 /**
  * Interval in seconds between subsequent keepalive probes.
  * @member {Number} tcp_keepalive_interval
+ * @default 10
  */
-Backend.prototype['tcp_keepalive_interval'] = undefined;
+Backend.prototype['tcp_keepalive_interval'] = 10;
 
 /**
  * Number of unacknowledged probes to send before considering the connection dead.
  * @member {Number} tcp_keepalive_probes
+ * @default 3
  */
-Backend.prototype['tcp_keepalive_probes'] = undefined;
+Backend.prototype['tcp_keepalive_probes'] = 3;
 
 /**
  * Interval in seconds between the last data packet sent and the first keepalive probe.
  * @member {Number} tcp_keepalive_time
+ * @default 300
  */
-Backend.prototype['tcp_keepalive_time'] = undefined;
+Backend.prototype['tcp_keepalive_time'] = 300;
 
 /**
  * Whether or not to require TLS for connections to this backend.

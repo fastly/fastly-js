@@ -22,7 +22,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingSplunkResponse model module.
  * @module model/LoggingSplunkResponse
- * @version 12.1.0
+ * @version 13.0.0
  */
 class LoggingSplunkResponse {
     /**

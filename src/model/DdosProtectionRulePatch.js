@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The LogTimeseriesValueField model module.
- * @module model/LogTimeseriesValueField
- * @version 12.1.0
+ * The DdosProtectionRulePatch model module.
+ * @module model/DdosProtectionRulePatch
+ * @version 13.0.0
  */
-class LogTimeseriesValueField {
+class DdosProtectionRulePatch {
     /**
-     * Constructs a new <code>LogTimeseriesValueField</code>.
-     * @alias module:model/LogTimeseriesValueField
+     * Constructs a new <code>DdosProtectionRulePatch</code>.
+     * @alias module:model/DdosProtectionRulePatch
      */
     constructor() { 
         
-        LogTimeseriesValueField.initialize(this);
+        DdosProtectionRulePatch.initialize(this);
     }
 
     /**
@@ -36,16 +36,19 @@ class LogTimeseriesValueField {
     }
 
     /**
-     * Constructs a <code>LogTimeseriesValueField</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DdosProtectionRulePatch</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LogTimeseriesValueField} obj Optional instance to populate.
-     * @return {module:model/LogTimeseriesValueField} The populated <code>LogTimeseriesValueField</code> instance.
+     * @param {module:model/DdosProtectionRulePatch} obj Optional instance to populate.
+     * @return {module:model/DdosProtectionRulePatch} The populated <code>DdosProtectionRulePatch</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new LogTimeseriesValueField();
+            obj = obj || new DdosProtectionRulePatch();
 
+            if (data.hasOwnProperty('action')) {
+                obj['action'] = ApiClient.convertToType(data['action'], 'String');
+            }
         }
         return obj;
     }
@@ -53,10 +56,17 @@ class LogTimeseriesValueField {
 
 }
 
+/**
+ * Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+ * @member {String} action
+ * @default 'default'
+ */
+DdosProtectionRulePatch.prototype['action'] = 'default';
 
 
 
 
 
-export default LogTimeseriesValueField;
+
+export default DdosProtectionRulePatch;
 

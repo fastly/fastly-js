@@ -18,7 +18,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The DdosProtectionTrafficStats model module.
  * @module model/DdosProtectionTrafficStats
- * @version 12.1.0
+ * @version 13.0.0
  */
 class DdosProtectionTrafficStats {
     /**

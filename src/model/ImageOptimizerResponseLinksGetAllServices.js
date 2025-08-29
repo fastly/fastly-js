@@ -16,7 +16,7 @@ import ImageOptimizerResponseLinksGetAllServicesLinks from './ImageOptimizerResp
 /**
  * The ImageOptimizerResponseLinksGetAllServices model module.
  * @module model/ImageOptimizerResponseLinksGetAllServices
- * @version 12.1.0
+ * @version 13.0.0
  */
 class ImageOptimizerResponseLinksGetAllServices {
     /**

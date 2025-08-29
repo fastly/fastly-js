@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DashboardItemPropertyVisualizationPropertyConfig model module.
  * @module model/DashboardItemPropertyVisualizationPropertyConfig
- * @version 12.1.0
+ * @version 13.0.0
  */
 class DashboardItemPropertyVisualizationPropertyConfig {
     /**

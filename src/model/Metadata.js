@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Metadata model module.
  * @module model/Metadata
- * @version 12.1.0
+ * @version 13.0.0
  */
 class Metadata {
     /**

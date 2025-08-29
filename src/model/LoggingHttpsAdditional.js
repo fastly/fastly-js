@@ -16,7 +16,7 @@ import LoggingMessageType from './LoggingMessageType';
 /**
  * The LoggingHttpsAdditional model module.
  * @module model/LoggingHttpsAdditional
- * @version 12.1.0
+ * @version 13.0.0
  */
 class LoggingHttpsAdditional {
     /**

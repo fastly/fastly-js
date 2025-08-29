@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The DdosProtectionResponseService model module.
  * @module model/DdosProtectionResponseService
- * @version 12.1.0
+ * @version 13.0.0
  */
 class DdosProtectionResponseService {
     /**

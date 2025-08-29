@@ -12,12 +12,11 @@
 
 import ApiClient from '../ApiClient';
 import DdosProtectionAttributeValue from './DdosProtectionAttributeValue';
-import DdosProtectionTrafficAttribute from './DdosProtectionTrafficAttribute';
 
 /**
  * The DdosProtectionAttributeStats model module.
  * @module model/DdosProtectionAttributeStats
- * @version 12.1.0
+ * @version 13.0.0
  */
 class DdosProtectionAttributeStats {
     /**
@@ -49,7 +48,7 @@ class DdosProtectionAttributeStats {
             obj = obj || new DdosProtectionAttributeStats();
 
             if (data.hasOwnProperty('name')) {
-                obj['name'] = DdosProtectionTrafficAttribute.constructFromObject(data['name']);
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('values')) {
                 obj['values'] = ApiClient.convertToType(data['values'], [DdosProtectionAttributeValue]);
@@ -62,7 +61,8 @@ class DdosProtectionAttributeStats {
 }
 
 /**
- * @member {module:model/DdosProtectionTrafficAttribute} name
+ * Name of an attribute type used in traffic stats. Currently, supported values are source_ip, country_code, host, asn, source_ip_prefix, user_agent, method_path.
+ * @member {String} name
  */
 DdosProtectionAttributeStats.prototype['name'] = undefined;
 

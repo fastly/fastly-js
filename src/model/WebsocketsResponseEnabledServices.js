@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebsocketsResponseEnabledServices model module.
  * @module model/WebsocketsResponseEnabledServices
- * @version 12.1.0
+ * @version 13.0.0
  */
 class WebsocketsResponseEnabledServices {
     /**

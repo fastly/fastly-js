@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The ImageOptimizerResponseCustomer model module.
  * @module model/ImageOptimizerResponseCustomer
- * @version 12.1.0
+ * @version 13.0.0
  */
 class ImageOptimizerResponseCustomer {
     /**

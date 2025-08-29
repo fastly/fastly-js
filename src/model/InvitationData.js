@@ -17,7 +17,7 @@ import TypeInvitation from './TypeInvitation';
 /**
  * The InvitationData model module.
  * @module model/InvitationData
- * @version 12.1.0
+ * @version 13.0.0
  */
 class InvitationData {
     /**

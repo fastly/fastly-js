@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorDimensions model module.
  * @module model/OriginInspectorDimensions
- * @version 12.1.0
+ * @version 13.0.0
  */
 class OriginInspectorDimensions {
     /**

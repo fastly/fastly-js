@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesStatusCodes model module.
  * @module model/ValuesStatusCodes
- * @version 12.1.0
+ * @version 13.0.0
  */
 class ValuesStatusCodes {
     /**

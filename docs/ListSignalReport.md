@@ -1,11 +1,10 @@
-# Fastly.LogTimeseriesResult
+# Fastly.ListSignalReport
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dimensions** | [**LogTimeseriesResultDimensions**](LogTimeseriesResultDimensions.md) |  | [optional] 
-**values** | **{String: Object}** |  | [optional] 
+**data** | [**[SignalReport]**](SignalReport.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

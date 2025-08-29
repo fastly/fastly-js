@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 ## `kvStoreList`
 
 ```javascript
-kvStoreList({ , [cursor, ][limit] })
+kvStoreList({ , [cursor, ][limit, ][name] })
 ```
 
 List all KV stores.
@@ -137,6 +137,7 @@ List all KV stores.
 const options = {
   cursor: "cursor_example",
   limit: 1000,
+  name: "name_example",
 };
 
 apiInstance.kvStoreList(options)
@@ -154,6 +155,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **cursor** | **String** |  | [optional]
 **limit** | **Number** |  | [optional] [defaults to 1000]
+**name** | **String** | Returns a one-element array containing the details for the named KV store. | [optional]
 
 ### Return type
 

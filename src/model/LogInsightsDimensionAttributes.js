@@ -17,7 +17,7 @@ import DimensionAttributesRate from './DimensionAttributesRate';
 /**
  * The LogInsightsDimensionAttributes model module.
  * @module model/LogInsightsDimensionAttributes
- * @version 12.1.0
+ * @version 13.0.0
  */
 class LogInsightsDimensionAttributes {
     /**

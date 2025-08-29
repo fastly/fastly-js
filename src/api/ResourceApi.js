@@ -18,7 +18,7 @@ import ResourceResponse from '../model/ResourceResponse';
 /**
 * Resource service.
 * @module api/ResourceApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class ResourceApi {
 

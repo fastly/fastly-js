@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**ddosProtectionEventList**](DdosProtectionApi.md#ddosProtectionEventList) | **GET** /ddos-protection/v1/events | Get events
 [**ddosProtectionEventRuleList**](DdosProtectionApi.md#ddosProtectionEventRuleList) | **GET** /ddos-protection/v1/events/{event_id}/rules | Get all rules for an event
 [**ddosProtectionRuleGet**](DdosProtectionApi.md#ddosProtectionRuleGet) | **GET** /ddos-protection/v1/rules/{rule_id} | Get a rule by ID
+[**ddosProtectionRulePatch**](DdosProtectionApi.md#ddosProtectionRulePatch) | **PATCH** /ddos-protection/v1/rules/{rule_id} | Update rule
 [**ddosProtectionTrafficStatsRuleGet**](DdosProtectionApi.md#ddosProtectionTrafficStatsRuleGet) | **GET** /ddos-protection/v1/events/{event_id}/rules/{rule_id}/traffic-stats | Get traffic stats for a rule
 
 
@@ -165,6 +166,43 @@ apiInstance.ddosProtectionRuleGet(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **rule_id** | **String** | Unique ID of the rule. |
+
+### Return type
+
+[**DdosProtectionRule**](DdosProtectionRule.md)
+
+
+## `ddosProtectionRulePatch`
+
+```javascript
+ddosProtectionRulePatch({ rule_id, [ddos_protection_rule_patch] })
+```
+
+Update rule.
+
+### Example
+
+```javascript
+const options = {
+  rule_id: "rule_id_example", // required
+  ddos_protection_rule_patch: new Fastly.DdosProtectionRulePatch(),
+};
+
+apiInstance.ddosProtectionRulePatch(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**rule_id** | **String** | Unique ID of the rule. |
+**ddos_protection_rule_patch** | [**DdosProtectionRulePatch**](DdosProtectionRulePatch.md) |  | [optional]
 
 ### Return type
 

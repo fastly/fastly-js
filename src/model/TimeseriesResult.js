@@ -11,22 +11,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import LogTimeseriesFilterFieldItem from './LogTimeseriesFilterFieldItem';
 
 /**
- * The LogTimeseriesGetResponseMetaFilters model module.
- * @module model/LogTimeseriesGetResponseMetaFilters
- * @version 12.1.0
+ * The TimeseriesResult model module.
+ * @module model/TimeseriesResult
+ * @version 13.0.0
  */
-class LogTimeseriesGetResponseMetaFilters {
+class TimeseriesResult {
     /**
-     * Constructs a new <code>LogTimeseriesGetResponseMetaFilters</code>.
-     * Echoes the filters that were supplied in the request.
-     * @alias module:model/LogTimeseriesGetResponseMetaFilters
+     * Constructs a new <code>TimeseriesResult</code>.
+     * @alias module:model/TimeseriesResult
      */
     constructor() { 
         
-        LogTimeseriesGetResponseMetaFilters.initialize(this);
+        TimeseriesResult.initialize(this);
     }
 
     /**
@@ -38,18 +36,21 @@ class LogTimeseriesGetResponseMetaFilters {
     }
 
     /**
-     * Constructs a <code>LogTimeseriesGetResponseMetaFilters</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TimeseriesResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LogTimeseriesGetResponseMetaFilters} obj Optional instance to populate.
-     * @return {module:model/LogTimeseriesGetResponseMetaFilters} The populated <code>LogTimeseriesGetResponseMetaFilters</code> instance.
+     * @param {module:model/TimeseriesResult} obj Optional instance to populate.
+     * @return {module:model/TimeseriesResult} The populated <code>TimeseriesResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new LogTimeseriesGetResponseMetaFilters();
+            obj = obj || new TimeseriesResult();
 
-            if (data.hasOwnProperty('filter_fields')) {
-                obj['filter_fields'] = ApiClient.convertToType(data['filter_fields'], [LogTimeseriesFilterFieldItem]);
+            if (data.hasOwnProperty('dimensions')) {
+                obj['dimensions'] = ApiClient.convertToType(data['dimensions'], {'String': Object});
+            }
+            if (data.hasOwnProperty('values')) {
+                obj['values'] = ApiClient.convertToType(data['values'], {'String': Object});
             }
         }
         return obj;
@@ -59,14 +60,21 @@ class LogTimeseriesGetResponseMetaFilters {
 }
 
 /**
- * @member {Array.<module:model/LogTimeseriesFilterFieldItem>} filter_fields
+ * An object containing each requested dimension and time as properties.
+ * @member {Object.<String, Object>} dimensions
  */
-LogTimeseriesGetResponseMetaFilters.prototype['filter_fields'] = undefined;
+TimeseriesResult.prototype['dimensions'] = undefined;
+
+/**
+ * An object containing each requested series as a property.
+ * @member {Object.<String, Object>} values
+ */
+TimeseriesResult.prototype['values'] = undefined;
 
 
 
 
 
 
-export default LogTimeseriesGetResponseMetaFilters;
+export default TimeseriesResult;
 

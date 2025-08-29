@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class BackendApi {
 
@@ -45,7 +45,7 @@ export default class BackendApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
-     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
@@ -74,9 +74,9 @@ export default class BackendApi {
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.tcp_keepalive_enable] - Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
-     * @param {Number} [options.tcp_keepalive_interval] - Interval in seconds between subsequent keepalive probes.
-     * @param {Number} [options.tcp_keepalive_probes] - Number of unacknowledged probes to send before considering the connection dead.
-     * @param {Number} [options.tcp_keepalive_time] - Interval in seconds between the last data packet sent and the first keepalive probe.
+     * @param {Number} [options.tcp_keepalive_interval=10] - Interval in seconds between subsequent keepalive probes.
+     * @param {Number} [options.tcp_keepalive_probes=3] - Number of unacknowledged probes to send before considering the connection dead.
+     * @param {Number} [options.tcp_keepalive_time=300] - Interval in seconds between the last data packet sent and the first keepalive probe.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
@@ -168,7 +168,7 @@ export default class BackendApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
-     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
@@ -197,9 +197,9 @@ export default class BackendApi {
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.tcp_keepalive_enable] - Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
-     * @param {Number} [options.tcp_keepalive_interval] - Interval in seconds between subsequent keepalive probes.
-     * @param {Number} [options.tcp_keepalive_probes] - Number of unacknowledged probes to send before considering the connection dead.
-     * @param {Number} [options.tcp_keepalive_time] - Interval in seconds between the last data packet sent and the first keepalive probe.
+     * @param {Number} [options.tcp_keepalive_interval=10] - Interval in seconds between subsequent keepalive probes.
+     * @param {Number} [options.tcp_keepalive_probes=3] - Number of unacknowledged probes to send before considering the connection dead.
+     * @param {Number} [options.tcp_keepalive_time=300] - Interval in seconds between the last data packet sent and the first keepalive probe.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
@@ -428,7 +428,7 @@ export default class BackendApi {
      * @param {String} options.backend_name - The name of the backend.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
-     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
@@ -457,9 +457,9 @@ export default class BackendApi {
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.tcp_keepalive_enable] - Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
-     * @param {Number} [options.tcp_keepalive_interval] - Interval in seconds between subsequent keepalive probes.
-     * @param {Number} [options.tcp_keepalive_probes] - Number of unacknowledged probes to send before considering the connection dead.
-     * @param {Number} [options.tcp_keepalive_time] - Interval in seconds between the last data packet sent and the first keepalive probe.
+     * @param {Number} [options.tcp_keepalive_interval=10] - Interval in seconds between subsequent keepalive probes.
+     * @param {Number} [options.tcp_keepalive_probes=3] - Number of unacknowledged probes to send before considering the connection dead.
+     * @param {Number} [options.tcp_keepalive_time=300] - Interval in seconds between the last data packet sent and the first keepalive probe.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
@@ -557,7 +557,7 @@ export default class BackendApi {
      * @param {String} options.backend_name - The name of the backend.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
-     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
@@ -586,9 +586,9 @@ export default class BackendApi {
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.tcp_keepalive_enable] - Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
-     * @param {Number} [options.tcp_keepalive_interval] - Interval in seconds between subsequent keepalive probes.
-     * @param {Number} [options.tcp_keepalive_probes] - Number of unacknowledged probes to send before considering the connection dead.
-     * @param {Number} [options.tcp_keepalive_time] - Interval in seconds between the last data packet sent and the first keepalive probe.
+     * @param {Number} [options.tcp_keepalive_interval=10] - Interval in seconds between subsequent keepalive probes.
+     * @param {Number} [options.tcp_keepalive_probes=3] - Number of unacknowledged probes to send before considering the connection dead.
+     * @param {Number} [options.tcp_keepalive_time=300] - Interval in seconds between the last data packet sent and the first keepalive probe.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}

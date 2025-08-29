@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The FanoutResponseService model module.
  * @module model/FanoutResponseService
- * @version 12.1.0
+ * @version 13.0.0
  */
 class FanoutResponseService {
     /**

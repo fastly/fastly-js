@@ -13,18 +13,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The LogTimeseriesResultDimensions model module.
- * @module model/LogTimeseriesResultDimensions
- * @version 12.1.0
+ * The ListAttackReportMeta model module.
+ * @module model/ListAttackReportMeta
+ * @version 13.0.0
  */
-class LogTimeseriesResultDimensions {
+class ListAttackReportMeta {
     /**
-     * Constructs a new <code>LogTimeseriesResultDimensions</code>.
-     * @alias module:model/LogTimeseriesResultDimensions
+     * Constructs a new <code>ListAttackReportMeta</code>.
+     * Metadata about the request.
+     * @alias module:model/ListAttackReportMeta
      */
     constructor() { 
         
-        LogTimeseriesResultDimensions.initialize(this);
+        ListAttackReportMeta.initialize(this);
     }
 
     /**
@@ -36,18 +37,18 @@ class LogTimeseriesResultDimensions {
     }
 
     /**
-     * Constructs a <code>LogTimeseriesResultDimensions</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ListAttackReportMeta</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LogTimeseriesResultDimensions} obj Optional instance to populate.
-     * @return {module:model/LogTimeseriesResultDimensions} The populated <code>LogTimeseriesResultDimensions</code> instance.
+     * @param {module:model/ListAttackReportMeta} obj Optional instance to populate.
+     * @return {module:model/ListAttackReportMeta} The populated <code>ListAttackReportMeta</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new LogTimeseriesResultDimensions();
+            obj = obj || new ListAttackReportMeta();
 
-            if (data.hasOwnProperty('time')) {
-                obj['time'] = ApiClient.convertToType(data['time'], 'String');
+            if (data.hasOwnProperty('total')) {
+                obj['total'] = ApiClient.convertToType(data['total'], 'Number');
             }
         }
         return obj;
@@ -57,14 +58,15 @@ class LogTimeseriesResultDimensions {
 }
 
 /**
- * @member {String} time
+ * The count of attack reports matching the filter.
+ * @member {Number} total
  */
-LogTimeseriesResultDimensions.prototype['time'] = undefined;
+ListAttackReportMeta.prototype['total'] = undefined;
 
 
 
 
 
 
-export default LogTimeseriesResultDimensions;
+export default ListAttackReportMeta;
 

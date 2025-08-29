@@ -17,7 +17,7 @@ import HistoricalOriginsResponse from '../model/HistoricalOriginsResponse';
 /**
 * OriginInspectorHistorical service.
 * @module api/OriginInspectorHistoricalApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class OriginInspectorHistoricalApi {
 

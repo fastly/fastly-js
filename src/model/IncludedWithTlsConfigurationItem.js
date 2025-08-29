@@ -17,7 +17,7 @@ import TypeTlsDnsRecord from './TypeTlsDnsRecord';
 /**
  * The IncludedWithTlsConfigurationItem model module.
  * @module model/IncludedWithTlsConfigurationItem
- * @version 12.1.0
+ * @version 13.0.0
  */
 class IncludedWithTlsConfigurationItem {
     /**

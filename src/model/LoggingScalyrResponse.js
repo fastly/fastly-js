@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingScalyrResponse model module.
  * @module model/LoggingScalyrResponse
- * @version 12.1.0
+ * @version 13.0.0
  */
 class LoggingScalyrResponse {
     /**

@@ -16,7 +16,7 @@ import TlsPrivateKeyResponseData from './TlsPrivateKeyResponseData';
 /**
  * The TlsPrivateKeysResponseAllOf model module.
  * @module model/TlsPrivateKeysResponseAllOf
- * @version 12.1.0
+ * @version 13.0.0
  */
 class TlsPrivateKeysResponseAllOf {
     /**

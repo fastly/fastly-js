@@ -11,14 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import DdosProtectionAction from './DdosProtectionAction';
 import DdosProtectionRuleAllOf from './DdosProtectionRuleAllOf';
 import TimestampsNoDelete from './TimestampsNoDelete';
 
 /**
  * The DdosProtectionRule model module.
  * @module model/DdosProtectionRule
- * @version 12.1.0
+ * @version 13.0.0
  */
 class DdosProtectionRule {
     /**
@@ -66,7 +65,7 @@ class DdosProtectionRule {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('action')) {
-                obj['action'] = DdosProtectionAction.constructFromObject(data['action']);
+                obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
@@ -124,9 +123,11 @@ DdosProtectionRule.prototype['id'] = undefined;
 DdosProtectionRule.prototype['name'] = undefined;
 
 /**
- * @member {module:model/DdosProtectionAction} action
+ * Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+ * @member {String} action
+ * @default 'default'
  */
-DdosProtectionRule.prototype['action'] = undefined;
+DdosProtectionRule.prototype['action'] = 'default';
 
 /**
  * Alphanumeric string identifying the customer.
@@ -200,9 +201,11 @@ DdosProtectionRuleAllOf.prototype['id'] = undefined;
  */
 DdosProtectionRuleAllOf.prototype['name'] = undefined;
 /**
- * @member {module:model/DdosProtectionAction} action
+ * Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+ * @member {String} action
+ * @default 'default'
  */
-DdosProtectionRuleAllOf.prototype['action'] = undefined;
+DdosProtectionRuleAllOf.prototype['action'] = 'default';
 /**
  * Alphanumeric string identifying the customer.
  * @member {String} customer_id

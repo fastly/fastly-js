@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingFtpAdditional model module.
  * @module model/LoggingFtpAdditional
- * @version 12.1.0
+ * @version 13.0.0
  */
 class LoggingFtpAdditional {
     /**

@@ -16,7 +16,7 @@ import RelationshipMemberService from './RelationshipMemberService';
 /**
  * The RelationshipsForTlsConfiguration model module.
  * @module model/RelationshipsForTlsConfiguration
- * @version 12.1.0
+ * @version 13.0.0
  */
 class RelationshipsForTlsConfiguration {
     /**

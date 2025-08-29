@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiAcceleratorResponseProductProduct model module.
  * @module model/AiAcceleratorResponseProductProduct
- * @version 12.1.0
+ * @version 13.0.0
  */
 class AiAcceleratorResponseProductProduct {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolResponseCommon model module.
  * @module model/PoolResponseCommon
- * @version 12.1.0
+ * @version 13.0.0
  */
 class PoolResponseCommon {
     /**
@@ -72,7 +72,7 @@ class PoolResponseCommon {
 }
 
 /**
- * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+ * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
  * @member {String} between_bytes_timeout
  */
 PoolResponseCommon.prototype['between_bytes_timeout'] = undefined;

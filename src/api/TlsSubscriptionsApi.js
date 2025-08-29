@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class TlsSubscriptionsApi {
 
@@ -109,7 +109,6 @@ export default class TlsSubscriptionsApi {
     /**
      * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
      * @param {Object} options
-     * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
      * @param {module:model/TlsSubscription} [options.tls_subscription]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
      */
@@ -121,7 +120,6 @@ export default class TlsSubscriptionsApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
-        'force': options['force']
       };
       let headerParams = {
       };
@@ -151,7 +149,6 @@ export default class TlsSubscriptionsApi {
     /**
      * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
      * @param {Object} options
-     * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
      * @param {module:model/TlsSubscription} [options.tls_subscription]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
      */

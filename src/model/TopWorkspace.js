@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import LogTimeseriesResultDimensions from './LogTimeseriesResultDimensions';
 
 /**
- * The LogTimeseriesResult model module.
- * @module model/LogTimeseriesResult
- * @version 12.1.0
+ * The TopWorkspace model module.
+ * @module model/TopWorkspace
+ * @version 13.0.0
  */
-class LogTimeseriesResult {
+class TopWorkspace {
     /**
-     * Constructs a new <code>LogTimeseriesResult</code>.
-     * @alias module:model/LogTimeseriesResult
+     * Constructs a new <code>TopWorkspace</code>.
+     * This object, found within the &#x60;top_workspaces&#x60; array, contains the workspace information and count for the requested signal.
+     * @alias module:model/TopWorkspace
      */
     constructor() { 
         
-        LogTimeseriesResult.initialize(this);
+        TopWorkspace.initialize(this);
     }
 
     /**
@@ -37,21 +37,24 @@ class LogTimeseriesResult {
     }
 
     /**
-     * Constructs a <code>LogTimeseriesResult</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TopWorkspace</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LogTimeseriesResult} obj Optional instance to populate.
-     * @return {module:model/LogTimeseriesResult} The populated <code>LogTimeseriesResult</code> instance.
+     * @param {module:model/TopWorkspace} obj Optional instance to populate.
+     * @return {module:model/TopWorkspace} The populated <code>TopWorkspace</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new LogTimeseriesResult();
+            obj = obj || new TopWorkspace();
 
-            if (data.hasOwnProperty('dimensions')) {
-                obj['dimensions'] = LogTimeseriesResultDimensions.constructFromObject(data['dimensions']);
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('values')) {
-                obj['values'] = ApiClient.convertToType(data['values'], {'String': Object});
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('count')) {
+                obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
         }
         return obj;
@@ -61,19 +64,27 @@ class LogTimeseriesResult {
 }
 
 /**
- * @member {module:model/LogTimeseriesResultDimensions} dimensions
+ * ID of the workspace.
+ * @member {String} id
  */
-LogTimeseriesResult.prototype['dimensions'] = undefined;
+TopWorkspace.prototype['id'] = undefined;
 
 /**
- * @member {Object.<String, Object>} values
+ * Name of the workspace.
+ * @member {String} name
  */
-LogTimeseriesResult.prototype['values'] = undefined;
+TopWorkspace.prototype['name'] = undefined;
+
+/**
+ * Count of attacks on this workspace for the specific attack type.
+ * @member {Number} count
+ */
+TopWorkspace.prototype['count'] = undefined;
 
 
 
 
 
 
-export default LogTimeseriesResult;
+export default TopWorkspace;
 

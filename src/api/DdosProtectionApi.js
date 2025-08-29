@@ -14,9 +14,12 @@
 import ApiClient from "../ApiClient";
 import DdosProtectionError from '../model/DdosProtectionError';
 import DdosProtectionEvent from '../model/DdosProtectionEvent';
+import DdosProtectionInvalidRequest from '../model/DdosProtectionInvalidRequest';
 import DdosProtectionNotAuthenticated from '../model/DdosProtectionNotAuthenticated';
+import DdosProtectionNotAuthorized from '../model/DdosProtectionNotAuthorized';
 import DdosProtectionNotFound from '../model/DdosProtectionNotFound';
 import DdosProtectionRule from '../model/DdosProtectionRule';
+import DdosProtectionRulePatch from '../model/DdosProtectionRulePatch';
 import DdosProtectionTrafficStats from '../model/DdosProtectionTrafficStats';
 import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse2003 from '../model/InlineResponse2003';
@@ -24,7 +27,7 @@ import InlineResponse2003 from '../model/InlineResponse2003';
 /**
 * DdosProtection service.
 * @module api/DdosProtectionApi
-* @version 12.1.0
+* @version 13.0.0
 */
 export default class DdosProtectionApi {
 
@@ -288,6 +291,66 @@ export default class DdosProtectionApi {
      */
     ddosProtectionRuleGet(options = {}) {
       return this.ddosProtectionRuleGetWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update rule.
+     * @param {Object} options
+     * @param {String} options.rule_id - Unique ID of the rule.
+     * @param {module:model/DdosProtectionRulePatch} [options.ddos_protection_rule_patch]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DdosProtectionRule} and HTTP response
+     */
+    ddosProtectionRulePatchWithHttpInfo(options = {}) {
+      let postBody = options['ddos_protection_rule_patch'];
+      // Verify the required parameter 'rule_id' is set.
+      if (options['rule_id'] === undefined || options['rule_id'] === null) {
+        throw new Error("Missing the required parameter 'rule_id'.");
+      }
+
+      let pathParams = {
+        'rule_id': options['rule_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json', 'application/problem+json'];
+      let returnType = DdosProtectionRule;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/ddos-protection/v1/rules/{rule_id}', 'PATCH',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update rule.
+     * @param {Object} options
+     * @param {String} options.rule_id - Unique ID of the rule.
+     * @param {module:model/DdosProtectionRulePatch} [options.ddos_protection_rule_patch]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DdosProtectionRule}
+     */
+    ddosProtectionRulePatch(options = {}) {
+      return this.ddosProtectionRulePatchWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

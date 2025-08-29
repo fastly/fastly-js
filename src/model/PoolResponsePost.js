@@ -21,7 +21,7 @@ import TlsCommonResponse from './TlsCommonResponse';
 /**
  * The PoolResponsePost model module.
  * @module model/PoolResponsePost
- * @version 12.1.0
+ * @version 13.0.0
  */
 class PoolResponsePost {
     /**
@@ -287,7 +287,7 @@ PoolResponsePost.prototype['type'] = undefined;
 PoolResponsePost.prototype['override_host'] = 'null';
 
 /**
- * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+ * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
  * @member {String} between_bytes_timeout
  */
 PoolResponsePost.prototype['between_bytes_timeout'] = undefined;
@@ -446,7 +446,7 @@ PoolAdditional.prototype['type'] = undefined;
 PoolAdditional.prototype['override_host'] = 'null';
 // Implement PoolResponseCommon interface:
 /**
- * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+ * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
  * @member {String} between_bytes_timeout
  */
 PoolResponseCommon.prototype['between_bytes_timeout'] = undefined;

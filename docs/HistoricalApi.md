@@ -24,7 +24,7 @@ Method | HTTP request | Description
 ## `getHistStats`
 
 ```javascript
-getHistStats({ , [from, ][to, ][by, ][region] })
+getHistStats({ , [from, ][to, ][by, ][region, ][services] })
 ```
 
 Fetches historical stats for each of your Fastly services and groups the results by service ID.
@@ -37,6 +37,7 @@ const options = {
   to: 2020-04-09T18:14:30Z,
   by: "hour",
   region: "usa",
+  services: "services_example",
 };
 
 apiInstance.getHistStats(options)
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
 **to** | **String** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [optional] [defaults to 'now']
 **by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 **region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "mexico", "southamerica_std"]
+**services** | **String** | Limit the query to only the specified, comma-separated list of services.  | [optional]
 
 ### Return type
 
