@@ -12,12 +12,12 @@
 
 import ApiClient from '../ApiClient';
 import PaginationCursorMeta from './PaginationCursorMeta';
-import SecretResponse from './SecretResponse';
+import SecretStoreResponse from './SecretStoreResponse';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 13.0.0
+ * @version 14.0.0
  */
 class InlineResponse2008 {
     /**
@@ -49,7 +49,7 @@ class InlineResponse2008 {
             obj = obj || new InlineResponse2008();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SecretResponse]);
+                obj['data'] = ApiClient.convertToType(data['data'], [SecretStoreResponse]);
             }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
@@ -62,7 +62,7 @@ class InlineResponse2008 {
 }
 
 /**
- * @member {Array.<module:model/SecretResponse>} data
+ * @member {Array.<module:model/SecretStoreResponse>} data
  */
 InlineResponse2008.prototype['data'] = undefined;
 

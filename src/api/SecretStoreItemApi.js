@@ -12,14 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2008 from '../model/InlineResponse2008';
+import InlineResponse2009 from '../model/InlineResponse2009';
 import Secret from '../model/Secret';
 import SecretResponse from '../model/SecretResponse';
 
 /**
 * SecretStoreItem service.
 * @module api/SecretStoreItemApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class SecretStoreItemApi {
 
@@ -235,7 +235,7 @@ export default class SecretStoreItemApi {
      * @param {String} options.store_id
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
     getSecretsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -261,7 +261,7 @@ export default class SecretStoreItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2008;
+      let returnType = InlineResponse2009;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -284,7 +284,7 @@ export default class SecretStoreItemApi {
      * @param {String} options.store_id
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
     getSecrets(options = {}) {
       return this.getSecretsWithHttpInfo(options)

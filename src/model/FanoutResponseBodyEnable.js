@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import FanoutResponseLinks from './FanoutResponseLinks';
 import FanoutResponseLinksLinks from './FanoutResponseLinksLinks';
 import FanoutResponseProduct from './FanoutResponseProduct';
@@ -21,7 +21,7 @@ import FanoutResponseService from './FanoutResponseService';
 /**
  * The FanoutResponseBodyEnable model module.
  * @module model/FanoutResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class FanoutResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class FanoutResponseBodyEnable {
                 obj['product'] = FanoutResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = FanoutResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class FanoutResponseBodyEnable {
 FanoutResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 FanoutResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ FanoutResponseBodyEnable.prototype['_links'] = undefined;
 FanoutResponseProduct.prototype['product'] = undefined;
 // Implement FanoutResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 FanoutResponseService.prototype['service'] = undefined;
 // Implement FanoutResponseLinks interface:

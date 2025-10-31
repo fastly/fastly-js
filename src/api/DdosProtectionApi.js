@@ -27,7 +27,7 @@ import InlineResponse2003 from '../model/InlineResponse2003';
 /**
 * DdosProtection service.
 * @module api/DdosProtectionApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class DdosProtectionApi {
 
@@ -180,6 +180,7 @@ export default class DdosProtectionApi {
      * @param {String} options.event_id - Unique ID of the event.
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {Number} [options.limit=20] - Limit how many results are returned.
+     * @param {String} [options.include] - Include relationships. Optional. Comma-separated values.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     ddosProtectionEventRuleListWithHttpInfo(options = {}) {
@@ -196,7 +197,8 @@ export default class DdosProtectionApi {
       };
       let queryParams = {
         'cursor': options['cursor'],
-        'limit': options['limit']
+        'limit': options['limit'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -229,6 +231,7 @@ export default class DdosProtectionApi {
      * @param {String} options.event_id - Unique ID of the event.
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {Number} [options.limit=20] - Limit how many results are returned.
+     * @param {String} [options.include] - Include relationships. Optional. Comma-separated values.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     ddosProtectionEventRuleList(options = {}) {

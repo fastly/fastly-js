@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The HealthcheckResponse model module.
  * @module model/HealthcheckResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class HealthcheckResponse {
     /**
@@ -117,7 +117,7 @@ class HealthcheckResponse {
 }
 
 /**
- * How often to run the health check in milliseconds.
+ * How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
  * @member {Number} check_interval
  */
 HealthcheckResponse.prototype['check_interval'] = undefined;
@@ -225,7 +225,7 @@ HealthcheckResponse.prototype['updated_at'] = undefined;
 
 // Implement Healthcheck interface:
 /**
- * How often to run the health check in milliseconds.
+ * How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
  * @member {Number} check_interval
  */
 Healthcheck.prototype['check_interval'] = undefined;

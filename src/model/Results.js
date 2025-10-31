@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 13.0.0
+ * @version 14.0.0
  */
 class Results {
     /**
@@ -850,6 +850,9 @@ class Results {
             }
             if (data.hasOwnProperty('ngwaf_requests_challenged_count')) {
                 obj['ngwaf_requests_challenged_count'] = ApiClient.convertToType(data['ngwaf_requests_challenged_count'], 'Number');
+            }
+            if (data.hasOwnProperty('api_discovery_requests_count')) {
+                obj['api_discovery_requests_count'] = ApiClient.convertToType(data['api_discovery_requests_count'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -2471,6 +2474,12 @@ Results.prototype['ngwaf_requests_timeout_count'] = undefined;
  * @member {Number} ngwaf_requests_challenged_count
  */
 Results.prototype['ngwaf_requests_challenged_count'] = undefined;
+
+/**
+ * Number of requests processed by the API Discovery engine.
+ * @member {Number} api_discovery_requests_count
+ */
+Results.prototype['api_discovery_requests_count'] = undefined;
 
 /**
  * @member {String} service_id

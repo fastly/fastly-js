@@ -39,7 +39,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

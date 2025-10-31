@@ -22,7 +22,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingHttpsResponse model module.
  * @module model/LoggingHttpsResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class LoggingHttpsResponse {
     /**
@@ -121,6 +121,9 @@ class LoggingHttpsResponse {
             }
             if (data.hasOwnProperty('json_format')) {
                 obj['json_format'] = ApiClient.convertToType(data['json_format'], 'String');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -269,6 +272,13 @@ LoggingHttpsResponse.prototype['method'] = undefined;
  * @member {module:model/LoggingHttpsResponse.JsonFormatEnum} json_format
  */
 LoggingHttpsResponse.prototype['json_format'] = undefined;
+
+/**
+ * How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
+ * @member {Number} period
+ * @default 5
+ */
+LoggingHttpsResponse.prototype['period'] = 5;
 
 /**
  * Date and time in ISO 8601 format.
@@ -428,6 +438,12 @@ LoggingHttpsAdditional.prototype['json_format'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingHttpsAdditional.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
+ * @member {Number} period
+ * @default 5
+ */
+LoggingHttpsAdditional.prototype['period'] = 5;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.

@@ -16,7 +16,7 @@ import WebsocketsResponseProductProduct from './WebsocketsResponseProductProduct
 /**
  * The WebsocketsResponseProduct model module.
  * @module model/WebsocketsResponseProduct
- * @version 13.0.0
+ * @version 14.0.0
  */
 class WebsocketsResponseProduct {
     /**

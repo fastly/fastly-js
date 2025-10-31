@@ -16,7 +16,7 @@ import WebsocketsResponseLinksLinks from './WebsocketsResponseLinksLinks';
 /**
  * The WebsocketsResponseLinks model module.
  * @module model/WebsocketsResponseLinks
- * @version 13.0.0
+ * @version 14.0.0
  */
 class WebsocketsResponseLinks {
     /**

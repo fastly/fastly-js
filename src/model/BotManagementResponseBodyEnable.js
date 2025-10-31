@@ -11,17 +11,17 @@
  */
 
 import ApiClient from '../ApiClient';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import BotManagementResponseLinks from './BotManagementResponseLinks';
 import BotManagementResponseLinksLinks from './BotManagementResponseLinksLinks';
 import BotManagementResponseProduct from './BotManagementResponseProduct';
 import BotManagementResponseProductProduct from './BotManagementResponseProductProduct';
 import BotManagementResponseService from './BotManagementResponseService';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
 
 /**
  * The BotManagementResponseBodyEnable model module.
  * @module model/BotManagementResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class BotManagementResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class BotManagementResponseBodyEnable {
                 obj['product'] = BotManagementResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = BotManagementResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class BotManagementResponseBodyEnable {
 BotManagementResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 BotManagementResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ BotManagementResponseBodyEnable.prototype['_links'] = undefined;
 BotManagementResponseProduct.prototype['product'] = undefined;
 // Implement BotManagementResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 BotManagementResponseService.prototype['service'] = undefined;
 // Implement BotManagementResponseLinks interface:

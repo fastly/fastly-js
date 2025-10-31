@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The DomainInspectorResponseService model module.
  * @module model/DomainInspectorResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DomainInspectorResponseService {
     /**
@@ -48,7 +48,7 @@ class DomainInspectorResponseService {
             obj = obj || new DomainInspectorResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class DomainInspectorResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DomainInspectorResponseService.prototype['service'] = undefined;
 

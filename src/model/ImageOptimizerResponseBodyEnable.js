@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import ImageOptimizerResponseLinks from './ImageOptimizerResponseLinks';
 import ImageOptimizerResponseLinksLinks from './ImageOptimizerResponseLinksLinks';
 import ImageOptimizerResponseProduct from './ImageOptimizerResponseProduct';
@@ -21,7 +21,7 @@ import ImageOptimizerResponseService from './ImageOptimizerResponseService';
 /**
  * The ImageOptimizerResponseBodyEnable model module.
  * @module model/ImageOptimizerResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class ImageOptimizerResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class ImageOptimizerResponseBodyEnable {
                 obj['product'] = ImageOptimizerResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = ImageOptimizerResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class ImageOptimizerResponseBodyEnable {
 ImageOptimizerResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 ImageOptimizerResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ ImageOptimizerResponseBodyEnable.prototype['_links'] = undefined;
 ImageOptimizerResponseProduct.prototype['product'] = undefined;
 // Implement ImageOptimizerResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 ImageOptimizerResponseService.prototype['service'] = undefined;
 // Implement ImageOptimizerResponseLinks interface:

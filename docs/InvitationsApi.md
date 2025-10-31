@@ -27,7 +27,7 @@ Create an invitation.
 
 ```javascript
 const options = {
-  invitation: {"data":{"type":"invitation","attributes":{"email":"thelma@example.com","limit_services":true,"role":"engineer"},"relationships":{"customer":{"data":{"id":"44tb1D3asjhhuh2SH8e8YD","type":"customer"}},"service_invitations":{"data":[{"type":"service_invitation","attributes":{"permission":"purge_all"},"relationships":{"service":{"data":{"type":"service","id":"6yrrdleXQ9QDtum9rMB0nr"}}}}]}}}},
+  invitation: {"data":{"type":"invitation","attributes":{"email":"thelma@example.com","limit_services":true,"roles":["Q4rXe9vN1szK8a2fUjYtWp"]},"relationships":{"customer":{"data":{"id":"44tb1D3asjhhuh2SH8e8YD","type":"customer"}},"service_invitations":{"data":[{"type":"service_invitation","attributes":{"permission":"purge_all"},"relationships":{"service":{"data":{"type":"service","id":"6yrrdleXQ9QDtum9rMB0nr"}}}}]}}}},
 };
 
 apiInstance.createInvitation(options)

@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The WebsocketsResponseService model module.
  * @module model/WebsocketsResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class WebsocketsResponseService {
     /**
@@ -48,7 +48,7 @@ class WebsocketsResponseService {
             obj = obj || new WebsocketsResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class WebsocketsResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 WebsocketsResponseService.prototype['service'] = undefined;
 

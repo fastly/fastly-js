@@ -171,6 +171,11 @@ Class | Method | Description
 *Fastly.DirectorBackendApi* | [**createDirectorBackend**](docs/DirectorBackendApi.md#createDirectorBackend) | Create a director-backend relationship
 *Fastly.DirectorBackendApi* | [**deleteDirectorBackend**](docs/DirectorBackendApi.md#deleteDirectorBackend) | Delete a director-backend relationship
 *Fastly.DirectorBackendApi* | [**getDirectorBackend**](docs/DirectorBackendApi.md#getDirectorBackend) | Get a director-backend relationship
+*Fastly.DmDomainsApi* | [**createDmDomain**](docs/DmDomainsApi.md#createDmDomain) | Create a domain
+*Fastly.DmDomainsApi* | [**deleteDmDomain**](docs/DmDomainsApi.md#deleteDmDomain) | Delete a domain
+*Fastly.DmDomainsApi* | [**getDmDomain**](docs/DmDomainsApi.md#getDmDomain) | Get a domain
+*Fastly.DmDomainsApi* | [**listDmDomains**](docs/DmDomainsApi.md#listDmDomains) | List domains
+*Fastly.DmDomainsApi* | [**updateDmDomain**](docs/DmDomainsApi.md#updateDmDomain) | Update a domain
 *Fastly.DomainApi* | [**checkDomain**](docs/DomainApi.md#checkDomain) | Validate DNS configuration for a single domain on a service
 *Fastly.DomainApi* | [**checkDomains**](docs/DomainApi.md#checkDomains) | Validate DNS configuration for all domains on a service
 *Fastly.DomainApi* | [**createDomain**](docs/DomainApi.md#createDomain) | Add a domain name to a service
@@ -213,14 +218,8 @@ Class | Method | Description
 *Fastly.Http3Api* | [**deleteHttp3**](docs/Http3Api.md#deleteHttp3) | Disable support for HTTP/3
 *Fastly.Http3Api* | [**getHttp3**](docs/Http3Api.md#getHttp3) | Get HTTP/3 status
 *Fastly.IamPermissionsApi* | [**listPermissions**](docs/IamPermissionsApi.md#listPermissions) | List permissions
-*Fastly.IamRolesApi* | [**addRolePermissions**](docs/IamRolesApi.md#addRolePermissions) | Add permissions to a role
-*Fastly.IamRolesApi* | [**createARole**](docs/IamRolesApi.md#createARole) | Create a role
-*Fastly.IamRolesApi* | [**deleteARole**](docs/IamRolesApi.md#deleteARole) | Delete a role
-*Fastly.IamRolesApi* | [**getARole**](docs/IamRolesApi.md#getARole) | Get a role
-*Fastly.IamRolesApi* | [**listRolePermissions**](docs/IamRolesApi.md#listRolePermissions) | List permissions in a role
-*Fastly.IamRolesApi* | [**listRoles**](docs/IamRolesApi.md#listRoles) | List roles
-*Fastly.IamRolesApi* | [**removeRolePermissions**](docs/IamRolesApi.md#removeRolePermissions) | Remove permissions from a role
-*Fastly.IamRolesApi* | [**updateARole**](docs/IamRolesApi.md#updateARole) | Update a role
+*Fastly.IamRolesApi* | [**iamV1RolesGet**](docs/IamRolesApi.md#iamV1RolesGet) | Get IAM role by ID
+*Fastly.IamRolesApi* | [**iamV1RolesList**](docs/IamRolesApi.md#iamV1RolesList) | List IAM roles
 *Fastly.IamServiceGroupsApi* | [**addServiceGroupServices**](docs/IamServiceGroupsApi.md#addServiceGroupServices) | Add services in a service group
 *Fastly.IamServiceGroupsApi* | [**createAServiceGroup**](docs/IamServiceGroupsApi.md#createAServiceGroup) | Create a service group
 *Fastly.IamServiceGroupsApi* | [**deleteAServiceGroup**](docs/IamServiceGroupsApi.md#deleteAServiceGroup) | Delete a service group
@@ -431,6 +430,10 @@ Class | Method | Description
 *Fastly.ProductAiAcceleratorApi* | [**disableProductAiAccelerator**](docs/ProductAiAcceleratorApi.md#disableProductAiAccelerator) | Disable product
 *Fastly.ProductAiAcceleratorApi* | [**enableAiAccelerator**](docs/ProductAiAcceleratorApi.md#enableAiAccelerator) | Enable product
 *Fastly.ProductAiAcceleratorApi* | [**getAiAccelerator**](docs/ProductAiAcceleratorApi.md#getAiAccelerator) | Get product enablement status
+*Fastly.ProductApiDiscoveryApi* | [**disableProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#disableProductApiDiscovery) | Disable product
+*Fastly.ProductApiDiscoveryApi* | [**enableProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#enableProductApiDiscovery) | Enable product
+*Fastly.ProductApiDiscoveryApi* | [**getProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#getProductApiDiscovery) | Get product enablement status
+*Fastly.ProductApiDiscoveryApi* | [**getServicesProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#getServicesProductApiDiscovery) | Get services with product enabled
 *Fastly.ProductBotManagementApi* | [**disableProductBotManagement**](docs/ProductBotManagementApi.md#disableProductBotManagement) | Disable product
 *Fastly.ProductBotManagementApi* | [**enableProductBotManagement**](docs/ProductBotManagementApi.md#enableProductBotManagement) | Enable product
 *Fastly.ProductBotManagementApi* | [**getProductBotManagement**](docs/ProductBotManagementApi.md#getProductBotManagement) | Get product enablement status
@@ -640,8 +643,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
-- [`/domain-management/v1/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
-- [`/domain-management/v1/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/domains/v1/tools/status`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/domains/v1/tools/suggest`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/ngwaf/v1/lists/{listId}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
@@ -658,6 +659,7 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/ngwaf/v1/workspaces/{workspace_id}/events`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/redactions/{redaction_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/redactions) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/redactions`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/redactions) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/requests/{request_id}/report`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/requests/{request_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/requests`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/rules/{rule_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (DELETE, GET, PATCH)

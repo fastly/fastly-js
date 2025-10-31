@@ -12,11 +12,13 @@
 
 
 import ApiClient from "../ApiClient";
+import IamV1RoleListResponse from '../model/IamV1RoleListResponse';
+import IamV1RoleResponse from '../model/IamV1RoleResponse';
 
 /**
 * IamRoles service.
 * @module api/IamRolesApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class IamRolesApi {
 
@@ -37,125 +39,13 @@ export default class IamRolesApi {
 
 
     /**
-     * Add permissions to a role.
+     * Retrieve a single IAM role by its unique identifier. 
      * @param {Object} options
      * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @param {module:model/String} [options.include] - Include related data (i.e., permissions).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IamV1RoleResponse} and HTTP response
      */
-    addRolePermissionsWithHttpInfo(options = {}) {
-      let postBody = options['request_body'];
-      // Verify the required parameter 'role_id' is set.
-      if (options['role_id'] === undefined || options['role_id'] === null) {
-        throw new Error("Missing the required parameter 'role_id'.");
-      }
-
-      let pathParams = {
-        'role_id': options['role_id']
-      };
-      let pathParamsAllowReserved = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      let basePaths = ['https://api.fastly.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof options['_base_path_index'] !== 'undefined') {
-        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[options['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/roles/{role_id}/permissions', 'POST',
-        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath
-      );
-    }
-
-    /**
-     * Add permissions to a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    addRolePermissions(options = {}) {
-      return this.addRolePermissionsWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Create a role.
-     * @param {Object} options
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    createARoleWithHttpInfo(options = {}) {
-      let postBody = options['request_body'];
-
-      let pathParams = {
-      };
-      let pathParamsAllowReserved = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      let basePaths = ['https://api.fastly.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof options['_base_path_index'] !== 'undefined') {
-        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[options['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/roles', 'POST',
-        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath
-      );
-    }
-
-    /**
-     * Create a role.
-     * @param {Object} options
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    createARole(options = {}) {
-      return this.createARoleWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Delete a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteARoleWithHttpInfo(options = {}) {
+    iamV1RolesGetWithHttpInfo(options = {}) {
       let postBody = null;
       // Verify the required parameter 'role_id' is set.
       if (options['role_id'] === undefined || options['role_id'] === null) {
@@ -168,64 +58,7 @@ export default class IamRolesApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      let basePaths = ['https://api.fastly.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof options['_base_path_index'] !== 'undefined') {
-        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[options['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/roles/{role_id}', 'DELETE',
-        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath
-      );
-    }
-
-    /**
-     * Delete a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteARole(options = {}) {
-      return this.deleteARoleWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Get a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    getARoleWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'role_id' is set.
-      if (options['role_id'] === undefined || options['role_id'] === null) {
-        throw new Error("Missing the required parameter 'role_id'.");
-      }
-
-      let pathParams = {
-        'role_id': options['role_id']
-      };
-      let pathParamsAllowReserved = {
-      };
-      let queryParams = {
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -235,7 +68,7 @@ export default class IamRolesApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = IamV1RoleResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -246,91 +79,34 @@ export default class IamRolesApi {
       }
 
       return this.apiClient.callApi(
-        '/roles/{role_id}', 'GET',
+        '/iam/v1/roles/{role_id}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
     /**
-     * Get a role.
+     * Retrieve a single IAM role by its unique identifier. 
      * @param {Object} options
      * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @param {module:model/String} [options.include] - Include related data (i.e., permissions).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IamV1RoleResponse}
      */
-    getARole(options = {}) {
-      return this.getARoleWithHttpInfo(options)
+    iamV1RolesGet(options = {}) {
+      return this.iamV1RolesGetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
 
     /**
-     * List all permissions in a role.
+     * Retrieve a paginated list of IAM roles available in the account. 
      * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @param {Number} [options.limit=100] - Number of results per page. The maximum is 1000.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IamV1RoleListResponse} and HTTP response
      */
-    listRolePermissionsWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'role_id' is set.
-      if (options['role_id'] === undefined || options['role_id'] === null) {
-        throw new Error("Missing the required parameter 'role_id'.");
-      }
-
-      let pathParams = {
-        'role_id': options['role_id']
-      };
-      let pathParamsAllowReserved = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      let basePaths = ['https://api.fastly.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof options['_base_path_index'] !== 'undefined') {
-        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[options['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/roles/{role_id}/permissions', 'GET',
-        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath
-      );
-    }
-
-    /**
-     * List all permissions in a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    listRolePermissions(options = {}) {
-      return this.listRolePermissionsWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * List all roles.
-     * @param {Object} options
-     * @param {Number} [options.per_page=20] - Number of records per page.
-     * @param {Number} [options.page] - Current page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    listRolesWithHttpInfo(options = {}) {
+    iamV1RolesListWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -338,8 +114,8 @@ export default class IamRolesApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
-        'per_page': options['per_page'],
-        'page': options['page']
+        'limit': options['limit'],
+        'cursor': options['cursor']
       };
       let headerParams = {
       };
@@ -349,7 +125,7 @@ export default class IamRolesApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = IamV1RoleListResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -360,141 +136,21 @@ export default class IamRolesApi {
       }
 
       return this.apiClient.callApi(
-        '/roles', 'GET',
+        '/iam/v1/roles', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
     /**
-     * List all roles.
+     * Retrieve a paginated list of IAM roles available in the account. 
      * @param {Object} options
-     * @param {Number} [options.per_page=20] - Number of records per page.
-     * @param {Number} [options.page] - Current page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @param {Number} [options.limit=100] - Number of results per page. The maximum is 1000.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IamV1RoleListResponse}
      */
-    listRoles(options = {}) {
-      return this.listRolesWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Remove permissions from a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    removeRolePermissionsWithHttpInfo(options = {}) {
-      let postBody = options['request_body'];
-      // Verify the required parameter 'role_id' is set.
-      if (options['role_id'] === undefined || options['role_id'] === null) {
-        throw new Error("Missing the required parameter 'role_id'.");
-      }
-
-      let pathParams = {
-        'role_id': options['role_id']
-      };
-      let pathParamsAllowReserved = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/json'];
-      let accepts = [];
-      let returnType = null;
-      let basePaths = ['https://api.fastly.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof options['_base_path_index'] !== 'undefined') {
-        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[options['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/roles/{role_id}/permissions', 'DELETE',
-        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath
-      );
-    }
-
-    /**
-     * Remove permissions from a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    removeRolePermissions(options = {}) {
-      return this.removeRolePermissionsWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Update a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    updateARoleWithHttpInfo(options = {}) {
-      let postBody = options['request_body'];
-      // Verify the required parameter 'role_id' is set.
-      if (options['role_id'] === undefined || options['role_id'] === null) {
-        throw new Error("Missing the required parameter 'role_id'.");
-      }
-
-      let pathParams = {
-        'role_id': options['role_id']
-      };
-      let pathParamsAllowReserved = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      let basePaths = ['https://api.fastly.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof options['_base_path_index'] !== 'undefined') {
-        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[options['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/roles/{role_id}', 'PATCH',
-        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath
-      );
-    }
-
-    /**
-     * Update a role.
-     * @param {Object} options
-     * @param {String} options.role_id - Alphanumeric string identifying the role.
-     * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    updateARole(options = {}) {
-      return this.updateARoleWithHttpInfo(options)
+    iamV1RolesList(options = {}) {
+      return this.iamV1RolesListWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

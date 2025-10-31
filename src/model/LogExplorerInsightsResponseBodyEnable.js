@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import LogExplorerInsightsResponseLinks from './LogExplorerInsightsResponseLinks';
 import LogExplorerInsightsResponseLinksLinks from './LogExplorerInsightsResponseLinksLinks';
 import LogExplorerInsightsResponseProduct from './LogExplorerInsightsResponseProduct';
@@ -21,7 +21,7 @@ import LogExplorerInsightsResponseService from './LogExplorerInsightsResponseSer
 /**
  * The LogExplorerInsightsResponseBodyEnable model module.
  * @module model/LogExplorerInsightsResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class LogExplorerInsightsResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class LogExplorerInsightsResponseBodyEnable {
                 obj['product'] = LogExplorerInsightsResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = LogExplorerInsightsResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class LogExplorerInsightsResponseBodyEnable {
 LogExplorerInsightsResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 LogExplorerInsightsResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ LogExplorerInsightsResponseBodyEnable.prototype['_links'] = undefined;
 LogExplorerInsightsResponseProduct.prototype['product'] = undefined;
 // Implement LogExplorerInsightsResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 LogExplorerInsightsResponseService.prototype['service'] = undefined;
 // Implement LogExplorerInsightsResponseLinks interface:

@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The LogExplorerInsightsResponseService model module.
  * @module model/LogExplorerInsightsResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class LogExplorerInsightsResponseService {
     /**
@@ -48,7 +48,7 @@ class LogExplorerInsightsResponseService {
             obj = obj || new LogExplorerInsightsResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class LogExplorerInsightsResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 LogExplorerInsightsResponseService.prototype['service'] = undefined;
 

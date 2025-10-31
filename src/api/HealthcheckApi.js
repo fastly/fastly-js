@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Healthcheck service.
 * @module api/HealthcheckApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class HealthcheckApi {
 
@@ -43,7 +43,7 @@ export default class HealthcheckApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
      * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
@@ -120,7 +120,7 @@ export default class HealthcheckApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
      * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
@@ -357,7 +357,7 @@ export default class HealthcheckApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.healthcheck_name - The name of the health check.
-     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
      * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
@@ -440,7 +440,7 @@ export default class HealthcheckApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.healthcheck_name - The name of the health check.
-     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
      * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.

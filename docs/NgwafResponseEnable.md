@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **product** | [**NgwafResponseProductProduct**](NgwafResponseProductProduct.md) |  | [optional] 
-**service** | [**BotManagementResponseServiceService**](BotManagementResponseServiceService.md) |  | [optional] 
+**service** | [**ApiDiscoveryResponseServiceService**](ApiDiscoveryResponseServiceService.md) |  | [optional] 
 **_links** | [**NgwafResponseLinksLinks**](NgwafResponseLinksLinks.md) |  | [optional] 
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionResponse model module.
  * @module model/DimensionResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DimensionResponse {
     /**

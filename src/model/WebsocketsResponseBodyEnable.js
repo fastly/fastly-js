@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import WebsocketsResponseLinks from './WebsocketsResponseLinks';
 import WebsocketsResponseLinksLinks from './WebsocketsResponseLinksLinks';
 import WebsocketsResponseProduct from './WebsocketsResponseProduct';
@@ -21,7 +21,7 @@ import WebsocketsResponseService from './WebsocketsResponseService';
 /**
  * The WebsocketsResponseBodyEnable model module.
  * @module model/WebsocketsResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class WebsocketsResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class WebsocketsResponseBodyEnable {
                 obj['product'] = WebsocketsResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = WebsocketsResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class WebsocketsResponseBodyEnable {
 WebsocketsResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 WebsocketsResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ WebsocketsResponseBodyEnable.prototype['_links'] = undefined;
 WebsocketsResponseProduct.prototype['product'] = undefined;
 // Implement WebsocketsResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 WebsocketsResponseService.prototype['service'] = undefined;
 // Implement WebsocketsResponseLinks interface:

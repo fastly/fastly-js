@@ -20,7 +20,7 @@ import TypeTlsConfiguration from './TypeTlsConfiguration';
 /**
  * The TlsConfigurationResponseData model module.
  * @module model/TlsConfigurationResponseData
- * @version 13.0.0
+ * @version 14.0.0
  */
 class TlsConfigurationResponseData {
     /**

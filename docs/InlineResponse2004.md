@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expires_at** | **String** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
+**data** | [**[SuccessfulResponseAsObject]**](SuccessfulResponseAsObject.md) |  | [optional] 
+**meta** | **Object** | Meta for the pagination. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

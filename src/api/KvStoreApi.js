@@ -12,14 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2005 from '../model/InlineResponse2005';
+import InlineResponse2006 from '../model/InlineResponse2006';
 import KvStoreDetails from '../model/KvStoreDetails';
 import KvStoreRequestCreate from '../model/KvStoreRequestCreate';
 
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class KvStoreApi {
 
@@ -217,7 +217,7 @@ export default class KvStoreApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     kvStoreListWithHttpInfo(options = {}) {
       let postBody = null;
@@ -239,7 +239,7 @@ export default class KvStoreApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2005;
+      let returnType = InlineResponse2006;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -262,7 +262,7 @@ export default class KvStoreApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     kvStoreList(options = {}) {
       return this.kvStoreListWithHttpInfo(options)

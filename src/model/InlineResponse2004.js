@@ -11,11 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import SuccessfulResponseAsObject from './SuccessfulResponseAsObject';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 13.0.0
+ * @version 14.0.0
  */
 class InlineResponse2004 {
     /**
@@ -46,8 +47,11 @@ class InlineResponse2004 {
         if (data) {
             obj = obj || new InlineResponse2004();
 
-            if (data.hasOwnProperty('expires_at')) {
-                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [SuccessfulResponseAsObject]);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = ApiClient.convertToType(data['meta'], Object);
             }
         }
         return obj;
@@ -57,10 +61,15 @@ class InlineResponse2004 {
 }
 
 /**
- * Time-stamp (GMT) when the domain_ownership validation will expire.
- * @member {String} expires_at
+ * @member {Array.<module:model/SuccessfulResponseAsObject>} data
  */
-InlineResponse2004.prototype['expires_at'] = undefined;
+InlineResponse2004.prototype['data'] = undefined;
+
+/**
+ * Meta for the pagination.
+ * @member {Object} meta
+ */
+InlineResponse2004.prototype['meta'] = undefined;
 
 
 

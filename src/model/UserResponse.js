@@ -19,7 +19,7 @@ import UserResponseReadOnly from './UserResponseReadOnly';
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class UserResponse {
     /**
@@ -73,6 +73,9 @@ class UserResponse {
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = RoleUser.constructFromObject(data['role']);
+            }
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
             }
             if (data.hasOwnProperty('two_factor_auth_enabled')) {
                 obj['two_factor_auth_enabled'] = ApiClient.convertToType(data['two_factor_auth_enabled'], 'Boolean');
@@ -138,6 +141,12 @@ UserResponse.prototype['require_new_password'] = undefined;
  * @member {module:model/RoleUser} role
  */
 UserResponse.prototype['role'] = undefined;
+
+/**
+ * A list of role IDs assigned to the user.
+ * @member {Array.<String>} roles
+ */
+UserResponse.prototype['roles'] = undefined;
 
 /**
  * Indicates if 2FA is enabled on the user.
@@ -215,6 +224,11 @@ User.prototype['require_new_password'] = undefined;
  * @member {module:model/RoleUser} role
  */
 User.prototype['role'] = undefined;
+/**
+ * A list of role IDs assigned to the user.
+ * @member {Array.<String>} roles
+ */
+User.prototype['roles'] = undefined;
 /**
  * Indicates if 2FA is enabled on the user.
  * @member {Boolean} two_factor_auth_enabled

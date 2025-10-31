@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TopWorkspace model module.
  * @module model/TopWorkspace
- * @version 13.0.0
+ * @version 14.0.0
  */
 class TopWorkspace {
     /**

@@ -20,7 +20,7 @@ import TypeTlsCertificate from './TypeTlsCertificate';
 /**
  * The TlsCertificateResponseData model module.
  * @module model/TlsCertificateResponseData
- * @version 13.0.0
+ * @version 14.0.0
  */
 class TlsCertificateResponseData {
     /**

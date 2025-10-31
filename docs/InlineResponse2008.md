@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[SecretResponse]**](SecretResponse.md) |  | [optional] 
+**data** | [**[SecretStoreResponse]**](SecretStoreResponse.md) |  | [optional] 
 **meta** | [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 

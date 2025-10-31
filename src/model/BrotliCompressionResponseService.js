@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The BrotliCompressionResponseService model module.
  * @module model/BrotliCompressionResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class BrotliCompressionResponseService {
     /**
@@ -48,7 +48,7 @@ class BrotliCompressionResponseService {
             obj = obj || new BrotliCompressionResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class BrotliCompressionResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 BrotliCompressionResponseService.prototype['service'] = undefined;
 

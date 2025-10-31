@@ -11,20 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
 
 /**
- * The BotManagementResponseServiceService model module.
- * @module model/BotManagementResponseServiceService
- * @version 13.0.0
+ * The InlineResponse20010 model module.
+ * @module model/InlineResponse20010
+ * @version 14.0.0
  */
-class BotManagementResponseServiceService {
+class InlineResponse20010 {
     /**
-     * Constructs a new <code>BotManagementResponseServiceService</code>.
-     * @alias module:model/BotManagementResponseServiceService
+     * Constructs a new <code>InlineResponse20010</code>.
+     * @alias module:model/InlineResponse20010
      */
     constructor() { 
         
-        BotManagementResponseServiceService.initialize(this);
+        InlineResponse20010.initialize(this);
     }
 
     /**
@@ -36,21 +37,18 @@ class BotManagementResponseServiceService {
     }
 
     /**
-     * Constructs a <code>BotManagementResponseServiceService</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse20010</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BotManagementResponseServiceService} obj Optional instance to populate.
-     * @return {module:model/BotManagementResponseServiceService} The populated <code>BotManagementResponseServiceService</code> instance.
+     * @param {module:model/InlineResponse20010} obj Optional instance to populate.
+     * @return {module:model/InlineResponse20010} The populated <code>InlineResponse20010</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BotManagementResponseServiceService();
+            obj = obj || new InlineResponse20010();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('object')) {
-                obj['object'] = ApiClient.convertToType(data['object'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
             }
         }
         return obj;
@@ -60,21 +58,14 @@ class BotManagementResponseServiceService {
 }
 
 /**
- * Service identifier
- * @member {String} id
+ * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
  */
-BotManagementResponseServiceService.prototype['id'] = undefined;
-
-/**
- * Name of the object
- * @member {String} object
- */
-BotManagementResponseServiceService.prototype['object'] = undefined;
+InlineResponse20010.prototype['data'] = undefined;
 
 
 
 
 
 
-export default BotManagementResponseServiceService;
+export default InlineResponse20010;
 

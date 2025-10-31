@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import DdosProtectionResponseConfiguration from './DdosProtectionResponseConfiguration';
 import DdosProtectionResponseConfigurationConfiguration from './DdosProtectionResponseConfigurationConfiguration';
 import DdosProtectionResponseLinks from './DdosProtectionResponseLinks';
@@ -23,7 +23,7 @@ import DdosProtectionResponseService from './DdosProtectionResponseService';
 /**
  * The DdosProtectionResponseConfigure model module.
  * @module model/DdosProtectionResponseConfigure
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DdosProtectionResponseConfigure {
     /**
@@ -66,7 +66,7 @@ class DdosProtectionResponseConfigure {
                 obj['product'] = DdosProtectionResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('configuration')) {
                 obj['configuration'] = DdosProtectionResponseConfigurationConfiguration.constructFromObject(data['configuration']);
@@ -87,7 +87,7 @@ class DdosProtectionResponseConfigure {
 DdosProtectionResponseConfigure.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DdosProtectionResponseConfigure.prototype['service'] = undefined;
 
@@ -109,7 +109,7 @@ DdosProtectionResponseConfigure.prototype['_links'] = undefined;
 DdosProtectionResponseProduct.prototype['product'] = undefined;
 // Implement DdosProtectionResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DdosProtectionResponseService.prototype['service'] = undefined;
 // Implement DdosProtectionResponseConfiguration interface:

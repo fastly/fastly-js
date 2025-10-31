@@ -16,7 +16,7 @@ import IncludedWithTlsConfigurationItem from './IncludedWithTlsConfigurationItem
 /**
  * The IncludedWithTlsConfiguration model module.
  * @module model/IncludedWithTlsConfiguration
- * @version 13.0.0
+ * @version 14.0.0
  */
 class IncludedWithTlsConfiguration {
     /**

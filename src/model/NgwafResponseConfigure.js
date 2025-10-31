@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import NgwafResponseConfiguration from './NgwafResponseConfiguration';
 import NgwafResponseConfigurationConfiguration from './NgwafResponseConfigurationConfiguration';
 import NgwafResponseLinks from './NgwafResponseLinks';
@@ -23,7 +23,7 @@ import NgwafResponseService from './NgwafResponseService';
 /**
  * The NgwafResponseConfigure model module.
  * @module model/NgwafResponseConfigure
- * @version 13.0.0
+ * @version 14.0.0
  */
 class NgwafResponseConfigure {
     /**
@@ -66,7 +66,7 @@ class NgwafResponseConfigure {
                 obj['product'] = NgwafResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('configuration')) {
                 obj['configuration'] = NgwafResponseConfigurationConfiguration.constructFromObject(data['configuration']);
@@ -87,7 +87,7 @@ class NgwafResponseConfigure {
 NgwafResponseConfigure.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 NgwafResponseConfigure.prototype['service'] = undefined;
 
@@ -109,7 +109,7 @@ NgwafResponseConfigure.prototype['_links'] = undefined;
 NgwafResponseProduct.prototype['product'] = undefined;
 // Implement NgwafResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 NgwafResponseService.prototype['service'] = undefined;
 // Implement NgwafResponseConfiguration interface:

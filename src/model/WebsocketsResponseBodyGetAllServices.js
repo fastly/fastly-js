@@ -22,7 +22,7 @@ import WebsocketsResponseProductProduct from './WebsocketsResponseProductProduct
 /**
  * The WebsocketsResponseBodyGetAllServices model module.
  * @module model/WebsocketsResponseBodyGetAllServices
- * @version 13.0.0
+ * @version 14.0.0
  */
 class WebsocketsResponseBodyGetAllServices {
     /**

@@ -16,7 +16,7 @@ import PublishItem from './PublishItem';
 /**
  * The PublishRequest model module.
  * @module model/PublishRequest
- * @version 13.0.0
+ * @version 14.0.0
  */
 class PublishRequest {
     /**

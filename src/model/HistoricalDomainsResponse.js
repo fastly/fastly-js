@@ -19,7 +19,7 @@ import HistoricalDomainsResponseAllOf from './HistoricalDomainsResponseAllOf';
 /**
  * The HistoricalDomainsResponse model module.
  * @module model/HistoricalDomainsResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class HistoricalDomainsResponse {
     /**

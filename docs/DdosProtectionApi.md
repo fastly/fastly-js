@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 ## `ddosProtectionEventRuleList`
 
 ```javascript
-ddosProtectionEventRuleList({ event_id, [cursor, ][limit] })
+ddosProtectionEventRuleList({ event_id, [cursor, ][limit, ][include] })
 ```
 
 Get all rules for an event.
@@ -113,6 +113,7 @@ const options = {
   event_id: "event_id_example", // required
   cursor: "cursor_example",
   limit: 20,
+  include: "include_example",
 };
 
 apiInstance.ddosProtectionEventRuleList(options)
@@ -131,6 +132,7 @@ Name | Type | Description  | Notes
 **event_id** | **String** | Unique ID of the event. |
 **cursor** | **String** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | [optional]
 **limit** | **Number** | Limit how many results are returned. | [optional] [defaults to 20]
+**include** | **String** | Include relationships. Optional. Comma-separated values. | [optional]
 
 ### Return type
 

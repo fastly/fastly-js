@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The FanoutResponseService model module.
  * @module model/FanoutResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class FanoutResponseService {
     /**
@@ -48,7 +48,7 @@ class FanoutResponseService {
             obj = obj || new FanoutResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class FanoutResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 FanoutResponseService.prototype['service'] = undefined;
 

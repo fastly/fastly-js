@@ -16,7 +16,7 @@ import RoleUser from './RoleUser';
 /**
  * The InvitationDataAttributes model module.
  * @module model/InvitationDataAttributes
- * @version 13.0.0
+ * @version 14.0.0
  */
 class InvitationDataAttributes {
     /**
@@ -56,6 +56,9 @@ class InvitationDataAttributes {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = RoleUser.constructFromObject(data['role']);
             }
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
+            }
             if (data.hasOwnProperty('status_code')) {
                 obj['status_code'] = ApiClient.convertToType(data['status_code'], 'Number');
             }
@@ -82,6 +85,11 @@ InvitationDataAttributes.prototype['limit_services'] = undefined;
  * @member {module:model/RoleUser} role
  */
 InvitationDataAttributes.prototype['role'] = undefined;
+
+/**
+ * @member {Array.<String>} roles
+ */
+InvitationDataAttributes.prototype['roles'] = undefined;
 
 /**
  * Indicates whether or not the invitation is active.

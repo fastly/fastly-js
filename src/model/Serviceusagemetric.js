@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Serviceusagemetric model module.
  * @module model/Serviceusagemetric
- * @version 13.0.0
+ * @version 14.0.0
  */
 class Serviceusagemetric {
     /**

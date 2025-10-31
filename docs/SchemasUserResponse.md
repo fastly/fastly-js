@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional] 
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional] 
 **role** | [**RoleUser**](RoleUser.md) |  | [optional] 
+**roles** | **[String]** | A list of role IDs assigned to the user. | [optional] 
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional] 
 **two_factor_setup_required** | **Boolean** | Indicates if 2FA is required by the user&#39;s customer account. | [optional] 
 **created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 

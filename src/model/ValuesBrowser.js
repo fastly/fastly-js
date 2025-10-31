@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesBrowser model module.
  * @module model/ValuesBrowser
- * @version 13.0.0
+ * @version 14.0.0
  */
 class ValuesBrowser {
     /**

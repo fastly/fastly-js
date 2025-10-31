@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 13.0.0
+ * @version 14.0.0
  */
 class RealtimeMeasurements {
     /**
@@ -829,6 +829,9 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('compute_cache_operations_count')) {
                 obj['compute_cache_operations_count'] = ApiClient.convertToType(data['compute_cache_operations_count'], 'Number');
+            }
+            if (data.hasOwnProperty('api_discovery_requests_count')) {
+                obj['api_discovery_requests_count'] = ApiClient.convertToType(data['api_discovery_requests_count'], 'Number');
             }
         }
         return obj;
@@ -2402,6 +2405,12 @@ RealtimeMeasurements.prototype['request_collapse_unusable_count'] = undefined;
  * @member {Number} compute_cache_operations_count
  */
 RealtimeMeasurements.prototype['compute_cache_operations_count'] = undefined;
+
+/**
+ * Number of requests processed by the API Discovery engine.
+ * @member {Number} api_discovery_requests_count
+ */
+RealtimeMeasurements.prototype['api_discovery_requests_count'] = undefined;
 
 
 

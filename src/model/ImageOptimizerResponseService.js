@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The ImageOptimizerResponseService model module.
  * @module model/ImageOptimizerResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class ImageOptimizerResponseService {
     /**
@@ -48,7 +48,7 @@ class ImageOptimizerResponseService {
             obj = obj || new ImageOptimizerResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class ImageOptimizerResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 ImageOptimizerResponseService.prototype['service'] = undefined;
 

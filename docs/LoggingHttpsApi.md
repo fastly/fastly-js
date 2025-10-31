@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `createLogHttps`
 
 ```javascript
-createLogHttps({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][log_processing_region, ][format_version, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_entries, ][request_max_bytes, ][url, ][content_type, ][header_name, ][message_type, ][header_value, ][method, ][json_format] })
+createLogHttps({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][log_processing_region, ][format_version, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_entries, ][request_max_bytes, ][url, ][content_type, ][header_name, ][message_type, ][header_value, ][method, ][json_format, ][period] })
 ```
 
 Create an HTTPS object for a particular service and version.
@@ -50,6 +50,7 @@ const options = {
   header_value: "'null'",
   method: "POST",
   json_format: "0",
+  period: 5,
 };
 
 apiInstance.createLogHttps(options)
@@ -86,6 +87,7 @@ Name | Type | Description  | Notes
 **header_value** | **String** | Value of the custom header sent with the request. | [optional] [defaults to 'null']
 **method** | **String** | HTTP method used for request. | [optional] [one of: "POST", "PUT"]
 **json_format** | **String** | Enforces valid JSON formatting for log entries. | [optional] [one of: "0", "1", "2"]
+**period** | **Number** | How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds. | [optional] [defaults to 5]
 
 ### Return type
 
@@ -210,7 +212,7 @@ Name | Type | Description  | Notes
 ## `updateLogHttps`
 
 ```javascript
-updateLogHttps({ service_id, version_id, logging_https_name, [name, ][placement, ][response_condition, ][format, ][log_processing_region, ][format_version, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_entries, ][request_max_bytes, ][url, ][content_type, ][header_name, ][message_type, ][header_value, ][method, ][json_format] })
+updateLogHttps({ service_id, version_id, logging_https_name, [name, ][placement, ][response_condition, ][format, ][log_processing_region, ][format_version, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_entries, ][request_max_bytes, ][url, ][content_type, ][header_name, ][message_type, ][header_value, ][method, ][json_format, ][period] })
 ```
 
 Update the HTTPS object for a particular service and version.
@@ -241,6 +243,7 @@ const options = {
   header_value: "'null'",
   method: "POST",
   json_format: "0",
+  period: 5,
 };
 
 apiInstance.updateLogHttps(options)
@@ -278,6 +281,7 @@ Name | Type | Description  | Notes
 **header_value** | **String** | Value of the custom header sent with the request. | [optional] [defaults to 'null']
 **method** | **String** | HTTP method used for request. | [optional] [one of: "POST", "PUT"]
 **json_format** | **String** | Enforces valid JSON formatting for log entries. | [optional] [one of: "0", "1", "2"]
+**period** | **Number** | How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds. | [optional] [defaults to 5]
 
 ### Return type
 

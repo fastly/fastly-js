@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import NgwafResponseLinks from './NgwafResponseLinks';
 import NgwafResponseLinksLinks from './NgwafResponseLinksLinks';
 import NgwafResponseProduct from './NgwafResponseProduct';
@@ -21,7 +21,7 @@ import NgwafResponseService from './NgwafResponseService';
 /**
  * The NgwafResponseEnable model module.
  * @module model/NgwafResponseEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class NgwafResponseEnable {
     /**
@@ -62,7 +62,7 @@ class NgwafResponseEnable {
                 obj['product'] = NgwafResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = NgwafResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class NgwafResponseEnable {
 NgwafResponseEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 NgwafResponseEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ NgwafResponseEnable.prototype['_links'] = undefined;
 NgwafResponseProduct.prototype['product'] = undefined;
 // Implement NgwafResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 NgwafResponseService.prototype['service'] = undefined;
 // Implement NgwafResponseLinks interface:

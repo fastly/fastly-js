@@ -19,7 +19,7 @@ import LoggingMessageType from '../model/LoggingMessageType';
 /**
 * LoggingHttps service.
 * @module api/LoggingHttpsApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class LoggingHttpsApi {
 
@@ -63,6 +63,7 @@ export default class LoggingHttpsApi {
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
      * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @param {Number} [options.period=5] - How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
     createLogHttpsWithHttpInfo(options = {}) {
@@ -105,7 +106,8 @@ export default class LoggingHttpsApi {
         'message_type': options['message_type'],
         'header_value': options['header_value'],
         'method': options['method'],
-        'json_format': options['json_format']
+        'json_format': options['json_format'],
+        'period': options['period']
       };
 
       let authNames = ['token'];
@@ -152,6 +154,7 @@ export default class LoggingHttpsApi {
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
      * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @param {Number} [options.period=5] - How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
     createLogHttps(options = {}) {
@@ -395,6 +398,7 @@ export default class LoggingHttpsApi {
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
      * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @param {Number} [options.period=5] - How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
     updateLogHttpsWithHttpInfo(options = {}) {
@@ -442,7 +446,8 @@ export default class LoggingHttpsApi {
         'message_type': options['message_type'],
         'header_value': options['header_value'],
         'method': options['method'],
-        'json_format': options['json_format']
+        'json_format': options['json_format'],
+        'period': options['period']
       };
 
       let authNames = ['token'];
@@ -490,6 +495,7 @@ export default class LoggingHttpsApi {
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
      * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @param {Number} [options.period=5] - How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
     updateLogHttps(options = {}) {

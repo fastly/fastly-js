@@ -16,7 +16,7 @@ import TypeTlsDnsRecord from './TypeTlsDnsRecord';
 /**
  * The RelationshipTlsDnsRecordsRequestDnsRecordsData model module.
  * @module model/RelationshipTlsDnsRecordsRequestDnsRecordsData
- * @version 13.0.0
+ * @version 14.0.0
  */
 class RelationshipTlsDnsRecordsRequestDnsRecordsData {
     /**

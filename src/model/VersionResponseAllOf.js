@@ -16,7 +16,7 @@ import Environment from './Environment';
 /**
  * The VersionResponseAllOf model module.
  * @module model/VersionResponseAllOf
- * @version 13.0.0
+ * @version 14.0.0
  */
 class VersionResponseAllOf {
     /**

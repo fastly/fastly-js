@@ -16,7 +16,7 @@ import DdosProtectionResponseLinksLinks from './DdosProtectionResponseLinksLinks
 /**
  * The DdosProtectionResponseLinks model module.
  * @module model/DdosProtectionResponseLinks
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DdosProtectionResponseLinks {
     /**

@@ -16,7 +16,7 @@ import LoggingMessageType from './LoggingMessageType';
 /**
  * The LoggingHttpsAdditional model module.
  * @module model/LoggingHttpsAdditional
- * @version 13.0.0
+ * @version 14.0.0
  */
 class LoggingHttpsAdditional {
     /**
@@ -76,6 +76,9 @@ class LoggingHttpsAdditional {
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
             }
         }
         return obj;
@@ -149,6 +152,13 @@ LoggingHttpsAdditional.prototype['json_format'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingHttpsAdditional.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
+ * @member {Number} period
+ * @default 5
+ */
+LoggingHttpsAdditional.prototype['period'] = 5;
 
 
 

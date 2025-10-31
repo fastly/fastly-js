@@ -22,7 +22,7 @@ import FanoutResponseProductProduct from './FanoutResponseProductProduct';
 /**
  * The FanoutResponseBodyGetAllServices model module.
  * @module model/FanoutResponseBodyGetAllServices
- * @version 13.0.0
+ * @version 14.0.0
  */
 class FanoutResponseBodyGetAllServices {
     /**

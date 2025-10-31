@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import DdosProtectionResponseLinks from './DdosProtectionResponseLinks';
 import DdosProtectionResponseLinksLinks from './DdosProtectionResponseLinksLinks';
 import DdosProtectionResponseProduct from './DdosProtectionResponseProduct';
@@ -21,7 +21,7 @@ import DdosProtectionResponseService from './DdosProtectionResponseService';
 /**
  * The DdosProtectionResponseEnable model module.
  * @module model/DdosProtectionResponseEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DdosProtectionResponseEnable {
     /**
@@ -62,7 +62,7 @@ class DdosProtectionResponseEnable {
                 obj['product'] = DdosProtectionResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = DdosProtectionResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class DdosProtectionResponseEnable {
 DdosProtectionResponseEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DdosProtectionResponseEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ DdosProtectionResponseEnable.prototype['_links'] = undefined;
 DdosProtectionResponseProduct.prototype['product'] = undefined;
 // Implement DdosProtectionResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DdosProtectionResponseService.prototype['service'] = undefined;
 // Implement DdosProtectionResponseLinks interface:

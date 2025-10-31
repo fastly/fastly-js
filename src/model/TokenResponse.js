@@ -18,7 +18,7 @@ import TokenResponseAllOf from './TokenResponseAllOf';
 /**
  * The TokenResponse model module.
  * @module model/TokenResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class TokenResponse {
     /**

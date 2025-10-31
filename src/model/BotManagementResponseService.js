@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The BotManagementResponseService model module.
  * @module model/BotManagementResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class BotManagementResponseService {
     /**
@@ -48,7 +48,7 @@ class BotManagementResponseService {
             obj = obj || new BotManagementResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class BotManagementResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 BotManagementResponseService.prototype['service'] = undefined;
 

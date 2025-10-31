@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import BrotliCompressionResponseLinks from './BrotliCompressionResponseLinks';
 import BrotliCompressionResponseLinksLinks from './BrotliCompressionResponseLinksLinks';
 import BrotliCompressionResponseProduct from './BrotliCompressionResponseProduct';
@@ -21,7 +21,7 @@ import BrotliCompressionResponseService from './BrotliCompressionResponseService
 /**
  * The BrotliCompressionResponseBodyEnable model module.
  * @module model/BrotliCompressionResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class BrotliCompressionResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class BrotliCompressionResponseBodyEnable {
                 obj['product'] = BrotliCompressionResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = BrotliCompressionResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class BrotliCompressionResponseBodyEnable {
 BrotliCompressionResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 BrotliCompressionResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ BrotliCompressionResponseBodyEnable.prototype['_links'] = undefined;
 BrotliCompressionResponseProduct.prototype['product'] = undefined;
 // Implement BrotliCompressionResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 BrotliCompressionResponseService.prototype['service'] = undefined;
 // Implement BrotliCompressionResponseLinks interface:

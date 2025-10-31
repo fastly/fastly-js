@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Healthcheck model module.
  * @module model/Healthcheck
- * @version 13.0.0
+ * @version 14.0.0
  */
 class Healthcheck {
     /**
@@ -93,7 +93,7 @@ class Healthcheck {
 }
 
 /**
- * How often to run the health check in milliseconds.
+ * How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
  * @member {Number} check_interval
  */
 Healthcheck.prototype['check_interval'] = undefined;

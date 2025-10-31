@@ -29,6 +29,19 @@ import AiAcceleratorResponseProduct from './model/AiAcceleratorResponseProduct';
 import AiAcceleratorResponseProductProduct from './model/AiAcceleratorResponseProductProduct';
 import ApexRedirect from './model/ApexRedirect';
 import ApexRedirectAllOf from './model/ApexRedirectAllOf';
+import ApiDiscoveryResponseBodyGetAllServices from './model/ApiDiscoveryResponseBodyGetAllServices';
+import ApiDiscoveryResponseCustomer from './model/ApiDiscoveryResponseCustomer';
+import ApiDiscoveryResponseCustomerCustomer from './model/ApiDiscoveryResponseCustomerCustomer';
+import ApiDiscoveryResponseEnable from './model/ApiDiscoveryResponseEnable';
+import ApiDiscoveryResponseEnabledServices from './model/ApiDiscoveryResponseEnabledServices';
+import ApiDiscoveryResponseLinks from './model/ApiDiscoveryResponseLinks';
+import ApiDiscoveryResponseLinksGetAllServices from './model/ApiDiscoveryResponseLinksGetAllServices';
+import ApiDiscoveryResponseLinksGetAllServicesLinks from './model/ApiDiscoveryResponseLinksGetAllServicesLinks';
+import ApiDiscoveryResponseLinksLinks from './model/ApiDiscoveryResponseLinksLinks';
+import ApiDiscoveryResponseProduct from './model/ApiDiscoveryResponseProduct';
+import ApiDiscoveryResponseProductProduct from './model/ApiDiscoveryResponseProductProduct';
+import ApiDiscoveryResponseService from './model/ApiDiscoveryResponseService';
+import ApiDiscoveryResponseServiceService from './model/ApiDiscoveryResponseServiceService';
 import AsyncResponse from './model/AsyncResponse';
 import AttackReport from './model/AttackReport';
 import AttackSignal from './model/AttackSignal';
@@ -64,7 +77,6 @@ import BotManagementResponseLinksLinks from './model/BotManagementResponseLinksL
 import BotManagementResponseProduct from './model/BotManagementResponseProduct';
 import BotManagementResponseProductProduct from './model/BotManagementResponseProductProduct';
 import BotManagementResponseService from './model/BotManagementResponseService';
-import BotManagementResponseServiceService from './model/BotManagementResponseServiceService';
 import BrotliCompressionResponseBodyEnable from './model/BrotliCompressionResponseBodyEnable';
 import BrotliCompressionResponseBodyGetAllServices from './model/BrotliCompressionResponseBodyGetAllServices';
 import BrotliCompressionResponseCustomer from './model/BrotliCompressionResponseCustomer';
@@ -152,6 +164,8 @@ import DdosProtectionResponseService from './model/DdosProtectionResponseService
 import DdosProtectionRule from './model/DdosProtectionRule';
 import DdosProtectionRuleAllOf from './model/DdosProtectionRuleAllOf';
 import DdosProtectionRulePatch from './model/DdosProtectionRulePatch';
+import DdosProtectionRuleWithStats from './model/DdosProtectionRuleWithStats';
+import DdosProtectionRuleWithStatsAllOf from './model/DdosProtectionRuleWithStatsAllOf';
 import DdosProtectionTrafficStats from './model/DdosProtectionTrafficStats';
 import DdosProtectionTrafficStatsAllOf from './model/DdosProtectionTrafficStatsAllOf';
 import DefaultSettings from './model/DefaultSettings';
@@ -264,12 +278,12 @@ import Http3AllOf from './model/Http3AllOf';
 import HttpResponseFormat from './model/HttpResponseFormat';
 import HttpStreamFormat from './model/HttpStreamFormat';
 import IamPermission from './model/IamPermission';
-import IamRole from './model/IamRole';
-import IamRoleAllOf from './model/IamRoleAllOf';
 import IamServiceGroup from './model/IamServiceGroup';
 import IamServiceGroupAllOf from './model/IamServiceGroupAllOf';
 import IamUserGroup from './model/IamUserGroup';
 import IamUserGroupAllOf from './model/IamUserGroupAllOf';
+import IamV1RoleListResponse from './model/IamV1RoleListResponse';
+import IamV1RoleResponse from './model/IamV1RoleResponse';
 import ImageOptimizerResponseBodyEnable from './model/ImageOptimizerResponseBodyEnable';
 import ImageOptimizerResponseBodyGetAllServices from './model/ImageOptimizerResponseBodyGetAllServices';
 import ImageOptimizerResponseCustomer from './model/ImageOptimizerResponseCustomer';
@@ -287,6 +301,7 @@ import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
+import InlineResponse20010 from './model/InlineResponse20010';
 import InlineResponse2002 from './model/InlineResponse2002';
 import InlineResponse2003 from './model/InlineResponse2003';
 import InlineResponse2004 from './model/InlineResponse2004';
@@ -591,6 +606,8 @@ import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfigu
 import RelationshipsForTlsDomain from './model/RelationshipsForTlsDomain';
 import RelationshipsForTlsPrivateKey from './model/RelationshipsForTlsPrivateKey';
 import RelationshipsForTlsSubscription from './model/RelationshipsForTlsSubscription';
+import RequestBodyForCreate from './model/RequestBodyForCreate';
+import RequestBodyForUpdate from './model/RequestBodyForUpdate';
 import RequestSettingsAdditional from './model/RequestSettingsAdditional';
 import RequestSettingsResponse from './model/RequestSettingsResponse';
 import RequestSettingsResponseAllOf from './model/RequestSettingsResponseAllOf';
@@ -663,6 +680,8 @@ import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
 import StarResponseAllOf from './model/StarResponseAllOf';
 import Stats from './model/Stats';
+import SuccessfulResponseAsObject from './model/SuccessfulResponseAsObject';
+import SuccessfulResponseAsObjectAllOf from './model/SuccessfulResponseAsObjectAllOf';
 import SudoGenericTokenError from './model/SudoGenericTokenError';
 import SudoRequest from './model/SudoRequest';
 import SudoResponse from './model/SudoResponse';
@@ -840,6 +859,7 @@ import DictionaryItemApi from './api/DictionaryItemApi';
 import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
+import DmDomainsApi from './api/DmDomainsApi';
 import DomainApi from './api/DomainApi';
 import DomainInspectorHistoricalApi from './api/DomainInspectorHistoricalApi';
 import DomainInspectorRealtimeApi from './api/DomainInspectorRealtimeApi';
@@ -900,6 +920,7 @@ import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
 import ProductAiAcceleratorApi from './api/ProductAiAcceleratorApi';
+import ProductApiDiscoveryApi from './api/ProductApiDiscoveryApi';
 import ProductBotManagementApi from './api/ProductBotManagementApi';
 import ProductBrotliCompressionApi from './api/ProductBrotliCompressionApi';
 import ProductDdosProtectionApi from './api/ProductDdosProtectionApi';
@@ -978,7 +999,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 13.0.0
+* @version 14.0.0
 */
 export {
     /**
@@ -1088,6 +1109,84 @@ export {
      * @property {module:model/ApexRedirectAllOf}
      */
     ApexRedirectAllOf,
+
+    /**
+     * The ApiDiscoveryResponseBodyGetAllServices model constructor.
+     * @property {module:model/ApiDiscoveryResponseBodyGetAllServices}
+     */
+    ApiDiscoveryResponseBodyGetAllServices,
+
+    /**
+     * The ApiDiscoveryResponseCustomer model constructor.
+     * @property {module:model/ApiDiscoveryResponseCustomer}
+     */
+    ApiDiscoveryResponseCustomer,
+
+    /**
+     * The ApiDiscoveryResponseCustomerCustomer model constructor.
+     * @property {module:model/ApiDiscoveryResponseCustomerCustomer}
+     */
+    ApiDiscoveryResponseCustomerCustomer,
+
+    /**
+     * The ApiDiscoveryResponseEnable model constructor.
+     * @property {module:model/ApiDiscoveryResponseEnable}
+     */
+    ApiDiscoveryResponseEnable,
+
+    /**
+     * The ApiDiscoveryResponseEnabledServices model constructor.
+     * @property {module:model/ApiDiscoveryResponseEnabledServices}
+     */
+    ApiDiscoveryResponseEnabledServices,
+
+    /**
+     * The ApiDiscoveryResponseLinks model constructor.
+     * @property {module:model/ApiDiscoveryResponseLinks}
+     */
+    ApiDiscoveryResponseLinks,
+
+    /**
+     * The ApiDiscoveryResponseLinksGetAllServices model constructor.
+     * @property {module:model/ApiDiscoveryResponseLinksGetAllServices}
+     */
+    ApiDiscoveryResponseLinksGetAllServices,
+
+    /**
+     * The ApiDiscoveryResponseLinksGetAllServicesLinks model constructor.
+     * @property {module:model/ApiDiscoveryResponseLinksGetAllServicesLinks}
+     */
+    ApiDiscoveryResponseLinksGetAllServicesLinks,
+
+    /**
+     * The ApiDiscoveryResponseLinksLinks model constructor.
+     * @property {module:model/ApiDiscoveryResponseLinksLinks}
+     */
+    ApiDiscoveryResponseLinksLinks,
+
+    /**
+     * The ApiDiscoveryResponseProduct model constructor.
+     * @property {module:model/ApiDiscoveryResponseProduct}
+     */
+    ApiDiscoveryResponseProduct,
+
+    /**
+     * The ApiDiscoveryResponseProductProduct model constructor.
+     * @property {module:model/ApiDiscoveryResponseProductProduct}
+     */
+    ApiDiscoveryResponseProductProduct,
+
+    /**
+     * The ApiDiscoveryResponseService model constructor.
+     * @property {module:model/ApiDiscoveryResponseService}
+     */
+    ApiDiscoveryResponseService,
+
+    /**
+     * The ApiDiscoveryResponseServiceService model constructor.
+     * @property {module:model/ApiDiscoveryResponseServiceService}
+     */
+    ApiDiscoveryResponseServiceService,
 
     /**
      * The AsyncResponse model constructor.
@@ -1298,12 +1397,6 @@ export {
      * @property {module:model/BotManagementResponseService}
      */
     BotManagementResponseService,
-
-    /**
-     * The BotManagementResponseServiceService model constructor.
-     * @property {module:model/BotManagementResponseServiceService}
-     */
-    BotManagementResponseServiceService,
 
     /**
      * The BrotliCompressionResponseBodyEnable model constructor.
@@ -1826,6 +1919,18 @@ export {
      * @property {module:model/DdosProtectionRulePatch}
      */
     DdosProtectionRulePatch,
+
+    /**
+     * The DdosProtectionRuleWithStats model constructor.
+     * @property {module:model/DdosProtectionRuleWithStats}
+     */
+    DdosProtectionRuleWithStats,
+
+    /**
+     * The DdosProtectionRuleWithStatsAllOf model constructor.
+     * @property {module:model/DdosProtectionRuleWithStatsAllOf}
+     */
+    DdosProtectionRuleWithStatsAllOf,
 
     /**
      * The DdosProtectionTrafficStats model constructor.
@@ -2500,18 +2605,6 @@ export {
     IamPermission,
 
     /**
-     * The IamRole model constructor.
-     * @property {module:model/IamRole}
-     */
-    IamRole,
-
-    /**
-     * The IamRoleAllOf model constructor.
-     * @property {module:model/IamRoleAllOf}
-     */
-    IamRoleAllOf,
-
-    /**
      * The IamServiceGroup model constructor.
      * @property {module:model/IamServiceGroup}
      */
@@ -2534,6 +2627,18 @@ export {
      * @property {module:model/IamUserGroupAllOf}
      */
     IamUserGroupAllOf,
+
+    /**
+     * The IamV1RoleListResponse model constructor.
+     * @property {module:model/IamV1RoleListResponse}
+     */
+    IamV1RoleListResponse,
+
+    /**
+     * The IamV1RoleResponse model constructor.
+     * @property {module:model/IamV1RoleResponse}
+     */
+    IamV1RoleResponse,
 
     /**
      * The ImageOptimizerResponseBodyEnable model constructor.
@@ -2636,6 +2741,12 @@ export {
      * @property {module:model/InlineResponse2001}
      */
     InlineResponse2001,
+
+    /**
+     * The InlineResponse20010 model constructor.
+     * @property {module:model/InlineResponse20010}
+     */
+    InlineResponse20010,
 
     /**
      * The InlineResponse2002 model constructor.
@@ -4462,6 +4573,18 @@ export {
     RelationshipsForTlsSubscription,
 
     /**
+     * The RequestBodyForCreate model constructor.
+     * @property {module:model/RequestBodyForCreate}
+     */
+    RequestBodyForCreate,
+
+    /**
+     * The RequestBodyForUpdate model constructor.
+     * @property {module:model/RequestBodyForUpdate}
+     */
+    RequestBodyForUpdate,
+
+    /**
      * The RequestSettingsAdditional model constructor.
      * @property {module:model/RequestSettingsAdditional}
      */
@@ -4892,6 +5015,18 @@ export {
      * @property {module:model/Stats}
      */
     Stats,
+
+    /**
+     * The SuccessfulResponseAsObject model constructor.
+     * @property {module:model/SuccessfulResponseAsObject}
+     */
+    SuccessfulResponseAsObject,
+
+    /**
+     * The SuccessfulResponseAsObjectAllOf model constructor.
+     * @property {module:model/SuccessfulResponseAsObjectAllOf}
+     */
+    SuccessfulResponseAsObjectAllOf,
 
     /**
      * The SudoGenericTokenError model constructor.
@@ -5956,6 +6091,12 @@ export {
     DirectorBackendApi,
 
     /**
+    * The DmDomainsApi service constructor.
+    * @property {module:api/DmDomainsApi}
+    */
+    DmDomainsApi,
+
+    /**
     * The DomainApi service constructor.
     * @property {module:api/DomainApi}
     */
@@ -6314,6 +6455,12 @@ export {
     * @property {module:api/ProductAiAcceleratorApi}
     */
     ProductAiAcceleratorApi,
+
+    /**
+    * The ProductApiDiscoveryApi service constructor.
+    * @property {module:api/ProductApiDiscoveryApi}
+    */
+    ProductApiDiscoveryApi,
 
     /**
     * The ProductBotManagementApi service constructor.

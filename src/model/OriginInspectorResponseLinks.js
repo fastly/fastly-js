@@ -16,7 +16,7 @@ import OriginInspectorResponseLinksLinks from './OriginInspectorResponseLinksLin
 /**
  * The OriginInspectorResponseLinks model module.
  * @module model/OriginInspectorResponseLinks
- * @version 13.0.0
+ * @version 14.0.0
  */
 class OriginInspectorResponseLinks {
     /**

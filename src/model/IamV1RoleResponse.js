@@ -13,18 +13,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The IamRoleAllOf model module.
- * @module model/IamRoleAllOf
- * @version 13.0.0
+ * The IamV1RoleResponse model module.
+ * @module model/IamV1RoleResponse
+ * @version 14.0.0
  */
-class IamRoleAllOf {
+class IamV1RoleResponse {
     /**
-     * Constructs a new <code>IamRoleAllOf</code>.
-     * @alias module:model/IamRoleAllOf
+     * Constructs a new <code>IamV1RoleResponse</code>.
+     * An IAM role.
+     * @alias module:model/IamV1RoleResponse
      */
     constructor() { 
         
-        IamRoleAllOf.initialize(this);
+        IamV1RoleResponse.initialize(this);
     }
 
     /**
@@ -36,21 +37,18 @@ class IamRoleAllOf {
     }
 
     /**
-     * Constructs a <code>IamRoleAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>IamV1RoleResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/IamRoleAllOf} obj Optional instance to populate.
-     * @return {module:model/IamRoleAllOf} The populated <code>IamRoleAllOf</code> instance.
+     * @param {module:model/IamV1RoleResponse} obj Optional instance to populate.
+     * @return {module:model/IamV1RoleResponse} The populated <code>IamV1RoleResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new IamRoleAllOf();
+            obj = obj || new IamV1RoleResponse();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('object')) {
-                obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -58,11 +56,8 @@ class IamRoleAllOf {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('custom')) {
-                obj['custom'] = ApiClient.convertToType(data['custom'], 'Boolean');
-            }
-            if (data.hasOwnProperty('permissions_count')) {
-                obj['permissions_count'] = ApiClient.convertToType(data['permissions_count'], 'Number');
+            if (data.hasOwnProperty('permissions')) {
+                obj['permissions'] = ApiClient.convertToType(data['permissions'], ['String']);
             }
         }
         return obj;
@@ -72,45 +67,30 @@ class IamRoleAllOf {
 }
 
 /**
- * Alphanumeric string identifying the role.
  * @member {String} id
  */
-IamRoleAllOf.prototype['id'] = undefined;
+IamV1RoleResponse.prototype['id'] = undefined;
 
 /**
- * The type of the object.
- * @member {String} object
- */
-IamRoleAllOf.prototype['object'] = undefined;
-
-/**
- * Name of the role.
  * @member {String} name
  */
-IamRoleAllOf.prototype['name'] = undefined;
+IamV1RoleResponse.prototype['name'] = undefined;
 
 /**
- * Description of the role.
  * @member {String} description
  */
-IamRoleAllOf.prototype['description'] = undefined;
+IamV1RoleResponse.prototype['description'] = undefined;
 
 /**
- * This attribute is set to `true` if the role is managed by the customer. It is set to `false` if the role was created by Fastly.
- * @member {Boolean} custom
+ * The set of permissions granted to this role.
+ * @member {Array.<String>} permissions
  */
-IamRoleAllOf.prototype['custom'] = undefined;
-
-/**
- * Number of permissions assigned to the role.
- * @member {Number} permissions_count
- */
-IamRoleAllOf.prototype['permissions_count'] = undefined;
+IamV1RoleResponse.prototype['permissions'] = undefined;
 
 
 
 
 
 
-export default IamRoleAllOf;
+export default IamV1RoleResponse;
 

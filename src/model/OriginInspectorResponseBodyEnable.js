@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import OriginInspectorResponseLinks from './OriginInspectorResponseLinks';
 import OriginInspectorResponseLinksLinks from './OriginInspectorResponseLinksLinks';
 import OriginInspectorResponseProduct from './OriginInspectorResponseProduct';
@@ -21,7 +21,7 @@ import OriginInspectorResponseService from './OriginInspectorResponseService';
 /**
  * The OriginInspectorResponseBodyEnable model module.
  * @module model/OriginInspectorResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class OriginInspectorResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class OriginInspectorResponseBodyEnable {
                 obj['product'] = OriginInspectorResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = OriginInspectorResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class OriginInspectorResponseBodyEnable {
 OriginInspectorResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 OriginInspectorResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ OriginInspectorResponseBodyEnable.prototype['_links'] = undefined;
 OriginInspectorResponseProduct.prototype['product'] = undefined;
 // Implement OriginInspectorResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 OriginInspectorResponseService.prototype['service'] = undefined;
 // Implement OriginInspectorResponseLinks interface:

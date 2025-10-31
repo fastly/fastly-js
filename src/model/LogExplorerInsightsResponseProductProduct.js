@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogExplorerInsightsResponseProductProduct model module.
  * @module model/LogExplorerInsightsResponseProductProduct
- * @version 13.0.0
+ * @version 14.0.0
  */
 class LogExplorerInsightsResponseProductProduct {
     /**

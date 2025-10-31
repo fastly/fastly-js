@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NgwafResponseLinksLinks model module.
  * @module model/NgwafResponseLinksLinks
- * @version 13.0.0
+ * @version 14.0.0
  */
 class NgwafResponseLinksLinks {
     /**

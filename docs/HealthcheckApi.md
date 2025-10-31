@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**check_interval** | **Number** | How often to run the health check in milliseconds. | [optional]
+**check_interval** | **Number** | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]
 **headers** | [**[String]**](String.md) | Array of custom headers that will be added to the health check probes. | [optional]
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
 **healthcheck_name** | **String** | The name of the health check. |
-**check_interval** | **Number** | How often to run the health check in milliseconds. | [optional]
+**check_interval** | **Number** | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]
 **headers** | [**[String]**](String.md) | Array of custom headers that will be added to the health check probes. | [optional]

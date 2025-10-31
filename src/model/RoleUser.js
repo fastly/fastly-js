@@ -26,6 +26,20 @@ export default class RoleUser {
 
     
         /**
+         * value: "tls_viewer"
+         * @const
+         */
+        "tls_viewer" = "tls_viewer";
+
+    
+        /**
+         * value: "tls_admin"
+         * @const
+         */
+        "tls_admin" = "tls_admin";
+
+    
+        /**
          * value: "billing"
          * @const
          */

@@ -16,7 +16,7 @@ import MutualAuthenticationResponseAttributes from './MutualAuthenticationRespon
 /**
  * The MutualAuthenticationResponseDataAllOf model module.
  * @module model/MutualAuthenticationResponseDataAllOf
- * @version 13.0.0
+ * @version 14.0.0
  */
 class MutualAuthenticationResponseDataAllOf {
     /**

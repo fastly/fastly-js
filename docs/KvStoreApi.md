@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

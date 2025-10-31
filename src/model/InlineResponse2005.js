@@ -11,13 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import KvStoreDetails from './KvStoreDetails';
-import PaginationCursorMeta from './PaginationCursorMeta';
 
 /**
  * The InlineResponse2005 model module.
  * @module model/InlineResponse2005
- * @version 13.0.0
+ * @version 14.0.0
  */
 class InlineResponse2005 {
     /**
@@ -48,11 +46,8 @@ class InlineResponse2005 {
         if (data) {
             obj = obj || new InlineResponse2005();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [KvStoreDetails]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('expires_at')) {
+                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
             }
         }
         return obj;
@@ -62,14 +57,10 @@ class InlineResponse2005 {
 }
 
 /**
- * @member {Array.<module:model/KvStoreDetails>} data
+ * Time-stamp (GMT) when the domain_ownership validation will expire.
+ * @member {String} expires_at
  */
-InlineResponse2005.prototype['data'] = undefined;
-
-/**
- * @member {module:model/PaginationCursorMeta} meta
- */
-InlineResponse2005.prototype['meta'] = undefined;
+InlineResponse2005.prototype['expires_at'] = undefined;
 
 
 

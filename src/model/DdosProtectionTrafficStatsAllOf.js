@@ -16,7 +16,7 @@ import DdosProtectionAttributeStats from './DdosProtectionAttributeStats';
 /**
  * The DdosProtectionTrafficStatsAllOf model module.
  * @module model/DdosProtectionTrafficStatsAllOf
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DdosProtectionTrafficStatsAllOf {
     /**
@@ -56,6 +56,9 @@ class DdosProtectionTrafficStatsAllOf {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], [DdosProtectionAttributeStats]);
             }
+            if (data.hasOwnProperty('traffic_percentage')) {
+                obj['traffic_percentage'] = ApiClient.convertToType(data['traffic_percentage'], 'Number');
+            }
         }
         return obj;
     }
@@ -79,6 +82,12 @@ DdosProtectionTrafficStatsAllOf.prototype['service_id'] = undefined;
  * @member {Array.<module:model/DdosProtectionAttributeStats>} attributes
  */
 DdosProtectionTrafficStatsAllOf.prototype['attributes'] = undefined;
+
+/**
+ * Rule traffic percentage for the event.
+ * @member {Number} traffic_percentage
+ */
+DdosProtectionTrafficStatsAllOf.prototype['traffic_percentage'] = undefined;
 
 
 

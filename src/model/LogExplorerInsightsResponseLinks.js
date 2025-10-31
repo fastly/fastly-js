@@ -16,7 +16,7 @@ import LogExplorerInsightsResponseLinksLinks from './LogExplorerInsightsResponse
 /**
  * The LogExplorerInsightsResponseLinks model module.
  * @module model/LogExplorerInsightsResponseLinks
- * @version 13.0.0
+ * @version 14.0.0
  */
 class LogExplorerInsightsResponseLinks {
     /**

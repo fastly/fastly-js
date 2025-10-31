@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 
 /**
  * The DdosProtectionResponseService model module.
  * @module model/DdosProtectionResponseService
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DdosProtectionResponseService {
     /**
@@ -48,7 +48,7 @@ class DdosProtectionResponseService {
             obj = obj || new DdosProtectionResponseService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class DdosProtectionResponseService {
 }
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DdosProtectionResponseService.prototype['service'] = undefined;
 

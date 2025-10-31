@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BotManagementResponseServiceService from './BotManagementResponseServiceService';
+import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceService';
 import DomainInspectorResponseLinks from './DomainInspectorResponseLinks';
 import DomainInspectorResponseLinksLinks from './DomainInspectorResponseLinksLinks';
 import DomainInspectorResponseProduct from './DomainInspectorResponseProduct';
@@ -21,7 +21,7 @@ import DomainInspectorResponseService from './DomainInspectorResponseService';
 /**
  * The DomainInspectorResponseBodyEnable model module.
  * @module model/DomainInspectorResponseBodyEnable
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DomainInspectorResponseBodyEnable {
     /**
@@ -62,7 +62,7 @@ class DomainInspectorResponseBodyEnable {
                 obj['product'] = DomainInspectorResponseProductProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = BotManagementResponseServiceService.constructFromObject(data['service']);
+                obj['service'] = ApiDiscoveryResponseServiceService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
                 obj['_links'] = DomainInspectorResponseLinksLinks.constructFromObject(data['_links']);
@@ -80,7 +80,7 @@ class DomainInspectorResponseBodyEnable {
 DomainInspectorResponseBodyEnable.prototype['product'] = undefined;
 
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DomainInspectorResponseBodyEnable.prototype['service'] = undefined;
 
@@ -97,7 +97,7 @@ DomainInspectorResponseBodyEnable.prototype['_links'] = undefined;
 DomainInspectorResponseProduct.prototype['product'] = undefined;
 // Implement DomainInspectorResponseService interface:
 /**
- * @member {module:model/BotManagementResponseServiceService} service
+ * @member {module:model/ApiDiscoveryResponseServiceService} service
  */
 DomainInspectorResponseService.prototype['service'] = undefined;
 // Implement DomainInspectorResponseLinks interface:

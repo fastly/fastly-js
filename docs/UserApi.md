@@ -22,7 +22,7 @@ Method | HTTP request | Description
 ## `createUser`
 
 ```javascript
-createUser({ , [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
+createUser({ , [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][roles, ][two_factor_auth_enabled, ][two_factor_setup_required] })
 ```
 
 Create a user.
@@ -37,6 +37,7 @@ const options = {
   locked: true,
   require_new_password: true,
   role: new Fastly.RoleUser(),
+  roles: ["6bKsDElwPt8vZXCArszK9x"],
   two_factor_auth_enabled: true,
   two_factor_setup_required: true,
 };
@@ -60,6 +61,7 @@ Name | Type | Description  | Notes
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
 **role** | [**RoleUser**](RoleUser.md) |  | [optional]
+**roles** | [**[String]**](String.md) | A list of role IDs assigned to the user. | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
 **two_factor_setup_required** | **Boolean** | Indicates if 2FA is required by the user&#39;s customer account. | [optional]
 
@@ -205,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateUser`
 
 ```javascript
-updateUser({ user_id, [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
+updateUser({ user_id, [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][roles, ][two_factor_auth_enabled, ][two_factor_setup_required] })
 ```
 
 Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.
@@ -221,6 +223,7 @@ const options = {
   locked: true,
   require_new_password: true,
   role: new Fastly.RoleUser(),
+  roles: ["6bKsDElwPt8vZXCArszK9x"],
   two_factor_auth_enabled: true,
   two_factor_setup_required: true,
 };
@@ -245,6 +248,7 @@ Name | Type | Description  | Notes
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
 **role** | [**RoleUser**](RoleUser.md) |  | [optional]
+**roles** | [**[String]**](String.md) | A list of role IDs assigned to the user. | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
 **two_factor_setup_required** | **Boolean** | Indicates if 2FA is required by the user&#39;s customer account. | [optional]
 

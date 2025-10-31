@@ -16,7 +16,7 @@ import DdosProtectionAttributeValue from './DdosProtectionAttributeValue';
 /**
  * The DdosProtectionAttributeStats model module.
  * @module model/DdosProtectionAttributeStats
- * @version 13.0.0
+ * @version 14.0.0
  */
 class DdosProtectionAttributeStats {
     /**

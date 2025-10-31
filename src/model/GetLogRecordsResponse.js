@@ -17,7 +17,7 @@ import LogRecord from './LogRecord';
 /**
  * The GetLogRecordsResponse model module.
  * @module model/GetLogRecordsResponse
- * @version 13.0.0
+ * @version 14.0.0
  */
 class GetLogRecordsResponse {
     /**

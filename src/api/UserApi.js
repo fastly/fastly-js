@@ -19,7 +19,7 @@ import UserResponse from '../model/UserResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version 13.0.0
+* @version 14.0.0
 */
 export default class UserApi {
 
@@ -48,6 +48,7 @@ export default class UserApi {
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
+     * @param {Array.<String>} [options.roles] - A list of role IDs assigned to the user.
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
@@ -70,6 +71,7 @@ export default class UserApi {
         'locked': options['locked'],
         'require_new_password': options['require_new_password'],
         'role': options['role'],
+        'roles': this.apiClient.buildCollectionParam(options['roles'], 'csv'),
         'two_factor_auth_enabled': options['two_factor_auth_enabled'],
         'two_factor_setup_required': options['two_factor_setup_required']
       };
@@ -103,6 +105,7 @@ export default class UserApi {
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
+     * @param {Array.<String>} [options.roles] - A list of role IDs assigned to the user.
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
@@ -349,6 +352,7 @@ export default class UserApi {
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
+     * @param {Array.<String>} [options.roles] - A list of role IDs assigned to the user.
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
@@ -376,6 +380,7 @@ export default class UserApi {
         'locked': options['locked'],
         'require_new_password': options['require_new_password'],
         'role': options['role'],
+        'roles': this.apiClient.buildCollectionParam(options['roles'], 'csv'),
         'two_factor_auth_enabled': options['two_factor_auth_enabled'],
         'two_factor_setup_required': options['two_factor_setup_required']
       };
@@ -410,6 +415,7 @@ export default class UserApi {
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
+     * @param {Array.<String>} [options.roles] - A list of role IDs assigned to the user.
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
