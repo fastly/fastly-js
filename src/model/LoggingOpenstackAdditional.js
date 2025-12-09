@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingOpenstackAdditional model module.
  * @module model/LoggingOpenstackAdditional
- * @version 14.0.0
+ * @version 14.1.0
  */
 class LoggingOpenstackAdditional {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingFormatVersionString model module.
  * @module model/LoggingFormatVersionString
- * @version 14.0.0
+ * @version 14.1.0
  */
 class LoggingFormatVersionString {
     /**

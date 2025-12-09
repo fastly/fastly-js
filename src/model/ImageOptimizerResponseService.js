@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The ImageOptimizerResponseService model module.
  * @module model/ImageOptimizerResponseService
- * @version 14.0.0
+ * @version 14.1.0
  */
 class ImageOptimizerResponseService {
     /**

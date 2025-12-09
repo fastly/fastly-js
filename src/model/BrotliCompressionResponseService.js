@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The BrotliCompressionResponseService model module.
  * @module model/BrotliCompressionResponseService
- * @version 14.0.0
+ * @version 14.1.0
  */
 class BrotliCompressionResponseService {
     /**

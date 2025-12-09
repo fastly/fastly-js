@@ -21,7 +21,7 @@ import WebsocketsResponseService from './WebsocketsResponseService';
 /**
  * The WebsocketsResponseBodyEnable model module.
  * @module model/WebsocketsResponseBodyEnable
- * @version 14.0.0
+ * @version 14.1.0
  */
 class WebsocketsResponseBodyEnable {
     /**

@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The DomainInspectorResponseService model module.
  * @module model/DomainInspectorResponseService
- * @version 14.0.0
+ * @version 14.1.0
  */
 class DomainInspectorResponseService {
     /**

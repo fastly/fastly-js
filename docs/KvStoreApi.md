@@ -14,12 +14,13 @@ Method | HTTP request | Description
 [**kvStoreDelete**](KvStoreApi.md#kvStoreDelete) | **DELETE** /resources/stores/kv/{store_id} | Delete a KV store.
 [**kvStoreGet**](KvStoreApi.md#kvStoreGet) | **GET** /resources/stores/kv/{store_id} | Describe a KV store.
 [**kvStoreList**](KvStoreApi.md#kvStoreList) | **GET** /resources/stores/kv | List all KV stores.
+[**kvStorePut**](KvStoreApi.md#kvStorePut) | **PUT** /resources/stores/kv/{store_id} | Update a KV store.
 
 
 ## `kvStoreCreate`
 
 ```javascript
-kvStoreCreate({ , [location, ][kv_store_request_create] })
+kvStoreCreate({ , [location, ][kv_store_request_create_or_update] })
 ```
 
 Create a KV store.
@@ -29,7 +30,7 @@ Create a KV store.
 ```javascript
 const options = {
   location: "US",
-  kv_store_request_create: {"name":"my-store"},
+  kv_store_request_create_or_update: {"name":"my-store"},
 };
 
 apiInstance.kvStoreCreate(options)
@@ -46,7 +47,7 @@ apiInstance.kvStoreCreate(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **location** | **String** |  | [optional] [one of: "US", "EU", "ASIA", "AUS"]
-**kv_store_request_create** | [**KvStoreRequestCreate**](KvStoreRequestCreate.md) |  | [optional]
+**kv_store_request_create_or_update** | [**KvStoreRequestCreateOrUpdate**](KvStoreRequestCreateOrUpdate.md) |  | [optional]
 
 ### Return type
 
@@ -159,7 +160,44 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
+
+
+## `kvStorePut`
+
+```javascript
+kvStorePut({ store_id, [kv_store_request_create_or_update] })
+```
+
+Update the name of a KV store.
+
+### Example
+
+```javascript
+const options = {
+  store_id: "store_id_example", // required
+  kv_store_request_create_or_update: {"name":"my-renamed-store"},
+};
+
+apiInstance.kvStorePut(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**store_id** | **String** |  |
+**kv_store_request_create_or_update** | [**KvStoreRequestCreateOrUpdate**](KvStoreRequestCreateOrUpdate.md) |  | [optional]
+
+### Return type
+
+null (empty response body)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

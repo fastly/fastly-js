@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SuccessfulResponseAsObjectAllOf model module.
  * @module model/SuccessfulResponseAsObjectAllOf
- * @version 14.0.0
+ * @version 14.1.0
  */
 class SuccessfulResponseAsObjectAllOf {
     /**

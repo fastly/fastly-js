@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreDetails model module.
  * @module model/KvStoreDetails
- * @version 14.0.0
+ * @version 14.1.0
  */
 class KvStoreDetails {
     /**
@@ -52,6 +52,12 @@ class KvStoreDetails {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+            }
         }
         return obj;
     }
@@ -70,6 +76,18 @@ KvStoreDetails.prototype['id'] = undefined;
  * @member {String} name
  */
 KvStoreDetails.prototype['name'] = undefined;
+
+/**
+ * Timestamp at which the store was created.
+ * @member {String} created_at
+ */
+KvStoreDetails.prototype['created_at'] = undefined;
+
+/**
+ * Timestamp at which the store was last updated.
+ * @member {String} updated_at
+ */
+KvStoreDetails.prototype['updated_at'] = undefined;
 
 
 

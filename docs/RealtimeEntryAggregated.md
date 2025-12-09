@@ -266,6 +266,10 @@ Name | Type | Description | Notes
 **request_collapse_unusable_count** | **Number** | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. | [optional] 
 **compute_cache_operations_count** | **Number** | Number of cache operations executed by the Compute platform. | [optional] 
 **api_discovery_requests_count** | **Number** | Number of requests processed by the API Discovery engine. | [optional] 
+**imgopto_compute_requests** | **Number** | The number of Image Optimizer requests made from Compute services. | [optional] 
+**dns_billable_responses_count** | **Number** | Number of billable DNS responses (e.g., A, CNAME). | [optional] 
+**dns_nonbillable_responses_count** | **Number** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
+**upgrade** | **Number** | Number of requests that resulted in a WebSocket upgrade. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultSettings model module.
  * @module model/DefaultSettings
- * @version 14.0.0
+ * @version 14.1.0
  */
 class DefaultSettings {
     /**

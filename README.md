@@ -188,6 +188,8 @@ Class | Method | Description
 *Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLastMaxEntries**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLastMaxEntries) | Get a limited number of real-time domain data entries
 *Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLastSecond**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLastSecond) | Get real-time domain data from a specified time
 *Fastly.DomainOwnershipsApi* | [**listDomainOwnerships**](docs/DomainOwnershipsApi.md#listDomainOwnerships) | List domain-ownerships
+*Fastly.DomainResearchApi* | [**domainStatus**](docs/DomainResearchApi.md#domainStatus) | Domain status
+*Fastly.DomainResearchApi* | [**suggestDomains**](docs/DomainResearchApi.md#suggestDomains) | Suggest domains
 *Fastly.EventsApi* | [**getEvent**](docs/EventsApi.md#getEvent) | Get an event
 *Fastly.EventsApi* | [**listEvents**](docs/EventsApi.md#listEvents) | List events
 *Fastly.GzipApi* | [**createGzipConfig**](docs/GzipApi.md#createGzipConfig) | Create a gzip configuration
@@ -252,6 +254,7 @@ Class | Method | Description
 *Fastly.KvStoreApi* | [**kvStoreDelete**](docs/KvStoreApi.md#kvStoreDelete) | Delete a KV store.
 *Fastly.KvStoreApi* | [**kvStoreGet**](docs/KvStoreApi.md#kvStoreGet) | Describe a KV store.
 *Fastly.KvStoreApi* | [**kvStoreList**](docs/KvStoreApi.md#kvStoreList) | List all KV stores.
+*Fastly.KvStoreApi* | [**kvStorePut**](docs/KvStoreApi.md#kvStorePut) | Update a KV store.
 *Fastly.KvStoreItemApi* | [**kvStoreDeleteItem**](docs/KvStoreItemApi.md#kvStoreDeleteItem) | Delete an item.
 *Fastly.KvStoreItemApi* | [**kvStoreGetItem**](docs/KvStoreItemApi.md#kvStoreGetItem) | Get an item.
 *Fastly.KvStoreItemApi* | [**kvStoreListItemKeys**](docs/KvStoreItemApi.md#kvStoreListItemKeys) | List item keys.
@@ -397,6 +400,7 @@ Class | Method | Description
 *Fastly.LoggingSyslogApi* | [**getLogSyslog**](docs/LoggingSyslogApi.md#getLogSyslog) | Get a syslog log endpoint
 *Fastly.LoggingSyslogApi* | [**listLogSyslog**](docs/LoggingSyslogApi.md#listLogSyslog) | List Syslog log endpoints
 *Fastly.LoggingSyslogApi* | [**updateLogSyslog**](docs/LoggingSyslogApi.md#updateLogSyslog) | Update a syslog log endpoint
+*Fastly.MetricsPlatformApi* | [**getPlatformMetricsServiceHistorical**](docs/MetricsPlatformApi.md#getPlatformMetricsServiceHistorical) | Get historical time series metrics for a single service
 *Fastly.MutualAuthenticationApi* | [**createMutualTlsAuthentication**](docs/MutualAuthenticationApi.md#createMutualTlsAuthentication) | Create a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**deleteMutualTls**](docs/MutualAuthenticationApi.md#deleteMutualTls) | Delete a Mutual TLS
 *Fastly.MutualAuthenticationApi* | [**getMutualAuthentication**](docs/MutualAuthenticationApi.md#getMutualAuthentication) | Get a Mutual Authentication
@@ -452,6 +456,9 @@ Class | Method | Description
 *Fastly.ProductDomainInspectorApi* | [**enableProductDomainInspector**](docs/ProductDomainInspectorApi.md#enableProductDomainInspector) | Enable product
 *Fastly.ProductDomainInspectorApi* | [**getProductDomainInspector**](docs/ProductDomainInspectorApi.md#getProductDomainInspector) | Get product enablement status
 *Fastly.ProductDomainInspectorApi* | [**getServicesProductDomainInspector**](docs/ProductDomainInspectorApi.md#getServicesProductDomainInspector) | Get services with product enabled
+*Fastly.ProductDomainResearchApi* | [**disableProductDomainResearch**](docs/ProductDomainResearchApi.md#disableProductDomainResearch) | Disable product
+*Fastly.ProductDomainResearchApi* | [**enableDomainResearch**](docs/ProductDomainResearchApi.md#enableDomainResearch) | Enable product
+*Fastly.ProductDomainResearchApi* | [**getDomainResearch**](docs/ProductDomainResearchApi.md#getDomainResearch) | Get product enablement status
 *Fastly.ProductFanoutApi* | [**disableProductFanout**](docs/ProductFanoutApi.md#disableProductFanout) | Disable product
 *Fastly.ProductFanoutApi* | [**enableProductFanout**](docs/ProductFanoutApi.md#enableProductFanout) | Enable product
 *Fastly.ProductFanoutApi* | [**getProductFanout**](docs/ProductFanoutApi.md#getProductFanout) | Get product enablement status
@@ -643,8 +650,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
-- [`/domains/v1/tools/status`](https://www.fastly.com/documentation/reference/api/) (GET)
-- [`/domains/v1/tools/suggest`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/ngwaf/v1/lists/{listId}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (GET, POST)
 - [`/ngwaf/v1/signals/{signal_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (DELETE, GET, PATCH)
@@ -657,6 +662,8 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/events/{event_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/events`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET)
+- [`/ngwaf/v1/workspaces/{workspace_id}/header-links/{header_link_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/header-links) (DELETE, GET, PUT)
+- [`/ngwaf/v1/workspaces/{workspace_id}/header-links`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/header-links) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/redactions/{redaction_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/redactions) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/redactions`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/redactions) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/requests/{request_id}/report`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (POST)

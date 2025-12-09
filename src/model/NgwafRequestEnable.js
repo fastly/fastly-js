@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NgwafRequestEnable model module.
  * @module model/NgwafRequestEnable
- * @version 14.0.0
+ * @version 14.1.0
  */
 class NgwafRequestEnable {
     /**
@@ -51,6 +51,9 @@ class NgwafRequestEnable {
             if (data.hasOwnProperty('workspace_id')) {
                 obj['workspace_id'] = ApiClient.convertToType(data['workspace_id'], 'String');
             }
+            if (data.hasOwnProperty('traffic_ramp')) {
+                obj['traffic_ramp'] = ApiClient.convertToType(data['traffic_ramp'], 'String');
+            }
         }
         return obj;
     }
@@ -63,6 +66,12 @@ class NgwafRequestEnable {
  * @member {String} workspace_id
  */
 NgwafRequestEnable.prototype['workspace_id'] = undefined;
+
+/**
+ * The percentage of traffic to inspect.
+ * @member {String} traffic_ramp
+ */
+NgwafRequestEnable.prototype['traffic_ramp'] = undefined;
 
 
 

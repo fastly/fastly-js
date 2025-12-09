@@ -12,6 +12,7 @@
 
 
 import ApiClient from "../ApiClient";
+import DdosProtectionRequestEnableMode from '../model/DdosProtectionRequestEnableMode';
 import DdosProtectionRequestUpdateConfiguration from '../model/DdosProtectionRequestUpdateConfiguration';
 import DdosProtectionResponseBodyGetAllServices from '../model/DdosProtectionResponseBodyGetAllServices';
 import DdosProtectionResponseConfigure from '../model/DdosProtectionResponseConfigure';
@@ -20,7 +21,7 @@ import DdosProtectionResponseEnable from '../model/DdosProtectionResponseEnable'
 /**
 * ProductDdosProtection service.
 * @module api/ProductDdosProtectionApi
-* @version 14.0.0
+* @version 14.1.0
 */
 export default class ProductDdosProtectionApi {
 
@@ -99,13 +100,14 @@ export default class ProductDdosProtectionApi {
     }
 
     /**
-     * Enable the DDoS Protection product on a service in 'log' mode.
+     * Enable the DDoS Protection product on a service in default 'log' mode unless otherwise specified in the request body.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {module:model/DdosProtectionRequestEnableMode} [options.ddos_protection_request_enable_mode]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DdosProtectionResponseEnable} and HTTP response
      */
     enableProductDdosProtectionWithHttpInfo(options = {}) {
-      let postBody = null;
+      let postBody = options['ddos_protection_request_enable_mode'];
       // Verify the required parameter 'service_id' is set.
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -124,7 +126,7 @@ export default class ProductDdosProtectionApi {
       };
 
       let authNames = ['token'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = DdosProtectionResponseEnable;
       let basePaths = ['https://api.fastly.com'];
@@ -144,9 +146,10 @@ export default class ProductDdosProtectionApi {
     }
 
     /**
-     * Enable the DDoS Protection product on a service in 'log' mode.
+     * Enable the DDoS Protection product on a service in default 'log' mode unless otherwise specified in the request body.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {module:model/DdosProtectionRequestEnableMode} [options.ddos_protection_request_enable_mode]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DdosProtectionResponseEnable}
      */
     enableProductDdosProtection(options = {}) {

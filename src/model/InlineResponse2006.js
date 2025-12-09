@@ -11,13 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import KvStoreDetails from './KvStoreDetails';
-import PaginationCursorMeta from './PaginationCursorMeta';
+import Suggestion from './Suggestion';
 
 /**
  * The InlineResponse2006 model module.
  * @module model/InlineResponse2006
- * @version 14.0.0
+ * @version 14.1.0
  */
 class InlineResponse2006 {
     /**
@@ -48,11 +47,8 @@ class InlineResponse2006 {
         if (data) {
             obj = obj || new InlineResponse2006();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [KvStoreDetails]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('results')) {
+                obj['results'] = ApiClient.convertToType(data['results'], [Suggestion]);
             }
         }
         return obj;
@@ -62,14 +58,9 @@ class InlineResponse2006 {
 }
 
 /**
- * @member {Array.<module:model/KvStoreDetails>} data
+ * @member {Array.<module:model/Suggestion>} results
  */
-InlineResponse2006.prototype['data'] = undefined;
-
-/**
- * @member {module:model/PaginationCursorMeta} meta
- */
-InlineResponse2006.prototype['meta'] = undefined;
+InlineResponse2006.prototype['results'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import HistoricalDomainsResponse from '../model/HistoricalDomainsResponse';
 /**
 * DomainInspectorHistorical service.
 * @module api/DomainInspectorHistoricalApi
-* @version 14.0.0
+* @version 14.1.0
 */
 export default class DomainInspectorHistoricalApi {
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **[String]** |  | [optional] 
+**data** | [**[KvStoreDetails]**](KvStoreDetails.md) |  | [optional] 
 **meta** | [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 

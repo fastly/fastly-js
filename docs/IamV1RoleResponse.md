@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
+**display_name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **permissions** | **[String]** | The set of permissions granted to this role. | [optional] 
 

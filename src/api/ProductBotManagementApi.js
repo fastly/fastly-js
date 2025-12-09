@@ -18,7 +18,7 @@ import BotManagementResponseBodyGetAllServices from '../model/BotManagementRespo
 /**
 * ProductBotManagement service.
 * @module api/ProductBotManagementApi
-* @version 14.0.0
+* @version 14.1.0
 */
 export default class ProductBotManagementApi {
 

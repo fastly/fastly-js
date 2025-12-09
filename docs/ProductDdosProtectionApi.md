@@ -56,16 +56,17 @@ null (empty response body)
 ## `enableProductDdosProtection`
 
 ```javascript
-enableProductDdosProtection({ service_id })
+enableProductDdosProtection({ service_id, [ddos_protection_request_enable_mode] })
 ```
 
-Enable the DDoS Protection product on a service in 'log' mode.
+Enable the DDoS Protection product on a service in default 'log' mode unless otherwise specified in the request body.
 
 ### Example
 
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+  ddos_protection_request_enable_mode: {"mode":"block"},
 };
 
 apiInstance.enableProductDdosProtection(options)
@@ -82,6 +83,7 @@ apiInstance.enableProductDdosProtection(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
+**ddos_protection_request_enable_mode** | [**DdosProtectionRequestEnableMode**](DdosProtectionRequestEnableMode.md) |  | [optional]
 
 ### Return type
 

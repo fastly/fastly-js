@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttackSignal model module.
  * @module model/AttackSignal
- * @version 14.0.0
+ * @version 14.1.0
  */
 class AttackSignal {
     /**

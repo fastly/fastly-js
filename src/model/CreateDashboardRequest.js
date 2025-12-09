@@ -16,7 +16,7 @@ import DashboardItem from './DashboardItem';
 /**
  * The CreateDashboardRequest model module.
  * @module model/CreateDashboardRequest
- * @version 14.0.0
+ * @version 14.1.0
  */
 class CreateDashboardRequest {
     /**

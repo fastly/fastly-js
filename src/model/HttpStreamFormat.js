@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HttpStreamFormat model module.
  * @module model/HttpStreamFormat
- * @version 14.0.0
+ * @version 14.1.0
  */
 class HttpStreamFormat {
     /**

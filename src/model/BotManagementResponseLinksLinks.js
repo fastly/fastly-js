@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotManagementResponseLinksLinks model module.
  * @module model/BotManagementResponseLinksLinks
- * @version 14.0.0
+ * @version 14.1.0
  */
 class BotManagementResponseLinksLinks {
     /**

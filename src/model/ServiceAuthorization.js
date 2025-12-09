@@ -16,7 +16,7 @@ import ServiceAuthorizationData from './ServiceAuthorizationData';
 /**
  * The ServiceAuthorization model module.
  * @module model/ServiceAuthorization
- * @version 14.0.0
+ * @version 14.1.0
  */
 class ServiceAuthorization {
     /**

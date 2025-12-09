@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamV1RoleResponse model module.
  * @module model/IamV1RoleResponse
- * @version 14.0.0
+ * @version 14.1.0
  */
 class IamV1RoleResponse {
     /**
@@ -53,6 +53,9 @@ class IamV1RoleResponse {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('display_name')) {
+                obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -75,6 +78,11 @@ IamV1RoleResponse.prototype['id'] = undefined;
  * @member {String} name
  */
 IamV1RoleResponse.prototype['name'] = undefined;
+
+/**
+ * @member {String} display_name
+ */
+IamV1RoleResponse.prototype['display_name'] = undefined;
 
 /**
  * @member {String} description

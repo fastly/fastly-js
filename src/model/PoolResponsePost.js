@@ -21,7 +21,7 @@ import TlsCommonResponse from './TlsCommonResponse';
 /**
  * The PoolResponsePost model module.
  * @module model/PoolResponsePost
- * @version 14.0.0
+ * @version 14.1.0
  */
 class PoolResponsePost {
     /**

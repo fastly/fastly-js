@@ -16,7 +16,7 @@ import DdosProtectionResponseProductProduct from './DdosProtectionResponseProduc
 /**
  * The DdosProtectionResponseProduct model module.
  * @module model/DdosProtectionResponseProduct
- * @version 14.0.0
+ * @version 14.1.0
  */
 class DdosProtectionResponseProduct {
     /**

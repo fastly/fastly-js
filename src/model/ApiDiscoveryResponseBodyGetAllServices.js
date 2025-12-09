@@ -22,7 +22,7 @@ import ApiDiscoveryResponseProductProduct from './ApiDiscoveryResponseProductPro
 /**
  * The ApiDiscoveryResponseBodyGetAllServices model module.
  * @module model/ApiDiscoveryResponseBodyGetAllServices
- * @version 14.0.0
+ * @version 14.1.0
  */
 class ApiDiscoveryResponseBodyGetAllServices {
     /**

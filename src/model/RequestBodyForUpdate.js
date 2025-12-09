@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestBodyForUpdate model module.
  * @module model/RequestBodyForUpdate
- * @version 14.0.0
+ * @version 14.1.0
  */
 class RequestBodyForUpdate {
     /**

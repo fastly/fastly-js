@@ -146,6 +146,7 @@ import DdosProtectionInvalidRequest from './model/DdosProtectionInvalidRequest';
 import DdosProtectionNotAuthenticated from './model/DdosProtectionNotAuthenticated';
 import DdosProtectionNotAuthorized from './model/DdosProtectionNotAuthorized';
 import DdosProtectionNotFound from './model/DdosProtectionNotFound';
+import DdosProtectionRequestEnableMode from './model/DdosProtectionRequestEnableMode';
 import DdosProtectionRequestUpdateConfiguration from './model/DdosProtectionRequestUpdateConfiguration';
 import DdosProtectionResponseBodyGetAllServices from './model/DdosProtectionResponseBodyGetAllServices';
 import DdosProtectionResponseConfiguration from './model/DdosProtectionResponseConfiguration';
@@ -210,6 +211,12 @@ import DomainInspectorResponseLinksLinks from './model/DomainInspectorResponseLi
 import DomainInspectorResponseProduct from './model/DomainInspectorResponseProduct';
 import DomainInspectorResponseProductProduct from './model/DomainInspectorResponseProductProduct';
 import DomainInspectorResponseService from './model/DomainInspectorResponseService';
+import DomainResearchResponseBodyEnable from './model/DomainResearchResponseBodyEnable';
+import DomainResearchResponseCustomer from './model/DomainResearchResponseCustomer';
+import DomainResearchResponseLinks from './model/DomainResearchResponseLinks';
+import DomainResearchResponseLinksLinks from './model/DomainResearchResponseLinksLinks';
+import DomainResearchResponseProduct from './model/DomainResearchResponseProduct';
+import DomainResearchResponseProductProduct from './model/DomainResearchResponseProductProduct';
 import DomainResponse from './model/DomainResponse';
 import Environment from './model/Environment';
 import EnvironmentName from './model/EnvironmentName';
@@ -302,6 +309,7 @@ import InlineObject1 from './model/InlineObject1';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse20010 from './model/InlineResponse20010';
+import InlineResponse20011 from './model/InlineResponse20011';
 import InlineResponse2002 from './model/InlineResponse2002';
 import InlineResponse2003 from './model/InlineResponse2003';
 import InlineResponse2004 from './model/InlineResponse2004';
@@ -328,7 +336,7 @@ import Invoicelineitems from './model/Invoicelineitems';
 import KvStoreBatchResponse from './model/KvStoreBatchResponse';
 import KvStoreBatchResponseErrors from './model/KvStoreBatchResponseErrors';
 import KvStoreDetails from './model/KvStoreDetails';
-import KvStoreRequestCreate from './model/KvStoreRequestCreate';
+import KvStoreRequestCreateOrUpdate from './model/KvStoreRequestCreateOrUpdate';
 import KvStoreUpsertBatch from './model/KvStoreUpsertBatch';
 import ListAttackReport from './model/ListAttackReport';
 import ListAttackReportMeta from './model/ListAttackReportMeta';
@@ -473,6 +481,8 @@ import ObjectStorageResponseLinks from './model/ObjectStorageResponseLinks';
 import ObjectStorageResponseLinksLinks from './model/ObjectStorageResponseLinksLinks';
 import ObjectStorageResponseProduct from './model/ObjectStorageResponseProduct';
 import ObjectStorageResponseProductProduct from './model/ObjectStorageResponseProductProduct';
+import Offer from './model/Offer';
+import OfferAllOf from './model/OfferAllOf';
 import OriginInspector from './model/OriginInspector';
 import OriginInspectorDimensions from './model/OriginInspectorDimensions';
 import OriginInspectorEntry from './model/OriginInspectorEntry';
@@ -507,6 +517,9 @@ import PlatformDdosDataItems from './model/PlatformDdosDataItems';
 import PlatformDdosEntry from './model/PlatformDdosEntry';
 import PlatformDdosResponse from './model/PlatformDdosResponse';
 import PlatformDdosResponseAllOf from './model/PlatformDdosResponseAllOf';
+import PlatformMetadata from './model/PlatformMetadata';
+import PlatformMetricsResponse from './model/PlatformMetricsResponse';
+import PlatformValues from './model/PlatformValues';
 import PoolAdditional from './model/PoolAdditional';
 import PoolResponse from './model/PoolResponse';
 import PoolResponseAllOf from './model/PoolResponseAllOf';
@@ -680,11 +693,15 @@ import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
 import StarResponseAllOf from './model/StarResponseAllOf';
 import Stats from './model/Stats';
+import Status from './model/Status';
+import StatusAllOf from './model/StatusAllOf';
 import SuccessfulResponseAsObject from './model/SuccessfulResponseAsObject';
 import SuccessfulResponseAsObjectAllOf from './model/SuccessfulResponseAsObjectAllOf';
 import SudoGenericTokenError from './model/SudoGenericTokenError';
 import SudoRequest from './model/SudoRequest';
 import SudoResponse from './model/SudoResponse';
+import Suggestion from './model/Suggestion';
+import SuggestionAllOf from './model/SuggestionAllOf';
 import TimeseriesGetResponse from './model/TimeseriesGetResponse';
 import TimeseriesMeta from './model/TimeseriesMeta';
 import TimeseriesResult from './model/TimeseriesResult';
@@ -864,6 +881,7 @@ import DomainApi from './api/DomainApi';
 import DomainInspectorHistoricalApi from './api/DomainInspectorHistoricalApi';
 import DomainInspectorRealtimeApi from './api/DomainInspectorRealtimeApi';
 import DomainOwnershipsApi from './api/DomainOwnershipsApi';
+import DomainResearchApi from './api/DomainResearchApi';
 import EventsApi from './api/EventsApi';
 import GzipApi from './api/GzipApi';
 import HeaderApi from './api/HeaderApi';
@@ -908,6 +926,7 @@ import LoggingSftpApi from './api/LoggingSftpApi';
 import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
+import MetricsPlatformApi from './api/MetricsPlatformApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
 import NgwafReportsApi from './api/NgwafReportsApi';
 import ObjectStorageAccessKeysApi from './api/ObjectStorageAccessKeysApi';
@@ -925,6 +944,7 @@ import ProductBotManagementApi from './api/ProductBotManagementApi';
 import ProductBrotliCompressionApi from './api/ProductBrotliCompressionApi';
 import ProductDdosProtectionApi from './api/ProductDdosProtectionApi';
 import ProductDomainInspectorApi from './api/ProductDomainInspectorApi';
+import ProductDomainResearchApi from './api/ProductDomainResearchApi';
 import ProductFanoutApi from './api/ProductFanoutApi';
 import ProductImageOptimizerApi from './api/ProductImageOptimizerApi';
 import ProductLogExplorerInsightsApi from './api/ProductLogExplorerInsightsApi';
@@ -999,7 +1019,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 14.0.0
+* @version 14.1.0
 */
 export {
     /**
@@ -1813,6 +1833,12 @@ export {
     DdosProtectionNotFound,
 
     /**
+     * The DdosProtectionRequestEnableMode model constructor.
+     * @property {module:model/DdosProtectionRequestEnableMode}
+     */
+    DdosProtectionRequestEnableMode,
+
+    /**
      * The DdosProtectionRequestUpdateConfiguration model constructor.
      * @property {module:model/DdosProtectionRequestUpdateConfiguration}
      */
@@ -2195,6 +2221,42 @@ export {
      * @property {module:model/DomainInspectorResponseService}
      */
     DomainInspectorResponseService,
+
+    /**
+     * The DomainResearchResponseBodyEnable model constructor.
+     * @property {module:model/DomainResearchResponseBodyEnable}
+     */
+    DomainResearchResponseBodyEnable,
+
+    /**
+     * The DomainResearchResponseCustomer model constructor.
+     * @property {module:model/DomainResearchResponseCustomer}
+     */
+    DomainResearchResponseCustomer,
+
+    /**
+     * The DomainResearchResponseLinks model constructor.
+     * @property {module:model/DomainResearchResponseLinks}
+     */
+    DomainResearchResponseLinks,
+
+    /**
+     * The DomainResearchResponseLinksLinks model constructor.
+     * @property {module:model/DomainResearchResponseLinksLinks}
+     */
+    DomainResearchResponseLinksLinks,
+
+    /**
+     * The DomainResearchResponseProduct model constructor.
+     * @property {module:model/DomainResearchResponseProduct}
+     */
+    DomainResearchResponseProduct,
+
+    /**
+     * The DomainResearchResponseProductProduct model constructor.
+     * @property {module:model/DomainResearchResponseProductProduct}
+     */
+    DomainResearchResponseProductProduct,
 
     /**
      * The DomainResponse model constructor.
@@ -2749,6 +2811,12 @@ export {
     InlineResponse20010,
 
     /**
+     * The InlineResponse20011 model constructor.
+     * @property {module:model/InlineResponse20011}
+     */
+    InlineResponse20011,
+
+    /**
      * The InlineResponse2002 model constructor.
      * @property {module:model/InlineResponse2002}
      */
@@ -2905,10 +2973,10 @@ export {
     KvStoreDetails,
 
     /**
-     * The KvStoreRequestCreate model constructor.
-     * @property {module:model/KvStoreRequestCreate}
+     * The KvStoreRequestCreateOrUpdate model constructor.
+     * @property {module:model/KvStoreRequestCreateOrUpdate}
      */
-    KvStoreRequestCreate,
+    KvStoreRequestCreateOrUpdate,
 
     /**
      * The KvStoreUpsertBatch model constructor.
@@ -3775,6 +3843,18 @@ export {
     ObjectStorageResponseProductProduct,
 
     /**
+     * The Offer model constructor.
+     * @property {module:model/Offer}
+     */
+    Offer,
+
+    /**
+     * The OfferAllOf model constructor.
+     * @property {module:model/OfferAllOf}
+     */
+    OfferAllOf,
+
+    /**
      * The OriginInspector model constructor.
      * @property {module:model/OriginInspector}
      */
@@ -3977,6 +4057,24 @@ export {
      * @property {module:model/PlatformDdosResponseAllOf}
      */
     PlatformDdosResponseAllOf,
+
+    /**
+     * The PlatformMetadata model constructor.
+     * @property {module:model/PlatformMetadata}
+     */
+    PlatformMetadata,
+
+    /**
+     * The PlatformMetricsResponse model constructor.
+     * @property {module:model/PlatformMetricsResponse}
+     */
+    PlatformMetricsResponse,
+
+    /**
+     * The PlatformValues model constructor.
+     * @property {module:model/PlatformValues}
+     */
+    PlatformValues,
 
     /**
      * The PoolAdditional model constructor.
@@ -5017,6 +5115,18 @@ export {
     Stats,
 
     /**
+     * The Status model constructor.
+     * @property {module:model/Status}
+     */
+    Status,
+
+    /**
+     * The StatusAllOf model constructor.
+     * @property {module:model/StatusAllOf}
+     */
+    StatusAllOf,
+
+    /**
      * The SuccessfulResponseAsObject model constructor.
      * @property {module:model/SuccessfulResponseAsObject}
      */
@@ -5045,6 +5155,18 @@ export {
      * @property {module:model/SudoResponse}
      */
     SudoResponse,
+
+    /**
+     * The Suggestion model constructor.
+     * @property {module:model/Suggestion}
+     */
+    Suggestion,
+
+    /**
+     * The SuggestionAllOf model constructor.
+     * @property {module:model/SuggestionAllOf}
+     */
+    SuggestionAllOf,
 
     /**
      * The TimeseriesGetResponse model constructor.
@@ -6121,6 +6243,12 @@ export {
     DomainOwnershipsApi,
 
     /**
+    * The DomainResearchApi service constructor.
+    * @property {module:api/DomainResearchApi}
+    */
+    DomainResearchApi,
+
+    /**
     * The EventsApi service constructor.
     * @property {module:api/EventsApi}
     */
@@ -6385,6 +6513,12 @@ export {
     LoggingSyslogApi,
 
     /**
+    * The MetricsPlatformApi service constructor.
+    * @property {module:api/MetricsPlatformApi}
+    */
+    MetricsPlatformApi,
+
+    /**
     * The MutualAuthenticationApi service constructor.
     * @property {module:api/MutualAuthenticationApi}
     */
@@ -6485,6 +6619,12 @@ export {
     * @property {module:api/ProductDomainInspectorApi}
     */
     ProductDomainInspectorApi,
+
+    /**
+    * The ProductDomainResearchApi service constructor.
+    * @property {module:api/ProductDomainResearchApi}
+    */
+    ProductDomainResearchApi,
 
     /**
     * The ProductFanoutApi service constructor.

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 14.0.0
+ * @version 14.1.0
  */
 class RealtimeMeasurements {
     /**
@@ -832,6 +832,18 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('api_discovery_requests_count')) {
                 obj['api_discovery_requests_count'] = ApiClient.convertToType(data['api_discovery_requests_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_compute_requests')) {
+                obj['imgopto_compute_requests'] = ApiClient.convertToType(data['imgopto_compute_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('dns_billable_responses_count')) {
+                obj['dns_billable_responses_count'] = ApiClient.convertToType(data['dns_billable_responses_count'], 'Number');
+            }
+            if (data.hasOwnProperty('dns_nonbillable_responses_count')) {
+                obj['dns_nonbillable_responses_count'] = ApiClient.convertToType(data['dns_nonbillable_responses_count'], 'Number');
+            }
+            if (data.hasOwnProperty('upgrade')) {
+                obj['upgrade'] = ApiClient.convertToType(data['upgrade'], 'Number');
             }
         }
         return obj;
@@ -2411,6 +2423,30 @@ RealtimeMeasurements.prototype['compute_cache_operations_count'] = undefined;
  * @member {Number} api_discovery_requests_count
  */
 RealtimeMeasurements.prototype['api_discovery_requests_count'] = undefined;
+
+/**
+ * The number of Image Optimizer requests made from Compute services.
+ * @member {Number} imgopto_compute_requests
+ */
+RealtimeMeasurements.prototype['imgopto_compute_requests'] = undefined;
+
+/**
+ * Number of billable DNS responses (e.g., A, CNAME).
+ * @member {Number} dns_billable_responses_count
+ */
+RealtimeMeasurements.prototype['dns_billable_responses_count'] = undefined;
+
+/**
+ * Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN).
+ * @member {Number} dns_nonbillable_responses_count
+ */
+RealtimeMeasurements.prototype['dns_nonbillable_responses_count'] = undefined;
+
+/**
+ * Number of requests that resulted in a WebSocket upgrade.
+ * @member {Number} upgrade
+ */
+RealtimeMeasurements.prototype['upgrade'] = undefined;
 
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorHistoricalMetaFilters model module.
  * @module model/OriginInspectorHistoricalMetaFilters
- * @version 14.0.0
+ * @version 14.1.0
  */
 class OriginInspectorHistoricalMetaFilters {
     /**

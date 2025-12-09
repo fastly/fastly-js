@@ -16,7 +16,7 @@ import ImageOptimizerResponseLinksLinks from './ImageOptimizerResponseLinksLinks
 /**
  * The ImageOptimizerResponseLinks model module.
  * @module model/ImageOptimizerResponseLinks
- * @version 14.0.0
+ * @version 14.1.0
  */
 class ImageOptimizerResponseLinks {
     /**

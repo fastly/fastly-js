@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionEventAllOf model module.
  * @module model/DdosProtectionEventAllOf
- * @version 14.0.0
+ * @version 14.1.0
  */
 class DdosProtectionEventAllOf {
     /**
@@ -52,6 +52,12 @@ class DdosProtectionEventAllOf {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('requests_allowed')) {
+                obj['requests_allowed'] = ApiClient.convertToType(data['requests_allowed'], 'Number');
+            }
+            if (data.hasOwnProperty('requests_detected')) {
+                obj['requests_detected'] = ApiClient.convertToType(data['requests_detected'], 'Number');
+            }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
@@ -82,6 +88,18 @@ DdosProtectionEventAllOf.prototype['id'] = undefined;
  * @member {String} name
  */
 DdosProtectionEventAllOf.prototype['name'] = undefined;
+
+/**
+ * Number of requests classified as non-attack traffic for an event.
+ * @member {Number} requests_allowed
+ */
+DdosProtectionEventAllOf.prototype['requests_allowed'] = undefined;
+
+/**
+ * Number of requests classified as DDoS attack traffic for an event.
+ * @member {Number} requests_detected
+ */
+DdosProtectionEventAllOf.prototype['requests_detected'] = undefined;
 
 /**
  * Alphanumeric string identifying the customer.

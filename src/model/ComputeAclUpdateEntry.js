@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclUpdateEntry model module.
  * @module model/ComputeAclUpdateEntry
- * @version 14.0.0
+ * @version 14.1.0
  */
 class ComputeAclUpdateEntry {
     /**

@@ -12,14 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2006 from '../model/InlineResponse2006';
+import InlineResponse2007 from '../model/InlineResponse2007';
 import KvStoreDetails from '../model/KvStoreDetails';
-import KvStoreRequestCreate from '../model/KvStoreRequestCreate';
+import KvStoreRequestCreateOrUpdate from '../model/KvStoreRequestCreateOrUpdate';
 
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 14.0.0
+* @version 14.1.0
 */
 export default class KvStoreApi {
 
@@ -43,11 +43,11 @@ export default class KvStoreApi {
      * Create a KV store.
      * @param {Object} options
      * @param {module:model/String} [options.location]
-     * @param {module:model/KvStoreRequestCreate} [options.kv_store_request_create]
+     * @param {module:model/KvStoreRequestCreateOrUpdate} [options.kv_store_request_create_or_update]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KvStoreDetails} and HTTP response
      */
     kvStoreCreateWithHttpInfo(options = {}) {
-      let postBody = options['kv_store_request_create'];
+      let postBody = options['kv_store_request_create_or_update'];
 
       let pathParams = {
       };
@@ -85,7 +85,7 @@ export default class KvStoreApi {
      * Create a KV store.
      * @param {Object} options
      * @param {module:model/String} [options.location]
-     * @param {module:model/KvStoreRequestCreate} [options.kv_store_request_create]
+     * @param {module:model/KvStoreRequestCreateOrUpdate} [options.kv_store_request_create_or_update]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KvStoreDetails}
      */
     kvStoreCreate(options = {}) {
@@ -217,7 +217,7 @@ export default class KvStoreApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
     kvStoreListWithHttpInfo(options = {}) {
       let postBody = null;
@@ -239,7 +239,7 @@ export default class KvStoreApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2007;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -262,10 +262,70 @@ export default class KvStoreApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
     kvStoreList(options = {}) {
       return this.kvStoreListWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update the name of a KV store.
+     * @param {Object} options
+     * @param {String} options.store_id
+     * @param {module:model/KvStoreRequestCreateOrUpdate} [options.kv_store_request_create_or_update]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    kvStorePutWithHttpInfo(options = {}) {
+      let postBody = options['kv_store_request_create_or_update'];
+      // Verify the required parameter 'store_id' is set.
+      if (options['store_id'] === undefined || options['store_id'] === null) {
+        throw new Error("Missing the required parameter 'store_id'.");
+      }
+
+      let pathParams = {
+        'store_id': options['store_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/resources/stores/kv/{store_id}', 'PUT',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update the name of a KV store.
+     * @param {Object} options
+     * @param {String} options.store_id
+     * @param {module:model/KvStoreRequestCreateOrUpdate} [options.kv_store_request_create_or_update]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    kvStorePut(options = {}) {
+      return this.kvStorePutWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

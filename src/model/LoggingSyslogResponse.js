@@ -23,7 +23,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingSyslogResponse model module.
  * @module model/LoggingSyslogResponse
- * @version 14.0.0
+ * @version 14.1.0
  */
 class LoggingSyslogResponse {
     /**
