@@ -6,6 +6,10 @@ on:
       # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
       - 'release/v?[0-9]*'
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   GITHUB_REF_NAME: ${{ github.ref_name }}
 
@@ -26,8 +30,6 @@ jobs:
         run: ./.github/scripts/pack.sh
         working-directory: ./main
         shell: bash
-      - name: Auth with NPM
-        run: npm config set "//registry.npmjs.org/:_authToken" "${{ secrets.NPM_PUBLISH_TOKEN }}"
       - name: Publish API client
         run: ./.github/scripts/publish.sh
         working-directory: ./main
