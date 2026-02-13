@@ -16,7 +16,7 @@ import AiAcceleratorResponseProductProduct from './AiAcceleratorResponseProductP
 /**
  * The AiAcceleratorResponseProduct model module.
  * @module model/AiAcceleratorResponseProduct
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class AiAcceleratorResponseProduct {
     /**

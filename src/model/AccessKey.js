@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessKey model module.
  * @module model/AccessKey
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class AccessKey {
     /**

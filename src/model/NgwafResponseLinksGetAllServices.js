@@ -16,7 +16,7 @@ import NgwafResponseLinksGetAllServicesLinks from './NgwafResponseLinksGetAllSer
 /**
  * The NgwafResponseLinksGetAllServices model module.
  * @module model/NgwafResponseLinksGetAllServices
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class NgwafResponseLinksGetAllServices {
     /**

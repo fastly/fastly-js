@@ -16,7 +16,7 @@ import RelationshipServiceInvitationsCreate from './RelationshipServiceInvitatio
 /**
  * The InvitationCreateDataAllOf model module.
  * @module model/InvitationCreateDataAllOf
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class InvitationCreateDataAllOf {
     /**

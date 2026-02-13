@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Gzip service.
 * @module api/GzipApi
-* @version 15.0.0-beta.0
+* @version 15.0.0-beta.1
 */
 export default class GzipApi {
 

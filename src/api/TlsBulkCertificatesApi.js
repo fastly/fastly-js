@@ -19,7 +19,7 @@ import TlsBulkCertificatesResponse from '../model/TlsBulkCertificatesResponse';
 /**
 * TlsBulkCertificates service.
 * @module api/TlsBulkCertificatesApi
-* @version 15.0.0-beta.0
+* @version 15.0.0-beta.1
 */
 export default class TlsBulkCertificatesApi {
 

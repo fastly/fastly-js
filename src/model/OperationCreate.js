@@ -16,7 +16,7 @@ import OperationBase from './OperationBase';
 /**
  * The OperationCreate model module.
  * @module model/OperationCreate
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class OperationCreate {
     /**

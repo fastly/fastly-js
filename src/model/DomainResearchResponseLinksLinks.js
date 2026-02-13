@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainResearchResponseLinksLinks model module.
  * @module model/DomainResearchResponseLinksLinks
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class DomainResearchResponseLinksLinks {
     /**

@@ -16,7 +16,7 @@ import OriginInspectorHistoricalMetaFilters from './OriginInspectorHistoricalMet
 /**
  * The OriginInspectorHistoricalMeta model module.
  * @module model/OriginInspectorHistoricalMeta
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class OriginInspectorHistoricalMeta {
     /**

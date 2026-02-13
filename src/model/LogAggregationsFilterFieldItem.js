@@ -16,7 +16,7 @@ import LogAggregationsValueField from './LogAggregationsValueField';
 /**
  * The LogAggregationsFilterFieldItem model module.
  * @module model/LogAggregationsFilterFieldItem
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class LogAggregationsFilterFieldItem {
     /**

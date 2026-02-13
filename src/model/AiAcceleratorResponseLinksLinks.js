@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiAcceleratorResponseLinksLinks model module.
  * @module model/AiAcceleratorResponseLinksLinks
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class AiAcceleratorResponseLinksLinks {
     /**

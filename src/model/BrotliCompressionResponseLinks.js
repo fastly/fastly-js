@@ -16,7 +16,7 @@ import BrotliCompressionResponseLinksLinks from './BrotliCompressionResponseLink
 /**
  * The BrotliCompressionResponseLinks model module.
  * @module model/BrotliCompressionResponseLinks
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class BrotliCompressionResponseLinks {
     /**

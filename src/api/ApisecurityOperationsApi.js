@@ -25,7 +25,7 @@ import TagGet from '../model/TagGet';
 /**
 * ApisecurityOperations service.
 * @module api/ApisecurityOperationsApi
-* @version 15.0.0-beta.0
+* @version 15.0.0-beta.1
 */
 export default class ApisecurityOperationsApi {
 

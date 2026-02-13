@@ -20,7 +20,7 @@ import SuccessfulResponseAsObject from '../model/SuccessfulResponseAsObject';
 /**
 * DmDomains service.
 * @module api/DmDomainsApi
-* @version 15.0.0-beta.0
+* @version 15.0.0-beta.1
 */
 export default class DmDomainsApi {
 

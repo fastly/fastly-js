@@ -16,7 +16,7 @@ import FanoutResponseLinksLinks from './FanoutResponseLinksLinks';
 /**
  * The FanoutResponseLinks model module.
  * @module model/FanoutResponseLinks
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class FanoutResponseLinks {
     /**

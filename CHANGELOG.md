@@ -1,5 +1,9 @@
 # Changelog
 
+## [v15.0.0-beta.1](https://github.com/fastly/fastly-js/releases/tag/release/v15.0.0-beta.1) (2026-02-13)
+
+- No notable changes in this release.
+
 ## [v15.0.0-beta.0](https://github.com/fastly/fastly-js/releases/tag/release/v15.0.0-beta.0) (2026-02-13)
 
 **Breaking Changes:**

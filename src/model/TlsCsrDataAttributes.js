@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCsrDataAttributes model module.
  * @module model/TlsCsrDataAttributes
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class TlsCsrDataAttributes {
     /**

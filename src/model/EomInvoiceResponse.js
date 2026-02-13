@@ -17,7 +17,7 @@ import Invoicelineitems from './Invoicelineitems';
 /**
  * The EomInvoiceResponse model module.
  * @module model/EomInvoiceResponse
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class EomInvoiceResponse {
     /**

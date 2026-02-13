@@ -17,7 +17,7 @@ import LogInsightsMeta from './LogInsightsMeta';
 /**
  * The GetLogInsightsResponse model module.
  * @module model/GetLogInsightsResponse
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class GetLogInsightsResponse {
     /**

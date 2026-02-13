@@ -22,7 +22,7 @@ import OriginInspectorResponseProductProduct from './OriginInspectorResponseProd
 /**
  * The OriginInspectorResponseBodyGetAllServices model module.
  * @module model/OriginInspectorResponseBodyGetAllServices
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class OriginInspectorResponseBodyGetAllServices {
     /**

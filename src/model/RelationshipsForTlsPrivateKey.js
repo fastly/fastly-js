@@ -18,7 +18,7 @@ import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains
 /**
  * The RelationshipsForTlsPrivateKey model module.
  * @module model/RelationshipsForTlsPrivateKey
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class RelationshipsForTlsPrivateKey {
     /**

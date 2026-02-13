@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SudoGenericTokenError model module.
  * @module model/SudoGenericTokenError
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class SudoGenericTokenError {
     /**

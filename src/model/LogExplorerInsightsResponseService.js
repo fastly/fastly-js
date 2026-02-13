@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The LogExplorerInsightsResponseService model module.
  * @module model/LogExplorerInsightsResponseService
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class LogExplorerInsightsResponseService {
     /**

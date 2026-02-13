@@ -16,7 +16,7 @@ import NgwafResponseLinksLinks from './NgwafResponseLinksLinks';
 /**
  * The NgwafResponseLinks model module.
  * @module model/NgwafResponseLinks
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class NgwafResponseLinks {
     /**

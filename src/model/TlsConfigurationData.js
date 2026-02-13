@@ -18,7 +18,7 @@ import TypeTlsConfiguration from './TypeTlsConfiguration';
 /**
  * The TlsConfigurationData model module.
  * @module model/TlsConfigurationData
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class TlsConfigurationData {
     /**

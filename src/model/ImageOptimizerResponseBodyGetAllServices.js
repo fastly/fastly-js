@@ -22,7 +22,7 @@ import ImageOptimizerResponseProductProduct from './ImageOptimizerResponseProduc
 /**
  * The ImageOptimizerResponseBodyGetAllServices model module.
  * @module model/ImageOptimizerResponseBodyGetAllServices
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class ImageOptimizerResponseBodyGetAllServices {
     /**

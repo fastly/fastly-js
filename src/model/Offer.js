@@ -16,7 +16,7 @@ import OfferAllOf from './OfferAllOf';
 /**
  * The Offer model module.
  * @module model/Offer
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class Offer {
     /**

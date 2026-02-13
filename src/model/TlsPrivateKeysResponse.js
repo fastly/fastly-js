@@ -20,7 +20,7 @@ import TlsPrivateKeysResponseAllOf from './TlsPrivateKeysResponseAllOf';
 /**
  * The TlsPrivateKeysResponse model module.
  * @module model/TlsPrivateKeysResponse
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class TlsPrivateKeysResponse {
     /**

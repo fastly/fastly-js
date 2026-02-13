@@ -20,7 +20,7 @@ import UpdateBillingAddressRequest from '../model/UpdateBillingAddressRequest';
 /**
 * BillingAddress service.
 * @module api/BillingAddressApi
-* @version 15.0.0-beta.0
+* @version 15.0.0-beta.1
 */
 export default class BillingAddressApi {
 

@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The WebsocketsResponseCustomer model module.
  * @module model/WebsocketsResponseCustomer
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class WebsocketsResponseCustomer {
     /**

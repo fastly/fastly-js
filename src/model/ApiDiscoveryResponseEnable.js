@@ -21,7 +21,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The ApiDiscoveryResponseEnable model module.
  * @module model/ApiDiscoveryResponseEnable
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class ApiDiscoveryResponseEnable {
     /**

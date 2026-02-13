@@ -17,7 +17,7 @@ import ServiceusagemetricsData from './ServiceusagemetricsData';
 /**
  * The GetServiceLevelUsageResponse model module.
  * @module model/GetServiceLevelUsageResponse
- * @version 15.0.0-beta.0
+ * @version 15.0.0-beta.1
  */
 class GetServiceLevelUsageResponse {
     /**
