@@ -18,7 +18,7 @@ import ImageOptimizerResponseBodyGetAllServices from '../model/ImageOptimizerRes
 /**
 * ProductImageOptimizer service.
 * @module api/ProductImageOptimizerApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class ProductImageOptimizerApi {
 

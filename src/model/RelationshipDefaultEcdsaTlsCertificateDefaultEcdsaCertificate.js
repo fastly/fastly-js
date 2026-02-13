@@ -16,7 +16,7 @@ import RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData from '.
 /**
  * The RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate model module.
  * @module model/RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate {
     /**

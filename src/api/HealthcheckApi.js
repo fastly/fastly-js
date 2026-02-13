@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Healthcheck service.
 * @module api/HealthcheckApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class HealthcheckApi {
 

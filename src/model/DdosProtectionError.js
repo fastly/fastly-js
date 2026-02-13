@@ -16,7 +16,7 @@ import DdosProtectionErrorErrors from './DdosProtectionErrorErrors';
 /**
  * The DdosProtectionError model module.
  * @module model/DdosProtectionError
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class DdosProtectionError {
     /**

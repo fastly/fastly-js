@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingLogglyAdditional model module.
  * @module model/LoggingLogglyAdditional
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class LoggingLogglyAdditional {
     /**

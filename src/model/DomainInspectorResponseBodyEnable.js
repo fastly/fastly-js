@@ -21,7 +21,7 @@ import DomainInspectorResponseService from './DomainInspectorResponseService';
 /**
  * The DomainInspectorResponseBodyEnable model module.
  * @module model/DomainInspectorResponseBodyEnable
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class DomainInspectorResponseBodyEnable {
     /**

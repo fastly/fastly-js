@@ -17,7 +17,7 @@ import PlatformValues from './PlatformValues';
 /**
  * The PlatformMetricsResponse model module.
  * @module model/PlatformMetricsResponse
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class PlatformMetricsResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OfferAllOf model module.
  * @module model/OfferAllOf
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class OfferAllOf {
     /**

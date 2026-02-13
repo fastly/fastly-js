@@ -16,7 +16,7 @@ import Results from './Results';
 /**
  * The HistoricalStatsAggregatedResponseAllOf model module.
  * @module model/HistoricalStatsAggregatedResponseAllOf
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class HistoricalStatsAggregatedResponseAllOf {
     /**

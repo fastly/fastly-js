@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The ListEomInvoicesResponse model module.
  * @module model/ListEomInvoicesResponse
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class ListEomInvoicesResponse {
     /**

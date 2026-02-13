@@ -18,7 +18,7 @@ import LoggingDigitaloceanResponse from '../model/LoggingDigitaloceanResponse';
 /**
 * LoggingDigitalocean service.
 * @module api/LoggingDigitaloceanApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class LoggingDigitaloceanApi {
 

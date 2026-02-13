@@ -17,7 +17,7 @@ import GetLogInsightsResponse from '../model/GetLogInsightsResponse';
 /**
 * Insights service.
 * @module api/InsightsApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class InsightsApi {
 

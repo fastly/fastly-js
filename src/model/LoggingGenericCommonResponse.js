@@ -17,7 +17,7 @@ import LoggingGenericCommonResponseAllOf1 from './LoggingGenericCommonResponseAl
 /**
  * The LoggingGenericCommonResponse model module.
  * @module model/LoggingGenericCommonResponse
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class LoggingGenericCommonResponse {
     /**

@@ -19,7 +19,7 @@ import PoolResponsePost from '../model/PoolResponsePost';
 /**
 * Pool service.
 * @module api/PoolApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class PoolApi {
 

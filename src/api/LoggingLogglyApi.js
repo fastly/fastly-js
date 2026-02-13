@@ -18,7 +18,7 @@ import LoggingLogglyResponse from '../model/LoggingLogglyResponse';
 /**
 * LoggingLoggly service.
 * @module api/LoggingLogglyApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class LoggingLogglyApi {
 

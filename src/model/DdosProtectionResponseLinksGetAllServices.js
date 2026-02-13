@@ -16,7 +16,7 @@ import DdosProtectionResponseLinksGetAllServicesLinks from './DdosProtectionResp
 /**
  * The DdosProtectionResponseLinksGetAllServices model module.
  * @module model/DdosProtectionResponseLinksGetAllServices
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class DdosProtectionResponseLinksGetAllServices {
     /**

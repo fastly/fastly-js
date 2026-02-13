@@ -16,7 +16,7 @@ import InvitationCreateData from './InvitationCreateData';
 /**
  * The Invitation model module.
  * @module model/Invitation
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class Invitation {
     /**

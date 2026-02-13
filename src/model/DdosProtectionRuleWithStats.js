@@ -18,7 +18,7 @@ import DdosProtectionTrafficStats from './DdosProtectionTrafficStats';
 /**
  * The DdosProtectionRuleWithStats model module.
  * @module model/DdosProtectionRuleWithStats
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class DdosProtectionRuleWithStats {
     /**

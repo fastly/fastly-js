@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The ContactResponse model module.
  * @module model/ContactResponse
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class ContactResponse {
     /**

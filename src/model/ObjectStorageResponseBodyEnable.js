@@ -21,7 +21,7 @@ import ObjectStorageResponseProductProduct from './ObjectStorageResponseProductP
 /**
  * The ObjectStorageResponseBodyEnable model module.
  * @module model/ObjectStorageResponseBodyEnable
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class ObjectStorageResponseBodyEnable {
     /**

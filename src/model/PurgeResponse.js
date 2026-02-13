@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PurgeResponse model module.
  * @module model/PurgeResponse
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class PurgeResponse {
     /**

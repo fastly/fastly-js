@@ -22,7 +22,7 @@ import BotManagementResponseProductProduct from './BotManagementResponseProductP
 /**
  * The BotManagementResponseBodyGetAllServices model module.
  * @module model/BotManagementResponseBodyGetAllServices
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class BotManagementResponseBodyGetAllServices {
     /**

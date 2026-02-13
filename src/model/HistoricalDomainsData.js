@@ -17,7 +17,7 @@ import Values from './Values';
 /**
  * The HistoricalDomainsData model module.
  * @module model/HistoricalDomainsData
- * @version 15.0.0-beta.2
+ * @version 15.0.0-beta.3
  */
 class HistoricalDomainsData {
     /**

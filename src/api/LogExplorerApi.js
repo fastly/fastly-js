@@ -17,7 +17,7 @@ import GetLogRecordsResponse from '../model/GetLogRecordsResponse';
 /**
 * LogExplorer service.
 * @module api/LogExplorerApi
-* @version 15.0.0-beta.2
+* @version 15.0.0-beta.3
 */
 export default class LogExplorerApi {
 
