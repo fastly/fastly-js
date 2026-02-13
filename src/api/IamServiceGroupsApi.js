@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamServiceGroups service.
 * @module api/IamServiceGroupsApi
-* @version 15.0.0-beta.1
+* @version 15.0.0-beta.2
 */
 export default class IamServiceGroupsApi {
 

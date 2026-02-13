@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SuggestionAllOf model module.
  * @module model/SuggestionAllOf
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class SuggestionAllOf {
     /**

@@ -16,7 +16,7 @@ import SignalReport from './SignalReport';
 /**
  * The ListSignalReport model module.
  * @module model/ListSignalReport
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class ListSignalReport {
     /**

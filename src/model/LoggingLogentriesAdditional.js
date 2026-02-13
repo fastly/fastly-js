@@ -16,7 +16,7 @@ import LoggingUseTlsString from './LoggingUseTlsString';
 /**
  * The LoggingLogentriesAdditional model module.
  * @module model/LoggingLogentriesAdditional
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class LoggingLogentriesAdditional {
     /**

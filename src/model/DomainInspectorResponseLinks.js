@@ -16,7 +16,7 @@ import DomainInspectorResponseLinksLinks from './DomainInspectorResponseLinksLin
 /**
  * The DomainInspectorResponseLinks model module.
  * @module model/DomainInspectorResponseLinks
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class DomainInspectorResponseLinks {
     /**

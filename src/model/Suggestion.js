@@ -16,7 +16,7 @@ import SuggestionAllOf from './SuggestionAllOf';
 /**
  * The Suggestion model module.
  * @module model/Suggestion
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class Suggestion {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DiscoveredOperationGetExtra model module.
  * @module model/DiscoveredOperationGetExtra
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class DiscoveredOperationGetExtra {
     /**

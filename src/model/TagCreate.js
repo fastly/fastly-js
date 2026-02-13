@@ -16,7 +16,7 @@ import TagBase from './TagBase';
 /**
  * The TagCreate model module.
  * @module model/TagCreate
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class TagCreate {
     /**

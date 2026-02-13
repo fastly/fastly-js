@@ -16,7 +16,7 @@ import RelationshipMemberService from './RelationshipMemberService';
 /**
  * The ServiceInvitationDataRelationships model module.
  * @module model/ServiceInvitationDataRelationships
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class ServiceInvitationDataRelationships {
     /**

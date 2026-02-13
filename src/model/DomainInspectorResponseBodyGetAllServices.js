@@ -22,7 +22,7 @@ import DomainInspectorResponseProductProduct from './DomainInspectorResponseProd
 /**
  * The DomainInspectorResponseBodyGetAllServices model module.
  * @module model/DomainInspectorResponseBodyGetAllServices
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class DomainInspectorResponseBodyGetAllServices {
     /**

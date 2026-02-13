@@ -23,7 +23,7 @@ import NgwafResponseService from './NgwafResponseService';
 /**
  * The NgwafResponseConfigure model module.
  * @module model/NgwafResponseConfigure
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class NgwafResponseConfigure {
     /**

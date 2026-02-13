@@ -17,7 +17,7 @@ import LogAggregationsGetResponse from '../model/LogAggregationsGetResponse';
 /**
 * ObservabilityAggregationsForLogs service.
 * @module api/ObservabilityAggregationsForLogsApi
-* @version 15.0.0-beta.1
+* @version 15.0.0-beta.2
 */
 export default class ObservabilityAggregationsForLogsApi {
 

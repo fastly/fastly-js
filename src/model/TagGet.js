@@ -17,7 +17,7 @@ import TagGetExtra from './TagGetExtra';
 /**
  * The TagGet model module.
  * @module model/TagGet
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class TagGet {
     /**

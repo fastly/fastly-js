@@ -22,7 +22,7 @@ import VclSyntaxHighlightingResponse from '../model/VclSyntaxHighlightingRespons
 /**
 * Vcl service.
 * @module api/VclApi
-* @version 15.0.0-beta.1
+* @version 15.0.0-beta.2
 */
 export default class VclApi {
 

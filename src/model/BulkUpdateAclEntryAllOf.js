@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BulkUpdateAclEntryAllOf model module.
  * @module model/BulkUpdateAclEntryAllOf
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class BulkUpdateAclEntryAllOf {
     /**

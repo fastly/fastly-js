@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorResponseEnabledServices model module.
  * @module model/OriginInspectorResponseEnabledServices
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class OriginInspectorResponseEnabledServices {
     /**

@@ -20,7 +20,7 @@ import LoggingUseTlsString from '../model/LoggingUseTlsString';
 /**
 * LoggingKafka service.
 * @module api/LoggingKafkaApi
-* @version 15.0.0-beta.1
+* @version 15.0.0-beta.2
 */
 export default class LoggingKafkaApi {
 

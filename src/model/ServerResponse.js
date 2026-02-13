@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServerResponse model module.
  * @module model/ServerResponse
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class ServerResponse {
     /**

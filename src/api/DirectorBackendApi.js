@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * DirectorBackend service.
 * @module api/DirectorBackendApi
-* @version 15.0.0-beta.1
+* @version 15.0.0-beta.2
 */
 export default class DirectorBackendApi {
 

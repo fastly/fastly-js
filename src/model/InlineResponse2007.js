@@ -16,7 +16,7 @@ import SuccessfulResponseAsObject from './SuccessfulResponseAsObject';
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class InlineResponse2007 {
     /**

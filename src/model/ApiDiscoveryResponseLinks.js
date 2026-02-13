@@ -16,7 +16,7 @@ import ApiDiscoveryResponseLinksLinks from './ApiDiscoveryResponseLinksLinks';
 /**
  * The ApiDiscoveryResponseLinks model module.
  * @module model/ApiDiscoveryResponseLinks
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class ApiDiscoveryResponseLinks {
     /**

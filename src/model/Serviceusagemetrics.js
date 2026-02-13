@@ -16,7 +16,7 @@ import ServiceusagemetricsData from './ServiceusagemetricsData';
 /**
  * The Serviceusagemetrics model module.
  * @module model/Serviceusagemetrics
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class Serviceusagemetrics {
     /**

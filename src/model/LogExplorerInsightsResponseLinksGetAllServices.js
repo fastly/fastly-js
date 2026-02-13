@@ -16,7 +16,7 @@ import LogExplorerInsightsResponseLinksGetAllServicesLinks from './LogExplorerIn
 /**
  * The LogExplorerInsightsResponseLinksGetAllServices model module.
  * @module model/LogExplorerInsightsResponseLinksGetAllServices
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class LogExplorerInsightsResponseLinksGetAllServices {
     /**

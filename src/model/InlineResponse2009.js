@@ -16,7 +16,7 @@ import Suggestion from './Suggestion';
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 15.0.0-beta.1
+ * @version 15.0.0-beta.2
  */
 class InlineResponse2009 {
     /**
