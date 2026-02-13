@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse400 model module.
  * @module model/InlineResponse400
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse400 {
     /**

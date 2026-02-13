@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class BackendApi {
 
@@ -50,6 +50,7 @@ export default class BackendApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
      * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -110,6 +111,7 @@ export default class BackendApi {
         'comment': options['comment'],
         'connect_timeout': options['connect_timeout'],
         'first_byte_timeout': options['first_byte_timeout'],
+        'fetch_timeout': options['fetch_timeout'],
         'healthcheck': options['healthcheck'],
         'hostname': options['hostname'],
         'ipv4': options['ipv4'],
@@ -173,6 +175,7 @@ export default class BackendApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
      * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -433,6 +436,7 @@ export default class BackendApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
      * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -498,6 +502,7 @@ export default class BackendApi {
         'comment': options['comment'],
         'connect_timeout': options['connect_timeout'],
         'first_byte_timeout': options['first_byte_timeout'],
+        'fetch_timeout': options['fetch_timeout'],
         'healthcheck': options['healthcheck'],
         'hostname': options['hostname'],
         'ipv4': options['ipv4'],
@@ -562,6 +567,7 @@ export default class BackendApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
      * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.

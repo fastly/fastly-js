@@ -16,12 +16,12 @@ import AutomationTokenCreateRequest from '../model/AutomationTokenCreateRequest'
 import AutomationTokenCreateResponse from '../model/AutomationTokenCreateResponse';
 import AutomationTokenErrorResponse from '../model/AutomationTokenErrorResponse';
 import AutomationTokenResponse from '../model/AutomationTokenResponse';
-import InlineResponse2001 from '../model/InlineResponse2001';
+import InlineResponse2004 from '../model/InlineResponse2004';
 
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class AutomationTokensApi {
 
@@ -158,7 +158,7 @@ export default class AutomationTokensApi {
      * @param {String} options.id
      * @param {Number} [options.per_page]
      * @param {Number} [options.page]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getAutomationTokensIdServicesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -184,7 +184,7 @@ export default class AutomationTokensApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json', 'application/problem+json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2004;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -207,7 +207,7 @@ export default class AutomationTokensApi {
      * @param {String} options.id
      * @param {Number} [options.per_page]
      * @param {Number} [options.page]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getAutomationTokensIdServices(options = {}) {
       return this.getAutomationTokensIdServicesWithHttpInfo(options)

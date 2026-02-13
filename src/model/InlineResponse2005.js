@@ -11,11 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import DdosProtectionEvent from './DdosProtectionEvent';
+import PaginationCursorMeta from './PaginationCursorMeta';
 
 /**
  * The InlineResponse2005 model module.
  * @module model/InlineResponse2005
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse2005 {
     /**
@@ -46,8 +48,11 @@ class InlineResponse2005 {
         if (data) {
             obj = obj || new InlineResponse2005();
 
-            if (data.hasOwnProperty('expires_at')) {
-                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionEvent]);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -57,10 +62,14 @@ class InlineResponse2005 {
 }
 
 /**
- * Time-stamp (GMT) when the domain_ownership validation will expire.
- * @member {String} expires_at
+ * @member {Array.<module:model/DdosProtectionEvent>} data
  */
-InlineResponse2005.prototype['expires_at'] = undefined;
+InlineResponse2005.prototype['data'] = undefined;
+
+/**
+ * @member {module:model/PaginationCursorMeta} meta
+ */
+InlineResponse2005.prototype['meta'] = undefined;
 
 
 

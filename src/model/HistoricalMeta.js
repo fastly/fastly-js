@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalMeta model module.
  * @module model/HistoricalMeta
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class HistoricalMeta {
     /**
@@ -59,6 +59,9 @@ class HistoricalMeta {
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
+            if (data.hasOwnProperty('datacenter')) {
+                obj['datacenter'] = ApiClient.convertToType(data['datacenter'], 'String');
+            }
         }
         return obj;
     }
@@ -85,6 +88,11 @@ HistoricalMeta.prototype['by'] = undefined;
  * @member {String} region
  */
 HistoricalMeta.prototype['region'] = undefined;
+
+/**
+ * @member {String} datacenter
+ */
+HistoricalMeta.prototype['datacenter'] = undefined;
 
 
 

@@ -25,10 +25,10 @@ Retrieves statistics from sampled log records.
 
 ```javascript
 const options = {
-  visualization: "visualization_example", // required
-  service_id: "service_id_example", // required
-  start: "start_example", // required
-  end: "end_example", // required
+  visualization: top-url-by-requests, // required
+  service_id: 1jlmtMz1ncwA0KC3TBGD0X, // required
+  start: 2024-01-01T14:30:23Z, // required
+  end: 2024-01-05T14:30:23Z, // required
   pops: "pops_example",
   domain: "domain_example",
   domain_exact_match: true,

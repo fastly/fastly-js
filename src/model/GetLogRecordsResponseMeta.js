@@ -16,7 +16,7 @@ import GetLogRecordsResponseMetaFilters from './GetLogRecordsResponseMetaFilters
 /**
  * The GetLogRecordsResponseMeta model module.
  * @module model/GetLogRecordsResponseMeta
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class GetLogRecordsResponseMeta {
     /**

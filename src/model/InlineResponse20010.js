@@ -11,13 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import KvStoreDetails from './KvStoreDetails';
 import PaginationCursorMeta from './PaginationCursorMeta';
-import SecretResponse from './SecretResponse';
 
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse20010 {
     /**
@@ -49,7 +49,7 @@ class InlineResponse20010 {
             obj = obj || new InlineResponse20010();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SecretResponse]);
+                obj['data'] = ApiClient.convertToType(data['data'], [KvStoreDetails]);
             }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
@@ -62,7 +62,7 @@ class InlineResponse20010 {
 }
 
 /**
- * @member {Array.<module:model/SecretResponse>} data
+ * @member {Array.<module:model/KvStoreDetails>} data
  */
 InlineResponse20010.prototype['data'] = undefined;
 

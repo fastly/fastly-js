@@ -194,6 +194,9 @@ import Director from './model/Director';
 import DirectorBackend from './model/DirectorBackend';
 import DirectorBackendAllOf from './model/DirectorBackendAllOf';
 import DirectorResponse from './model/DirectorResponse';
+import DiscoveredOperationBase from './model/DiscoveredOperationBase';
+import DiscoveredOperationGet from './model/DiscoveredOperationGet';
+import DiscoveredOperationGetExtra from './model/DiscoveredOperationGetExtra';
 import Domain from './model/Domain';
 import DomainInspector from './model/DomainInspector';
 import DomainInspectorEntry from './model/DomainInspectorEntry';
@@ -310,6 +313,9 @@ import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse20010 from './model/InlineResponse20010';
 import InlineResponse20011 from './model/InlineResponse20011';
+import InlineResponse20012 from './model/InlineResponse20012';
+import InlineResponse20013 from './model/InlineResponse20013';
+import InlineResponse20014 from './model/InlineResponse20014';
 import InlineResponse2002 from './model/InlineResponse2002';
 import InlineResponse2003 from './model/InlineResponse2003';
 import InlineResponse2004 from './model/InlineResponse2004';
@@ -445,6 +451,7 @@ import LoggingSyslogAdditional from './model/LoggingSyslogAdditional';
 import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTlsString from './model/LoggingUseTlsString';
+import Meta from './model/Meta';
 import Metadata from './model/Metadata';
 import MtdInvoiceResponse from './model/MtdInvoiceResponse';
 import Mtdinvoice from './model/Mtdinvoice';
@@ -483,6 +490,11 @@ import ObjectStorageResponseProduct from './model/ObjectStorageResponseProduct';
 import ObjectStorageResponseProductProduct from './model/ObjectStorageResponseProductProduct';
 import Offer from './model/Offer';
 import OfferAllOf from './model/OfferAllOf';
+import OperationBase from './model/OperationBase';
+import OperationCreate from './model/OperationCreate';
+import OperationGet from './model/OperationGet';
+import OperationGetExtra from './model/OperationGetExtra';
+import OperationUpdate from './model/OperationUpdate';
 import OriginInspector from './model/OriginInspector';
 import OriginInspectorDimensions from './model/OriginInspectorDimensions';
 import OriginInspectorEntry from './model/OriginInspectorEntry';
@@ -702,6 +714,10 @@ import SudoRequest from './model/SudoRequest';
 import SudoResponse from './model/SudoResponse';
 import Suggestion from './model/Suggestion';
 import SuggestionAllOf from './model/SuggestionAllOf';
+import TagBase from './model/TagBase';
+import TagCreate from './model/TagCreate';
+import TagGet from './model/TagGet';
+import TagGetExtra from './model/TagGetExtra';
 import TimeseriesGetResponse from './model/TimeseriesGetResponse';
 import TimeseriesMeta from './model/TimeseriesMeta';
 import TimeseriesResult from './model/TimeseriesResult';
@@ -856,6 +872,7 @@ import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
 import AclsInComputeApi from './api/AclsInComputeApi';
 import ApexRedirectApi from './api/ApexRedirectApi';
+import ApisecurityOperationsApi from './api/ApisecurityOperationsApi';
 import AutomationTokensApi from './api/AutomationTokensApi';
 import BackendApi from './api/BackendApi';
 import BillingAddressApi from './api/BillingAddressApi';
@@ -1019,7 +1036,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export {
     /**
@@ -2121,6 +2138,24 @@ export {
     DirectorResponse,
 
     /**
+     * The DiscoveredOperationBase model constructor.
+     * @property {module:model/DiscoveredOperationBase}
+     */
+    DiscoveredOperationBase,
+
+    /**
+     * The DiscoveredOperationGet model constructor.
+     * @property {module:model/DiscoveredOperationGet}
+     */
+    DiscoveredOperationGet,
+
+    /**
+     * The DiscoveredOperationGetExtra model constructor.
+     * @property {module:model/DiscoveredOperationGetExtra}
+     */
+    DiscoveredOperationGetExtra,
+
+    /**
      * The Domain model constructor.
      * @property {module:model/Domain}
      */
@@ -2815,6 +2850,24 @@ export {
      * @property {module:model/InlineResponse20011}
      */
     InlineResponse20011,
+
+    /**
+     * The InlineResponse20012 model constructor.
+     * @property {module:model/InlineResponse20012}
+     */
+    InlineResponse20012,
+
+    /**
+     * The InlineResponse20013 model constructor.
+     * @property {module:model/InlineResponse20013}
+     */
+    InlineResponse20013,
+
+    /**
+     * The InlineResponse20014 model constructor.
+     * @property {module:model/InlineResponse20014}
+     */
+    InlineResponse20014,
 
     /**
      * The InlineResponse2002 model constructor.
@@ -3627,6 +3680,12 @@ export {
     LoggingUseTlsString,
 
     /**
+     * The Meta model constructor.
+     * @property {module:model/Meta}
+     */
+    Meta,
+
+    /**
      * The Metadata model constructor.
      * @property {module:model/Metadata}
      */
@@ -3853,6 +3912,36 @@ export {
      * @property {module:model/OfferAllOf}
      */
     OfferAllOf,
+
+    /**
+     * The OperationBase model constructor.
+     * @property {module:model/OperationBase}
+     */
+    OperationBase,
+
+    /**
+     * The OperationCreate model constructor.
+     * @property {module:model/OperationCreate}
+     */
+    OperationCreate,
+
+    /**
+     * The OperationGet model constructor.
+     * @property {module:model/OperationGet}
+     */
+    OperationGet,
+
+    /**
+     * The OperationGetExtra model constructor.
+     * @property {module:model/OperationGetExtra}
+     */
+    OperationGetExtra,
+
+    /**
+     * The OperationUpdate model constructor.
+     * @property {module:model/OperationUpdate}
+     */
+    OperationUpdate,
 
     /**
      * The OriginInspector model constructor.
@@ -5169,6 +5258,30 @@ export {
     SuggestionAllOf,
 
     /**
+     * The TagBase model constructor.
+     * @property {module:model/TagBase}
+     */
+    TagBase,
+
+    /**
+     * The TagCreate model constructor.
+     * @property {module:model/TagCreate}
+     */
+    TagCreate,
+
+    /**
+     * The TagGet model constructor.
+     * @property {module:model/TagGet}
+     */
+    TagGet,
+
+    /**
+     * The TagGetExtra model constructor.
+     * @property {module:model/TagGetExtra}
+     */
+    TagGetExtra,
+
+    /**
      * The TimeseriesGetResponse model constructor.
      * @property {module:model/TimeseriesGetResponse}
      */
@@ -6091,6 +6204,12 @@ export {
     * @property {module:api/ApexRedirectApi}
     */
     ApexRedirectApi,
+
+    /**
+    * The ApisecurityOperationsApi service constructor.
+    * @property {module:api/ApisecurityOperationsApi}
+    */
+    ApisecurityOperationsApi,
 
     /**
     * The AutomationTokensApi service constructor.

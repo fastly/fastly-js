@@ -11,12 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import SuccessfulResponseAsObject from './SuccessfulResponseAsObject';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse2004 {
     /**
@@ -48,10 +47,7 @@ class InlineResponse2004 {
             obj = obj || new InlineResponse2004();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SuccessfulResponseAsObject]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = ApiClient.convertToType(data['meta'], Object);
+                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
             }
         }
         return obj;
@@ -61,15 +57,10 @@ class InlineResponse2004 {
 }
 
 /**
- * @member {Array.<module:model/SuccessfulResponseAsObject>} data
+ * The service IDs of the services the token will have access to. Separate service IDs with a space.
+ * @member {Array.<String>} data
  */
 InlineResponse2004.prototype['data'] = undefined;
-
-/**
- * Meta for the pagination.
- * @member {Object} meta
- */
-InlineResponse2004.prototype['meta'] = undefined;
 
 
 

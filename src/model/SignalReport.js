@@ -16,7 +16,7 @@ import TopWorkspace from './TopWorkspace';
 /**
  * The SignalReport model module.
  * @module model/SignalReport
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class SignalReport {
     /**

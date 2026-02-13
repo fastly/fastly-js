@@ -24,7 +24,7 @@ Method | HTTP request | Description
 ## `getHistStats`
 
 ```javascript
-getHistStats({ , [from, ][to, ][by, ][region, ][services] })
+getHistStats({ , [from, ][to, ][by, ][region, ][datacenter, ][services] })
 ```
 
 Fetches historical stats for each of your Fastly services and groups the results by service ID.
@@ -37,6 +37,7 @@ const options = {
   to: 2020-04-09T18:14:30Z,
   by: "hour",
   region: "usa",
+  datacenter: IAD,CHI,
   services: "services_example",
 };
 
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
 **to** | **String** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [optional] [defaults to 'now']
 **by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 **region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "mexico", "southamerica_std"]
+**datacenter** | **String** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | [optional]
 **services** | **String** | Limit the query to only the specified, comma-separated list of services.  | [optional]
 
 ### Return type
@@ -108,7 +110,7 @@ Name | Type | Description  | Notes
 ## `getHistStatsField`
 
 ```javascript
-getHistStatsField({ field, [from, ][to, ][by, ][region] })
+getHistStatsField({ field, [from, ][to, ][by, ][region, ][datacenter] })
 ```
 
 Fetches the specified field from the historical stats for each of your services and groups the results by service ID.
@@ -122,6 +124,7 @@ const options = {
   to: 2020-04-09T18:14:30Z,
   by: "hour",
   region: "usa",
+  datacenter: IAD,CHI,
 };
 
 apiInstance.getHistStatsField(options)
@@ -142,6 +145,7 @@ Name | Type | Description  | Notes
 **to** | **String** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [optional] [defaults to 'now']
 **by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 **region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "mexico", "southamerica_std"]
+**datacenter** | **String** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | [optional]
 
 ### Return type
 
@@ -151,7 +155,7 @@ Name | Type | Description  | Notes
 ## `getHistStatsService`
 
 ```javascript
-getHistStatsService({ service_id, [from, ][to, ][by, ][region] })
+getHistStatsService({ service_id, [from, ][to, ][by, ][region, ][datacenter] })
 ```
 
 Fetches historical stats for a given service.
@@ -165,6 +169,7 @@ const options = {
   to: 2020-04-09T18:14:30Z,
   by: "hour",
   region: "usa",
+  datacenter: IAD,CHI,
 };
 
 apiInstance.getHistStatsService(options)
@@ -185,6 +190,7 @@ Name | Type | Description  | Notes
 **to** | **String** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [optional] [defaults to 'now']
 **by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 **region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "mexico", "southamerica_std"]
+**datacenter** | **String** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | [optional]
 
 ### Return type
 
@@ -194,7 +200,7 @@ Name | Type | Description  | Notes
 ## `getHistStatsServiceField`
 
 ```javascript
-getHistStatsServiceField({ service_id, field, [from, ][to, ][by, ][region] })
+getHistStatsServiceField({ service_id, field, [from, ][to, ][by, ][region, ][datacenter] })
 ```
 
 Fetches the specified field from the historical stats for a given service.
@@ -209,6 +215,7 @@ const options = {
   to: 2020-04-09T18:14:30Z,
   by: "hour",
   region: "usa",
+  datacenter: IAD,CHI,
 };
 
 apiInstance.getHistStatsServiceField(options)
@@ -230,6 +237,7 @@ Name | Type | Description  | Notes
 **to** | **String** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [optional] [defaults to 'now']
 **by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 **region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "mexico", "southamerica_std"]
+**datacenter** | **String** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | [optional]
 
 ### Return type
 

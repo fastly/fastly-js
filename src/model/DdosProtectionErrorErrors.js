@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionErrorErrors model module.
  * @module model/DdosProtectionErrorErrors
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class DdosProtectionErrorErrors {
     /**

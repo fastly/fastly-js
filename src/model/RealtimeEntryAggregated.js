@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class RealtimeEntryAggregated {
     /**
@@ -836,6 +836,66 @@ class RealtimeEntryAggregated {
             if (data.hasOwnProperty('api_discovery_requests_count')) {
                 obj['api_discovery_requests_count'] = ApiClient.convertToType(data['api_discovery_requests_count'], 'Number');
             }
+            if (data.hasOwnProperty('compute_resp_status_103')) {
+                obj['compute_resp_status_103'] = ApiClient.convertToType(data['compute_resp_status_103'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_200')) {
+                obj['compute_resp_status_200'] = ApiClient.convertToType(data['compute_resp_status_200'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_204')) {
+                obj['compute_resp_status_204'] = ApiClient.convertToType(data['compute_resp_status_204'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_206')) {
+                obj['compute_resp_status_206'] = ApiClient.convertToType(data['compute_resp_status_206'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_301')) {
+                obj['compute_resp_status_301'] = ApiClient.convertToType(data['compute_resp_status_301'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_302')) {
+                obj['compute_resp_status_302'] = ApiClient.convertToType(data['compute_resp_status_302'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_304')) {
+                obj['compute_resp_status_304'] = ApiClient.convertToType(data['compute_resp_status_304'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_400')) {
+                obj['compute_resp_status_400'] = ApiClient.convertToType(data['compute_resp_status_400'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_401')) {
+                obj['compute_resp_status_401'] = ApiClient.convertToType(data['compute_resp_status_401'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_403')) {
+                obj['compute_resp_status_403'] = ApiClient.convertToType(data['compute_resp_status_403'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_404')) {
+                obj['compute_resp_status_404'] = ApiClient.convertToType(data['compute_resp_status_404'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_416')) {
+                obj['compute_resp_status_416'] = ApiClient.convertToType(data['compute_resp_status_416'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_429')) {
+                obj['compute_resp_status_429'] = ApiClient.convertToType(data['compute_resp_status_429'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_500')) {
+                obj['compute_resp_status_500'] = ApiClient.convertToType(data['compute_resp_status_500'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_501')) {
+                obj['compute_resp_status_501'] = ApiClient.convertToType(data['compute_resp_status_501'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_502')) {
+                obj['compute_resp_status_502'] = ApiClient.convertToType(data['compute_resp_status_502'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_503')) {
+                obj['compute_resp_status_503'] = ApiClient.convertToType(data['compute_resp_status_503'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_504')) {
+                obj['compute_resp_status_504'] = ApiClient.convertToType(data['compute_resp_status_504'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_505')) {
+                obj['compute_resp_status_505'] = ApiClient.convertToType(data['compute_resp_status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_530')) {
+                obj['compute_resp_status_530'] = ApiClient.convertToType(data['compute_resp_status_530'], 'Number');
+            }
             if (data.hasOwnProperty('imgopto_compute_requests')) {
                 obj['imgopto_compute_requests'] = ApiClient.convertToType(data['imgopto_compute_requests'], 'Number');
             }
@@ -847,6 +907,9 @@ class RealtimeEntryAggregated {
             }
             if (data.hasOwnProperty('upgrade')) {
                 obj['upgrade'] = ApiClient.convertToType(data['upgrade'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_bot_analysis_request_count')) {
+                obj['ngwaf_bot_analysis_request_count'] = ApiClient.convertToType(data['ngwaf_bot_analysis_request_count'], 'Number');
             }
         }
         return obj;
@@ -2428,6 +2491,126 @@ RealtimeEntryAggregated.prototype['compute_cache_operations_count'] = undefined;
 RealtimeEntryAggregated.prototype['api_discovery_requests_count'] = undefined;
 
 /**
+ * Number of responses delivered with status code 103 (Early Hints) by the Compute platform.
+ * @member {Number} compute_resp_status_103
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_103'] = undefined;
+
+/**
+ * Number of responses delivered with status code 200 (Success) by the Compute platform.
+ * @member {Number} compute_resp_status_200
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_200'] = undefined;
+
+/**
+ * Number of responses delivered with status code 204 (No Content) by the Compute platform.
+ * @member {Number} compute_resp_status_204
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_204'] = undefined;
+
+/**
+ * Number of responses delivered with status code 206 (Partial Content) by the Compute platform.
+ * @member {Number} compute_resp_status_206
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_206'] = undefined;
+
+/**
+ * Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform.
+ * @member {Number} compute_resp_status_301
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_301'] = undefined;
+
+/**
+ * Number of responses delivered with status code 302 (Found) by the Compute platform.
+ * @member {Number} compute_resp_status_302
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_302'] = undefined;
+
+/**
+ * Number of responses delivered with status code 304 (Not Modified) by the Compute platform.
+ * @member {Number} compute_resp_status_304
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_304'] = undefined;
+
+/**
+ * Number of responses delivered with status code 400 (Bad Request) by the Compute platform.
+ * @member {Number} compute_resp_status_400
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_400'] = undefined;
+
+/**
+ * Number of responses delivered with status code 401 (Unauthorized) by the Compute platform.
+ * @member {Number} compute_resp_status_401
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_401'] = undefined;
+
+/**
+ * Number of responses delivered with status code 403 (Forbidden) by the Compute platform.
+ * @member {Number} compute_resp_status_403
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_403'] = undefined;
+
+/**
+ * Number of responses delivered with status code 404 (Not Found) by the Compute platform.
+ * @member {Number} compute_resp_status_404
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_404'] = undefined;
+
+/**
+ * Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform.
+ * @member {Number} compute_resp_status_416
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_416'] = undefined;
+
+/**
+ * Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform.
+ * @member {Number} compute_resp_status_429
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_429'] = undefined;
+
+/**
+ * Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform.
+ * @member {Number} compute_resp_status_500
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_500'] = undefined;
+
+/**
+ * Number of responses delivered with status code 501 (Not Implemented) by the Compute platform.
+ * @member {Number} compute_resp_status_501
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_501'] = undefined;
+
+/**
+ * Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform.
+ * @member {Number} compute_resp_status_502
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_502'] = undefined;
+
+/**
+ * Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform.
+ * @member {Number} compute_resp_status_503
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_503'] = undefined;
+
+/**
+ * Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform.
+ * @member {Number} compute_resp_status_504
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_504'] = undefined;
+
+/**
+ * Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform.
+ * @member {Number} compute_resp_status_505
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_505'] = undefined;
+
+/**
+ * Number of responses delivered with status code 530 by the Compute platform.
+ * @member {Number} compute_resp_status_530
+ */
+RealtimeEntryAggregated.prototype['compute_resp_status_530'] = undefined;
+
+/**
  * The number of Image Optimizer requests made from Compute services.
  * @member {Number} imgopto_compute_requests
  */
@@ -2450,6 +2633,12 @@ RealtimeEntryAggregated.prototype['dns_nonbillable_responses_count'] = undefined
  * @member {Number} upgrade
  */
 RealtimeEntryAggregated.prototype['upgrade'] = undefined;
+
+/**
+ * Count of Next-Gen WAF Bot Management requests.
+ * @member {Number} ngwaf_bot_analysis_request_count
+ */
+RealtimeEntryAggregated.prototype['ngwaf_bot_analysis_request_count'] = undefined;
 
 
 // Implement RealtimeMeasurements interface:
@@ -3764,6 +3953,106 @@ RealtimeMeasurements.prototype['compute_cache_operations_count'] = undefined;
  */
 RealtimeMeasurements.prototype['api_discovery_requests_count'] = undefined;
 /**
+ * Number of responses delivered with status code 103 (Early Hints) by the Compute platform.
+ * @member {Number} compute_resp_status_103
+ */
+RealtimeMeasurements.prototype['compute_resp_status_103'] = undefined;
+/**
+ * Number of responses delivered with status code 200 (Success) by the Compute platform.
+ * @member {Number} compute_resp_status_200
+ */
+RealtimeMeasurements.prototype['compute_resp_status_200'] = undefined;
+/**
+ * Number of responses delivered with status code 204 (No Content) by the Compute platform.
+ * @member {Number} compute_resp_status_204
+ */
+RealtimeMeasurements.prototype['compute_resp_status_204'] = undefined;
+/**
+ * Number of responses delivered with status code 206 (Partial Content) by the Compute platform.
+ * @member {Number} compute_resp_status_206
+ */
+RealtimeMeasurements.prototype['compute_resp_status_206'] = undefined;
+/**
+ * Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform.
+ * @member {Number} compute_resp_status_301
+ */
+RealtimeMeasurements.prototype['compute_resp_status_301'] = undefined;
+/**
+ * Number of responses delivered with status code 302 (Found) by the Compute platform.
+ * @member {Number} compute_resp_status_302
+ */
+RealtimeMeasurements.prototype['compute_resp_status_302'] = undefined;
+/**
+ * Number of responses delivered with status code 304 (Not Modified) by the Compute platform.
+ * @member {Number} compute_resp_status_304
+ */
+RealtimeMeasurements.prototype['compute_resp_status_304'] = undefined;
+/**
+ * Number of responses delivered with status code 400 (Bad Request) by the Compute platform.
+ * @member {Number} compute_resp_status_400
+ */
+RealtimeMeasurements.prototype['compute_resp_status_400'] = undefined;
+/**
+ * Number of responses delivered with status code 401 (Unauthorized) by the Compute platform.
+ * @member {Number} compute_resp_status_401
+ */
+RealtimeMeasurements.prototype['compute_resp_status_401'] = undefined;
+/**
+ * Number of responses delivered with status code 403 (Forbidden) by the Compute platform.
+ * @member {Number} compute_resp_status_403
+ */
+RealtimeMeasurements.prototype['compute_resp_status_403'] = undefined;
+/**
+ * Number of responses delivered with status code 404 (Not Found) by the Compute platform.
+ * @member {Number} compute_resp_status_404
+ */
+RealtimeMeasurements.prototype['compute_resp_status_404'] = undefined;
+/**
+ * Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform.
+ * @member {Number} compute_resp_status_416
+ */
+RealtimeMeasurements.prototype['compute_resp_status_416'] = undefined;
+/**
+ * Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform.
+ * @member {Number} compute_resp_status_429
+ */
+RealtimeMeasurements.prototype['compute_resp_status_429'] = undefined;
+/**
+ * Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform.
+ * @member {Number} compute_resp_status_500
+ */
+RealtimeMeasurements.prototype['compute_resp_status_500'] = undefined;
+/**
+ * Number of responses delivered with status code 501 (Not Implemented) by the Compute platform.
+ * @member {Number} compute_resp_status_501
+ */
+RealtimeMeasurements.prototype['compute_resp_status_501'] = undefined;
+/**
+ * Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform.
+ * @member {Number} compute_resp_status_502
+ */
+RealtimeMeasurements.prototype['compute_resp_status_502'] = undefined;
+/**
+ * Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform.
+ * @member {Number} compute_resp_status_503
+ */
+RealtimeMeasurements.prototype['compute_resp_status_503'] = undefined;
+/**
+ * Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform.
+ * @member {Number} compute_resp_status_504
+ */
+RealtimeMeasurements.prototype['compute_resp_status_504'] = undefined;
+/**
+ * Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform.
+ * @member {Number} compute_resp_status_505
+ */
+RealtimeMeasurements.prototype['compute_resp_status_505'] = undefined;
+/**
+ * Number of responses delivered with status code 530 by the Compute platform.
+ * @member {Number} compute_resp_status_530
+ */
+RealtimeMeasurements.prototype['compute_resp_status_530'] = undefined;
+/**
  * The number of Image Optimizer requests made from Compute services.
  * @member {Number} imgopto_compute_requests
  */
@@ -3783,6 +4072,11 @@ RealtimeMeasurements.prototype['dns_nonbillable_responses_count'] = undefined;
  * @member {Number} upgrade
  */
 RealtimeMeasurements.prototype['upgrade'] = undefined;
+/**
+ * Count of Next-Gen WAF Bot Management requests.
+ * @member {Number} ngwaf_bot_analysis_request_count
+ */
+RealtimeMeasurements.prototype['ngwaf_bot_analysis_request_count'] = undefined;
 
 
 

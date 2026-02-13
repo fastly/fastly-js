@@ -19,7 +19,7 @@ import HistoricalUsageData from './HistoricalUsageData';
 /**
  * The HistoricalUsageAggregatedResponse model module.
  * @module model/HistoricalUsageAggregatedResponse
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class HistoricalUsageAggregatedResponse {
     /**

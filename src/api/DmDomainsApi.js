@@ -12,7 +12,7 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2004 from '../model/InlineResponse2004';
+import InlineResponse2007 from '../model/InlineResponse2007';
 import RequestBodyForCreate from '../model/RequestBodyForCreate';
 import RequestBodyForUpdate from '../model/RequestBodyForUpdate';
 import SuccessfulResponseAsObject from '../model/SuccessfulResponseAsObject';
@@ -20,7 +20,7 @@ import SuccessfulResponseAsObject from '../model/SuccessfulResponseAsObject';
 /**
 * DmDomains service.
 * @module api/DmDomainsApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class DmDomainsApi {
 
@@ -219,7 +219,7 @@ export default class DmDomainsApi {
      * @param {Boolean} [options.verified]
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {Number} [options.limit=20] - Limit how many results are returned.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
     listDmDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -245,7 +245,7 @@ export default class DmDomainsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2007;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -272,7 +272,7 @@ export default class DmDomainsApi {
      * @param {Boolean} [options.verified]
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {Number} [options.limit=20] - Limit how many results are returned.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
     listDmDomains(options = {}) {
       return this.listDmDomainsWithHttpInfo(options)

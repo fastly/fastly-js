@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * ConfigStore service.
 * @module api/ConfigStoreApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class ConfigStoreApi {
 

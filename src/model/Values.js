@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Values model module.
  * @module model/Values
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class Values {
     /**
@@ -238,6 +238,195 @@ class Values {
             }
             if (data.hasOwnProperty('origin_status_5xx')) {
                 obj['origin_status_5xx'] = ApiClient.convertToType(data['origin_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_bereq_body_bytes')) {
+                obj['compute_bereq_body_bytes'] = ApiClient.convertToType(data['compute_bereq_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_bereq_errors')) {
+                obj['compute_bereq_errors'] = ApiClient.convertToType(data['compute_bereq_errors'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_bereq_header_bytes')) {
+                obj['compute_bereq_header_bytes'] = ApiClient.convertToType(data['compute_bereq_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_bereqs')) {
+                obj['compute_bereqs'] = ApiClient.convertToType(data['compute_bereqs'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_beresp_body_bytes')) {
+                obj['compute_beresp_body_bytes'] = ApiClient.convertToType(data['compute_beresp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_beresp_header_bytes')) {
+                obj['compute_beresp_header_bytes'] = ApiClient.convertToType(data['compute_beresp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_execution_time_ms')) {
+                obj['compute_execution_time_ms'] = ApiClient.convertToType(data['compute_execution_time_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_1xx')) {
+                obj['compute_origin_status_1xx'] = ApiClient.convertToType(data['compute_origin_status_1xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_200')) {
+                obj['compute_origin_status_200'] = ApiClient.convertToType(data['compute_origin_status_200'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_204')) {
+                obj['compute_origin_status_204'] = ApiClient.convertToType(data['compute_origin_status_204'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_206')) {
+                obj['compute_origin_status_206'] = ApiClient.convertToType(data['compute_origin_status_206'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_2xx')) {
+                obj['compute_origin_status_2xx'] = ApiClient.convertToType(data['compute_origin_status_2xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_301')) {
+                obj['compute_origin_status_301'] = ApiClient.convertToType(data['compute_origin_status_301'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_302')) {
+                obj['compute_origin_status_302'] = ApiClient.convertToType(data['compute_origin_status_302'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_304')) {
+                obj['compute_origin_status_304'] = ApiClient.convertToType(data['compute_origin_status_304'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_3xx')) {
+                obj['compute_origin_status_3xx'] = ApiClient.convertToType(data['compute_origin_status_3xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_400')) {
+                obj['compute_origin_status_400'] = ApiClient.convertToType(data['compute_origin_status_400'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_401')) {
+                obj['compute_origin_status_401'] = ApiClient.convertToType(data['compute_origin_status_401'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_403')) {
+                obj['compute_origin_status_403'] = ApiClient.convertToType(data['compute_origin_status_403'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_404')) {
+                obj['compute_origin_status_404'] = ApiClient.convertToType(data['compute_origin_status_404'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_416')) {
+                obj['compute_origin_status_416'] = ApiClient.convertToType(data['compute_origin_status_416'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_429')) {
+                obj['compute_origin_status_429'] = ApiClient.convertToType(data['compute_origin_status_429'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_4xx')) {
+                obj['compute_origin_status_4xx'] = ApiClient.convertToType(data['compute_origin_status_4xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_500')) {
+                obj['compute_origin_status_500'] = ApiClient.convertToType(data['compute_origin_status_500'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_501')) {
+                obj['compute_origin_status_501'] = ApiClient.convertToType(data['compute_origin_status_501'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_502')) {
+                obj['compute_origin_status_502'] = ApiClient.convertToType(data['compute_origin_status_502'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_503')) {
+                obj['compute_origin_status_503'] = ApiClient.convertToType(data['compute_origin_status_503'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_504')) {
+                obj['compute_origin_status_504'] = ApiClient.convertToType(data['compute_origin_status_504'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_505')) {
+                obj['compute_origin_status_505'] = ApiClient.convertToType(data['compute_origin_status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_530')) {
+                obj['compute_origin_status_530'] = ApiClient.convertToType(data['compute_origin_status_530'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_origin_status_5xx')) {
+                obj['compute_origin_status_5xx'] = ApiClient.convertToType(data['compute_origin_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_req_body_bytes')) {
+                obj['compute_req_body_bytes'] = ApiClient.convertToType(data['compute_req_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_req_header_bytes')) {
+                obj['compute_req_header_bytes'] = ApiClient.convertToType(data['compute_req_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_request_time_billed_ms')) {
+                obj['compute_request_time_billed_ms'] = ApiClient.convertToType(data['compute_request_time_billed_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_request_time_ms')) {
+                obj['compute_request_time_ms'] = ApiClient.convertToType(data['compute_request_time_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_request')) {
+                obj['compute_request'] = ApiClient.convertToType(data['compute_request'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_body_bytes')) {
+                obj['compute_resp_body_bytes'] = ApiClient.convertToType(data['compute_resp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_header_bytes')) {
+                obj['compute_resp_header_bytes'] = ApiClient.convertToType(data['compute_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_103')) {
+                obj['compute_resp_status_103'] = ApiClient.convertToType(data['compute_resp_status_103'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_1xx')) {
+                obj['compute_resp_status_1xx'] = ApiClient.convertToType(data['compute_resp_status_1xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_200')) {
+                obj['compute_resp_status_200'] = ApiClient.convertToType(data['compute_resp_status_200'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_204')) {
+                obj['compute_resp_status_204'] = ApiClient.convertToType(data['compute_resp_status_204'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_206')) {
+                obj['compute_resp_status_206'] = ApiClient.convertToType(data['compute_resp_status_206'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_2xx')) {
+                obj['compute_resp_status_2xx'] = ApiClient.convertToType(data['compute_resp_status_2xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_301')) {
+                obj['compute_resp_status_301'] = ApiClient.convertToType(data['compute_resp_status_301'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_302')) {
+                obj['compute_resp_status_302'] = ApiClient.convertToType(data['compute_resp_status_302'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_304')) {
+                obj['compute_resp_status_304'] = ApiClient.convertToType(data['compute_resp_status_304'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_3xx')) {
+                obj['compute_resp_status_3xx'] = ApiClient.convertToType(data['compute_resp_status_3xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_400')) {
+                obj['compute_resp_status_400'] = ApiClient.convertToType(data['compute_resp_status_400'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_401')) {
+                obj['compute_resp_status_401'] = ApiClient.convertToType(data['compute_resp_status_401'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_403')) {
+                obj['compute_resp_status_403'] = ApiClient.convertToType(data['compute_resp_status_403'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_404')) {
+                obj['compute_resp_status_404'] = ApiClient.convertToType(data['compute_resp_status_404'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_416')) {
+                obj['compute_resp_status_416'] = ApiClient.convertToType(data['compute_resp_status_416'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_429')) {
+                obj['compute_resp_status_429'] = ApiClient.convertToType(data['compute_resp_status_429'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_4xx')) {
+                obj['compute_resp_status_4xx'] = ApiClient.convertToType(data['compute_resp_status_4xx'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_500')) {
+                obj['compute_resp_status_500'] = ApiClient.convertToType(data['compute_resp_status_500'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_501')) {
+                obj['compute_resp_status_501'] = ApiClient.convertToType(data['compute_resp_status_501'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_502')) {
+                obj['compute_resp_status_502'] = ApiClient.convertToType(data['compute_resp_status_502'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_503')) {
+                obj['compute_resp_status_503'] = ApiClient.convertToType(data['compute_resp_status_503'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_504')) {
+                obj['compute_resp_status_504'] = ApiClient.convertToType(data['compute_resp_status_504'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_505')) {
+                obj['compute_resp_status_505'] = ApiClient.convertToType(data['compute_resp_status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_530')) {
+                obj['compute_resp_status_530'] = ApiClient.convertToType(data['compute_resp_status_530'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_resp_status_5xx')) {
+                obj['compute_resp_status_5xx'] = ApiClient.convertToType(data['compute_resp_status_5xx'], 'Number');
             }
         }
         return obj;
@@ -629,6 +818,384 @@ Values.prototype['origin_status_4xx'] = undefined;
  * @member {Number} origin_status_5xx
  */
 Values.prototype['origin_status_5xx'] = undefined;
+
+/**
+ * Total body bytes sent to backends (origins) by the Compute platform.
+ * @member {Number} compute_bereq_body_bytes
+ */
+Values.prototype['compute_bereq_body_bytes'] = undefined;
+
+/**
+ * Number of backend request errors, including timeouts, by the Compute platform.
+ * @member {Number} compute_bereq_errors
+ */
+Values.prototype['compute_bereq_errors'] = undefined;
+
+/**
+ * Total header bytes sent to backends (origins) by the Compute platform.
+ * @member {Number} compute_bereq_header_bytes
+ */
+Values.prototype['compute_bereq_header_bytes'] = undefined;
+
+/**
+ * Number of backend requests started by the Compute platform.
+ * @member {Number} compute_bereqs
+ */
+Values.prototype['compute_bereqs'] = undefined;
+
+/**
+ * Total body bytes received from backends (origins) by the Compute platform.
+ * @member {Number} compute_beresp_body_bytes
+ */
+Values.prototype['compute_beresp_body_bytes'] = undefined;
+
+/**
+ * Total header bytes received from backends (origins) by the Compute platform.
+ * @member {Number} compute_beresp_header_bytes
+ */
+Values.prototype['compute_beresp_header_bytes'] = undefined;
+
+/**
+ * The amount of active CPU time used to process your requests (in milliseconds).
+ * @member {Number} compute_execution_time_ms
+ */
+Values.prototype['compute_execution_time_ms'] = undefined;
+
+/**
+ * Number of \"Informational\" category status codes received from origin by the Compute platform.
+ * @member {Number} compute_origin_status_1xx
+ */
+Values.prototype['compute_origin_status_1xx'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 200 (Success) by the Compute platform.
+ * @member {Number} compute_origin_status_200
+ */
+Values.prototype['compute_origin_status_200'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 204 (No Content) by the Compute platform.
+ * @member {Number} compute_origin_status_204
+ */
+Values.prototype['compute_origin_status_204'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 206 (Partial Content) by the Compute platform.
+ * @member {Number} compute_origin_status_206
+ */
+Values.prototype['compute_origin_status_206'] = undefined;
+
+/**
+ * Number of \"Success\" status codes received from origin by the Compute platform.
+ * @member {Number} compute_origin_status_2xx
+ */
+Values.prototype['compute_origin_status_2xx'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform.
+ * @member {Number} compute_origin_status_301
+ */
+Values.prototype['compute_origin_status_301'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 302 (Found) by the Compute platform.
+ * @member {Number} compute_origin_status_302
+ */
+Values.prototype['compute_origin_status_302'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 304 (Not Modified) by the Compute platform.
+ * @member {Number} compute_origin_status_304
+ */
+Values.prototype['compute_origin_status_304'] = undefined;
+
+/**
+ * Number of \"Redirection\" codes received from origin by the Compute platform.
+ * @member {Number} compute_origin_status_3xx
+ */
+Values.prototype['compute_origin_status_3xx'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 400 (Bad Request) by the Compute platform.
+ * @member {Number} compute_origin_status_400
+ */
+Values.prototype['compute_origin_status_400'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform.
+ * @member {Number} compute_origin_status_401
+ */
+Values.prototype['compute_origin_status_401'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 403 (Forbidden) by the Compute platform.
+ * @member {Number} compute_origin_status_403
+ */
+Values.prototype['compute_origin_status_403'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 404 (Not Found) by the Compute platform.
+ * @member {Number} compute_origin_status_404
+ */
+Values.prototype['compute_origin_status_404'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform.
+ * @member {Number} compute_origin_status_416
+ */
+Values.prototype['compute_origin_status_416'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform.
+ * @member {Number} compute_origin_status_429
+ */
+Values.prototype['compute_origin_status_429'] = undefined;
+
+/**
+ * Number of \"Client Error\" codes received from origin by the Compute platform.
+ * @member {Number} compute_origin_status_4xx
+ */
+Values.prototype['compute_origin_status_4xx'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform.
+ * @member {Number} compute_origin_status_500
+ */
+Values.prototype['compute_origin_status_500'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform.
+ * @member {Number} compute_origin_status_501
+ */
+Values.prototype['compute_origin_status_501'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform.
+ * @member {Number} compute_origin_status_502
+ */
+Values.prototype['compute_origin_status_502'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform.
+ * @member {Number} compute_origin_status_503
+ */
+Values.prototype['compute_origin_status_503'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform.
+ * @member {Number} compute_origin_status_504
+ */
+Values.prototype['compute_origin_status_504'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform.
+ * @member {Number} compute_origin_status_505
+ */
+Values.prototype['compute_origin_status_505'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 530 by the Compute platform.
+ * @member {Number} compute_origin_status_530
+ */
+Values.prototype['compute_origin_status_530'] = undefined;
+
+/**
+ * Number of \"Server Error\" codes received from origin by the Compute platform.
+ * @member {Number} compute_origin_status_5xx
+ */
+Values.prototype['compute_origin_status_5xx'] = undefined;
+
+/**
+ * Total body bytes received by the Compute platform.
+ * @member {Number} compute_req_body_bytes
+ */
+Values.prototype['compute_req_body_bytes'] = undefined;
+
+/**
+ * Total header bytes received by the Compute platform.
+ * @member {Number} compute_req_header_bytes
+ */
+Values.prototype['compute_req_header_bytes'] = undefined;
+
+/**
+ * The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
+ * @member {Number} compute_request_time_billed_ms
+ */
+Values.prototype['compute_request_time_billed_ms'] = undefined;
+
+/**
+ * The total amount of time used to process your requests, including active CPU time (in milliseconds).
+ * @member {Number} compute_request_time_ms
+ */
+Values.prototype['compute_request_time_ms'] = undefined;
+
+/**
+ * The total number of requests that were received by the Compute platform.
+ * @member {Number} compute_request
+ */
+Values.prototype['compute_request'] = undefined;
+
+/**
+ * Total body bytes sent from Compute to the end user.
+ * @member {Number} compute_resp_body_bytes
+ */
+Values.prototype['compute_resp_body_bytes'] = undefined;
+
+/**
+ * Total header bytes sent from Compute to the end user.
+ * @member {Number} compute_resp_header_bytes
+ */
+Values.prototype['compute_resp_header_bytes'] = undefined;
+
+/**
+ * Number of responses delivered with status code 103 (Early Hints) by the Compute platform.
+ * @member {Number} compute_resp_status_103
+ */
+Values.prototype['compute_resp_status_103'] = undefined;
+
+/**
+ * Number of 1xx \"Informational\" category status codes delivered by the Compute platform.
+ * @member {Number} compute_resp_status_1xx
+ */
+Values.prototype['compute_resp_status_1xx'] = undefined;
+
+/**
+ * Number of responses delivered with status code 200 (Success) by the Compute platform.
+ * @member {Number} compute_resp_status_200
+ */
+Values.prototype['compute_resp_status_200'] = undefined;
+
+/**
+ * Number of responses delivered with status code 204 (No Content) by the Compute platform.
+ * @member {Number} compute_resp_status_204
+ */
+Values.prototype['compute_resp_status_204'] = undefined;
+
+/**
+ * Number of responses delivered with status code 206 (Partial Content) by the Compute platform.
+ * @member {Number} compute_resp_status_206
+ */
+Values.prototype['compute_resp_status_206'] = undefined;
+
+/**
+ * Number of 2xx \"Success\" status codes delivered by the Compute platform.
+ * @member {Number} compute_resp_status_2xx
+ */
+Values.prototype['compute_resp_status_2xx'] = undefined;
+
+/**
+ * Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform.
+ * @member {Number} compute_resp_status_301
+ */
+Values.prototype['compute_resp_status_301'] = undefined;
+
+/**
+ * Number of responses delivered with status code 302 (Found) by the Compute platform.
+ * @member {Number} compute_resp_status_302
+ */
+Values.prototype['compute_resp_status_302'] = undefined;
+
+/**
+ * Number of responses delivered with status code 304 (Not Modified) by the Compute platform.
+ * @member {Number} compute_resp_status_304
+ */
+Values.prototype['compute_resp_status_304'] = undefined;
+
+/**
+ * Number of 3xx \"Redirection\" codes delivered by the Compute platform.
+ * @member {Number} compute_resp_status_3xx
+ */
+Values.prototype['compute_resp_status_3xx'] = undefined;
+
+/**
+ * Number of responses delivered with status code 400 (Bad Request) by the Compute platform.
+ * @member {Number} compute_resp_status_400
+ */
+Values.prototype['compute_resp_status_400'] = undefined;
+
+/**
+ * Number of responses delivered with status code 401 (Unauthorized) by the Compute platform.
+ * @member {Number} compute_resp_status_401
+ */
+Values.prototype['compute_resp_status_401'] = undefined;
+
+/**
+ * Number of responses delivered with status code 403 (Forbidden) by the Compute platform.
+ * @member {Number} compute_resp_status_403
+ */
+Values.prototype['compute_resp_status_403'] = undefined;
+
+/**
+ * Number of responses delivered with status code 404 (Not Found) by the Compute platform.
+ * @member {Number} compute_resp_status_404
+ */
+Values.prototype['compute_resp_status_404'] = undefined;
+
+/**
+ * Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform.
+ * @member {Number} compute_resp_status_416
+ */
+Values.prototype['compute_resp_status_416'] = undefined;
+
+/**
+ * Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform.
+ * @member {Number} compute_resp_status_429
+ */
+Values.prototype['compute_resp_status_429'] = undefined;
+
+/**
+ * Number of 4xx \"Client Error\" codes delivered by the Compute platform.
+ * @member {Number} compute_resp_status_4xx
+ */
+Values.prototype['compute_resp_status_4xx'] = undefined;
+
+/**
+ * Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform.
+ * @member {Number} compute_resp_status_500
+ */
+Values.prototype['compute_resp_status_500'] = undefined;
+
+/**
+ * Number of responses delivered with status code 501 (Not Implemented) by the Compute platform.
+ * @member {Number} compute_resp_status_501
+ */
+Values.prototype['compute_resp_status_501'] = undefined;
+
+/**
+ * Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform.
+ * @member {Number} compute_resp_status_502
+ */
+Values.prototype['compute_resp_status_502'] = undefined;
+
+/**
+ * Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform.
+ * @member {Number} compute_resp_status_503
+ */
+Values.prototype['compute_resp_status_503'] = undefined;
+
+/**
+ * Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform.
+ * @member {Number} compute_resp_status_504
+ */
+Values.prototype['compute_resp_status_504'] = undefined;
+
+/**
+ * Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform.
+ * @member {Number} compute_resp_status_505
+ */
+Values.prototype['compute_resp_status_505'] = undefined;
+
+/**
+ * Number of responses delivered with status code 530 by the Compute platform.
+ * @member {Number} compute_resp_status_530
+ */
+Values.prototype['compute_resp_status_530'] = undefined;
+
+/**
+ * Number of \"Server Error\" category status codes delivered by the Compute platform.
+ * @member {Number} compute_resp_status_5xx
+ */
+Values.prototype['compute_resp_status_5xx'] = undefined;
 
 
 

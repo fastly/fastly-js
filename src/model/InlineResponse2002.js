@@ -11,13 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import DdosProtectionEvent from './DdosProtectionEvent';
-import PaginationCursorMeta from './PaginationCursorMeta';
+import Meta from './Meta';
+import OperationGet from './OperationGet';
 
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse2002 {
     /**
@@ -48,11 +48,11 @@ class InlineResponse2002 {
         if (data) {
             obj = obj || new InlineResponse2002();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionEvent]);
-            }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+                obj['meta'] = Meta.constructFromObject(data['meta']);
+            }
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [OperationGet]);
             }
         }
         return obj;
@@ -62,14 +62,15 @@ class InlineResponse2002 {
 }
 
 /**
- * @member {Array.<module:model/DdosProtectionEvent>} data
- */
-InlineResponse2002.prototype['data'] = undefined;
-
-/**
- * @member {module:model/PaginationCursorMeta} meta
+ * @member {module:model/Meta} meta
  */
 InlineResponse2002.prototype['meta'] = undefined;
+
+/**
+ * The operations returned by the request.
+ * @member {Array.<module:model/OperationGet>} data
+ */
+InlineResponse2002.prototype['data'] = undefined;
 
 
 

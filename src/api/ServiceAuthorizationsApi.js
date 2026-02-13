@@ -12,7 +12,7 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse20011 from '../model/InlineResponse20011';
+import InlineResponse20014 from '../model/InlineResponse20014';
 import ServiceAuthorization from '../model/ServiceAuthorization';
 import ServiceAuthorizationResponse from '../model/ServiceAuthorizationResponse';
 import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsResponse';
@@ -20,7 +20,7 @@ import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsRespons
 /**
 * ServiceAuthorizations service.
 * @module api/ServiceAuthorizationsApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class ServiceAuthorizationsApi {
 
@@ -155,7 +155,7 @@ export default class ServiceAuthorizationsApi {
      * Delete service authorizations.
      * @param {Object} options
      * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20011} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20014} and HTTP response
      */
     deleteServiceAuthorization2WithHttpInfo(options = {}) {
       let postBody = options['request_body'];
@@ -174,7 +174,7 @@ export default class ServiceAuthorizationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json; ext=bulk'];
       let accepts = ['application/vnd.api+json; ext=bulk'];
-      let returnType = InlineResponse20011;
+      let returnType = InlineResponse20014;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -195,7 +195,7 @@ export default class ServiceAuthorizationsApi {
      * Delete service authorizations.
      * @param {Object} options
      * @param {Object.<String, {String: Object}>} [options.request_body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20011}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20014}
      */
     deleteServiceAuthorization2(options = {}) {
       return this.deleteServiceAuthorization2WithHttpInfo(options)

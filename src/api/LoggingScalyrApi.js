@@ -18,7 +18,7 @@ import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
 /**
 * LoggingScalyr service.
 * @module api/LoggingScalyrApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class LoggingScalyrApi {
 

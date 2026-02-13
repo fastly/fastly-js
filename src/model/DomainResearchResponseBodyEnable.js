@@ -21,7 +21,7 @@ import DomainResearchResponseProductProduct from './DomainResearchResponseProduc
 /**
  * The DomainResearchResponseBodyEnable model module.
  * @module model/DomainResearchResponseBodyEnable
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class DomainResearchResponseBodyEnable {
     /**

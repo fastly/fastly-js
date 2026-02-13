@@ -5,6 +5,12 @@ An asynchronous JavaScript client library for interacting with most facets of th
 > [!WARNING]
 > This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritized.
 
+> ⚠️ This client library (`15.0.0-beta.0`)  is an early-access release. Features may change without notice. Use at your own risk.
+
+**We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
+
+Read about the [Fastly Product Lifecycle](https://docs.fastly.com/products/fastly-product-lifecycle).
+
 
 ## Usage
 
@@ -88,6 +94,17 @@ Class | Method | Description
 *Fastly.ApexRedirectApi* | [**getApexRedirect**](docs/ApexRedirectApi.md#getApexRedirect) | Get an apex redirect
 *Fastly.ApexRedirectApi* | [**listApexRedirects**](docs/ApexRedirectApi.md#listApexRedirects) | List apex redirects
 *Fastly.ApexRedirectApi* | [**updateApexRedirect**](docs/ApexRedirectApi.md#updateApexRedirect) | Update an apex redirect
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityCreateOperation**](docs/ApisecurityOperationsApi.md#apiSecurityCreateOperation) | Create operation
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityCreateOperationTag**](docs/ApisecurityOperationsApi.md#apiSecurityCreateOperationTag) | Create operation tag
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityDeleteOperation**](docs/ApisecurityOperationsApi.md#apiSecurityDeleteOperation) | Delete operation
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityDeleteOperationTag**](docs/ApisecurityOperationsApi.md#apiSecurityDeleteOperationTag) | Delete operation tag
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityGetOperation**](docs/ApisecurityOperationsApi.md#apiSecurityGetOperation) | Retrieve operation
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityGetOperationTag**](docs/ApisecurityOperationsApi.md#apiSecurityGetOperationTag) | Retrieve operation tag
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityListDiscoveredOperations**](docs/ApisecurityOperationsApi.md#apiSecurityListDiscoveredOperations) | List discovered operations
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityListOperationTags**](docs/ApisecurityOperationsApi.md#apiSecurityListOperationTags) | List operation tags
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityListOperations**](docs/ApisecurityOperationsApi.md#apiSecurityListOperations) | List operations
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityUpdateOperation**](docs/ApisecurityOperationsApi.md#apiSecurityUpdateOperation) | Update operation
+*Fastly.ApisecurityOperationsApi* | [**apiSecurityUpdateOperationTag**](docs/ApisecurityOperationsApi.md#apiSecurityUpdateOperationTag) | Update operation tag
 *Fastly.AutomationTokensApi* | [**createAutomationToken**](docs/AutomationTokensApi.md#createAutomationToken) | Create Automation Token
 *Fastly.AutomationTokensApi* | [**getAutomationTokenId**](docs/AutomationTokensApi.md#getAutomationTokenId) | Retrieve an Automation Token by ID
 *Fastly.AutomationTokensApi* | [**getAutomationTokensIdServices**](docs/AutomationTokensApi.md#getAutomationTokensIdServices) | List Automation Token Services
@@ -650,6 +667,11 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/dns/v1/tsig-keys/{tsig_key_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/dns/v1/tsig-keys`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/dns/v1/zones/{zone_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/dns/v1/zones`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/ngwaf/v1/default-dashboards`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (GET)
 - [`/ngwaf/v1/lists/{listId}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (GET, POST)
 - [`/ngwaf/v1/signals/{signal_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (DELETE, GET, PATCH)
@@ -660,6 +682,9 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}/signing-key`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/dashboards/{dashboard_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/workspaces/{workspace_id}/dashboards`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/default-dashboard`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (GET, PUT)
 - [`/ngwaf/v1/workspaces/{workspace_id}/events/{event_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/events`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/header-links/{header_link_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/header-links) (DELETE, GET, PUT)
@@ -671,7 +696,10 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/ngwaf/v1/workspaces/{workspace_id}/requests`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/rules/{rule_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/rules`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/thresholds/{threshold_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/thresholds) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/workspaces/{workspace_id}/thresholds`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/thresholds) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/timeseries`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/timeseries) (GET)
+- [`/ngwaf/v1/workspaces/{workspace_id}/top-attacks`](https://www.fastly.com/documentation/reference/api/ngwaf/workspaces) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/virtual-patches/{virtual_patch_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/virtual-patches) (GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/virtual-patches`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/virtual-patches) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/workspaces) (DELETE, GET, PATCH)

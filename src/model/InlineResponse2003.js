@@ -11,24 +11,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import DdosProtectionRuleWithStats from './DdosProtectionRuleWithStats';
-import PaginationCursorMeta from './PaginationCursorMeta';
+import Meta from './Meta';
+import TagGet from './TagGet';
 
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse2003 {
     /**
      * Constructs a new <code>InlineResponse2003</code>.
      * @alias module:model/InlineResponse2003
-     * @param data {Array.<module:model/DdosProtectionRuleWithStats>} 
-     * @param meta {module:model/PaginationCursorMeta} 
      */
-    constructor(data, meta) { 
+    constructor() { 
         
-        InlineResponse2003.initialize(this, data, meta);
+        InlineResponse2003.initialize(this);
     }
 
     /**
@@ -36,9 +34,7 @@ class InlineResponse2003 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data, meta) { 
-        obj['data'] = data;
-        obj['meta'] = meta;
+    static initialize(obj) { 
     }
 
     /**
@@ -52,11 +48,11 @@ class InlineResponse2003 {
         if (data) {
             obj = obj || new InlineResponse2003();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionRuleWithStats]);
-            }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+                obj['meta'] = Meta.constructFromObject(data['meta']);
+            }
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [TagGet]);
             }
         }
         return obj;
@@ -66,14 +62,15 @@ class InlineResponse2003 {
 }
 
 /**
- * @member {Array.<module:model/DdosProtectionRuleWithStats>} data
- */
-InlineResponse2003.prototype['data'] = undefined;
-
-/**
- * @member {module:model/PaginationCursorMeta} meta
+ * @member {module:model/Meta} meta
  */
 InlineResponse2003.prototype['meta'] = undefined;
+
+/**
+ * The operation tags returned by the request.
+ * @member {Array.<module:model/TagGet>} data
+ */
+InlineResponse2003.prototype['data'] = undefined;
 
 
 

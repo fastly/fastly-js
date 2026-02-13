@@ -16,7 +16,7 @@ import Permission from './Permission';
 /**
  * The ServiceAuthorizationDataAttributes model module.
  * @module model/ServiceAuthorizationDataAttributes
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class ServiceAuthorizationDataAttributes {
     /**

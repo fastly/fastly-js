@@ -17,7 +17,7 @@ import Realtime from '../model/Realtime';
 /**
 * Realtime service.
 * @module api/RealtimeApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class RealtimeApi {
 

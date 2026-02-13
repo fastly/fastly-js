@@ -11,11 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import DiscoveredOperationGet from './DiscoveredOperationGet';
+import Meta from './Meta';
 
 /**
  * The InlineResponse2001 model module.
  * @module model/InlineResponse2001
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse2001 {
     /**
@@ -46,8 +48,11 @@ class InlineResponse2001 {
         if (data) {
             obj = obj || new InlineResponse2001();
 
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = Meta.constructFromObject(data['meta']);
+            }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
+                obj['data'] = ApiClient.convertToType(data['data'], [DiscoveredOperationGet]);
             }
         }
         return obj;
@@ -57,8 +62,13 @@ class InlineResponse2001 {
 }
 
 /**
- * The service IDs of the services the token will have access to. Separate service IDs with a space.
- * @member {Array.<String>} data
+ * @member {module:model/Meta} meta
+ */
+InlineResponse2001.prototype['meta'] = undefined;
+
+/**
+ * The discovered operations returned by the request.
+ * @member {Array.<module:model/DiscoveredOperationGet>} data
  */
 InlineResponse2001.prototype['data'] = undefined;
 

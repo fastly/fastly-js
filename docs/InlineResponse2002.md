@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[DdosProtectionEvent]**](DdosProtectionEvent.md) |  | [optional] 
-**meta** | [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
+**meta** | [**Meta**](Meta.md) |  | [optional] 
+**data** | [**[OperationGet]**](OperationGet.md) | The operations returned by the request. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

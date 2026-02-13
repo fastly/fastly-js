@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
+import PaginationCursorMeta from './PaginationCursorMeta';
 
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse20011 {
     /**
@@ -48,7 +48,10 @@ class InlineResponse20011 {
             obj = obj || new InlineResponse20011();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
+                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -58,9 +61,14 @@ class InlineResponse20011 {
 }
 
 /**
- * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
+ * @member {Array.<String>} data
  */
 InlineResponse20011.prototype['data'] = undefined;
+
+/**
+ * @member {module:model/PaginationCursorMeta} meta
+ */
+InlineResponse20011.prototype['meta'] = undefined;
 
 
 

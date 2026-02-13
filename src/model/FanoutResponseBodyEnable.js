@@ -21,7 +21,7 @@ import FanoutResponseService from './FanoutResponseService';
 /**
  * The FanoutResponseBodyEnable model module.
  * @module model/FanoutResponseBodyEnable
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class FanoutResponseBodyEnable {
     /**

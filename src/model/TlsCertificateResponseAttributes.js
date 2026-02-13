@@ -17,7 +17,7 @@ import TlsCertificateResponseAttributesAllOf from './TlsCertificateResponseAttri
 /**
  * The TlsCertificateResponseAttributes model module.
  * @module model/TlsCertificateResponseAttributes
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class TlsCertificateResponseAttributes {
     /**

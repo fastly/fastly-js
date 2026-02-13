@@ -17,7 +17,7 @@ import TimeseriesResult from './TimeseriesResult';
 /**
  * The TimeseriesGetResponse model module.
  * @module model/TimeseriesGetResponse
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class TimeseriesGetResponse {
     /**

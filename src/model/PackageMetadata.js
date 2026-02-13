@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PackageMetadata model module.
  * @module model/PackageMetadata
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class PackageMetadata {
     /**
@@ -100,13 +100,13 @@ PackageMetadata.prototype['authors'] = undefined;
 PackageMetadata.prototype['language'] = undefined;
 
 /**
- * Size of the Compute package in bytes.
+ * Size of the Compute package in bytes. This is deprecated along with `hashsum`.
  * @member {Number} size
  */
 PackageMetadata.prototype['size'] = undefined;
 
 /**
- * Hash of the Compute package.
+ * Hash of the Compute package. This is deprecated in favor of `files_hash`.
  * @member {String} hashsum
  */
 PackageMetadata.prototype['hashsum'] = undefined;

@@ -18,7 +18,7 @@ import LogInsightsValues from './LogInsightsValues';
 /**
  * The LogInsights model module.
  * @module model/LogInsights
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class LogInsights {
     /**
@@ -56,7 +56,7 @@ class LogInsights {
                 obj['dimension_attributes'] = LogInsightsDimensionAttributes.constructFromObject(data['dimension_attributes']);
             }
             if (data.hasOwnProperty('values')) {
-                obj['values'] = LogInsightsValues.constructFromObject(data['values']);
+                obj['values'] = ApiClient.convertToType(data['values'], [LogInsightsValues]);
             }
         }
         return obj;
@@ -76,7 +76,7 @@ LogInsights.prototype['dimensions'] = undefined;
 LogInsights.prototype['dimension_attributes'] = undefined;
 
 /**
- * @member {module:model/LogInsightsValues} values
+ * @member {Array.<module:model/LogInsightsValues>} values
  */
 LogInsights.prototype['values'] = undefined;
 

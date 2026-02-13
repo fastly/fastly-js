@@ -16,7 +16,7 @@ import ApiDiscoveryResponseProductProduct from './ApiDiscoveryResponseProductPro
 /**
  * The ApiDiscoveryResponseProduct model module.
  * @module model/ApiDiscoveryResponseProduct
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class ApiDiscoveryResponseProduct {
     /**

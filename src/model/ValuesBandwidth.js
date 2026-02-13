@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesBandwidth model module.
  * @module model/ValuesBandwidth
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class ValuesBandwidth {
     /**

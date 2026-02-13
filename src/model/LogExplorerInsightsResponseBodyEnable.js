@@ -21,7 +21,7 @@ import LogExplorerInsightsResponseService from './LogExplorerInsightsResponseSer
 /**
  * The LogExplorerInsightsResponseBodyEnable model module.
  * @module model/LogExplorerInsightsResponseBodyEnable
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class LogExplorerInsightsResponseBodyEnable {
     /**

@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class BackendResponse {
     /**
@@ -78,6 +78,9 @@ class BackendResponse {
             }
             if (data.hasOwnProperty('first_byte_timeout')) {
                 obj['first_byte_timeout'] = ApiClient.convertToType(data['first_byte_timeout'], 'Number');
+            }
+            if (data.hasOwnProperty('fetch_timeout')) {
+                obj['fetch_timeout'] = ApiClient.convertToType(data['fetch_timeout'], 'Number');
             }
             if (data.hasOwnProperty('healthcheck')) {
                 obj['healthcheck'] = ApiClient.convertToType(data['healthcheck'], 'String');
@@ -232,6 +235,12 @@ BackendResponse.prototype['connect_timeout'] = undefined;
  * @member {Number} first_byte_timeout
  */
 BackendResponse.prototype['first_byte_timeout'] = undefined;
+
+/**
+ * Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
+ * @member {Number} fetch_timeout
+ */
+BackendResponse.prototype['fetch_timeout'] = undefined;
 
 /**
  * The name of the healthcheck to use with this backend.
@@ -482,6 +491,11 @@ Backend.prototype['connect_timeout'] = undefined;
  * @member {Number} first_byte_timeout
  */
 Backend.prototype['first_byte_timeout'] = undefined;
+/**
+ * Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
+ * @member {Number} fetch_timeout
+ */
+Backend.prototype['fetch_timeout'] = undefined;
 /**
  * The name of the healthcheck to use with this backend.
  * @member {String} healthcheck

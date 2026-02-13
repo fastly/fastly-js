@@ -22,7 +22,7 @@ import HistoricalUsageServiceResponse from '../model/HistoricalUsageServiceRespo
 /**
 * Historical service.
 * @module api/HistoricalApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class HistoricalApi {
 
@@ -49,6 +49,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @param {String} [options.services] - Limit the query to only the specified, comma-separated list of services. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsByServiceResponse} and HTTP response
      */
@@ -64,6 +65,7 @@ export default class HistoricalApi {
         'to': options['to'],
         'by': options['by'],
         'region': options['region'],
+        'datacenter': options['datacenter'],
         'services': options['services']
       };
       let headerParams = {
@@ -98,6 +100,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @param {String} [options.services] - Limit the query to only the specified, comma-separated list of services. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsByServiceResponse}
      */
@@ -179,6 +182,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsByServiceResponse} and HTTP response
      */
     getHistStatsFieldWithHttpInfo(options = {}) {
@@ -197,7 +201,8 @@ export default class HistoricalApi {
         'from': options['from'],
         'to': options['to'],
         'by': options['by'],
-        'region': options['region']
+        'region': options['region'],
+        'datacenter': options['datacenter']
       };
       let headerParams = {
       };
@@ -232,6 +237,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsByServiceResponse}
      */
     getHistStatsField(options = {}) {
@@ -249,6 +255,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsAggregatedResponse} and HTTP response
      */
     getHistStatsServiceWithHttpInfo(options = {}) {
@@ -267,7 +274,8 @@ export default class HistoricalApi {
         'from': options['from'],
         'to': options['to'],
         'by': options['by'],
-        'region': options['region']
+        'region': options['region'],
+        'datacenter': options['datacenter']
       };
       let headerParams = {
       };
@@ -302,6 +310,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsAggregatedResponse}
      */
     getHistStatsService(options = {}) {
@@ -320,6 +329,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsAggregatedResponse} and HTTP response
      */
     getHistStatsServiceFieldWithHttpInfo(options = {}) {
@@ -343,7 +353,8 @@ export default class HistoricalApi {
         'from': options['from'],
         'to': options['to'],
         'by': options['by'],
-        'region': options['region']
+        'region': options['region'],
+        'datacenter': options['datacenter']
       };
       let headerParams = {
       };
@@ -379,6 +390,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America. 
+     * @param {String} [options.datacenter] - Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/). 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsAggregatedResponse}
      */
     getHistStatsServiceField(options = {}) {

@@ -18,7 +18,7 @@ import LoggingGrafanacloudlogsResponse from '../model/LoggingGrafanacloudlogsRes
 /**
 * LoggingGrafanacloudlogs service.
 * @module api/LoggingGrafanacloudlogsApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class LoggingGrafanacloudlogsApi {
 

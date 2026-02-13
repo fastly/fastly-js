@@ -11,13 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import PaginationCursorMeta from './PaginationCursorMeta';
-import SecretStoreResponse from './SecretStoreResponse';
+import Suggestion from './Suggestion';
 
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class InlineResponse2009 {
     /**
@@ -48,11 +47,8 @@ class InlineResponse2009 {
         if (data) {
             obj = obj || new InlineResponse2009();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SecretStoreResponse]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('results')) {
+                obj['results'] = ApiClient.convertToType(data['results'], [Suggestion]);
             }
         }
         return obj;
@@ -62,14 +58,9 @@ class InlineResponse2009 {
 }
 
 /**
- * @member {Array.<module:model/SecretStoreResponse>} data
+ * @member {Array.<module:model/Suggestion>} results
  */
-InlineResponse2009.prototype['data'] = undefined;
-
-/**
- * @member {module:model/PaginationCursorMeta} meta
- */
-InlineResponse2009.prototype['meta'] = undefined;
+InlineResponse2009.prototype['results'] = undefined;
 
 
 

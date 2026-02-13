@@ -16,7 +16,7 @@ import LogExplorerInsightsResponseProductProduct from './LogExplorerInsightsResp
 /**
  * The LogExplorerInsightsResponseProduct model module.
  * @module model/LogExplorerInsightsResponseProduct
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class LogExplorerInsightsResponseProduct {
     /**

@@ -21,7 +21,7 @@ import DdosProtectionResponseEnable from '../model/DdosProtectionResponseEnable'
 /**
 * ProductDdosProtection service.
 * @module api/ProductDdosProtectionApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class ProductDdosProtectionApi {
 

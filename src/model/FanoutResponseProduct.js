@@ -16,7 +16,7 @@ import FanoutResponseProductProduct from './FanoutResponseProductProduct';
 /**
  * The FanoutResponseProduct model module.
  * @module model/FanoutResponseProduct
- * @version 14.1.0
+ * @version 15.0.0-beta.0
  */
 class FanoutResponseProduct {
     /**

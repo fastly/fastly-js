@@ -21,13 +21,13 @@ import DdosProtectionNotFound from '../model/DdosProtectionNotFound';
 import DdosProtectionRule from '../model/DdosProtectionRule';
 import DdosProtectionRulePatch from '../model/DdosProtectionRulePatch';
 import DdosProtectionTrafficStats from '../model/DdosProtectionTrafficStats';
-import InlineResponse2002 from '../model/InlineResponse2002';
-import InlineResponse2003 from '../model/InlineResponse2003';
+import InlineResponse2005 from '../model/InlineResponse2005';
+import InlineResponse2006 from '../model/InlineResponse2006';
 
 /**
 * DdosProtection service.
 * @module api/DdosProtectionApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class DdosProtectionApi {
 
@@ -114,7 +114,7 @@ export default class DdosProtectionApi {
      * @param {Date} [options.from] - Represents the start of a date-time range expressed in RFC 3339 format.
      * @param {Date} [options.to] - Represents the end of a date-time range expressed in RFC 3339 format.
      * @param {String} [options.name]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     ddosProtectionEventListWithHttpInfo(options = {}) {
       let postBody = null;
@@ -139,7 +139,7 @@ export default class DdosProtectionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json', 'application/problem+json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2005;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -165,7 +165,7 @@ export default class DdosProtectionApi {
      * @param {Date} [options.from] - Represents the start of a date-time range expressed in RFC 3339 format.
      * @param {Date} [options.to] - Represents the end of a date-time range expressed in RFC 3339 format.
      * @param {String} [options.name]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     ddosProtectionEventList(options = {}) {
       return this.ddosProtectionEventListWithHttpInfo(options)
@@ -181,7 +181,7 @@ export default class DdosProtectionApi {
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {Number} [options.limit=20] - Limit how many results are returned.
      * @param {String} [options.include] - Include relationships. Optional. Comma-separated values.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     ddosProtectionEventRuleListWithHttpInfo(options = {}) {
       let postBody = null;
@@ -208,7 +208,7 @@ export default class DdosProtectionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json', 'application/problem+json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2006;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -232,7 +232,7 @@ export default class DdosProtectionApi {
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {Number} [options.limit=20] - Limit how many results are returned.
      * @param {String} [options.include] - Include relationships. Optional. Comma-separated values.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     ddosProtectionEventRuleList(options = {}) {
       return this.ddosProtectionEventRuleListWithHttpInfo(options)

@@ -12,14 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2007 from '../model/InlineResponse2007';
+import InlineResponse20010 from '../model/InlineResponse20010';
 import KvStoreDetails from '../model/KvStoreDetails';
 import KvStoreRequestCreateOrUpdate from '../model/KvStoreRequestCreateOrUpdate';
 
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 14.1.0
+* @version 15.0.0-beta.0
 */
 export default class KvStoreApi {
 
@@ -217,7 +217,7 @@ export default class KvStoreApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20010} and HTTP response
      */
     kvStoreListWithHttpInfo(options = {}) {
       let postBody = null;
@@ -239,7 +239,7 @@ export default class KvStoreApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2007;
+      let returnType = InlineResponse20010;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -262,7 +262,7 @@ export default class KvStoreApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @param {String} [options.name] - Returns a one-element array containing the details for the named KV store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20010}
      */
     kvStoreList(options = {}) {
       return this.kvStoreListWithHttpInfo(options)
