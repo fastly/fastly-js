@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogExplorerInsightsResponseEnabledServices model module.
  * @module model/LogExplorerInsightsResponseEnabledServices
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class LogExplorerInsightsResponseEnabledServices {
     /**

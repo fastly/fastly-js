@@ -17,7 +17,7 @@ import TlsDomainsResponse from '../model/TlsDomainsResponse';
 /**
 * TlsDomains service.
 * @module api/TlsDomainsApi
-* @version 15.0.0-beta.3
+* @version 15.0.0-beta.4
 */
 export default class TlsDomainsApi {
 

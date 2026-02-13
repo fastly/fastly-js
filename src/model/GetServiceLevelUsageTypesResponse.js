@@ -17,7 +17,7 @@ import Serviceusagetypes from './Serviceusagetypes';
 /**
  * The GetServiceLevelUsageTypesResponse model module.
  * @module model/GetServiceLevelUsageTypesResponse
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class GetServiceLevelUsageTypesResponse {
     /**

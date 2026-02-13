@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The DomainInspectorResponseCustomer model module.
  * @module model/DomainInspectorResponseCustomer
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class DomainInspectorResponseCustomer {
     /**

@@ -16,7 +16,7 @@ import ValidatorResultDataAttributesMessages from './ValidatorResultDataAttribut
 /**
  * The ValidatorResultDataAttributes model module.
  * @module model/ValidatorResultDataAttributes
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class ValidatorResultDataAttributes {
     /**

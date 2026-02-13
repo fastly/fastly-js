@@ -18,7 +18,7 @@ import LoggingElasticsearchResponse from '../model/LoggingElasticsearchResponse'
 /**
 * LoggingElasticsearch service.
 * @module api/LoggingElasticsearchApi
-* @version 15.0.0-beta.3
+* @version 15.0.0-beta.4
 */
 export default class LoggingElasticsearchApi {
 

@@ -19,7 +19,7 @@ import DefaultSettingsResponse from '../model/DefaultSettingsResponse';
 /**
 * ImageOptimizerDefaultSettings service.
 * @module api/ImageOptimizerDefaultSettingsApi
-* @version 15.0.0-beta.3
+* @version 15.0.0-beta.4
 */
 export default class ImageOptimizerDefaultSettingsApi {
 

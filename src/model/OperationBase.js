@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationBase model module.
  * @module model/OperationBase
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class OperationBase {
     /**

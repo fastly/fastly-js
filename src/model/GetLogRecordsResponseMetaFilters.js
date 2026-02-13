@@ -16,7 +16,7 @@ import FilterFieldItem from './FilterFieldItem';
 /**
  * The GetLogRecordsResponseMetaFilters model module.
  * @module model/GetLogRecordsResponseMetaFilters
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class GetLogRecordsResponseMetaFilters {
     /**

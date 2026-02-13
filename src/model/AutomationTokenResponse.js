@@ -19,7 +19,7 @@ import ReadOnlyId from './ReadOnlyId';
 /**
  * The AutomationTokenResponse model module.
  * @module model/AutomationTokenResponse
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class AutomationTokenResponse {
     /**

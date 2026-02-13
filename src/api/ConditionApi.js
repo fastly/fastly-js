@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Condition service.
 * @module api/ConditionApi
-* @version 15.0.0-beta.3
+* @version 15.0.0-beta.4
 */
 export default class ConditionApi {
 

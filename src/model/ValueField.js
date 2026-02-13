@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValueField model module.
  * @module model/ValueField
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class ValueField {
     /**

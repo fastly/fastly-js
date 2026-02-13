@@ -20,7 +20,7 @@ import PaginationMeta from './PaginationMeta';
 /**
  * The MutualAuthenticationsResponse model module.
  * @module model/MutualAuthenticationsResponse
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class MutualAuthenticationsResponse {
     /**

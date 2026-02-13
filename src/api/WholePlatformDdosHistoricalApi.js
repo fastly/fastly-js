@@ -17,7 +17,7 @@ import PlatformDdosResponse from '../model/PlatformDdosResponse';
 /**
 * WholePlatformDdosHistorical service.
 * @module api/WholePlatformDdosHistoricalApi
-* @version 15.0.0-beta.3
+* @version 15.0.0-beta.4
 */
 export default class WholePlatformDdosHistoricalApi {
 

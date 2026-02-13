@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DashboardPropertyCreatedBy model module.
  * @module model/DashboardPropertyCreatedBy
- * @version 15.0.0-beta.3
+ * @version 15.0.0-beta.4
  */
 class DashboardPropertyCreatedBy {
     /**
