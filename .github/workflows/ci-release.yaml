@@ -28,11 +28,15 @@ jobs:
         with:
           node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org'
-
       - name: Set up environment variables
         run: ./.github/scripts/publish_env.sh >> $GITHUB_ENV
         working-directory: ./main
         shell: bash
+      - name: Set repository fields
+        run: |
+          npm pkg set repository.type=git
+          npm pkg set repository.url="git+https://github.com/${{ github.repository }}.git"
+        working-directory: ./main
       - name: Pack API client
         run: ./.github/scripts/pack.sh
         working-directory: ./main
