@@ -1,11 +1,11 @@
 # install deps
-yarn
+npm ci
 
 # mark version
-yarn version --new-version "${VERSION}" --no-git-tag-version
+npm version "${VERSION}" --no-git-tag-version
 
 # make a package (output is current directory)
-yarn pack
+npm pack
 
 # save the output filename to env
 PACKAGE_FILENAME=$(ls -1 -- fastly-*.tgz)
