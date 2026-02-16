@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingNewrelicAdditional model module.
  * @module model/LoggingNewrelicAdditional
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class LoggingNewrelicAdditional {
     /**

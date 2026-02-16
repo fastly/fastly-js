@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Contact model module.
  * @module model/Contact
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class Contact {
     /**

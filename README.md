@@ -5,12 +5,6 @@ An asynchronous JavaScript client library for interacting with most facets of th
 > [!WARNING]
 > This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritized.
 
-> ⚠️ This client library (`15.0.0-beta.4`)  is an early-access release. Features may change without notice. Use at your own risk.
-
-**We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
-
-Read about the [Fastly Product Lifecycle](https://docs.fastly.com/products/fastly-product-lifecycle).
-
 
 ## Usage
 

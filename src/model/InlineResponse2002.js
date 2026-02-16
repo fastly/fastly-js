@@ -17,7 +17,7 @@ import OperationGet from './OperationGet';
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class InlineResponse2002 {
     /**

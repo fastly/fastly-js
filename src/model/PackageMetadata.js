@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PackageMetadata model module.
  * @module model/PackageMetadata
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class PackageMetadata {
     /**

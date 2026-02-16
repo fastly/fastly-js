@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationGetExtra model module.
  * @module model/OperationGetExtra
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class OperationGetExtra {
     /**

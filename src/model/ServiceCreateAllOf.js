@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServiceCreateAllOf model module.
  * @module model/ServiceCreateAllOf
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class ServiceCreateAllOf {
     /**

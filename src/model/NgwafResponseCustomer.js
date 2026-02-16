@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The NgwafResponseCustomer model module.
  * @module model/NgwafResponseCustomer
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class NgwafResponseCustomer {
     /**

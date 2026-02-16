@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Error model module.
  * @module model/Error
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class Error {
     /**

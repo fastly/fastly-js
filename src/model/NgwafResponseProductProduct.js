@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NgwafResponseProductProduct model module.
  * @module model/NgwafResponseProductProduct
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class NgwafResponseProductProduct {
     /**

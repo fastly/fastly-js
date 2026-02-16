@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsSubscriptionDataAttributes model module.
  * @module model/TlsSubscriptionDataAttributes
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class TlsSubscriptionDataAttributes {
     /**

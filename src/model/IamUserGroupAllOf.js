@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamUserGroupAllOf model module.
  * @module model/IamUserGroupAllOf
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class IamUserGroupAllOf {
     /**

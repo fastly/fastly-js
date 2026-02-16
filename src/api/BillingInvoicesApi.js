@@ -21,7 +21,7 @@ import MtdInvoiceResponse from '../model/MtdInvoiceResponse';
 /**
 * BillingInvoices service.
 * @module api/BillingInvoicesApi
-* @version 15.0.0-beta.4
+* @version 15.0.0
 */
 export default class BillingInvoicesApi {
 

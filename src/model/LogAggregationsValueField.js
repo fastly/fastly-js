@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogAggregationsValueField model module.
  * @module model/LogAggregationsValueField
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class LogAggregationsValueField {
     /**

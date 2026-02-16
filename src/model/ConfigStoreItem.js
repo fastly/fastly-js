@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigStoreItem model module.
  * @module model/ConfigStoreItem
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class ConfigStoreItem {
     /**

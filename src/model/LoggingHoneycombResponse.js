@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingHoneycombResponse model module.
  * @module model/LoggingHoneycombResponse
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class LoggingHoneycombResponse {
     /**

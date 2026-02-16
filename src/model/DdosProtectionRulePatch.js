@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionRulePatch model module.
  * @module model/DdosProtectionRulePatch
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class DdosProtectionRulePatch {
     /**

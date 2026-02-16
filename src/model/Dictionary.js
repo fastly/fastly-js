@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Dictionary model module.
  * @module model/Dictionary
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class Dictionary {
     /**

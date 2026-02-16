@@ -16,7 +16,7 @@ import LogInsightsMetaFilter from './LogInsightsMetaFilter';
 /**
  * The LogInsightsMeta model module.
  * @module model/LogInsightsMeta
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class LogInsightsMeta {
     /**

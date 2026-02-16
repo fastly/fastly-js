@@ -19,7 +19,7 @@ import KvStoreRequestCreateOrUpdate from '../model/KvStoreRequestCreateOrUpdate'
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 15.0.0-beta.4
+* @version 15.0.0
 */
 export default class KvStoreApi {
 

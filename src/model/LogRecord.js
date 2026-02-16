@@ -16,7 +16,7 @@ import LogPropertyServiceId from './LogPropertyServiceId';
 /**
  * The LogRecord model module.
  * @module model/LogRecord
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class LogRecord {
     /**

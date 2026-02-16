@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestSettingsResponseAllOf model module.
  * @module model/RequestSettingsResponseAllOf
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class RequestSettingsResponseAllOf {
     /**

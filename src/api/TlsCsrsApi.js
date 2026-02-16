@@ -18,7 +18,7 @@ import TlsCsrResponse from '../model/TlsCsrResponse';
 /**
 * TlsCsrs service.
 * @module api/TlsCsrsApi
-* @version 15.0.0-beta.4
+* @version 15.0.0
 */
 export default class TlsCsrsApi {
 

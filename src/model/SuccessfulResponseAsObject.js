@@ -17,7 +17,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The SuccessfulResponseAsObject model module.
  * @module model/SuccessfulResponseAsObject
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class SuccessfulResponseAsObject {
     /**

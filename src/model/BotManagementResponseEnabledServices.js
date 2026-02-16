@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotManagementResponseEnabledServices model module.
  * @module model/BotManagementResponseEnabledServices
- * @version 15.0.0-beta.4
+ * @version 15.0.0
  */
 class BotManagementResponseEnabledServices {
     /**
