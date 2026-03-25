@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationUpdate model module.
  * @module model/OperationUpdate
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class OperationUpdate {
     /**
@@ -61,6 +61,9 @@ class OperationUpdate {
             if (data.hasOwnProperty('tag_ids')) {
                 obj['tag_ids'] = ApiClient.convertToType(data['tag_ids'], ['String']);
             }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
         }
         return obj;
     }
@@ -97,6 +100,12 @@ OperationUpdate.prototype['description'] = undefined;
  * @member {Array.<String>} tag_ids
  */
 OperationUpdate.prototype['tag_ids'] = undefined;
+
+/**
+ * The status of the operation.
+ * @member {module:model/OperationUpdate.StatusEnum} status
+ */
+OperationUpdate.prototype['status'] = undefined;
 
 
 
@@ -162,6 +171,27 @@ OperationUpdate['MethodEnum'] = {
      * @const
      */
     "TRACE": "TRACE"
+};
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+OperationUpdate['StatusEnum'] = {
+
+    /**
+     * value: "SAVED"
+     * @const
+     */
+    "SAVED": "SAVED",
+
+    /**
+     * value: "IGNORED"
+     * @const
+     */
+    "IGNORED": "IGNORED"
 };
 
 

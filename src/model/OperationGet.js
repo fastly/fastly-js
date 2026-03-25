@@ -17,7 +17,7 @@ import OperationGetExtra from './OperationGetExtra';
 /**
  * The OperationGet model module.
  * @module model/OperationGet
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class OperationGet {
     /**
@@ -89,6 +89,12 @@ class OperationGet {
             if (data.hasOwnProperty('last_seen_at')) {
                 obj['last_seen_at'] = ApiClient.convertToType(data['last_seen_at'], 'Date');
             }
+            if (data.hasOwnProperty('rps')) {
+                obj['rps'] = ApiClient.convertToType(data['rps'], 'Number');
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
         }
         return obj;
     }
@@ -150,6 +156,18 @@ OperationGet.prototype['created_at'] = undefined;
  */
 OperationGet.prototype['last_seen_at'] = undefined;
 
+/**
+ * Requests per second observed for this operation.
+ * @member {Number} rps
+ */
+OperationGet.prototype['rps'] = undefined;
+
+/**
+ * The status of the operation.
+ * @member {module:model/OperationGet.StatusEnum} status
+ */
+OperationGet.prototype['status'] = undefined;
+
 
 // Implement OperationBase interface:
 /**
@@ -198,6 +216,16 @@ OperationGetExtra.prototype['created_at'] = undefined;
  * @member {Date} last_seen_at
  */
 OperationGetExtra.prototype['last_seen_at'] = undefined;
+/**
+ * Requests per second observed for this operation.
+ * @member {Number} rps
+ */
+OperationGetExtra.prototype['rps'] = undefined;
+/**
+ * The status of the operation.
+ * @member {module:model/OperationGetExtra.StatusEnum} status
+ */
+OperationGetExtra.prototype['status'] = undefined;
 
 
 
@@ -261,6 +289,27 @@ OperationGet['MethodEnum'] = {
      * @const
      */
     "TRACE": "TRACE"
+};
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+OperationGet['StatusEnum'] = {
+
+    /**
+     * value: "SAVED"
+     * @const
+     */
+    "SAVED": "SAVED",
+
+    /**
+     * value: "IGNORED"
+     * @const
+     */
+    "IGNORED": "IGNORED"
 };
 
 

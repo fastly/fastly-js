@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TagGetExtra model module.
  * @module model/TagGetExtra
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class TagGetExtra {
     /**

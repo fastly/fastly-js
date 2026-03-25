@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 ## `listDmDomains`
 
 ```javascript
-listDmDomains({ , [fqdn, ][service_id, ][sort, ][activated, ][verified, ][cursor, ][limit] })
+listDmDomains({ , [fqdn, ][fqdn_match, ][service_id, ][sort, ][activated, ][verified, ][cursor, ][limit] })
 ```
 
 List all domains
@@ -135,6 +135,7 @@ List all domains
 ```javascript
 const options = {
   fqdn: "fqdn_example",
+  fqdn_match: "contains",
   service_id: "service_id_example",
   sort: "fqdn",
   activated: true,
@@ -157,6 +158,7 @@ apiInstance.listDmDomains(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **fqdn** | **String** |  | [optional]
+**fqdn_match** | **String** | (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN. | [optional] [one of: "contains", "exact", "starts_with", "ends_with"]
 **service_id** | **String** | Filter results based on a service_id. | [optional]
 **sort** | **String** | The order in which to list the results. | [optional] [one of: "fqdn", "-fqdn"]
 **activated** | **Boolean** |  | [optional]

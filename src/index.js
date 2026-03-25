@@ -88,6 +88,7 @@ import BrotliCompressionResponseLinksLinks from './model/BrotliCompressionRespon
 import BrotliCompressionResponseProduct from './model/BrotliCompressionResponseProduct';
 import BrotliCompressionResponseProductProduct from './model/BrotliCompressionResponseProductProduct';
 import BrotliCompressionResponseService from './model/BrotliCompressionResponseService';
+import BulkOperationResult from './model/BulkOperationResult';
 import BulkUpdateAclEntriesRequest from './model/BulkUpdateAclEntriesRequest';
 import BulkUpdateAclEntry from './model/BulkUpdateAclEntry';
 import BulkUpdateAclEntryAllOf from './model/BulkUpdateAclEntryAllOf';
@@ -325,6 +326,8 @@ import InlineResponse2007 from './model/InlineResponse2007';
 import InlineResponse2008 from './model/InlineResponse2008';
 import InlineResponse2009 from './model/InlineResponse2009';
 import InlineResponse201 from './model/InlineResponse201';
+import InlineResponse207 from './model/InlineResponse207';
+import InlineResponse2071 from './model/InlineResponse2071';
 import InlineResponse400 from './model/InlineResponse400';
 import Invitation from './model/Invitation';
 import InvitationCreateData from './model/InvitationCreateData';
@@ -491,7 +494,12 @@ import ObjectStorageResponseProductProduct from './model/ObjectStorageResponsePr
 import Offer from './model/Offer';
 import OfferAllOf from './model/OfferAllOf';
 import OperationBase from './model/OperationBase';
+import OperationBulkAddTags from './model/OperationBulkAddTags';
+import OperationBulkCreate from './model/OperationBulkCreate';
+import OperationBulkCreateOperations from './model/OperationBulkCreateOperations';
+import OperationBulkDelete from './model/OperationBulkDelete';
 import OperationCreate from './model/OperationCreate';
+import OperationCreateExtra from './model/OperationCreateExtra';
 import OperationGet from './model/OperationGet';
 import OperationGetExtra from './model/OperationGetExtra';
 import OperationUpdate from './model/OperationUpdate';
@@ -1036,7 +1044,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 15.0.0
+* @version 15.1.0-rc.0
 */
 export {
     /**
@@ -1500,6 +1508,12 @@ export {
      * @property {module:model/BrotliCompressionResponseService}
      */
     BrotliCompressionResponseService,
+
+    /**
+     * The BulkOperationResult model constructor.
+     * @property {module:model/BulkOperationResult}
+     */
+    BulkOperationResult,
 
     /**
      * The BulkUpdateAclEntriesRequest model constructor.
@@ -2924,6 +2938,18 @@ export {
     InlineResponse201,
 
     /**
+     * The InlineResponse207 model constructor.
+     * @property {module:model/InlineResponse207}
+     */
+    InlineResponse207,
+
+    /**
+     * The InlineResponse2071 model constructor.
+     * @property {module:model/InlineResponse2071}
+     */
+    InlineResponse2071,
+
+    /**
      * The InlineResponse400 model constructor.
      * @property {module:model/InlineResponse400}
      */
@@ -3920,10 +3946,40 @@ export {
     OperationBase,
 
     /**
+     * The OperationBulkAddTags model constructor.
+     * @property {module:model/OperationBulkAddTags}
+     */
+    OperationBulkAddTags,
+
+    /**
+     * The OperationBulkCreate model constructor.
+     * @property {module:model/OperationBulkCreate}
+     */
+    OperationBulkCreate,
+
+    /**
+     * The OperationBulkCreateOperations model constructor.
+     * @property {module:model/OperationBulkCreateOperations}
+     */
+    OperationBulkCreateOperations,
+
+    /**
+     * The OperationBulkDelete model constructor.
+     * @property {module:model/OperationBulkDelete}
+     */
+    OperationBulkDelete,
+
+    /**
      * The OperationCreate model constructor.
      * @property {module:model/OperationCreate}
      */
     OperationCreate,
+
+    /**
+     * The OperationCreateExtra model constructor.
+     * @property {module:model/OperationCreateExtra}
+     */
+    OperationCreateExtra,
 
     /**
      * The OperationGet model constructor.

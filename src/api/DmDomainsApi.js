@@ -20,7 +20,7 @@ import SuccessfulResponseAsObject from '../model/SuccessfulResponseAsObject';
 /**
 * DmDomains service.
 * @module api/DmDomainsApi
-* @version 15.0.0
+* @version 15.1.0-rc.0
 */
 export default class DmDomainsApi {
 
@@ -213,6 +213,7 @@ export default class DmDomainsApi {
      * List all domains
      * @param {Object} options
      * @param {String} [options.fqdn]
+     * @param {module:model/String} [options.fqdn_match='contains'] - (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN.
      * @param {String} [options.service_id] - Filter results based on a service_id.
      * @param {module:model/String} [options.sort='fqdn'] - The order in which to list the results.
      * @param {Boolean} [options.activated]
@@ -230,6 +231,7 @@ export default class DmDomainsApi {
       };
       let queryParams = {
         'fqdn': options['fqdn'],
+        'fqdn_match': options['fqdn_match'],
         'service_id': options['service_id'],
         'sort': options['sort'],
         'activated': options['activated'],
@@ -266,6 +268,7 @@ export default class DmDomainsApi {
      * List all domains
      * @param {Object} options
      * @param {String} [options.fqdn]
+     * @param {module:model/String} [options.fqdn_match='contains'] - (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN.
      * @param {String} [options.service_id] - Filter results based on a service_id.
      * @param {module:model/String} [options.sort='fqdn'] - The order in which to list the results.
      * @param {Boolean} [options.activated]

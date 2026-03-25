@@ -10,6 +10,9 @@ const apiInstance = new Fastly.ApisecurityOperationsApi();
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
+[**apiSecurityBulkAddTagsToOperations**](ApisecurityOperationsApi.md#apiSecurityBulkAddTagsToOperations) | **POST** /api-security/v1/services/{service_id}/operations-bulk-tags | Bulk add tags to operations
+[**apiSecurityBulkCreateOperations**](ApisecurityOperationsApi.md#apiSecurityBulkCreateOperations) | **POST** /api-security/v1/services/{service_id}/operations-bulk | Bulk create operations
+[**apiSecurityBulkDeleteOperations**](ApisecurityOperationsApi.md#apiSecurityBulkDeleteOperations) | **DELETE** /api-security/v1/services/{service_id}/operations-bulk | Bulk delete operations
 [**apiSecurityCreateOperation**](ApisecurityOperationsApi.md#apiSecurityCreateOperation) | **POST** /api-security/v1/services/{service_id}/operations | Create operation
 [**apiSecurityCreateOperationTag**](ApisecurityOperationsApi.md#apiSecurityCreateOperationTag) | **POST** /api-security/v1/services/{service_id}/tags | Create operation tag
 [**apiSecurityDeleteOperation**](ApisecurityOperationsApi.md#apiSecurityDeleteOperation) | **DELETE** /api-security/v1/services/{service_id}/operations/{operation_id} | Delete operation
@@ -21,6 +24,117 @@ Method | HTTP request | Description
 [**apiSecurityListOperations**](ApisecurityOperationsApi.md#apiSecurityListOperations) | **GET** /api-security/v1/services/{service_id}/operations | List operations
 [**apiSecurityUpdateOperation**](ApisecurityOperationsApi.md#apiSecurityUpdateOperation) | **PATCH** /api-security/v1/services/{service_id}/operations/{operation_id} | Update operation
 [**apiSecurityUpdateOperationTag**](ApisecurityOperationsApi.md#apiSecurityUpdateOperationTag) | **PATCH** /api-security/v1/services/{service_id}/tags/{tag_id} | Update operation tag
+
+
+## `apiSecurityBulkAddTagsToOperations`
+
+```javascript
+apiSecurityBulkAddTagsToOperations({ service_id, [operation_bulk_add_tags] })
+```
+
+Add tags to multiple operations in a single request.
+
+### Example
+
+```javascript
+const options = {
+  service_id: 3NeCFuZNP1v0iyJ2vmYQI6, // required
+  operation_bulk_add_tags: new Fastly.OperationBulkAddTags(),
+};
+
+apiInstance.apiSecurityBulkAddTagsToOperations(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | The unique identifier of the service. |
+**operation_bulk_add_tags** | [**OperationBulkAddTags**](OperationBulkAddTags.md) |  | [optional]
+
+### Return type
+
+[**InlineResponse2071**](InlineResponse2071.md)
+
+
+## `apiSecurityBulkCreateOperations`
+
+```javascript
+apiSecurityBulkCreateOperations({ service_id, [operation_bulk_create] })
+```
+
+Create multiple operations associated with a specific service in a single request.
+
+### Example
+
+```javascript
+const options = {
+  service_id: 3NeCFuZNP1v0iyJ2vmYQI6, // required
+  operation_bulk_create: new Fastly.OperationBulkCreate(),
+};
+
+apiInstance.apiSecurityBulkCreateOperations(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | The unique identifier of the service. |
+**operation_bulk_create** | [**OperationBulkCreate**](OperationBulkCreate.md) |  | [optional]
+
+### Return type
+
+[**InlineResponse207**](InlineResponse207.md)
+
+
+## `apiSecurityBulkDeleteOperations`
+
+```javascript
+apiSecurityBulkDeleteOperations({ service_id, [operation_bulk_delete] })
+```
+
+Delete multiple operations in a single request.
+
+### Example
+
+```javascript
+const options = {
+  service_id: 3NeCFuZNP1v0iyJ2vmYQI6, // required
+  operation_bulk_delete: new Fastly.OperationBulkDelete(),
+};
+
+apiInstance.apiSecurityBulkDeleteOperations(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | The unique identifier of the service. |
+**operation_bulk_delete** | [**OperationBulkDelete**](OperationBulkDelete.md) |  | [optional]
+
+### Return type
+
+[**InlineResponse2071**](InlineResponse2071.md)
 
 
 ## `apiSecurityCreateOperation`
@@ -248,7 +362,7 @@ Name | Type | Description  | Notes
 ## `apiSecurityListDiscoveredOperations`
 
 ```javascript
-apiSecurityListDiscoveredOperations({ service_id, [status, ][limit, ][page] })
+apiSecurityListDiscoveredOperations({ service_id, [method, ][domain, ][path, ][limit, ][page] })
 ```
 
 List all discovered operations associated with a specific service. Optionally filter operations by status.
@@ -258,7 +372,9 @@ List all discovered operations associated with a specific service. Optionally fi
 ```javascript
 const options = {
   service_id: 3NeCFuZNP1v0iyJ2vmYQI6, // required
-  status: "DISCOVERED",
+  method: "GET",
+  domain: ["example.com","api.example.com"],
+  path: /api/v1/users,
   limit: 100,
   page: 1,
 };
@@ -277,7 +393,9 @@ apiInstance.apiSecurityListDiscoveredOperations(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | The unique identifier of the service. |
-**status** | **String** | Filter operations by status. Only operations with this status will be returned. | [optional] [one of: "DISCOVERED", "SAVED", "IGNORED"]
+**method** | [**[String]**](String.md) | Filter operations by HTTP method. | [optional] [one of: "GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", "CONNECT", "TRACE"]
+**domain** | [**[String]**](String.md) | Filter operations by fully-qualified domain name (exact match). | [optional]
+**path** | **String** | Filter operations by path (exact match). | [optional]
 **limit** | **Number** | The maximum number of operations to return per page. | [optional] [defaults to 100]
 **page** | **Number** | The page number to return. | [optional] [defaults to 0]
 
@@ -289,7 +407,7 @@ Name | Type | Description  | Notes
 ## `apiSecurityListOperationTags`
 
 ```javascript
-apiSecurityListOperationTags({ service_id })
+apiSecurityListOperationTags({ service_id, [limit, ][page] })
 ```
 
 List all operation tags associated with a specific service.
@@ -299,6 +417,8 @@ List all operation tags associated with a specific service.
 ```javascript
 const options = {
   service_id: 3NeCFuZNP1v0iyJ2vmYQI6, // required
+  limit: 100,
+  page: 1,
 };
 
 apiInstance.apiSecurityListOperationTags(options)
@@ -315,6 +435,8 @@ apiInstance.apiSecurityListOperationTags(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | The unique identifier of the service. |
+**limit** | **Number** | The maximum number of operations to return per page. | [optional] [defaults to 100]
+**page** | **Number** | The page number to return. | [optional] [defaults to 0]
 
 ### Return type
 
@@ -324,7 +446,7 @@ Name | Type | Description  | Notes
 ## `apiSecurityListOperations`
 
 ```javascript
-apiSecurityListOperations({ service_id, [tag_id, ][limit, ][page] })
+apiSecurityListOperations({ service_id, [tag_id, ][status, ][method, ][domain, ][path, ][limit, ][page] })
 ```
 
 List all operations associated with a specific service. Optionally filter operations by tag ID.
@@ -335,6 +457,10 @@ List all operations associated with a specific service. Optionally filter operat
 const options = {
   service_id: 3NeCFuZNP1v0iyJ2vmYQI6, // required
   tag_id: tag_abc123def456,
+  status: "SAVED",
+  method: "GET",
+  domain: ["example.com","api.example.com"],
+  path: /api/v1/users,
   limit: 100,
   page: 1,
 };
@@ -354,6 +480,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | The unique identifier of the service. |
 **tag_id** | **String** | Filter operations by operation tag ID. Only operations associated with this operation tag will be returned. | [optional]
+**status** | **String** | Filter operations by status. Defaults to SAVED if omitted. | [optional] [one of: "SAVED", "IGNORED"]
+**method** | [**[String]**](String.md) | Filter operations by HTTP method. | [optional] [one of: "GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", "CONNECT", "TRACE"]
+**domain** | [**[String]**](String.md) | Filter operations by fully-qualified domain name (exact match). | [optional]
+**path** | **String** | Filter operations by path (exact match). | [optional]
 **limit** | **Number** | The maximum number of operations to return per page. | [optional] [defaults to 100]
 **page** | **Number** | The page number to return. | [optional] [defaults to 0]
 

@@ -18,7 +18,7 @@ import HistoricalRegionsResponseAllOf from './HistoricalRegionsResponseAllOf';
 /**
  * The HistoricalRegionsResponse model module.
  * @module model/HistoricalRegionsResponse
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class HistoricalRegionsResponse {
     /**

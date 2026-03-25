@@ -12,21 +12,26 @@
 
 import ApiClient from '../ApiClient';
 import OperationBase from './OperationBase';
+import OperationCreateExtra from './OperationCreateExtra';
 
 /**
  * The OperationCreate model module.
  * @module model/OperationCreate
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class OperationCreate {
     /**
      * Constructs a new <code>OperationCreate</code>.
      * @alias module:model/OperationCreate
      * @implements module:model/OperationBase
+     * @implements module:model/OperationCreateExtra
+     * @param method {module:model/OperationCreate.MethodEnum} The HTTP method for the operation.
+     * @param domain {String} The domain for the operation.
+     * @param path {String} The path for the operation, which may include path parameters.
      */
-    constructor() { 
-        OperationBase.initialize(this);
-        OperationCreate.initialize(this);
+    constructor(method, domain, path) { 
+        OperationBase.initialize(this);OperationCreateExtra.initialize(this);
+        OperationCreate.initialize(this, method, domain, path);
     }
 
     /**
@@ -34,7 +39,10 @@ class OperationCreate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, method, domain, path) { 
+        obj['method'] = method;
+        obj['domain'] = domain;
+        obj['path'] = path;
     }
 
     /**
@@ -48,6 +56,7 @@ class OperationCreate {
         if (data) {
             obj = obj || new OperationCreate();
             OperationBase.constructFromObject(data, obj);
+            OperationCreateExtra.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('method')) {
                 obj['method'] = ApiClient.convertToType(data['method'], 'String');
@@ -63,6 +72,9 @@ class OperationCreate {
             }
             if (data.hasOwnProperty('tag_ids')) {
                 obj['tag_ids'] = ApiClient.convertToType(data['tag_ids'], ['String']);
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
         }
         return obj;
@@ -101,6 +113,13 @@ OperationCreate.prototype['description'] = undefined;
  */
 OperationCreate.prototype['tag_ids'] = undefined;
 
+/**
+ * The status to assign to the operation. Defaults to SAVED if omitted.
+ * @member {module:model/OperationCreate.StatusEnum} status
+ * @default 'SAVED'
+ */
+OperationCreate.prototype['status'] = undefined;
+
 
 // Implement OperationBase interface:
 /**
@@ -128,6 +147,13 @@ OperationBase.prototype['description'] = undefined;
  * @member {Array.<String>} tag_ids
  */
 OperationBase.prototype['tag_ids'] = undefined;
+// Implement OperationCreateExtra interface:
+/**
+ * The status to assign to the operation. Defaults to SAVED if omitted.
+ * @member {module:model/OperationCreateExtra.StatusEnum} status
+ * @default 'SAVED'
+ */
+OperationCreateExtra.prototype['status'] = undefined;
 
 
 
@@ -191,6 +217,27 @@ OperationCreate['MethodEnum'] = {
      * @const
      */
     "TRACE": "TRACE"
+};
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+OperationCreate['StatusEnum'] = {
+
+    /**
+     * value: "SAVED"
+     * @const
+     */
+    "SAVED": "SAVED",
+
+    /**
+     * value: "IGNORED"
+     * @const
+     */
+    "IGNORED": "IGNORED"
 };
 
 

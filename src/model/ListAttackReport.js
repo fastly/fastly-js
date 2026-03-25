@@ -17,7 +17,7 @@ import ListAttackReportMeta from './ListAttackReportMeta';
 /**
  * The ListAttackReport model module.
  * @module model/ListAttackReport
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class ListAttackReport {
     /**

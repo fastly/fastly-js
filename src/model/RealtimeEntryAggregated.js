@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class RealtimeEntryAggregated {
     /**
@@ -563,11 +563,17 @@ class RealtimeEntryAggregated {
             if (data.hasOwnProperty('compute_bereq_errors')) {
                 obj['compute_bereq_errors'] = ApiClient.convertToType(data['compute_bereq_errors'], 'Number');
             }
+            if (data.hasOwnProperty('compute_service_bereq_error')) {
+                obj['compute_service_bereq_error'] = ApiClient.convertToType(data['compute_service_bereq_error'], 'Number');
+            }
             if (data.hasOwnProperty('compute_resource_limit_exceeded')) {
                 obj['compute_resource_limit_exceeded'] = ApiClient.convertToType(data['compute_resource_limit_exceeded'], 'Number');
             }
             if (data.hasOwnProperty('compute_heap_limit_exceeded')) {
                 obj['compute_heap_limit_exceeded'] = ApiClient.convertToType(data['compute_heap_limit_exceeded'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_memory_exceeded_error')) {
+                obj['compute_service_memory_exceeded_error'] = ApiClient.convertToType(data['compute_service_memory_exceeded_error'], 'Number');
             }
             if (data.hasOwnProperty('compute_stack_limit_exceeded')) {
                 obj['compute_stack_limit_exceeded'] = ApiClient.convertToType(data['compute_stack_limit_exceeded'], 'Number');
@@ -910,6 +916,54 @@ class RealtimeEntryAggregated {
             }
             if (data.hasOwnProperty('ngwaf_bot_analysis_request_count')) {
                 obj['ngwaf_bot_analysis_request_count'] = ApiClient.convertToType(data['ngwaf_bot_analysis_request_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_avif_count')) {
+                obj['imgopto_avif_count'] = ApiClient.convertToType(data['imgopto_avif_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_jpeg_count')) {
+                obj['imgopto_jpeg_count'] = ApiClient.convertToType(data['imgopto_jpeg_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_png_count')) {
+                obj['imgopto_png_count'] = ApiClient.convertToType(data['imgopto_png_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_gif_count')) {
+                obj['imgopto_gif_count'] = ApiClient.convertToType(data['imgopto_gif_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_webp_count')) {
+                obj['imgopto_webp_count'] = ApiClient.convertToType(data['imgopto_webp_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_jpegxl_count')) {
+                obj['imgopto_jpegxl_count'] = ApiClient.convertToType(data['imgopto_jpegxl_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_svg_count')) {
+                obj['imgopto_svg_count'] = ApiClient.convertToType(data['imgopto_svg_count'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_mp4_count')) {
+                obj['imgopto_mp4_count'] = ApiClient.convertToType(data['imgopto_mp4_count'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_resource_limits_error')) {
+                obj['compute_service_resource_limits_error'] = ApiClient.convertToType(data['compute_service_resource_limits_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_runtime_error')) {
+                obj['compute_service_runtime_error'] = ApiClient.convertToType(data['compute_service_runtime_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_chain_error')) {
+                obj['compute_service_chain_error'] = ApiClient.convertToType(data['compute_service_chain_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_platform_internal_error')) {
+                obj['compute_platform_internal_error'] = ApiClient.convertToType(data['compute_platform_internal_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_timeout_error')) {
+                obj['compute_service_timeout_error'] = ApiClient.convertToType(data['compute_service_timeout_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_vcpu_exceeded_error')) {
+                obj['compute_service_vcpu_exceeded_error'] = ApiClient.convertToType(data['compute_service_vcpu_exceeded_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_limits_error')) {
+                obj['compute_service_limits_error'] = ApiClient.convertToType(data['compute_service_limits_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_platform_invalid_request_error')) {
+                obj['compute_platform_invalid_request_error'] = ApiClient.convertToType(data['compute_platform_invalid_request_error'], 'Number');
             }
         }
         return obj;
@@ -1945,6 +1999,12 @@ RealtimeEntryAggregated.prototype['compute_bereqs'] = undefined;
 RealtimeEntryAggregated.prototype['compute_bereq_errors'] = undefined;
 
 /**
+ * Number of backend request errors, including timeouts.
+ * @member {Number} compute_service_bereq_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_bereq_error'] = undefined;
+
+/**
  * Number of times a guest exceeded its resource limit, includes heap, stack, globals, and code execution timeout.
  * @member {Number} compute_resource_limit_exceeded
  */
@@ -1955,6 +2015,12 @@ RealtimeEntryAggregated.prototype['compute_resource_limit_exceeded'] = undefined
  * @member {Number} compute_heap_limit_exceeded
  */
 RealtimeEntryAggregated.prototype['compute_heap_limit_exceeded'] = undefined;
+
+/**
+ * Number of times a guest exceeded its heap limit.
+ * @member {Number} compute_service_memory_exceeded_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_memory_exceeded_error'] = undefined;
 
 /**
  * Number of times a guest exceeded its stack limit.
@@ -2639,6 +2705,102 @@ RealtimeEntryAggregated.prototype['upgrade'] = undefined;
  * @member {Number} ngwaf_bot_analysis_request_count
  */
 RealtimeEntryAggregated.prototype['ngwaf_bot_analysis_request_count'] = undefined;
+
+/**
+ * Count of AVIF images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_avif_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_avif_count'] = undefined;
+
+/**
+ * Count of JPEG images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_jpeg_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_jpeg_count'] = undefined;
+
+/**
+ * Count of PNG images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_png_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_png_count'] = undefined;
+
+/**
+ * Count of GIF images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_gif_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_gif_count'] = undefined;
+
+/**
+ * Count of WebP images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_webp_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_webp_count'] = undefined;
+
+/**
+ * Count of JPEGXL images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_jpegxl_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_jpegxl_count'] = undefined;
+
+/**
+ * Count of SVG images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_svg_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_svg_count'] = undefined;
+
+/**
+ * Count of MP4s delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_mp4_count
+ */
+RealtimeEntryAggregated.prototype['imgopto_mp4_count'] = undefined;
+
+/**
+ * Aggregate of fatal errors caused by exceeding allocated resource limits, specifically runtime duration, vCPU usage, and heap memory limits.
+ * @member {Number} compute_service_resource_limits_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_resource_limits_error'] = undefined;
+
+/**
+ * Fatal errors caused by service logic faults, including stack overflows, unreachable code traps, illegal memory access, or attempts to send multiple responses.
+ * @member {Number} compute_service_runtime_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_runtime_error'] = undefined;
+
+/**
+ * Fatal errors caused by the service path exceeding hop or service limits, or where a forwarding loop is detected via CDN-Loop headers.
+ * @member {Number} compute_service_chain_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_chain_error'] = undefined;
+
+/**
+ * Fatal errors caused by internal errors in Fastly’s Compute platform.
+ * @member {Number} compute_platform_internal_error
+ */
+RealtimeEntryAggregated.prototype['compute_platform_internal_error'] = undefined;
+
+/**
+ * Fatal errors caused by exceeding the per-request runtime limit.
+ * @member {Number} compute_service_timeout_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_timeout_error'] = undefined;
+
+/**
+ * Fatal errors caused by exceeding the per-request vCPU time limit.
+ * @member {Number} compute_service_vcpu_exceeded_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_vcpu_exceeded_error'] = undefined;
+
+/**
+ * Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions.
+ * @member {Number} compute_service_limits_error
+ */
+RealtimeEntryAggregated.prototype['compute_service_limits_error'] = undefined;
+
+/**
+ * Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials.
+ * @member {Number} compute_platform_invalid_request_error
+ */
+RealtimeEntryAggregated.prototype['compute_platform_invalid_request_error'] = undefined;
 
 
 // Implement RealtimeMeasurements interface:
@@ -3498,6 +3660,11 @@ RealtimeMeasurements.prototype['compute_bereqs'] = undefined;
  */
 RealtimeMeasurements.prototype['compute_bereq_errors'] = undefined;
 /**
+ * Number of backend request errors, including timeouts.
+ * @member {Number} compute_service_bereq_error
+ */
+RealtimeMeasurements.prototype['compute_service_bereq_error'] = undefined;
+/**
  * Number of times a guest exceeded its resource limit, includes heap, stack, globals, and code execution timeout.
  * @member {Number} compute_resource_limit_exceeded
  */
@@ -3507,6 +3674,11 @@ RealtimeMeasurements.prototype['compute_resource_limit_exceeded'] = undefined;
  * @member {Number} compute_heap_limit_exceeded
  */
 RealtimeMeasurements.prototype['compute_heap_limit_exceeded'] = undefined;
+/**
+ * Number of times a guest exceeded its heap limit.
+ * @member {Number} compute_service_memory_exceeded_error
+ */
+RealtimeMeasurements.prototype['compute_service_memory_exceeded_error'] = undefined;
 /**
  * Number of times a guest exceeded its stack limit.
  * @member {Number} compute_stack_limit_exceeded
@@ -4077,6 +4249,86 @@ RealtimeMeasurements.prototype['upgrade'] = undefined;
  * @member {Number} ngwaf_bot_analysis_request_count
  */
 RealtimeMeasurements.prototype['ngwaf_bot_analysis_request_count'] = undefined;
+/**
+ * Count of AVIF images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_avif_count
+ */
+RealtimeMeasurements.prototype['imgopto_avif_count'] = undefined;
+/**
+ * Count of JPEG images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_jpeg_count
+ */
+RealtimeMeasurements.prototype['imgopto_jpeg_count'] = undefined;
+/**
+ * Count of PNG images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_png_count
+ */
+RealtimeMeasurements.prototype['imgopto_png_count'] = undefined;
+/**
+ * Count of GIF images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_gif_count
+ */
+RealtimeMeasurements.prototype['imgopto_gif_count'] = undefined;
+/**
+ * Count of WebP images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_webp_count
+ */
+RealtimeMeasurements.prototype['imgopto_webp_count'] = undefined;
+/**
+ * Count of JPEGXL images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_jpegxl_count
+ */
+RealtimeMeasurements.prototype['imgopto_jpegxl_count'] = undefined;
+/**
+ * Count of SVG images delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_svg_count
+ */
+RealtimeMeasurements.prototype['imgopto_svg_count'] = undefined;
+/**
+ * Count of MP4s delivered to end user by Image Optimizer.
+ * @member {Number} imgopto_mp4_count
+ */
+RealtimeMeasurements.prototype['imgopto_mp4_count'] = undefined;
+/**
+ * Aggregate of fatal errors caused by exceeding allocated resource limits, specifically runtime duration, vCPU usage, and heap memory limits.
+ * @member {Number} compute_service_resource_limits_error
+ */
+RealtimeMeasurements.prototype['compute_service_resource_limits_error'] = undefined;
+/**
+ * Fatal errors caused by service logic faults, including stack overflows, unreachable code traps, illegal memory access, or attempts to send multiple responses.
+ * @member {Number} compute_service_runtime_error
+ */
+RealtimeMeasurements.prototype['compute_service_runtime_error'] = undefined;
+/**
+ * Fatal errors caused by the service path exceeding hop or service limits, or where a forwarding loop is detected via CDN-Loop headers.
+ * @member {Number} compute_service_chain_error
+ */
+RealtimeMeasurements.prototype['compute_service_chain_error'] = undefined;
+/**
+ * Fatal errors caused by internal errors in Fastly’s Compute platform.
+ * @member {Number} compute_platform_internal_error
+ */
+RealtimeMeasurements.prototype['compute_platform_internal_error'] = undefined;
+/**
+ * Fatal errors caused by exceeding the per-request runtime limit.
+ * @member {Number} compute_service_timeout_error
+ */
+RealtimeMeasurements.prototype['compute_service_timeout_error'] = undefined;
+/**
+ * Fatal errors caused by exceeding the per-request vCPU time limit.
+ * @member {Number} compute_service_vcpu_exceeded_error
+ */
+RealtimeMeasurements.prototype['compute_service_vcpu_exceeded_error'] = undefined;
+/**
+ * Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions.
+ * @member {Number} compute_service_limits_error
+ */
+RealtimeMeasurements.prototype['compute_service_limits_error'] = undefined;
+/**
+ * Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials.
+ * @member {Number} compute_platform_invalid_request_error
+ */
+RealtimeMeasurements.prototype['compute_platform_invalid_request_error'] = undefined;
 
 
 

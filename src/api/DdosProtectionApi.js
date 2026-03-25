@@ -27,7 +27,7 @@ import InlineResponse2006 from '../model/InlineResponse2006';
 /**
 * DdosProtection service.
 * @module api/DdosProtectionApi
-* @version 15.0.0
+* @version 15.1.0-rc.0
 */
 export default class DdosProtectionApi {
 

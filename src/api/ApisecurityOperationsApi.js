@@ -15,6 +15,11 @@ import ApiClient from "../ApiClient";
 import InlineResponse2001 from '../model/InlineResponse2001';
 import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse2003 from '../model/InlineResponse2003';
+import InlineResponse207 from '../model/InlineResponse207';
+import InlineResponse2071 from '../model/InlineResponse2071';
+import OperationBulkAddTags from '../model/OperationBulkAddTags';
+import OperationBulkCreate from '../model/OperationBulkCreate';
+import OperationBulkDelete from '../model/OperationBulkDelete';
 import OperationCreate from '../model/OperationCreate';
 import OperationGet from '../model/OperationGet';
 import OperationUpdate from '../model/OperationUpdate';
@@ -25,7 +30,7 @@ import TagGet from '../model/TagGet';
 /**
 * ApisecurityOperations service.
 * @module api/ApisecurityOperationsApi
-* @version 15.0.0
+* @version 15.1.0-rc.0
 */
 export default class ApisecurityOperationsApi {
 
@@ -44,6 +49,186 @@ export default class ApisecurityOperationsApi {
         }
     }
 
+
+    /**
+     * Add tags to multiple operations in a single request.
+     * @param {Object} options
+     * @param {String} options.service_id - The unique identifier of the service.
+     * @param {module:model/OperationBulkAddTags} [options.operation_bulk_add_tags]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2071} and HTTP response
+     */
+    apiSecurityBulkAddTagsToOperationsWithHttpInfo(options = {}) {
+      let postBody = options['operation_bulk_add_tags'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json', 'application/problem+json'];
+      let returnType = InlineResponse2071;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/api-security/v1/services/{service_id}/operations-bulk-tags', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Add tags to multiple operations in a single request.
+     * @param {Object} options
+     * @param {String} options.service_id - The unique identifier of the service.
+     * @param {module:model/OperationBulkAddTags} [options.operation_bulk_add_tags]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2071}
+     */
+    apiSecurityBulkAddTagsToOperations(options = {}) {
+      return this.apiSecurityBulkAddTagsToOperationsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Create multiple operations associated with a specific service in a single request.
+     * @param {Object} options
+     * @param {String} options.service_id - The unique identifier of the service.
+     * @param {module:model/OperationBulkCreate} [options.operation_bulk_create]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse207} and HTTP response
+     */
+    apiSecurityBulkCreateOperationsWithHttpInfo(options = {}) {
+      let postBody = options['operation_bulk_create'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json', 'application/problem+json'];
+      let returnType = InlineResponse207;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/api-security/v1/services/{service_id}/operations-bulk', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Create multiple operations associated with a specific service in a single request.
+     * @param {Object} options
+     * @param {String} options.service_id - The unique identifier of the service.
+     * @param {module:model/OperationBulkCreate} [options.operation_bulk_create]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse207}
+     */
+    apiSecurityBulkCreateOperations(options = {}) {
+      return this.apiSecurityBulkCreateOperationsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Delete multiple operations in a single request.
+     * @param {Object} options
+     * @param {String} options.service_id - The unique identifier of the service.
+     * @param {module:model/OperationBulkDelete} [options.operation_bulk_delete]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2071} and HTTP response
+     */
+    apiSecurityBulkDeleteOperationsWithHttpInfo(options = {}) {
+      let postBody = options['operation_bulk_delete'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json', 'application/problem+json'];
+      let returnType = InlineResponse2071;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/api-security/v1/services/{service_id}/operations-bulk', 'DELETE',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Delete multiple operations in a single request.
+     * @param {Object} options
+     * @param {String} options.service_id - The unique identifier of the service.
+     * @param {module:model/OperationBulkDelete} [options.operation_bulk_delete]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2071}
+     */
+    apiSecurityBulkDeleteOperations(options = {}) {
+      return this.apiSecurityBulkDeleteOperationsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Create a new operation associated with a specific service.
@@ -429,7 +614,9 @@ export default class ApisecurityOperationsApi {
      * List all discovered operations associated with a specific service. Optionally filter operations by status.
      * @param {Object} options
      * @param {String} options.service_id - The unique identifier of the service.
-     * @param {module:model/String} [options.status] - Filter operations by status. Only operations with this status will be returned.
+     * @param {Array.<module:model/String>} [options.method] - Filter operations by HTTP method.
+     * @param {Array.<String>} [options.domain] - Filter operations by fully-qualified domain name (exact match).
+     * @param {String} [options.path] - Filter operations by path (exact match).
      * @param {Number} [options.limit=100] - The maximum number of operations to return per page.
      * @param {Number} [options.page=0] - The page number to return.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
@@ -447,7 +634,9 @@ export default class ApisecurityOperationsApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
-        'status': options['status'],
+        'method': this.apiClient.buildCollectionParam(options['method'], 'multi'),
+        'domain': this.apiClient.buildCollectionParam(options['domain'], 'multi'),
+        'path': options['path'],
         'limit': options['limit'],
         'page': options['page']
       };
@@ -480,7 +669,9 @@ export default class ApisecurityOperationsApi {
      * List all discovered operations associated with a specific service. Optionally filter operations by status.
      * @param {Object} options
      * @param {String} options.service_id - The unique identifier of the service.
-     * @param {module:model/String} [options.status] - Filter operations by status. Only operations with this status will be returned.
+     * @param {Array.<module:model/String>} [options.method] - Filter operations by HTTP method.
+     * @param {Array.<String>} [options.domain] - Filter operations by fully-qualified domain name (exact match).
+     * @param {String} [options.path] - Filter operations by path (exact match).
      * @param {Number} [options.limit=100] - The maximum number of operations to return per page.
      * @param {Number} [options.page=0] - The page number to return.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
@@ -496,6 +687,8 @@ export default class ApisecurityOperationsApi {
      * List all operation tags associated with a specific service.
      * @param {Object} options
      * @param {String} options.service_id - The unique identifier of the service.
+     * @param {Number} [options.limit=100] - The maximum number of operations to return per page.
+     * @param {Number} [options.page=0] - The page number to return.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     apiSecurityListOperationTagsWithHttpInfo(options = {}) {
@@ -511,6 +704,8 @@ export default class ApisecurityOperationsApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
+        'limit': options['limit'],
+        'page': options['page']
       };
       let headerParams = {
       };
@@ -541,6 +736,8 @@ export default class ApisecurityOperationsApi {
      * List all operation tags associated with a specific service.
      * @param {Object} options
      * @param {String} options.service_id - The unique identifier of the service.
+     * @param {Number} [options.limit=100] - The maximum number of operations to return per page.
+     * @param {Number} [options.page=0] - The page number to return.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     apiSecurityListOperationTags(options = {}) {
@@ -555,6 +752,10 @@ export default class ApisecurityOperationsApi {
      * @param {Object} options
      * @param {String} options.service_id - The unique identifier of the service.
      * @param {String} [options.tag_id] - Filter operations by operation tag ID. Only operations associated with this operation tag will be returned.
+     * @param {module:model/String} [options.status='SAVED'] - Filter operations by status. Defaults to SAVED if omitted.
+     * @param {Array.<module:model/String>} [options.method] - Filter operations by HTTP method.
+     * @param {Array.<String>} [options.domain] - Filter operations by fully-qualified domain name (exact match).
+     * @param {String} [options.path] - Filter operations by path (exact match).
      * @param {Number} [options.limit=100] - The maximum number of operations to return per page.
      * @param {Number} [options.page=0] - The page number to return.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
@@ -573,6 +774,10 @@ export default class ApisecurityOperationsApi {
       };
       let queryParams = {
         'tag_id': options['tag_id'],
+        'status': options['status'],
+        'method': this.apiClient.buildCollectionParam(options['method'], 'multi'),
+        'domain': this.apiClient.buildCollectionParam(options['domain'], 'multi'),
+        'path': options['path'],
         'limit': options['limit'],
         'page': options['page']
       };
@@ -606,6 +811,10 @@ export default class ApisecurityOperationsApi {
      * @param {Object} options
      * @param {String} options.service_id - The unique identifier of the service.
      * @param {String} [options.tag_id] - Filter operations by operation tag ID. Only operations associated with this operation tag will be returned.
+     * @param {module:model/String} [options.status='SAVED'] - Filter operations by status. Defaults to SAVED if omitted.
+     * @param {Array.<module:model/String>} [options.method] - Filter operations by HTTP method.
+     * @param {Array.<String>} [options.domain] - Filter operations by fully-qualified domain name (exact match).
+     * @param {String} [options.path] - Filter operations by path (exact match).
      * @param {Number} [options.limit=100] - The maximum number of operations to return per page.
      * @param {Number} [options.page=0] - The page number to return.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}

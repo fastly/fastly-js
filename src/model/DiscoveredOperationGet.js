@@ -17,7 +17,7 @@ import DiscoveredOperationGetExtra from './DiscoveredOperationGetExtra';
 /**
  * The DiscoveredOperationGet model module.
  * @module model/DiscoveredOperationGet
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class DiscoveredOperationGet {
     /**
@@ -28,10 +28,11 @@ class DiscoveredOperationGet {
      * @param method {module:model/DiscoveredOperationGet.MethodEnum} The HTTP method for the operation.
      * @param domain {String} The domain for the operation.
      * @param path {String} The path for the operation, which may include path parameters.
+     * @param id {String} The unique identifier of the discovered operation.
      */
-    constructor(method, domain, path) { 
-        DiscoveredOperationBase.initialize(this);DiscoveredOperationGetExtra.initialize(this);
-        DiscoveredOperationGet.initialize(this, method, domain, path);
+    constructor(method, domain, path, id) { 
+        DiscoveredOperationBase.initialize(this);DiscoveredOperationGetExtra.initialize(this, id);
+        DiscoveredOperationGet.initialize(this, method, domain, path, id);
     }
 
     /**
@@ -39,10 +40,11 @@ class DiscoveredOperationGet {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, method, domain, path) { 
+    static initialize(obj, method, domain, path, id) { 
         obj['method'] = method;
         obj['domain'] = domain;
         obj['path'] = path;
+        obj['id'] = id;
     }
 
     /**
@@ -67,14 +69,17 @@ class DiscoveredOperationGet {
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('last_seen_at')) {
                 obj['last_seen_at'] = ApiClient.convertToType(data['last_seen_at'], 'Date');
+            }
+            if (data.hasOwnProperty('rps')) {
+                obj['rps'] = ApiClient.convertToType(data['rps'], 'Number');
             }
         }
         return obj;
@@ -102,10 +107,10 @@ DiscoveredOperationGet.prototype['domain'] = undefined;
 DiscoveredOperationGet.prototype['path'] = undefined;
 
 /**
- * The current status of the operation.
- * @member {module:model/DiscoveredOperationGet.StatusEnum} status
+ * The unique identifier of the discovered operation.
+ * @member {String} id
  */
-DiscoveredOperationGet.prototype['status'] = undefined;
+DiscoveredOperationGet.prototype['id'] = undefined;
 
 /**
  * The timestamp when the operation was last updated.
@@ -118,6 +123,12 @@ DiscoveredOperationGet.prototype['updated_at'] = undefined;
  * @member {Date} last_seen_at
  */
 DiscoveredOperationGet.prototype['last_seen_at'] = undefined;
+
+/**
+ * Requests per second observed for this operation.
+ * @member {Number} rps
+ */
+DiscoveredOperationGet.prototype['rps'] = undefined;
 
 
 // Implement DiscoveredOperationBase interface:
@@ -138,10 +149,10 @@ DiscoveredOperationBase.prototype['domain'] = undefined;
 DiscoveredOperationBase.prototype['path'] = undefined;
 // Implement DiscoveredOperationGetExtra interface:
 /**
- * The current status of the operation.
- * @member {module:model/DiscoveredOperationGetExtra.StatusEnum} status
+ * The unique identifier of the discovered operation.
+ * @member {String} id
  */
-DiscoveredOperationGetExtra.prototype['status'] = undefined;
+DiscoveredOperationGetExtra.prototype['id'] = undefined;
 /**
  * The timestamp when the operation was last updated.
  * @member {Date} updated_at
@@ -152,6 +163,11 @@ DiscoveredOperationGetExtra.prototype['updated_at'] = undefined;
  * @member {Date} last_seen_at
  */
 DiscoveredOperationGetExtra.prototype['last_seen_at'] = undefined;
+/**
+ * Requests per second observed for this operation.
+ * @member {Number} rps
+ */
+DiscoveredOperationGetExtra.prototype['rps'] = undefined;
 
 
 
@@ -215,33 +231,6 @@ DiscoveredOperationGet['MethodEnum'] = {
      * @const
      */
     "TRACE": "TRACE"
-};
-
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-DiscoveredOperationGet['StatusEnum'] = {
-
-    /**
-     * value: "DISCOVERED"
-     * @const
-     */
-    "DISCOVERED": "DISCOVERED",
-
-    /**
-     * value: "SAVED"
-     * @const
-     */
-    "SAVED": "SAVED",
-
-    /**
-     * value: "IGNORED"
-     * @const
-     */
-    "IGNORED": "IGNORED"
 };
 
 

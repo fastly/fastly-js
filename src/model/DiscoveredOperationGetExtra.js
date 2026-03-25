@@ -15,16 +15,17 @@ import ApiClient from '../ApiClient';
 /**
  * The DiscoveredOperationGetExtra model module.
  * @module model/DiscoveredOperationGetExtra
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class DiscoveredOperationGetExtra {
     /**
      * Constructs a new <code>DiscoveredOperationGetExtra</code>.
      * @alias module:model/DiscoveredOperationGetExtra
+     * @param id {String} The unique identifier of the discovered operation.
      */
-    constructor() { 
+    constructor(id) { 
         
-        DiscoveredOperationGetExtra.initialize(this);
+        DiscoveredOperationGetExtra.initialize(this, id);
     }
 
     /**
@@ -32,7 +33,8 @@ class DiscoveredOperationGetExtra {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, id) { 
+        obj['id'] = id;
     }
 
     /**
@@ -46,14 +48,17 @@ class DiscoveredOperationGetExtra {
         if (data) {
             obj = obj || new DiscoveredOperationGetExtra();
 
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('last_seen_at')) {
                 obj['last_seen_at'] = ApiClient.convertToType(data['last_seen_at'], 'Date');
+            }
+            if (data.hasOwnProperty('rps')) {
+                obj['rps'] = ApiClient.convertToType(data['rps'], 'Number');
             }
         }
         return obj;
@@ -63,10 +68,10 @@ class DiscoveredOperationGetExtra {
 }
 
 /**
- * The current status of the operation.
- * @member {module:model/DiscoveredOperationGetExtra.StatusEnum} status
+ * The unique identifier of the discovered operation.
+ * @member {String} id
  */
-DiscoveredOperationGetExtra.prototype['status'] = undefined;
+DiscoveredOperationGetExtra.prototype['id'] = undefined;
 
 /**
  * The timestamp when the operation was last updated.
@@ -80,35 +85,14 @@ DiscoveredOperationGetExtra.prototype['updated_at'] = undefined;
  */
 DiscoveredOperationGetExtra.prototype['last_seen_at'] = undefined;
 
-
-
-
-
 /**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
+ * Requests per second observed for this operation.
+ * @member {Number} rps
  */
-DiscoveredOperationGetExtra['StatusEnum'] = {
+DiscoveredOperationGetExtra.prototype['rps'] = undefined;
 
-    /**
-     * value: "DISCOVERED"
-     * @const
-     */
-    "DISCOVERED": "DISCOVERED",
 
-    /**
-     * value: "SAVED"
-     * @const
-     */
-    "SAVED": "SAVED",
 
-    /**
-     * value: "IGNORED"
-     * @const
-     */
-    "IGNORED": "IGNORED"
-};
 
 
 

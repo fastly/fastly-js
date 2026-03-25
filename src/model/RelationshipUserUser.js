@@ -16,7 +16,7 @@ import ServiceAuthorizationDataRelationshipsUserData from './ServiceAuthorizatio
 /**
  * The RelationshipUserUser model module.
  * @module model/RelationshipUserUser
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class RelationshipUserUser {
     /**

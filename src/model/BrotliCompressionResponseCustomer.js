@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The BrotliCompressionResponseCustomer model module.
  * @module model/BrotliCompressionResponseCustomer
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class BrotliCompressionResponseCustomer {
     /**

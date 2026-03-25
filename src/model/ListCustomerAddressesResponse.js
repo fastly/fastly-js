@@ -16,7 +16,7 @@ import CustomerAddress from './CustomerAddress';
 /**
  * The ListCustomerAddressesResponse model module.
  * @module model/ListCustomerAddressesResponse
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class ListCustomerAddressesResponse {
     /**

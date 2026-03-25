@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationGetExtra model module.
  * @module model/OperationGetExtra
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class OperationGetExtra {
     /**
@@ -62,6 +62,12 @@ class OperationGetExtra {
             if (data.hasOwnProperty('last_seen_at')) {
                 obj['last_seen_at'] = ApiClient.convertToType(data['last_seen_at'], 'Date');
             }
+            if (data.hasOwnProperty('rps')) {
+                obj['rps'] = ApiClient.convertToType(data['rps'], 'Number');
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
         }
         return obj;
     }
@@ -93,8 +99,41 @@ OperationGetExtra.prototype['created_at'] = undefined;
  */
 OperationGetExtra.prototype['last_seen_at'] = undefined;
 
+/**
+ * Requests per second observed for this operation.
+ * @member {Number} rps
+ */
+OperationGetExtra.prototype['rps'] = undefined;
+
+/**
+ * The status of the operation.
+ * @member {module:model/OperationGetExtra.StatusEnum} status
+ */
+OperationGetExtra.prototype['status'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+OperationGetExtra['StatusEnum'] = {
+
+    /**
+     * value: "SAVED"
+     * @const
+     */
+    "SAVED": "SAVED",
+
+    /**
+     * value: "IGNORED"
+     * @const
+     */
+    "IGNORED": "IGNORED"
+};
 
 
 

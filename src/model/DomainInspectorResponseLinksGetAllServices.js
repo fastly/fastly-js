@@ -16,7 +16,7 @@ import DomainInspectorResponseLinksGetAllServicesLinks from './DomainInspectorRe
 /**
  * The DomainInspectorResponseLinksGetAllServices model module.
  * @module model/DomainInspectorResponseLinksGetAllServices
- * @version 15.0.0
+ * @version 15.1.0-rc.0
  */
 class DomainInspectorResponseLinksGetAllServices {
     /**
