@@ -16,7 +16,7 @@ import BrotliCompressionResponseLinksGetAllServicesLinks from './BrotliCompressi
 /**
  * The BrotliCompressionResponseLinksGetAllServices model module.
  * @module model/BrotliCompressionResponseLinksGetAllServices
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class BrotliCompressionResponseLinksGetAllServices {
     /**

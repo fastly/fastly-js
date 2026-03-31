@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationUpdate model module.
  * @module model/OperationUpdate
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class OperationUpdate {
     /**

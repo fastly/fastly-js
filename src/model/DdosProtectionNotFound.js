@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionNotFound model module.
  * @module model/DdosProtectionNotFound
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class DdosProtectionNotFound {
     /**

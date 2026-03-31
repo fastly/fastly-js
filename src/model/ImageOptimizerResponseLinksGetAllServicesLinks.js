@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImageOptimizerResponseLinksGetAllServicesLinks model module.
  * @module model/ImageOptimizerResponseLinksGetAllServicesLinks
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class ImageOptimizerResponseLinksGetAllServicesLinks {
     /**

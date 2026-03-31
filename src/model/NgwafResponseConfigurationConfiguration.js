@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NgwafResponseConfigurationConfiguration model module.
  * @module model/NgwafResponseConfigurationConfiguration
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class NgwafResponseConfigurationConfiguration {
     /**

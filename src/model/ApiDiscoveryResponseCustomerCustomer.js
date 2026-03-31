@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApiDiscoveryResponseCustomerCustomer model module.
  * @module model/ApiDiscoveryResponseCustomerCustomer
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class ApiDiscoveryResponseCustomerCustomer {
     /**

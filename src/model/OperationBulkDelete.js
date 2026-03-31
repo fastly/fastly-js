@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationBulkDelete model module.
  * @module model/OperationBulkDelete
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class OperationBulkDelete {
     /**

@@ -20,7 +20,7 @@ import TlsDomainsResponseAllOf from './TlsDomainsResponseAllOf';
 /**
  * The TlsDomainsResponse model module.
  * @module model/TlsDomainsResponse
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class TlsDomainsResponse {
     /**

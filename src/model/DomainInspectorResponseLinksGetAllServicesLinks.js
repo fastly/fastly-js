@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorResponseLinksGetAllServicesLinks model module.
  * @module model/DomainInspectorResponseLinksGetAllServicesLinks
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class DomainInspectorResponseLinksGetAllServicesLinks {
     /**

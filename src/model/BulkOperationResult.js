@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BulkOperationResult model module.
  * @module model/BulkOperationResult
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class BulkOperationResult {
     /**

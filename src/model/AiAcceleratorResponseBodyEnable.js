@@ -21,7 +21,7 @@ import AiAcceleratorResponseProductProduct from './AiAcceleratorResponseProductP
 /**
  * The AiAcceleratorResponseBodyEnable model module.
  * @module model/AiAcceleratorResponseBodyEnable
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class AiAcceleratorResponseBodyEnable {
     /**

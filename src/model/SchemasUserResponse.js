@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The SchemasUserResponse model module.
  * @module model/SchemasUserResponse
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class SchemasUserResponse {
     /**

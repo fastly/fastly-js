@@ -17,7 +17,7 @@ import StatusAllOf from './StatusAllOf';
 /**
  * The Status model module.
  * @module model/Status
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class Status {
     /**

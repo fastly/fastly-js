@@ -16,7 +16,7 @@ import OriginInspectorResponseLinksGetAllServicesLinks from './OriginInspectorRe
 /**
  * The OriginInspectorResponseLinksGetAllServices model module.
  * @module model/OriginInspectorResponseLinksGetAllServices
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class OriginInspectorResponseLinksGetAllServices {
     /**

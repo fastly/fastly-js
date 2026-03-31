@@ -17,7 +17,7 @@ import TlsBulkCertificateResponseAttributesAllOf from './TlsBulkCertificateRespo
 /**
  * The TlsBulkCertificateResponseAttributes model module.
  * @module model/TlsBulkCertificateResponseAttributes
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class TlsBulkCertificateResponseAttributes {
     /**

@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingLogglyResponse model module.
  * @module model/LoggingLogglyResponse
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class LoggingLogglyResponse {
     /**

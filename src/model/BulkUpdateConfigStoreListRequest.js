@@ -16,7 +16,7 @@ import BulkUpdateConfigStoreItem from './BulkUpdateConfigStoreItem';
 /**
  * The BulkUpdateConfigStoreListRequest model module.
  * @module model/BulkUpdateConfigStoreListRequest
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class BulkUpdateConfigStoreListRequest {
     /**

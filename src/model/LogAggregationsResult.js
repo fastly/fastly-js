@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogAggregationsResult model module.
  * @module model/LogAggregationsResult
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class LogAggregationsResult {
     /**

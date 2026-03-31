@@ -16,7 +16,7 @@ import NgwafResponseConfigurationConfiguration from './NgwafResponseConfiguratio
 /**
  * The NgwafResponseConfiguration model module.
  * @module model/NgwafResponseConfiguration
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class NgwafResponseConfiguration {
     /**

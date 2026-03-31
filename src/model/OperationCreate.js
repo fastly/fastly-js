@@ -17,7 +17,7 @@ import OperationCreateExtra from './OperationCreateExtra';
 /**
  * The OperationCreate model module.
  * @module model/OperationCreate
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class OperationCreate {
     /**

@@ -16,7 +16,7 @@ import ImageOptimizerResponseProductProduct from './ImageOptimizerResponseProduc
 /**
  * The ImageOptimizerResponseProduct model module.
  * @module model/ImageOptimizerResponseProduct
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class ImageOptimizerResponseProduct {
     /**

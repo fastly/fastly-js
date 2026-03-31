@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TimeseriesResult model module.
  * @module model/TimeseriesResult
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class TimeseriesResult {
     /**

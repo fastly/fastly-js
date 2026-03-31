@@ -18,7 +18,7 @@ import LoggingS3Response from '../model/LoggingS3Response';
 /**
 * LoggingS3 service.
 * @module api/LoggingS3Api
-* @version 15.1.0-rc.0
+* @version 15.1.0
 */
 export default class LoggingS3Api {
 

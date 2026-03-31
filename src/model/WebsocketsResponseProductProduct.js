@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebsocketsResponseProductProduct model module.
  * @module model/WebsocketsResponseProductProduct
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class WebsocketsResponseProductProduct {
     /**

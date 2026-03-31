@@ -16,7 +16,7 @@ import Mtdlineitems from './Mtdlineitems';
 /**
  * The Mtdinvoice model module.
  * @module model/Mtdinvoice
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class Mtdinvoice {
     /**

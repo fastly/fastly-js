@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorResponseProductProduct model module.
  * @module model/DomainInspectorResponseProductProduct
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class DomainInspectorResponseProductProduct {
     /**

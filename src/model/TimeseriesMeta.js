@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TimeseriesMeta model module.
  * @module model/TimeseriesMeta
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class TimeseriesMeta {
     /**

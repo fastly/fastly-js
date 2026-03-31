@@ -17,7 +17,7 @@ import OperationGetExtra from './OperationGetExtra';
 /**
  * The OperationGet model module.
  * @module model/OperationGet
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class OperationGet {
     /**

@@ -16,7 +16,7 @@ import DomainResearchResponseLinksLinks from './DomainResearchResponseLinksLinks
 /**
  * The DomainResearchResponseLinks model module.
  * @module model/DomainResearchResponseLinks
- * @version 15.1.0-rc.0
+ * @version 15.1.0
  */
 class DomainResearchResponseLinks {
     /**
