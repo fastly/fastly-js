@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingNewrelicotlpAdditional model module.
  * @module model/LoggingNewrelicotlpAdditional
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingNewrelicotlpAdditional {
     /**

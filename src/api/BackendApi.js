@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class BackendApi {
 
@@ -55,10 +55,12 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+     * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
+     * @param {Number} [options.max_lifetime] - Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {Number} [options.max_use] - Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
      * @param {String} [options.name] - The name of the backend.
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
@@ -118,8 +120,10 @@ export default class BackendApi {
         'ipv6': options['ipv6'],
         'keepalive_time': options['keepalive_time'],
         'max_conn': options['max_conn'],
+        'max_lifetime': options['max_lifetime'],
         'max_tls_version': options['max_tls_version'],
         'min_tls_version': options['min_tls_version'],
+        'max_use': options['max_use'],
         'name': options['name'],
         'override_host': options['override_host'],
         'port': options['port'],
@@ -180,10 +184,12 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+     * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
+     * @param {Number} [options.max_lifetime] - Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {Number} [options.max_use] - Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
      * @param {String} [options.name] - The name of the backend.
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
@@ -441,10 +447,12 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+     * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
+     * @param {Number} [options.max_lifetime] - Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {Number} [options.max_use] - Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
      * @param {String} [options.name] - The name of the backend.
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
@@ -509,8 +517,10 @@ export default class BackendApi {
         'ipv6': options['ipv6'],
         'keepalive_time': options['keepalive_time'],
         'max_conn': options['max_conn'],
+        'max_lifetime': options['max_lifetime'],
         'max_tls_version': options['max_tls_version'],
         'min_tls_version': options['min_tls_version'],
+        'max_use': options['max_use'],
         'name': options['name'],
         'override_host': options['override_host'],
         'port': options['port'],
@@ -572,10 +582,12 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+     * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
+     * @param {Number} [options.max_lifetime] - Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {Number} [options.max_use] - Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
      * @param {String} [options.name] - The name of the backend.
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.

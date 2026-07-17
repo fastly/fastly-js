@@ -17,7 +17,7 @@ import LoggingGenericCommonResponseAllOf1 from './LoggingGenericCommonResponseAl
 /**
  * The LoggingGenericCommonResponse model module.
  * @module model/LoggingGenericCommonResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingGenericCommonResponse {
     /**
@@ -77,7 +77,7 @@ class LoggingGenericCommonResponse {
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 
@@ -112,7 +112,7 @@ LoggingGenericCommonResponse.prototype['gzip_level'] = '0';
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGenericCommonResponseAllOf.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGenericCommonResponseAllOf.prototype['message_type'] = undefined;
 /**
@@ -149,6 +149,12 @@ LoggingGenericCommonResponseAllOf1.prototype['gzip_level'] = '0';
 LoggingGenericCommonResponse['MessageTypeEnum'] = {
 
     /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank",
+
+    /**
      * value: "classic"
      * @const
      */
@@ -164,13 +170,7 @@ LoggingGenericCommonResponse['MessageTypeEnum'] = {
      * value: "logplex"
      * @const
      */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
+    "logplex": "logplex"
 };
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGenericCommonResponseAllOf model module.
  * @module model/LoggingGenericCommonResponseAllOf
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingGenericCommonResponseAllOf {
     /**
@@ -65,7 +65,7 @@ class LoggingGenericCommonResponseAllOf {
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGenericCommonResponseAllOf.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGenericCommonResponseAllOf.prototype['message_type'] = undefined;
 
@@ -93,6 +93,12 @@ LoggingGenericCommonResponseAllOf.prototype['compression_codec'] = undefined;
 LoggingGenericCommonResponseAllOf['MessageTypeEnum'] = {
 
     /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank",
+
+    /**
      * value: "classic"
      * @const
      */
@@ -108,13 +114,7 @@ LoggingGenericCommonResponseAllOf['MessageTypeEnum'] = {
      * value: "logplex"
      * @const
      */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
+    "logplex": "logplex"
 };
 
 

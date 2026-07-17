@@ -11,12 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import PaginationCursorMeta from './PaginationCursorMeta';
+import HeaderEvent from './HeaderEvent';
+import PaginationMeta from './PaginationMeta';
 
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse20011 {
     /**
@@ -48,10 +49,10 @@ class InlineResponse20011 {
             obj = obj || new InlineResponse20011();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
+                obj['data'] = ApiClient.convertToType(data['data'], [HeaderEvent]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -61,12 +62,12 @@ class InlineResponse20011 {
 }
 
 /**
- * @member {Array.<String>} data
+ * @member {Array.<module:model/HeaderEvent>} data
  */
 InlineResponse20011.prototype['data'] = undefined;
 
 /**
- * @member {module:model/PaginationCursorMeta} meta
+ * @member {module:model/PaginationMeta} meta
  */
 InlineResponse20011.prototype['meta'] = undefined;
 

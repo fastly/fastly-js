@@ -16,7 +16,7 @@ import NgwafResponseProductProduct from './NgwafResponseProductProduct';
 /**
  * The NgwafResponseProduct model module.
  * @module model/NgwafResponseProduct
- * @version 15.1.0
+ * @version 16.0.0
  */
 class NgwafResponseProduct {
     /**

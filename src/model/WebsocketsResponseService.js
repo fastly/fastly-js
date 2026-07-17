@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The WebsocketsResponseService model module.
  * @module model/WebsocketsResponseService
- * @version 15.1.0
+ * @version 16.0.0
  */
 class WebsocketsResponseService {
     /**

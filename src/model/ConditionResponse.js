@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The ConditionResponse model module.
  * @module model/ConditionResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class ConditionResponse {
     /**

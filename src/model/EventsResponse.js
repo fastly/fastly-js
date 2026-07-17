@@ -15,12 +15,12 @@ import Event from './Event';
 import EventData from './EventData';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
+import PaginationMeta1 from './PaginationMeta1';
 
 /**
  * The EventsResponse model module.
  * @module model/EventsResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class EventsResponse {
     /**
@@ -59,7 +59,7 @@ class EventsResponse {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta1.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [Event]);
@@ -77,7 +77,7 @@ class EventsResponse {
 EventsResponse.prototype['links'] = undefined;
 
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 EventsResponse.prototype['meta'] = undefined;
 
@@ -93,7 +93,7 @@ EventsResponse.prototype['data'] = undefined;
  */
 Pagination.prototype['links'] = undefined;
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 Pagination.prototype['meta'] = undefined;
 // Implement EventData interface:

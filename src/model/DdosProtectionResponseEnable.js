@@ -21,7 +21,7 @@ import DdosProtectionResponseService from './DdosProtectionResponseService';
 /**
  * The DdosProtectionResponseEnable model module.
  * @module model/DdosProtectionResponseEnable
- * @version 15.1.0
+ * @version 16.0.0
  */
 class DdosProtectionResponseEnable {
     /**

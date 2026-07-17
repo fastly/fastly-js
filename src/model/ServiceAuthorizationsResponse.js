@@ -13,14 +13,14 @@
 import ApiClient from '../ApiClient';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
+import PaginationMeta1 from './PaginationMeta1';
 import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
 import ServiceAuthorizationsResponseAllOf from './ServiceAuthorizationsResponseAllOf';
 
 /**
  * The ServiceAuthorizationsResponse model module.
  * @module model/ServiceAuthorizationsResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class ServiceAuthorizationsResponse {
     /**
@@ -59,7 +59,7 @@ class ServiceAuthorizationsResponse {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta1.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
@@ -77,7 +77,7 @@ class ServiceAuthorizationsResponse {
 ServiceAuthorizationsResponse.prototype['links'] = undefined;
 
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 ServiceAuthorizationsResponse.prototype['meta'] = undefined;
 
@@ -93,7 +93,7 @@ ServiceAuthorizationsResponse.prototype['data'] = undefined;
  */
 Pagination.prototype['links'] = undefined;
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 Pagination.prototype['meta'] = undefined;
 // Implement ServiceAuthorizationsResponseAllOf interface:

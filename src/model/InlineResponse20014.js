@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
+import SuccessfulResponseAsObject from './SuccessfulResponseAsObject';
 
 /**
  * The InlineResponse20014 model module.
  * @module model/InlineResponse20014
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse20014 {
     /**
@@ -48,7 +48,10 @@ class InlineResponse20014 {
             obj = obj || new InlineResponse20014();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
+                obj['data'] = ApiClient.convertToType(data['data'], [SuccessfulResponseAsObject]);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = ApiClient.convertToType(data['meta'], Object);
             }
         }
         return obj;
@@ -58,9 +61,15 @@ class InlineResponse20014 {
 }
 
 /**
- * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
+ * @member {Array.<module:model/SuccessfulResponseAsObject>} data
  */
 InlineResponse20014.prototype['data'] = undefined;
+
+/**
+ * Meta for the pagination.
+ * @member {Object} meta
+ */
+InlineResponse20014.prototype['meta'] = undefined;
 
 
 

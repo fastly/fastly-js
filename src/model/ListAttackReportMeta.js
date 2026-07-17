@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAttackReportMeta model module.
  * @module model/ListAttackReportMeta
- * @version 15.1.0
+ * @version 16.0.0
  */
 class ListAttackReportMeta {
     /**

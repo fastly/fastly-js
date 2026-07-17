@@ -11,22 +11,24 @@
  */
 
 import ApiClient from '../ApiClient';
+import DdosProtectionRuleWithStats from './DdosProtectionRuleWithStats';
 import PaginationCursorMeta from './PaginationCursorMeta';
-import SecretResponse from './SecretResponse';
 
 /**
  * The InlineResponse20013 model module.
  * @module model/InlineResponse20013
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse20013 {
     /**
      * Constructs a new <code>InlineResponse20013</code>.
      * @alias module:model/InlineResponse20013
+     * @param data {Array.<module:model/DdosProtectionRuleWithStats>} 
+     * @param meta {module:model/PaginationCursorMeta} 
      */
-    constructor() { 
+    constructor(data, meta) { 
         
-        InlineResponse20013.initialize(this);
+        InlineResponse20013.initialize(this, data, meta);
     }
 
     /**
@@ -34,7 +36,9 @@ class InlineResponse20013 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, data, meta) { 
+        obj['data'] = data;
+        obj['meta'] = meta;
     }
 
     /**
@@ -49,7 +53,7 @@ class InlineResponse20013 {
             obj = obj || new InlineResponse20013();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SecretResponse]);
+                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionRuleWithStats]);
             }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
@@ -62,7 +66,7 @@ class InlineResponse20013 {
 }
 
 /**
- * @member {Array.<module:model/SecretResponse>} data
+ * @member {Array.<module:model/DdosProtectionRuleWithStats>} data
  */
 InlineResponse20013.prototype['data'] = undefined;
 

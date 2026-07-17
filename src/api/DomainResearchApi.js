@@ -12,13 +12,13 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2009 from '../model/InlineResponse2009';
+import InlineResponse20016 from '../model/InlineResponse20016';
 import Status from '../model/Status';
 
 /**
 * DomainResearch service.
 * @module api/DomainResearchApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class DomainResearchApi {
 
@@ -107,7 +107,7 @@ export default class DomainResearchApi {
      * @param {String} [options.keywords]
      * @param {String} [options.location]
      * @param {String} [options.vendor]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     suggestDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -135,7 +135,7 @@ export default class DomainResearchApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2009;
+      let returnType = InlineResponse20016;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -160,7 +160,7 @@ export default class DomainResearchApi {
      * @param {String} [options.keywords]
      * @param {String} [options.location]
      * @param {String} [options.vendor]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     suggestDomains(options = {}) {
       return this.suggestDomainsWithHttpInfo(options)

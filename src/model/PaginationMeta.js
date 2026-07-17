@@ -15,11 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The PaginationMeta model module.
  * @module model/PaginationMeta
- * @version 15.1.0
+ * @version 16.0.0
  */
 class PaginationMeta {
     /**
      * Constructs a new <code>PaginationMeta</code>.
+     * Cursor-based pagination metadata.
      * @alias module:model/PaginationMeta
      */
     constructor() { 
@@ -46,17 +47,17 @@ class PaginationMeta {
         if (data) {
             obj = obj || new PaginationMeta();
 
-            if (data.hasOwnProperty('current_page')) {
-                obj['current_page'] = ApiClient.convertToType(data['current_page'], 'Number');
+            if (data.hasOwnProperty('limit')) {
+                obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
             }
-            if (data.hasOwnProperty('per_page')) {
-                obj['per_page'] = ApiClient.convertToType(data['per_page'], 'Number');
+            if (data.hasOwnProperty('next_cursor')) {
+                obj['next_cursor'] = ApiClient.convertToType(data['next_cursor'], 'String');
             }
-            if (data.hasOwnProperty('record_count')) {
-                obj['record_count'] = ApiClient.convertToType(data['record_count'], 'Number');
+            if (data.hasOwnProperty('previous_cursor')) {
+                obj['previous_cursor'] = ApiClient.convertToType(data['previous_cursor'], 'String');
             }
-            if (data.hasOwnProperty('total_pages')) {
-                obj['total_pages'] = ApiClient.convertToType(data['total_pages'], 'Number');
+            if (data.hasOwnProperty('sort')) {
+                obj['sort'] = ApiClient.convertToType(data['sort'], 'String');
             }
         }
         return obj;
@@ -66,29 +67,28 @@ class PaginationMeta {
 }
 
 /**
- * Current page.
- * @member {Number} current_page
+ * The number of records returned per page.
+ * @member {Number} limit
  */
-PaginationMeta.prototype['current_page'] = undefined;
+PaginationMeta.prototype['limit'] = undefined;
 
 /**
- * Number of records per page.
- * @member {Number} per_page
- * @default 20
+ * Cursor value used to retrieve the next page of results. Empty if there are no more results.
+ * @member {String} next_cursor
  */
-PaginationMeta.prototype['per_page'] = 20;
+PaginationMeta.prototype['next_cursor'] = undefined;
 
 /**
- * Total records in result set.
- * @member {Number} record_count
+ * Cursor value used to retrieve the previous page of results. Empty if there is no previous page.
+ * @member {String} previous_cursor
  */
-PaginationMeta.prototype['record_count'] = undefined;
+PaginationMeta.prototype['previous_cursor'] = undefined;
 
 /**
- * Total pages in result set.
- * @member {Number} total_pages
+ * The sort order applied to the results.
+ * @member {String} sort
  */
-PaginationMeta.prototype['total_pages'] = undefined;
+PaginationMeta.prototype['sort'] = undefined;
 
 
 

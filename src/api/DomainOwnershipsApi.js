@@ -12,12 +12,12 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2008 from '../model/InlineResponse2008';
+import InlineResponse20015 from '../model/InlineResponse20015';
 
 /**
 * DomainOwnerships service.
 * @module api/DomainOwnershipsApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class DomainOwnershipsApi {
 
@@ -40,7 +40,7 @@ export default class DomainOwnershipsApi {
     /**
      * List all domain-ownerships.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20015} and HTTP response
      */
     listDomainOwnershipsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -59,7 +59,7 @@ export default class DomainOwnershipsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = InlineResponse2008;
+      let returnType = InlineResponse20015;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -79,7 +79,7 @@ export default class DomainOwnershipsApi {
     /**
      * List all domain-ownerships.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20015}
      */
     listDomainOwnerships(options = {}) {
       return this.listDomainOwnershipsWithHttpInfo(options)

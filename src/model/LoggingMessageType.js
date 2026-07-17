@@ -19,6 +19,13 @@ import ApiClient from '../ApiClient';
 export default class LoggingMessageType {
     
         /**
+         * value: "blank"
+         * @const
+         */
+        "blank" = "blank";
+
+    
+        /**
          * value: "classic"
          * @const
          */
@@ -37,13 +44,6 @@ export default class LoggingMessageType {
          * @const
          */
         "logplex" = "logplex";
-
-    
-        /**
-         * value: "blank"
-         * @const
-         */
-        "blank" = "blank";
 
     
 

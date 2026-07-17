@@ -13,14 +13,14 @@
 import ApiClient from '../ApiClient';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
+import PaginationMeta1 from './PaginationMeta1';
 import TlsSubscriptionResponse from './TlsSubscriptionResponse';
 import TlsSubscriptionsResponseAllOf from './TlsSubscriptionsResponseAllOf';
 
 /**
  * The TlsSubscriptionsResponse model module.
  * @module model/TlsSubscriptionsResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class TlsSubscriptionsResponse {
     /**
@@ -59,7 +59,7 @@ class TlsSubscriptionsResponse {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta1.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [TlsSubscriptionResponse]);
@@ -77,7 +77,7 @@ class TlsSubscriptionsResponse {
 TlsSubscriptionsResponse.prototype['links'] = undefined;
 
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 TlsSubscriptionsResponse.prototype['meta'] = undefined;
 
@@ -93,7 +93,7 @@ TlsSubscriptionsResponse.prototype['data'] = undefined;
  */
 Pagination.prototype['links'] = undefined;
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 Pagination.prototype['meta'] = undefined;
 // Implement TlsSubscriptionsResponseAllOf interface:

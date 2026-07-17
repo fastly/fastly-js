@@ -17,7 +17,7 @@ import TagGet from './TagGet';
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse2003 {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 15.1.0
+ * @version 16.0.0
  */
 class Backend {
     /**
@@ -88,11 +88,17 @@ class Backend {
             if (data.hasOwnProperty('max_conn')) {
                 obj['max_conn'] = ApiClient.convertToType(data['max_conn'], 'Number');
             }
+            if (data.hasOwnProperty('max_lifetime')) {
+                obj['max_lifetime'] = ApiClient.convertToType(data['max_lifetime'], 'Number');
+            }
             if (data.hasOwnProperty('max_tls_version')) {
                 obj['max_tls_version'] = ApiClient.convertToType(data['max_tls_version'], 'String');
             }
             if (data.hasOwnProperty('min_tls_version')) {
                 obj['min_tls_version'] = ApiClient.convertToType(data['min_tls_version'], 'String');
+            }
+            if (data.hasOwnProperty('max_use')) {
+                obj['max_use'] = ApiClient.convertToType(data['max_use'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -237,7 +243,7 @@ Backend.prototype['ipv4'] = undefined;
 Backend.prototype['ipv6'] = undefined;
 
 /**
- * How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+ * How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
  * @member {Number} keepalive_time
  */
 Backend.prototype['keepalive_time'] = undefined;
@@ -247,6 +253,12 @@ Backend.prototype['keepalive_time'] = undefined;
  * @member {Number} max_conn
  */
 Backend.prototype['max_conn'] = undefined;
+
+/**
+ * Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
+ * @member {Number} max_lifetime
+ */
+Backend.prototype['max_lifetime'] = undefined;
 
 /**
  * Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
@@ -259,6 +271,12 @@ Backend.prototype['max_tls_version'] = undefined;
  * @member {String} min_tls_version
  */
 Backend.prototype['min_tls_version'] = undefined;
+
+/**
+ * Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
+ * @member {Number} max_use
+ */
+Backend.prototype['max_use'] = undefined;
 
 /**
  * The name of the backend.

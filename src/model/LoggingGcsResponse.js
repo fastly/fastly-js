@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGcsResponse model module.
  * @module model/LoggingGcsResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingGcsResponse {
     /**
@@ -182,7 +182,7 @@ LoggingGcsResponse.prototype['format_version'] = undefined;
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGcsResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGcsResponse.prototype['message_type'] = undefined;
 
@@ -322,7 +322,7 @@ LoggingCommonResponse.prototype['format_version'] = undefined;
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
@@ -490,6 +490,12 @@ LoggingGcsResponse['FormatVersionEnum'] = {
 LoggingGcsResponse['MessageTypeEnum'] = {
 
     /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank",
+
+    /**
      * value: "classic"
      * @const
      */
@@ -505,13 +511,7 @@ LoggingGcsResponse['MessageTypeEnum'] = {
      * value: "logplex"
      * @const
      */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
+    "logplex": "logplex"
 };
 
 

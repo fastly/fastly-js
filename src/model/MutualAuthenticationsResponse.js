@@ -15,12 +15,12 @@ import MutualAuthenticationResponseData from './MutualAuthenticationResponseData
 import MutualAuthenticationsResponseAllOf from './MutualAuthenticationsResponseAllOf';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
+import PaginationMeta1 from './PaginationMeta1';
 
 /**
  * The MutualAuthenticationsResponse model module.
  * @module model/MutualAuthenticationsResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class MutualAuthenticationsResponse {
     /**
@@ -59,7 +59,7 @@ class MutualAuthenticationsResponse {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta1.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [MutualAuthenticationResponseData]);
@@ -77,7 +77,7 @@ class MutualAuthenticationsResponse {
 MutualAuthenticationsResponse.prototype['links'] = undefined;
 
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 MutualAuthenticationsResponse.prototype['meta'] = undefined;
 
@@ -93,7 +93,7 @@ MutualAuthenticationsResponse.prototype['data'] = undefined;
  */
 Pagination.prototype['links'] = undefined;
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/PaginationMeta1} meta
  */
 Pagination.prototype['meta'] = undefined;
 // Implement MutualAuthenticationsResponseAllOf interface:

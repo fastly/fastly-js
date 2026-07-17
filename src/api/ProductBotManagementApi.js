@@ -12,13 +12,15 @@
 
 
 import ApiClient from "../ApiClient";
+import BotManagementRequestUpdateConfiguration from '../model/BotManagementRequestUpdateConfiguration';
 import BotManagementResponseBodyEnable from '../model/BotManagementResponseBodyEnable';
 import BotManagementResponseBodyGetAllServices from '../model/BotManagementResponseBodyGetAllServices';
+import BotManagementResponseConfigure from '../model/BotManagementResponseConfigure';
 
 /**
 * ProductBotManagement service.
 * @module api/ProductBotManagementApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class ProductBotManagementApi {
 
@@ -213,6 +215,64 @@ export default class ProductBotManagementApi {
     }
 
     /**
+     * Get the configuration of the Bot Management product on a service.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BotManagementResponseConfigure} and HTTP response
+     */
+    getProductBotManagementConfigurationWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = BotManagementResponseConfigure;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/bot_management/services/{service_id}/configuration', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Get the configuration of the Bot Management product on a service.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BotManagementResponseConfigure}
+     */
+    getProductBotManagementConfiguration(options = {}) {
+      return this.getProductBotManagementConfigurationWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
      * Get all the services which have the Bot Management product enabled.
      * @param {Object} options
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BotManagementResponseBodyGetAllServices} and HTTP response
@@ -258,6 +318,66 @@ export default class ProductBotManagementApi {
      */
     getServicesProductBotManagement(options = {}) {
       return this.getServicesProductBotManagementWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update the configuration of the Bot Management product on a service.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {module:model/BotManagementRequestUpdateConfiguration} [options.bot_management_request_update_configuration]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BotManagementResponseConfigure} and HTTP response
+     */
+    setProductBotManagementConfigurationWithHttpInfo(options = {}) {
+      let postBody = options['bot_management_request_update_configuration'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = BotManagementResponseConfigure;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/enabled-products/v1/bot_management/services/{service_id}/configuration', 'PATCH',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update the configuration of the Bot Management product on a service.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {module:model/BotManagementRequestUpdateConfiguration} [options.bot_management_request_update_configuration]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BotManagementResponseConfigure}
+     */
+    setProductBotManagementConfiguration(options = {}) {
+      return this.setProductBotManagementConfigurationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

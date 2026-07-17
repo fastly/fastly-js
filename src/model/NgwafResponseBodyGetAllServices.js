@@ -22,7 +22,7 @@ import NgwafResponseProductProduct from './NgwafResponseProductProduct';
 /**
  * The NgwafResponseBodyGetAllServices model module.
  * @module model/NgwafResponseBodyGetAllServices
- * @version 15.1.0
+ * @version 16.0.0
  */
 class NgwafResponseBodyGetAllServices {
     /**

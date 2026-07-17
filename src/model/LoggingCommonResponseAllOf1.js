@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingCommonResponseAllOf1 model module.
  * @module model/LoggingCommonResponseAllOf1
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingCommonResponseAllOf1 {
     /**

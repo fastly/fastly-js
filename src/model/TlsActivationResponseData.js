@@ -20,7 +20,7 @@ import TypeTlsActivation from './TypeTlsActivation';
 /**
  * The TlsActivationResponseData model module.
  * @module model/TlsActivationResponseData
- * @version 15.1.0
+ * @version 16.0.0
  */
 class TlsActivationResponseData {
     /**

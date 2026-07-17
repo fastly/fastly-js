@@ -17,7 +17,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The DdosProtectionRule model module.
  * @module model/DdosProtectionRule
- * @version 15.1.0
+ * @version 16.0.0
  */
 class DdosProtectionRule {
     /**

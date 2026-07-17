@@ -20,6 +20,10 @@ import AclEntryResponse from './model/AclEntryResponse';
 import AclEntryResponseAllOf from './model/AclEntryResponseAllOf';
 import AclResponse from './model/AclResponse';
 import AclResponseAllOf from './model/AclResponseAllOf';
+import Action from './model/Action';
+import ActionType from './model/ActionType';
+import AgentKey from './model/AgentKey';
+import AgentKeyMeta from './model/AgentKeyMeta';
 import AiAcceleratorResponseBodyEnable from './model/AiAcceleratorResponseBodyEnable';
 import AiAcceleratorResponseCustomer from './model/AiAcceleratorResponseCustomer';
 import AiAcceleratorResponseCustomerCustomer from './model/AiAcceleratorResponseCustomerCustomer';
@@ -65,8 +69,12 @@ import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
 import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
+import BotManagementRequestUpdateConfiguration from './model/BotManagementRequestUpdateConfiguration';
 import BotManagementResponseBodyEnable from './model/BotManagementResponseBodyEnable';
 import BotManagementResponseBodyGetAllServices from './model/BotManagementResponseBodyGetAllServices';
+import BotManagementResponseConfiguration from './model/BotManagementResponseConfiguration';
+import BotManagementResponseConfigurationConfiguration from './model/BotManagementResponseConfigurationConfiguration';
+import BotManagementResponseConfigure from './model/BotManagementResponseConfigure';
 import BotManagementResponseCustomer from './model/BotManagementResponseCustomer';
 import BotManagementResponseCustomerCustomer from './model/BotManagementResponseCustomerCustomer';
 import BotManagementResponseEnabledServices from './model/BotManagementResponseEnabledServices';
@@ -111,7 +119,9 @@ import ComputeAclLookup from './model/ComputeAclLookup';
 import ComputeAclUpdate from './model/ComputeAclUpdate';
 import ComputeAclUpdateEntry from './model/ComputeAclUpdateEntry';
 import Condition from './model/Condition';
+import ConditionOperator from './model/ConditionOperator';
 import ConditionResponse from './model/ConditionResponse';
+import ConditionType from './model/ConditionType';
 import ConfigStore from './model/ConfigStore';
 import ConfigStoreInfoResponse from './model/ConfigStoreInfoResponse';
 import ConfigStoreItem from './model/ConfigStoreItem';
@@ -191,6 +201,7 @@ import DimensionOs from './model/DimensionOs';
 import DimensionResponse from './model/DimensionResponse';
 import DimensionStatusCode from './model/DimensionStatusCode';
 import DimensionUrl from './model/DimensionUrl';
+import Directive from './model/Directive';
 import Director from './model/Director';
 import DirectorBackend from './model/DirectorBackend';
 import DirectorBackendAllOf from './model/DirectorBackendAllOf';
@@ -222,6 +233,8 @@ import DomainResearchResponseLinksLinks from './model/DomainResearchResponseLink
 import DomainResearchResponseProduct from './model/DomainResearchResponseProduct';
 import DomainResearchResponseProductProduct from './model/DomainResearchResponseProductProduct';
 import DomainResponse from './model/DomainResponse';
+import DraftDiff from './model/DraftDiff';
+import DraftUpdate from './model/DraftUpdate';
 import Environment from './model/Environment';
 import EnvironmentName from './model/EnvironmentName';
 import EomInvoiceResponse from './model/EomInvoiceResponse';
@@ -254,6 +267,7 @@ import GetServiceLevelUsageTypesResponse from './model/GetServiceLevelUsageTypes
 import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
 import Header from './model/Header';
+import HeaderEvent from './model/HeaderEvent';
 import HeaderResponse from './model/HeaderResponse';
 import Healthcheck from './model/Healthcheck';
 import HealthcheckResponse from './model/HealthcheckResponse';
@@ -308,6 +322,8 @@ import ImageOptimizerResponseProductProduct from './model/ImageOptimizerResponse
 import ImageOptimizerResponseService from './model/ImageOptimizerResponseService';
 import IncludedWithTlsConfiguration from './model/IncludedWithTlsConfiguration';
 import IncludedWithTlsConfigurationItem from './model/IncludedWithTlsConfigurationItem';
+import InitialVersion from './model/InitialVersion';
+import InitialVersionPath from './model/InitialVersionPath';
 import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineResponse200 from './model/InlineResponse200';
@@ -317,7 +333,15 @@ import InlineResponse20011 from './model/InlineResponse20011';
 import InlineResponse20012 from './model/InlineResponse20012';
 import InlineResponse20013 from './model/InlineResponse20013';
 import InlineResponse20014 from './model/InlineResponse20014';
+import InlineResponse20015 from './model/InlineResponse20015';
+import InlineResponse20016 from './model/InlineResponse20016';
+import InlineResponse20017 from './model/InlineResponse20017';
+import InlineResponse20018 from './model/InlineResponse20018';
+import InlineResponse20019 from './model/InlineResponse20019';
 import InlineResponse2002 from './model/InlineResponse2002';
+import InlineResponse20020 from './model/InlineResponse20020';
+import InlineResponse20021 from './model/InlineResponse20021';
+import InlineResponse20022 from './model/InlineResponse20022';
 import InlineResponse2003 from './model/InlineResponse2003';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2005 from './model/InlineResponse2005';
@@ -346,6 +370,12 @@ import KvStoreBatchResponse from './model/KvStoreBatchResponse';
 import KvStoreBatchResponseErrors from './model/KvStoreBatchResponseErrors';
 import KvStoreDetails from './model/KvStoreDetails';
 import KvStoreRequestCreateOrUpdate from './model/KvStoreRequestCreateOrUpdate';
+import KvStoreResponseBodyEnable from './model/KvStoreResponseBodyEnable';
+import KvStoreResponseCustomer from './model/KvStoreResponseCustomer';
+import KvStoreResponseLinks from './model/KvStoreResponseLinks';
+import KvStoreResponseLinksLinks from './model/KvStoreResponseLinksLinks';
+import KvStoreResponseProduct from './model/KvStoreResponseProduct';
+import KvStoreResponseProductProduct from './model/KvStoreResponseProductProduct';
 import KvStoreUpsertBatch from './model/KvStoreUpsertBatch';
 import ListAttackReport from './model/ListAttackReport';
 import ListAttackReportMeta from './model/ListAttackReportMeta';
@@ -485,6 +515,8 @@ import NgwafResponseLinksLinks from './model/NgwafResponseLinksLinks';
 import NgwafResponseProduct from './model/NgwafResponseProduct';
 import NgwafResponseProductProduct from './model/NgwafResponseProductProduct';
 import NgwafResponseService from './model/NgwafResponseService';
+import Notification from './model/Notification';
+import NotificationConfig from './model/NotificationConfig';
 import ObjectStorageResponseBodyEnable from './model/ObjectStorageResponseBodyEnable';
 import ObjectStorageResponseCustomer from './model/ObjectStorageResponseCustomer';
 import ObjectStorageResponseLinks from './model/ObjectStorageResponseLinks';
@@ -528,10 +560,21 @@ import Package from './model/Package';
 import PackageMetadata from './model/PackageMetadata';
 import PackageResponse from './model/PackageResponse';
 import PackageResponseAllOf from './model/PackageResponseAllOf';
+import Page from './model/Page';
+import PageCreate from './model/PageCreate';
+import PageUpdate from './model/PageUpdate';
 import Pagination from './model/Pagination';
 import PaginationCursorMeta from './model/PaginationCursorMeta';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
+import PaginationMeta1 from './model/PaginationMeta1';
+import PathChange from './model/PathChange';
+import PathCreate from './model/PathCreate';
+import PathResponse from './model/PathResponse';
+import PathResponseAllOf from './model/PathResponseAllOf';
+import PathUpdate from './model/PathUpdate';
+import PathWithRules from './model/PathWithRules';
+import PathsResponse from './model/PathsResponse';
 import Permission from './model/Permission';
 import PlatformDdosDataItems from './model/PlatformDdosDataItems';
 import PlatformDdosEntry from './model/PlatformDdosEntry';
@@ -540,6 +583,9 @@ import PlatformDdosResponseAllOf from './model/PlatformDdosResponseAllOf';
 import PlatformMetadata from './model/PlatformMetadata';
 import PlatformMetricsResponse from './model/PlatformMetricsResponse';
 import PlatformValues from './model/PlatformValues';
+import Policy from './model/Policy';
+import PolicyCreate from './model/PolicyCreate';
+import PolicyUpdate from './model/PolicyUpdate';
 import PoolAdditional from './model/PoolAdditional';
 import PoolResponse from './model/PoolResponse';
 import PoolResponseAllOf from './model/PoolResponseAllOf';
@@ -548,6 +594,7 @@ import PoolResponsePost from './model/PoolResponsePost';
 import PoolResponsePostAllOf from './model/PoolResponsePostAllOf';
 import Pop from './model/Pop';
 import PopCoordinates from './model/PopCoordinates';
+import Position from './model/Position';
 import PublicIpList from './model/PublicIpList';
 import PublishItem from './model/PublishItem';
 import PublishItemFormats from './model/PublishItemFormats';
@@ -563,6 +610,7 @@ import ReadOnlyUserId from './model/ReadOnlyUserId';
 import Realtime from './model/Realtime';
 import RealtimeEntry from './model/RealtimeEntry';
 import RealtimeEntryAggregated from './model/RealtimeEntryAggregated';
+import RealtimeEntryDatacenter from './model/RealtimeEntryDatacenter';
 import RealtimeEntryRecorded from './model/RealtimeEntryRecorded';
 import RealtimeMeasurements from './model/RealtimeMeasurements';
 import RelationshipCommonName from './model/RelationshipCommonName';
@@ -639,6 +687,7 @@ import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfigu
 import RelationshipsForTlsDomain from './model/RelationshipsForTlsDomain';
 import RelationshipsForTlsPrivateKey from './model/RelationshipsForTlsPrivateKey';
 import RelationshipsForTlsSubscription from './model/RelationshipsForTlsSubscription';
+import Report from './model/Report';
 import RequestBodyForCreate from './model/RequestBodyForCreate';
 import RequestBodyForUpdate from './model/RequestBodyForUpdate';
 import RequestSettingsAdditional from './model/RequestSettingsAdditional';
@@ -651,6 +700,19 @@ import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
+import RoutingConfig from './model/RoutingConfig';
+import RoutingConfigCondition from './model/RoutingConfigCondition';
+import RoutingConfigResponse from './model/RoutingConfigResponse';
+import RoutingConfigResponseAllOf from './model/RoutingConfigResponseAllOf';
+import RoutingConfigState from './model/RoutingConfigState';
+import RoutingConfigVersionResponse from './model/RoutingConfigVersionResponse';
+import RoutingConfigsResponse from './model/RoutingConfigsResponse';
+import RuleChange from './model/RuleChange';
+import RuleCreate from './model/RuleCreate';
+import RuleResponse from './model/RuleResponse';
+import RuleResponseAllOf from './model/RuleResponseAllOf';
+import RuleUpdate from './model/RuleUpdate';
+import RulesResponse from './model/RulesResponse';
 import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
@@ -658,10 +720,13 @@ import SchemasUserResponseReadOnly from './model/SchemasUserResponseReadOnly';
 import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
+import Script from './model/Script';
+import ScriptUpdate from './model/ScriptUpdate';
 import Secret from './model/Secret';
 import SecretResponse from './model/SecretResponse';
 import SecretStore from './model/SecretStore';
 import SecretStoreResponse from './model/SecretStoreResponse';
+import SecurityHeader from './model/SecurityHeader';
 import Server from './model/Server';
 import ServerResponse from './model/ServerResponse';
 import ServerResponseAllOf from './model/ServerResponseAllOf';
@@ -864,6 +929,13 @@ import VersionDetail from './model/VersionDetail';
 import VersionDetailSettings from './model/VersionDetailSettings';
 import VersionResponse from './model/VersionResponse';
 import VersionResponseAllOf from './model/VersionResponseAllOf';
+import VersionsResponse from './model/VersionsResponse';
+import WafSimulateRequest from './model/WafSimulateRequest';
+import WafSimulateResponse from './model/WafSimulateResponse';
+import WafSimulateSignal from './model/WafSimulateSignal';
+import Website from './model/Website';
+import WebsiteCreate from './model/WebsiteCreate';
+import WebsiteUpdate from './model/WebsiteUpdate';
 import WebsocketsResponseBodyEnable from './model/WebsocketsResponseBodyEnable';
 import WebsocketsResponseBodyGetAllServices from './model/WebsocketsResponseBodyGetAllServices';
 import WebsocketsResponseCustomer from './model/WebsocketsResponseCustomer';
@@ -887,6 +959,7 @@ import BillingAddressApi from './api/BillingAddressApi';
 import BillingInvoicesApi from './api/BillingInvoicesApi';
 import BillingUsageMetricsApi from './api/BillingUsageMetricsApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
+import ClientSideProtectionApi from './api/ClientSideProtectionApi';
 import ConditionApi from './api/ConditionApi';
 import ConfigStoreApi from './api/ConfigStoreApi';
 import ConfigStoreItemApi from './api/ConfigStoreItemApi';
@@ -902,6 +975,7 @@ import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
 import DmDomainsApi from './api/DmDomainsApi';
+import DmRoutingConfigsApi from './api/DmRoutingConfigsApi';
 import DomainApi from './api/DomainApi';
 import DomainInspectorHistoricalApi from './api/DomainInspectorHistoricalApi';
 import DomainInspectorRealtimeApi from './api/DomainInspectorRealtimeApi';
@@ -953,7 +1027,9 @@ import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MetricsPlatformApi from './api/MetricsPlatformApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import NgwafAgentKeysApi from './api/NgwafAgentKeysApi';
 import NgwafReportsApi from './api/NgwafReportsApi';
+import NgwafSimulateApi from './api/NgwafSimulateApi';
 import ObjectStorageAccessKeysApi from './api/ObjectStorageAccessKeysApi';
 import ObservabilityAggregationsForLogsApi from './api/ObservabilityAggregationsForLogsApi';
 import ObservabilityCustomDashboardsApi from './api/ObservabilityCustomDashboardsApi';
@@ -972,6 +1048,7 @@ import ProductDomainInspectorApi from './api/ProductDomainInspectorApi';
 import ProductDomainResearchApi from './api/ProductDomainResearchApi';
 import ProductFanoutApi from './api/ProductFanoutApi';
 import ProductImageOptimizerApi from './api/ProductImageOptimizerApi';
+import ProductKvStoreApi from './api/ProductKvStoreApi';
 import ProductLogExplorerInsightsApi from './api/ProductLogExplorerInsightsApi';
 import ProductNgwafApi from './api/ProductNgwafApi';
 import ProductObjectStorageApi from './api/ProductObjectStorageApi';
@@ -1044,7 +1121,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 15.1.0
+* @version 16.0.0
 */
 export {
     /**
@@ -1100,6 +1177,30 @@ export {
      * @property {module:model/AclResponseAllOf}
      */
     AclResponseAllOf,
+
+    /**
+     * The Action model constructor.
+     * @property {module:model/Action}
+     */
+    Action,
+
+    /**
+     * The ActionType model constructor.
+     * @property {module:model/ActionType}
+     */
+    ActionType,
+
+    /**
+     * The AgentKey model constructor.
+     * @property {module:model/AgentKey}
+     */
+    AgentKey,
+
+    /**
+     * The AgentKeyMeta model constructor.
+     * @property {module:model/AgentKeyMeta}
+     */
+    AgentKeyMeta,
 
     /**
      * The AiAcceleratorResponseBodyEnable model constructor.
@@ -1372,6 +1473,12 @@ export {
     BillingAddressVerificationErrorResponseErrors,
 
     /**
+     * The BotManagementRequestUpdateConfiguration model constructor.
+     * @property {module:model/BotManagementRequestUpdateConfiguration}
+     */
+    BotManagementRequestUpdateConfiguration,
+
+    /**
      * The BotManagementResponseBodyEnable model constructor.
      * @property {module:model/BotManagementResponseBodyEnable}
      */
@@ -1382,6 +1489,24 @@ export {
      * @property {module:model/BotManagementResponseBodyGetAllServices}
      */
     BotManagementResponseBodyGetAllServices,
+
+    /**
+     * The BotManagementResponseConfiguration model constructor.
+     * @property {module:model/BotManagementResponseConfiguration}
+     */
+    BotManagementResponseConfiguration,
+
+    /**
+     * The BotManagementResponseConfigurationConfiguration model constructor.
+     * @property {module:model/BotManagementResponseConfigurationConfiguration}
+     */
+    BotManagementResponseConfigurationConfiguration,
+
+    /**
+     * The BotManagementResponseConfigure model constructor.
+     * @property {module:model/BotManagementResponseConfigure}
+     */
+    BotManagementResponseConfigure,
 
     /**
      * The BotManagementResponseCustomer model constructor.
@@ -1648,10 +1773,22 @@ export {
     Condition,
 
     /**
+     * The ConditionOperator model constructor.
+     * @property {module:model/ConditionOperator}
+     */
+    ConditionOperator,
+
+    /**
      * The ConditionResponse model constructor.
      * @property {module:model/ConditionResponse}
      */
     ConditionResponse,
+
+    /**
+     * The ConditionType model constructor.
+     * @property {module:model/ConditionType}
+     */
+    ConditionType,
 
     /**
      * The ConfigStore model constructor.
@@ -2128,6 +2265,12 @@ export {
     DimensionUrl,
 
     /**
+     * The Directive model constructor.
+     * @property {module:model/Directive}
+     */
+    Directive,
+
+    /**
      * The Director model constructor.
      * @property {module:model/Director}
      */
@@ -2312,6 +2455,18 @@ export {
      * @property {module:model/DomainResponse}
      */
     DomainResponse,
+
+    /**
+     * The DraftDiff model constructor.
+     * @property {module:model/DraftDiff}
+     */
+    DraftDiff,
+
+    /**
+     * The DraftUpdate model constructor.
+     * @property {module:model/DraftUpdate}
+     */
+    DraftUpdate,
 
     /**
      * The Environment model constructor.
@@ -2504,6 +2659,12 @@ export {
      * @property {module:model/Header}
      */
     Header,
+
+    /**
+     * The HeaderEvent model constructor.
+     * @property {module:model/HeaderEvent}
+     */
+    HeaderEvent,
 
     /**
      * The HeaderResponse model constructor.
@@ -2830,6 +2991,18 @@ export {
     IncludedWithTlsConfigurationItem,
 
     /**
+     * The InitialVersion model constructor.
+     * @property {module:model/InitialVersion}
+     */
+    InitialVersion,
+
+    /**
+     * The InitialVersionPath model constructor.
+     * @property {module:model/InitialVersionPath}
+     */
+    InitialVersionPath,
+
+    /**
      * The InlineObject model constructor.
      * @property {module:model/InlineObject}
      */
@@ -2884,10 +3057,58 @@ export {
     InlineResponse20014,
 
     /**
+     * The InlineResponse20015 model constructor.
+     * @property {module:model/InlineResponse20015}
+     */
+    InlineResponse20015,
+
+    /**
+     * The InlineResponse20016 model constructor.
+     * @property {module:model/InlineResponse20016}
+     */
+    InlineResponse20016,
+
+    /**
+     * The InlineResponse20017 model constructor.
+     * @property {module:model/InlineResponse20017}
+     */
+    InlineResponse20017,
+
+    /**
+     * The InlineResponse20018 model constructor.
+     * @property {module:model/InlineResponse20018}
+     */
+    InlineResponse20018,
+
+    /**
+     * The InlineResponse20019 model constructor.
+     * @property {module:model/InlineResponse20019}
+     */
+    InlineResponse20019,
+
+    /**
      * The InlineResponse2002 model constructor.
      * @property {module:model/InlineResponse2002}
      */
     InlineResponse2002,
+
+    /**
+     * The InlineResponse20020 model constructor.
+     * @property {module:model/InlineResponse20020}
+     */
+    InlineResponse20020,
+
+    /**
+     * The InlineResponse20021 model constructor.
+     * @property {module:model/InlineResponse20021}
+     */
+    InlineResponse20021,
+
+    /**
+     * The InlineResponse20022 model constructor.
+     * @property {module:model/InlineResponse20022}
+     */
+    InlineResponse20022,
 
     /**
      * The InlineResponse2003 model constructor.
@@ -3056,6 +3277,42 @@ export {
      * @property {module:model/KvStoreRequestCreateOrUpdate}
      */
     KvStoreRequestCreateOrUpdate,
+
+    /**
+     * The KvStoreResponseBodyEnable model constructor.
+     * @property {module:model/KvStoreResponseBodyEnable}
+     */
+    KvStoreResponseBodyEnable,
+
+    /**
+     * The KvStoreResponseCustomer model constructor.
+     * @property {module:model/KvStoreResponseCustomer}
+     */
+    KvStoreResponseCustomer,
+
+    /**
+     * The KvStoreResponseLinks model constructor.
+     * @property {module:model/KvStoreResponseLinks}
+     */
+    KvStoreResponseLinks,
+
+    /**
+     * The KvStoreResponseLinksLinks model constructor.
+     * @property {module:model/KvStoreResponseLinksLinks}
+     */
+    KvStoreResponseLinksLinks,
+
+    /**
+     * The KvStoreResponseProduct model constructor.
+     * @property {module:model/KvStoreResponseProduct}
+     */
+    KvStoreResponseProduct,
+
+    /**
+     * The KvStoreResponseProductProduct model constructor.
+     * @property {module:model/KvStoreResponseProductProduct}
+     */
+    KvStoreResponseProductProduct,
 
     /**
      * The KvStoreUpsertBatch model constructor.
@@ -3892,6 +4149,18 @@ export {
     NgwafResponseService,
 
     /**
+     * The Notification model constructor.
+     * @property {module:model/Notification}
+     */
+    Notification,
+
+    /**
+     * The NotificationConfig model constructor.
+     * @property {module:model/NotificationConfig}
+     */
+    NotificationConfig,
+
+    /**
      * The ObjectStorageResponseBodyEnable model constructor.
      * @property {module:model/ObjectStorageResponseBodyEnable}
      */
@@ -4150,6 +4419,24 @@ export {
     PackageResponseAllOf,
 
     /**
+     * The Page model constructor.
+     * @property {module:model/Page}
+     */
+    Page,
+
+    /**
+     * The PageCreate model constructor.
+     * @property {module:model/PageCreate}
+     */
+    PageCreate,
+
+    /**
+     * The PageUpdate model constructor.
+     * @property {module:model/PageUpdate}
+     */
+    PageUpdate,
+
+    /**
      * The Pagination model constructor.
      * @property {module:model/Pagination}
      */
@@ -4172,6 +4459,54 @@ export {
      * @property {module:model/PaginationMeta}
      */
     PaginationMeta,
+
+    /**
+     * The PaginationMeta1 model constructor.
+     * @property {module:model/PaginationMeta1}
+     */
+    PaginationMeta1,
+
+    /**
+     * The PathChange model constructor.
+     * @property {module:model/PathChange}
+     */
+    PathChange,
+
+    /**
+     * The PathCreate model constructor.
+     * @property {module:model/PathCreate}
+     */
+    PathCreate,
+
+    /**
+     * The PathResponse model constructor.
+     * @property {module:model/PathResponse}
+     */
+    PathResponse,
+
+    /**
+     * The PathResponseAllOf model constructor.
+     * @property {module:model/PathResponseAllOf}
+     */
+    PathResponseAllOf,
+
+    /**
+     * The PathUpdate model constructor.
+     * @property {module:model/PathUpdate}
+     */
+    PathUpdate,
+
+    /**
+     * The PathWithRules model constructor.
+     * @property {module:model/PathWithRules}
+     */
+    PathWithRules,
+
+    /**
+     * The PathsResponse model constructor.
+     * @property {module:model/PathsResponse}
+     */
+    PathsResponse,
 
     /**
      * The Permission model constructor.
@@ -4222,6 +4557,24 @@ export {
     PlatformValues,
 
     /**
+     * The Policy model constructor.
+     * @property {module:model/Policy}
+     */
+    Policy,
+
+    /**
+     * The PolicyCreate model constructor.
+     * @property {module:model/PolicyCreate}
+     */
+    PolicyCreate,
+
+    /**
+     * The PolicyUpdate model constructor.
+     * @property {module:model/PolicyUpdate}
+     */
+    PolicyUpdate,
+
+    /**
      * The PoolAdditional model constructor.
      * @property {module:model/PoolAdditional}
      */
@@ -4268,6 +4621,12 @@ export {
      * @property {module:model/PopCoordinates}
      */
     PopCoordinates,
+
+    /**
+     * The Position model constructor.
+     * @property {module:model/Position}
+     */
+    Position,
 
     /**
      * The PublicIpList model constructor.
@@ -4358,6 +4717,12 @@ export {
      * @property {module:model/RealtimeEntryAggregated}
      */
     RealtimeEntryAggregated,
+
+    /**
+     * The RealtimeEntryDatacenter model constructor.
+     * @property {module:model/RealtimeEntryDatacenter}
+     */
+    RealtimeEntryDatacenter,
 
     /**
      * The RealtimeEntryRecorded model constructor.
@@ -4816,6 +5181,12 @@ export {
     RelationshipsForTlsSubscription,
 
     /**
+     * The Report model constructor.
+     * @property {module:model/Report}
+     */
+    Report,
+
+    /**
      * The RequestBodyForCreate model constructor.
      * @property {module:model/RequestBodyForCreate}
      */
@@ -4888,6 +5259,84 @@ export {
     RoleUser,
 
     /**
+     * The RoutingConfig model constructor.
+     * @property {module:model/RoutingConfig}
+     */
+    RoutingConfig,
+
+    /**
+     * The RoutingConfigCondition model constructor.
+     * @property {module:model/RoutingConfigCondition}
+     */
+    RoutingConfigCondition,
+
+    /**
+     * The RoutingConfigResponse model constructor.
+     * @property {module:model/RoutingConfigResponse}
+     */
+    RoutingConfigResponse,
+
+    /**
+     * The RoutingConfigResponseAllOf model constructor.
+     * @property {module:model/RoutingConfigResponseAllOf}
+     */
+    RoutingConfigResponseAllOf,
+
+    /**
+     * The RoutingConfigState model constructor.
+     * @property {module:model/RoutingConfigState}
+     */
+    RoutingConfigState,
+
+    /**
+     * The RoutingConfigVersionResponse model constructor.
+     * @property {module:model/RoutingConfigVersionResponse}
+     */
+    RoutingConfigVersionResponse,
+
+    /**
+     * The RoutingConfigsResponse model constructor.
+     * @property {module:model/RoutingConfigsResponse}
+     */
+    RoutingConfigsResponse,
+
+    /**
+     * The RuleChange model constructor.
+     * @property {module:model/RuleChange}
+     */
+    RuleChange,
+
+    /**
+     * The RuleCreate model constructor.
+     * @property {module:model/RuleCreate}
+     */
+    RuleCreate,
+
+    /**
+     * The RuleResponse model constructor.
+     * @property {module:model/RuleResponse}
+     */
+    RuleResponse,
+
+    /**
+     * The RuleResponseAllOf model constructor.
+     * @property {module:model/RuleResponseAllOf}
+     */
+    RuleResponseAllOf,
+
+    /**
+     * The RuleUpdate model constructor.
+     * @property {module:model/RuleUpdate}
+     */
+    RuleUpdate,
+
+    /**
+     * The RulesResponse model constructor.
+     * @property {module:model/RulesResponse}
+     */
+    RulesResponse,
+
+    /**
      * The SchemasContactResponse model constructor.
      * @property {module:model/SchemasContactResponse}
      */
@@ -4930,6 +5379,18 @@ export {
     SchemasVersionResponse,
 
     /**
+     * The Script model constructor.
+     * @property {module:model/Script}
+     */
+    Script,
+
+    /**
+     * The ScriptUpdate model constructor.
+     * @property {module:model/ScriptUpdate}
+     */
+    ScriptUpdate,
+
+    /**
      * The Secret model constructor.
      * @property {module:model/Secret}
      */
@@ -4952,6 +5413,12 @@ export {
      * @property {module:model/SecretStoreResponse}
      */
     SecretStoreResponse,
+
+    /**
+     * The SecurityHeader model constructor.
+     * @property {module:model/SecurityHeader}
+     */
+    SecurityHeader,
 
     /**
      * The Server model constructor.
@@ -6166,6 +6633,48 @@ export {
     VersionResponseAllOf,
 
     /**
+     * The VersionsResponse model constructor.
+     * @property {module:model/VersionsResponse}
+     */
+    VersionsResponse,
+
+    /**
+     * The WafSimulateRequest model constructor.
+     * @property {module:model/WafSimulateRequest}
+     */
+    WafSimulateRequest,
+
+    /**
+     * The WafSimulateResponse model constructor.
+     * @property {module:model/WafSimulateResponse}
+     */
+    WafSimulateResponse,
+
+    /**
+     * The WafSimulateSignal model constructor.
+     * @property {module:model/WafSimulateSignal}
+     */
+    WafSimulateSignal,
+
+    /**
+     * The Website model constructor.
+     * @property {module:model/Website}
+     */
+    Website,
+
+    /**
+     * The WebsiteCreate model constructor.
+     * @property {module:model/WebsiteCreate}
+     */
+    WebsiteCreate,
+
+    /**
+     * The WebsiteUpdate model constructor.
+     * @property {module:model/WebsiteUpdate}
+     */
+    WebsiteUpdate,
+
+    /**
      * The WebsocketsResponseBodyEnable model constructor.
      * @property {module:model/WebsocketsResponseBodyEnable}
      */
@@ -6304,6 +6813,12 @@ export {
     CacheSettingsApi,
 
     /**
+    * The ClientSideProtectionApi service constructor.
+    * @property {module:api/ClientSideProtectionApi}
+    */
+    ClientSideProtectionApi,
+
+    /**
     * The ConditionApi service constructor.
     * @property {module:api/ConditionApi}
     */
@@ -6392,6 +6907,12 @@ export {
     * @property {module:api/DmDomainsApi}
     */
     DmDomainsApi,
+
+    /**
+    * The DmRoutingConfigsApi service constructor.
+    * @property {module:api/DmRoutingConfigsApi}
+    */
+    DmRoutingConfigsApi,
 
     /**
     * The DomainApi service constructor.
@@ -6700,10 +7221,22 @@ export {
     MutualAuthenticationApi,
 
     /**
+    * The NgwafAgentKeysApi service constructor.
+    * @property {module:api/NgwafAgentKeysApi}
+    */
+    NgwafAgentKeysApi,
+
+    /**
     * The NgwafReportsApi service constructor.
     * @property {module:api/NgwafReportsApi}
     */
     NgwafReportsApi,
+
+    /**
+    * The NgwafSimulateApi service constructor.
+    * @property {module:api/NgwafSimulateApi}
+    */
+    NgwafSimulateApi,
 
     /**
     * The ObjectStorageAccessKeysApi service constructor.
@@ -6812,6 +7345,12 @@ export {
     * @property {module:api/ProductImageOptimizerApi}
     */
     ProductImageOptimizerApi,
+
+    /**
+    * The ProductKvStoreApi service constructor.
+    * @property {module:api/ProductKvStoreApi}
+    */
+    ProductKvStoreApi,
 
     /**
     * The ProductLogExplorerInsightsApi service constructor.

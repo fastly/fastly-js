@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamV1RoleResponse model module.
  * @module model/IamV1RoleResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class IamV1RoleResponse {
     /**

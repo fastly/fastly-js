@@ -11,11 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import PaginationMeta from './PaginationMeta';
+import Policy from './Policy';
 
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse2008 {
     /**
@@ -46,8 +48,11 @@ class InlineResponse2008 {
         if (data) {
             obj = obj || new InlineResponse2008();
 
-            if (data.hasOwnProperty('expires_at')) {
-                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [Policy]);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -57,10 +62,14 @@ class InlineResponse2008 {
 }
 
 /**
- * Time-stamp (GMT) when the domain_ownership validation will expire.
- * @member {String} expires_at
+ * @member {Array.<module:model/Policy>} data
  */
-InlineResponse2008.prototype['expires_at'] = undefined;
+InlineResponse2008.prototype['data'] = undefined;
+
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+InlineResponse2008.prototype['meta'] = undefined;
 
 
 

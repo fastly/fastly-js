@@ -17,7 +17,7 @@ import TimeseriesGetResponse from '../model/TimeseriesGetResponse';
 /**
 * ObservabilityTimeseries service.
 * @module api/ObservabilityTimeseriesApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class ObservabilityTimeseriesApi {
 

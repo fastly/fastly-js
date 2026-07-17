@@ -12,13 +12,13 @@
 
 import ApiClient from '../ApiClient';
 import RealtimeEntryAggregated from './RealtimeEntryAggregated';
+import RealtimeEntryDatacenter from './RealtimeEntryDatacenter';
 import RealtimeEntryRecorded from './RealtimeEntryRecorded';
-import RealtimeMeasurements from './RealtimeMeasurements';
 
 /**
  * The RealtimeEntry model module.
  * @module model/RealtimeEntry
- * @version 15.1.0
+ * @version 16.0.0
  */
 class RealtimeEntry {
     /**
@@ -57,7 +57,7 @@ class RealtimeEntry {
                 obj['aggregated'] = RealtimeEntryAggregated.constructFromObject(data['aggregated']);
             }
             if (data.hasOwnProperty('datacenter')) {
-                obj['datacenter'] = ApiClient.convertToType(data['datacenter'], {'String': RealtimeMeasurements});
+                obj['datacenter'] = RealtimeEntryDatacenter.constructFromObject(data['datacenter']);
             }
         }
         return obj;
@@ -77,8 +77,7 @@ RealtimeEntry.prototype['recorded'] = undefined;
 RealtimeEntry.prototype['aggregated'] = undefined;
 
 /**
- * Groups [measurements](#measurements-data-model) by POP. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details of POP identifiers.
- * @member {Object.<String, module:model/RealtimeMeasurements>} datacenter
+ * @member {module:model/RealtimeEntryDatacenter} datacenter
  */
 RealtimeEntry.prototype['datacenter'] = undefined;
 

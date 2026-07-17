@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCsrResponseAttributes model module.
  * @module model/TlsCsrResponseAttributes
- * @version 15.1.0
+ * @version 16.0.0
  */
 class TlsCsrResponseAttributes {
     /**

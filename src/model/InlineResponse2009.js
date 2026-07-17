@@ -11,12 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import Suggestion from './Suggestion';
+import PaginationMeta from './PaginationMeta';
+import Report from './Report';
 
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse2009 {
     /**
@@ -47,8 +48,11 @@ class InlineResponse2009 {
         if (data) {
             obj = obj || new InlineResponse2009();
 
-            if (data.hasOwnProperty('results')) {
-                obj['results'] = ApiClient.convertToType(data['results'], [Suggestion]);
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [Report]);
+            }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -58,9 +62,14 @@ class InlineResponse2009 {
 }
 
 /**
- * @member {Array.<module:model/Suggestion>} results
+ * @member {Array.<module:model/Report>} data
  */
-InlineResponse2009.prototype['results'] = undefined;
+InlineResponse2009.prototype['data'] = undefined;
+
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+InlineResponse2009.prototype['meta'] = undefined;
 
 
 

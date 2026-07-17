@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamUserGroups service.
 * @module api/IamUserGroupsApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class IamUserGroupsApi {
 

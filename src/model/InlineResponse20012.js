@@ -11,13 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import DdosProtectionEvent from './DdosProtectionEvent';
 import PaginationCursorMeta from './PaginationCursorMeta';
-import SecretStoreResponse from './SecretStoreResponse';
 
 /**
  * The InlineResponse20012 model module.
  * @module model/InlineResponse20012
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse20012 {
     /**
@@ -49,7 +49,7 @@ class InlineResponse20012 {
             obj = obj || new InlineResponse20012();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SecretStoreResponse]);
+                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionEvent]);
             }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
@@ -62,7 +62,7 @@ class InlineResponse20012 {
 }
 
 /**
- * @member {Array.<module:model/SecretStoreResponse>} data
+ * @member {Array.<module:model/DdosProtectionEvent>} data
  */
 InlineResponse20012.prototype['data'] = undefined;
 

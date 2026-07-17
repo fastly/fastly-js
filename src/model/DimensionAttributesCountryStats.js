@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionAttributesCountryStats model module.
  * @module model/DimensionAttributesCountryStats
- * @version 15.1.0
+ * @version 16.0.0
  */
 class DimensionAttributesCountryStats {
     /**

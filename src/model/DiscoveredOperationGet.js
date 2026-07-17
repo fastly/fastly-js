@@ -17,7 +17,7 @@ import DiscoveredOperationGetExtra from './DiscoveredOperationGetExtra';
 /**
  * The DiscoveredOperationGet model module.
  * @module model/DiscoveredOperationGet
- * @version 15.1.0
+ * @version 16.0.0
  */
 class DiscoveredOperationGet {
     /**

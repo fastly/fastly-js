@@ -18,7 +18,7 @@ import LoggingOpenstackResponse from '../model/LoggingOpenstackResponse';
 /**
 * LoggingOpenstack service.
 * @module api/LoggingOpenstackApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class LoggingOpenstackApi {
 
@@ -49,7 +49,7 @@ export default class LoggingOpenstackApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
      * @param {module:model/String} [options.log_processing_region='none'] - The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-     * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
+     * @param {module:model/String} [options.message_type='blank'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
@@ -134,7 +134,7 @@ export default class LoggingOpenstackApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
      * @param {module:model/String} [options.log_processing_region='none'] - The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-     * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
+     * @param {module:model/String} [options.message_type='blank'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
@@ -375,7 +375,7 @@ export default class LoggingOpenstackApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
      * @param {module:model/String} [options.log_processing_region='none'] - The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-     * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
+     * @param {module:model/String} [options.message_type='blank'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
@@ -466,7 +466,7 @@ export default class LoggingOpenstackApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
      * @param {module:model/String} [options.log_processing_region='none'] - The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-     * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
+     * @param {module:model/String} [options.message_type='blank'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).

@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingFtpResponse model module.
  * @module model/LoggingFtpResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingFtpResponse {
     /**
@@ -185,7 +185,7 @@ LoggingFtpResponse.prototype['format_version'] = undefined;
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingFtpResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingFtpResponse.prototype['message_type'] = undefined;
 
@@ -332,7 +332,7 @@ LoggingCommonResponse.prototype['format_version'] = undefined;
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
@@ -506,6 +506,12 @@ LoggingFtpResponse['FormatVersionEnum'] = {
 LoggingFtpResponse['MessageTypeEnum'] = {
 
     /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank",
+
+    /**
      * value: "classic"
      * @const
      */
@@ -521,13 +527,7 @@ LoggingFtpResponse['MessageTypeEnum'] = {
      * value: "logplex"
      * @const
      */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
+    "logplex": "logplex"
 };
 
 

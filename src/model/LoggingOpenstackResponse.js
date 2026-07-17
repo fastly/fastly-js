@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingOpenstackResponse model module.
  * @module model/LoggingOpenstackResponse
- * @version 15.1.0
+ * @version 16.0.0
  */
 class LoggingOpenstackResponse {
     /**
@@ -176,7 +176,7 @@ LoggingOpenstackResponse.prototype['format_version'] = undefined;
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingOpenstackResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingOpenstackResponse.prototype['message_type'] = undefined;
 
@@ -311,7 +311,7 @@ LoggingCommonResponse.prototype['format_version'] = undefined;
 /**
  * How the message should be formatted.
  * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @default 'blank'
  */
 LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
@@ -474,6 +474,12 @@ LoggingOpenstackResponse['FormatVersionEnum'] = {
 LoggingOpenstackResponse['MessageTypeEnum'] = {
 
     /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank",
+
+    /**
      * value: "classic"
      * @const
      */
@@ -489,13 +495,7 @@ LoggingOpenstackResponse['MessageTypeEnum'] = {
      * value: "logplex"
      * @const
      */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
+    "logplex": "logplex"
 };
 
 

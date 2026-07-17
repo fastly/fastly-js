@@ -11,24 +11,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import DdosProtectionRuleWithStats from './DdosProtectionRuleWithStats';
-import PaginationCursorMeta from './PaginationCursorMeta';
+import Page from './Page';
+import PaginationMeta from './PaginationMeta';
 
 /**
  * The InlineResponse2006 model module.
  * @module model/InlineResponse2006
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse2006 {
     /**
      * Constructs a new <code>InlineResponse2006</code>.
      * @alias module:model/InlineResponse2006
-     * @param data {Array.<module:model/DdosProtectionRuleWithStats>} 
-     * @param meta {module:model/PaginationCursorMeta} 
      */
-    constructor(data, meta) { 
+    constructor() { 
         
-        InlineResponse2006.initialize(this, data, meta);
+        InlineResponse2006.initialize(this);
     }
 
     /**
@@ -36,9 +34,7 @@ class InlineResponse2006 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data, meta) { 
-        obj['data'] = data;
-        obj['meta'] = meta;
+    static initialize(obj) { 
     }
 
     /**
@@ -53,10 +49,10 @@ class InlineResponse2006 {
             obj = obj || new InlineResponse2006();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionRuleWithStats]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Page]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -66,12 +62,12 @@ class InlineResponse2006 {
 }
 
 /**
- * @member {Array.<module:model/DdosProtectionRuleWithStats>} data
+ * @member {Array.<module:model/Page>} data
  */
 InlineResponse2006.prototype['data'] = undefined;
 
 /**
- * @member {module:model/PaginationCursorMeta} meta
+ * @member {module:model/PaginationMeta} meta
  */
 InlineResponse2006.prototype['meta'] = undefined;
 

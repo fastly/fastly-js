@@ -18,7 +18,7 @@ import WebsocketsResponseBodyGetAllServices from '../model/WebsocketsResponseBod
 /**
 * ProductWebsockets service.
 * @module api/ProductWebsocketsApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class ProductWebsocketsApi {
 

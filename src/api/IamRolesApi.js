@@ -18,7 +18,7 @@ import IamV1RoleResponse from '../model/IamV1RoleResponse';
 /**
 * IamRoles service.
 * @module api/IamRolesApi
-* @version 15.1.0
+* @version 16.0.0
 */
 export default class IamRolesApi {
 

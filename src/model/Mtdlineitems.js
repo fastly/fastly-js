@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Mtdlineitems model module.
  * @module model/Mtdlineitems
- * @version 15.1.0
+ * @version 16.0.0
  */
 class Mtdlineitems {
     /**

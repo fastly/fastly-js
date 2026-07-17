@@ -11,13 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import DdosProtectionEvent from './DdosProtectionEvent';
-import PaginationCursorMeta from './PaginationCursorMeta';
+import PaginationMeta from './PaginationMeta';
+import Website from './Website';
 
 /**
  * The InlineResponse2005 model module.
  * @module model/InlineResponse2005
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse2005 {
     /**
@@ -49,10 +49,10 @@ class InlineResponse2005 {
             obj = obj || new InlineResponse2005();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [DdosProtectionEvent]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Website]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -62,12 +62,12 @@ class InlineResponse2005 {
 }
 
 /**
- * @member {Array.<module:model/DdosProtectionEvent>} data
+ * @member {Array.<module:model/Website>} data
  */
 InlineResponse2005.prototype['data'] = undefined;
 
 /**
- * @member {module:model/PaginationCursorMeta} meta
+ * @member {module:model/PaginationMeta} meta
  */
 InlineResponse2005.prototype['meta'] = undefined;
 

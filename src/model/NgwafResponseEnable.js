@@ -21,7 +21,7 @@ import NgwafResponseService from './NgwafResponseService';
 /**
  * The NgwafResponseEnable model module.
  * @module model/NgwafResponseEnable
- * @version 15.1.0
+ * @version 16.0.0
  */
 class NgwafResponseEnable {
     /**

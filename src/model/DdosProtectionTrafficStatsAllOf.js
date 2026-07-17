@@ -16,7 +16,7 @@ import DdosProtectionAttributeStats from './DdosProtectionAttributeStats';
 /**
  * The DdosProtectionTrafficStatsAllOf model module.
  * @module model/DdosProtectionTrafficStatsAllOf
- * @version 15.1.0
+ * @version 16.0.0
  */
 class DdosProtectionTrafficStatsAllOf {
     /**

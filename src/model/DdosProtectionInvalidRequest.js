@@ -16,7 +16,7 @@ import DdosProtectionErrorErrors from './DdosProtectionErrorErrors';
 /**
  * The DdosProtectionInvalidRequest model module.
  * @module model/DdosProtectionInvalidRequest
- * @version 15.1.0
+ * @version 16.0.0
  */
 class DdosProtectionInvalidRequest {
     /**

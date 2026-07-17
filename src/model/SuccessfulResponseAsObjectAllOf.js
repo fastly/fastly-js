@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SuccessfulResponseAsObjectAllOf model module.
  * @module model/SuccessfulResponseAsObjectAllOf
- * @version 15.1.0
+ * @version 16.0.0
  */
 class SuccessfulResponseAsObjectAllOf {
     /**
@@ -55,6 +55,9 @@ class SuccessfulResponseAsObjectAllOf {
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
+            if (data.hasOwnProperty('routing_configuration_id')) {
+                obj['routing_configuration_id'] = ApiClient.convertToType(data['routing_configuration_id'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -88,6 +91,12 @@ SuccessfulResponseAsObjectAllOf.prototype['fqdn'] = undefined;
  * @member {String} service_id
  */
 SuccessfulResponseAsObjectAllOf.prototype['service_id'] = undefined;
+
+/**
+ * The `routing_configuration_id` associated with your domain or `null` if there is no association.
+ * @member {String} routing_configuration_id
+ */
+SuccessfulResponseAsObjectAllOf.prototype['routing_configuration_id'] = undefined;
 
 /**
  * A freeform descriptive note.

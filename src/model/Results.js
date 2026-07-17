@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 15.1.0
+ * @version 16.0.0
  */
 class Results {
     /**
@@ -238,15 +238,6 @@ class Results {
             }
             if (data.hasOwnProperty('http3')) {
                 obj['http3'] = ApiClient.convertToType(data['http3'], 'Number');
-            }
-            if (data.hasOwnProperty('waf_logged')) {
-                obj['waf_logged'] = ApiClient.convertToType(data['waf_logged'], 'Number');
-            }
-            if (data.hasOwnProperty('waf_blocked')) {
-                obj['waf_blocked'] = ApiClient.convertToType(data['waf_blocked'], 'Number');
-            }
-            if (data.hasOwnProperty('waf_passed')) {
-                obj['waf_passed'] = ApiClient.convertToType(data['waf_passed'], 'Number');
             }
             if (data.hasOwnProperty('attack_req_body_bytes')) {
                 obj['attack_req_body_bytes'] = ApiClient.convertToType(data['attack_req_body_bytes'], 'Number');
@@ -983,6 +974,108 @@ class Results {
             if (data.hasOwnProperty('compute_platform_invalid_request_error')) {
                 obj['compute_platform_invalid_request_error'] = ApiClient.convertToType(data['compute_platform_invalid_request_error'], 'Number');
             }
+            if (data.hasOwnProperty('compute_sandboxes')) {
+                obj['compute_sandboxes'] = ApiClient.convertToType(data['compute_sandboxes'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_requests_total_count')) {
+                obj['bot_requests_total_count'] = ApiClient.convertToType(data['bot_requests_total_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_analyzed_count')) {
+                obj['bot_edge_requests_analyzed_count'] = ApiClient.convertToType(data['bot_edge_requests_analyzed_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_detected_count')) {
+                obj['bot_edge_requests_detected_count'] = ApiClient.convertToType(data['bot_edge_requests_detected_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_verified_count')) {
+                obj['bot_edge_requests_verified_count'] = ApiClient.convertToType(data['bot_edge_requests_verified_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_ai_crawler_count')) {
+                obj['bot_edge_requests_ai_crawler_count'] = ApiClient.convertToType(data['bot_edge_requests_ai_crawler_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_ai_fetcher_count')) {
+                obj['bot_edge_requests_ai_fetcher_count'] = ApiClient.convertToType(data['bot_edge_requests_ai_fetcher_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_accessibility_count')) {
+                obj['bot_edge_requests_accessibility_count'] = ApiClient.convertToType(data['bot_edge_requests_accessibility_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_content_fetcher_count')) {
+                obj['bot_edge_requests_content_fetcher_count'] = ApiClient.convertToType(data['bot_edge_requests_content_fetcher_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_monitoring_count')) {
+                obj['bot_edge_requests_monitoring_count'] = ApiClient.convertToType(data['bot_edge_requests_monitoring_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_online_marketing_count')) {
+                obj['bot_edge_requests_online_marketing_count'] = ApiClient.convertToType(data['bot_edge_requests_online_marketing_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_page_preview_count')) {
+                obj['bot_edge_requests_page_preview_count'] = ApiClient.convertToType(data['bot_edge_requests_page_preview_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_platform_integrations_count')) {
+                obj['bot_edge_requests_platform_integrations_count'] = ApiClient.convertToType(data['bot_edge_requests_platform_integrations_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_research_count')) {
+                obj['bot_edge_requests_research_count'] = ApiClient.convertToType(data['bot_edge_requests_research_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_search_engine_crawler_count')) {
+                obj['bot_edge_requests_search_engine_crawler_count'] = ApiClient.convertToType(data['bot_edge_requests_search_engine_crawler_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_search_engine_optimization_count')) {
+                obj['bot_edge_requests_search_engine_optimization_count'] = ApiClient.convertToType(data['bot_edge_requests_search_engine_optimization_count'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_requests_security_tools_count')) {
+                obj['bot_edge_requests_security_tools_count'] = ApiClient.convertToType(data['bot_edge_requests_security_tools_count'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_handoff')) {
+                obj['compute_handoff'] = ApiClient.convertToType(data['compute_handoff'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_dns_error')) {
+                obj['compute_service_bereq_dns_error'] = ApiClient.convertToType(data['compute_service_bereq_dns_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_conn_timeout_error')) {
+                obj['compute_service_bereq_conn_timeout_error'] = ApiClient.convertToType(data['compute_service_bereq_conn_timeout_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_conn_refused_error')) {
+                obj['compute_service_bereq_conn_refused_error'] = ApiClient.convertToType(data['compute_service_bereq_conn_refused_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_conn_other_error')) {
+                obj['compute_service_bereq_conn_other_error'] = ApiClient.convertToType(data['compute_service_bereq_conn_other_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_tls_server_cert_error')) {
+                obj['compute_service_bereq_tls_server_cert_error'] = ApiClient.convertToType(data['compute_service_bereq_tls_server_cert_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_tls_other_error')) {
+                obj['compute_service_bereq_tls_other_error'] = ApiClient.convertToType(data['compute_service_bereq_tls_other_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_http_proto_v1_error')) {
+                obj['compute_service_bereq_http_proto_v1_error'] = ApiClient.convertToType(data['compute_service_bereq_http_proto_v1_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_http_proto_v2_error')) {
+                obj['compute_service_bereq_http_proto_v2_error'] = ApiClient.convertToType(data['compute_service_bereq_http_proto_v2_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_http_incomplete_error')) {
+                obj['compute_service_bereq_http_incomplete_error'] = ApiClient.convertToType(data['compute_service_bereq_http_incomplete_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_http_timeout_error')) {
+                obj['compute_service_bereq_http_timeout_error'] = ApiClient.convertToType(data['compute_service_bereq_http_timeout_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_http_other_error')) {
+                obj['compute_service_bereq_http_other_error'] = ApiClient.convertToType(data['compute_service_bereq_http_other_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_other_error')) {
+                obj['compute_service_bereq_other_error'] = ApiClient.convertToType(data['compute_service_bereq_other_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_5xx_error')) {
+                obj['compute_service_bereq_5xx_error'] = ApiClient.convertToType(data['compute_service_bereq_5xx_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_conn_error')) {
+                obj['compute_service_bereq_conn_error'] = ApiClient.convertToType(data['compute_service_bereq_conn_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_tls_error')) {
+                obj['compute_service_bereq_tls_error'] = ApiClient.convertToType(data['compute_service_bereq_tls_error'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_service_bereq_http_error')) {
+                obj['compute_service_bereq_http_error'] = ApiClient.convertToType(data['compute_service_bereq_http_error'], 'Number');
+            }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
@@ -1379,24 +1472,6 @@ Results.prototype['http2'] = undefined;
  * @member {Number} http3
  */
 Results.prototype['http3'] = undefined;
-
-/**
- * Number of requests that triggered a WAF rule and were logged.
- * @member {Number} waf_logged
- */
-Results.prototype['waf_logged'] = undefined;
-
-/**
- * Number of requests that triggered a WAF rule and were blocked.
- * @member {Number} waf_blocked
- */
-Results.prototype['waf_blocked'] = undefined;
-
-/**
- * Number of requests that triggered a WAF rule and were passed.
- * @member {Number} waf_passed
- */
-Results.prototype['waf_passed'] = undefined;
 
 /**
  * Total body bytes received from requests that triggered a WAF rule.
@@ -2867,6 +2942,210 @@ Results.prototype['compute_service_limits_error'] = undefined;
  * @member {Number} compute_platform_invalid_request_error
  */
 Results.prototype['compute_platform_invalid_request_error'] = undefined;
+
+/**
+ * Number of WebAssembly (Wasm) sandboxes created.
+ * @member {Number} compute_sandboxes
+ */
+Results.prototype['compute_sandboxes'] = undefined;
+
+/**
+ * Total number of Bot Management requests across all deployments.
+ * @member {Number} bot_requests_total_count
+ */
+Results.prototype['bot_requests_total_count'] = undefined;
+
+/**
+ * Count of edge requests where bot detection analysis was performed.
+ * @member {Number} bot_edge_requests_analyzed_count
+ */
+Results.prototype['bot_edge_requests_analyzed_count'] = undefined;
+
+/**
+ * Count of edge requests where a bot was detected.
+ * @member {Number} bot_edge_requests_detected_count
+ */
+Results.prototype['bot_edge_requests_detected_count'] = undefined;
+
+/**
+ * Count of edge requests where a verified bot was detected.
+ * @member {Number} bot_edge_requests_verified_count
+ */
+Results.prototype['bot_edge_requests_verified_count'] = undefined;
+
+/**
+ * Count of edge requests where an AI crawler was detected.
+ * @member {Number} bot_edge_requests_ai_crawler_count
+ */
+Results.prototype['bot_edge_requests_ai_crawler_count'] = undefined;
+
+/**
+ * Count of edge requests where an AI fetcher was detected.
+ * @member {Number} bot_edge_requests_ai_fetcher_count
+ */
+Results.prototype['bot_edge_requests_ai_fetcher_count'] = undefined;
+
+/**
+ * Count of edge requests where an accessibility bot was detected.
+ * @member {Number} bot_edge_requests_accessibility_count
+ */
+Results.prototype['bot_edge_requests_accessibility_count'] = undefined;
+
+/**
+ * Count of edge requests where a content fetcher was detected.
+ * @member {Number} bot_edge_requests_content_fetcher_count
+ */
+Results.prototype['bot_edge_requests_content_fetcher_count'] = undefined;
+
+/**
+ * Count of edge requests where a monitoring and site tool was detected.
+ * @member {Number} bot_edge_requests_monitoring_count
+ */
+Results.prototype['bot_edge_requests_monitoring_count'] = undefined;
+
+/**
+ * Count of edge requests where an online marketing bot was detected.
+ * @member {Number} bot_edge_requests_online_marketing_count
+ */
+Results.prototype['bot_edge_requests_online_marketing_count'] = undefined;
+
+/**
+ * Count of edge requests where a page preview bot was detected.
+ * @member {Number} bot_edge_requests_page_preview_count
+ */
+Results.prototype['bot_edge_requests_page_preview_count'] = undefined;
+
+/**
+ * Count of edge requests where a platform integration was detected.
+ * @member {Number} bot_edge_requests_platform_integrations_count
+ */
+Results.prototype['bot_edge_requests_platform_integrations_count'] = undefined;
+
+/**
+ * Count of edge requests where a research bot was detected.
+ * @member {Number} bot_edge_requests_research_count
+ */
+Results.prototype['bot_edge_requests_research_count'] = undefined;
+
+/**
+ * Count of edge requests where a search engine crawler was detected.
+ * @member {Number} bot_edge_requests_search_engine_crawler_count
+ */
+Results.prototype['bot_edge_requests_search_engine_crawler_count'] = undefined;
+
+/**
+ * Count of edge requests where a search engine optimization bot was detected.
+ * @member {Number} bot_edge_requests_search_engine_optimization_count
+ */
+Results.prototype['bot_edge_requests_search_engine_optimization_count'] = undefined;
+
+/**
+ * Count of edge requests where a security tool was detected.
+ * @member {Number} bot_edge_requests_security_tools_count
+ */
+Results.prototype['bot_edge_requests_security_tools_count'] = undefined;
+
+/**
+ * The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy.
+ * @member {Number} compute_handoff
+ */
+Results.prototype['compute_handoff'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed during DNS resolution.
+ * @member {Number} compute_service_bereq_dns_error
+ */
+Results.prototype['compute_service_bereq_dns_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service where the connection to the origin timed out before being established.
+ * @member {Number} compute_service_bereq_conn_timeout_error
+ */
+Results.prototype['compute_service_bereq_conn_timeout_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service where the origin actively refused the connection.
+ * @member {Number} compute_service_bereq_conn_refused_error
+ */
+Results.prototype['compute_service_bereq_conn_refused_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal.
+ * @member {Number} compute_service_bereq_conn_other_error
+ */
+Results.prototype['compute_service_bereq_conn_other_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch).
+ * @member {Number} compute_service_bereq_tls_server_cert_error
+ */
+Results.prototype['compute_service_bereq_tls_server_cert_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error.
+ * @member {Number} compute_service_bereq_tls_other_error
+ */
+Results.prototype['compute_service_bereq_tls_other_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted.
+ * @member {Number} compute_service_bereq_http_proto_v1_error
+ */
+Results.prototype['compute_service_bereq_http_proto_v1_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a `RST_STREAM` or `GO_AWAY` from the origin.
+ * @member {Number} compute_service_bereq_http_proto_v2_error
+ */
+Results.prototype['compute_service_bereq_http_proto_v2_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service where the origin sent an incomplete HTTP response.
+ * @member {Number} compute_service_bereq_http_incomplete_error
+ */
+Results.prototype['compute_service_bereq_http_incomplete_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service where the origin did not respond within the configured timeout period.
+ * @member {Number} compute_service_bereq_http_timeout_error
+ */
+Results.prototype['compute_service_bereq_http_timeout_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category.
+ * @member {Number} compute_service_bereq_http_other_error
+ */
+Results.prototype['compute_service_bereq_http_other_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories.
+ * @member {Number} compute_service_bereq_other_error
+ */
+Results.prototype['compute_service_bereq_other_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service where the origin returned a 5xx status code.
+ * @member {Number} compute_service_bereq_5xx_error
+ */
+Results.prototype['compute_service_bereq_5xx_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed at the TCP connection level. Sum of `compute_service_bereq_conn_timeout_error`, `compute_service_bereq_conn_refused_error`, and `compute_service_bereq_conn_other_error`.
+ * @member {Number} compute_service_bereq_conn_error
+ */
+Results.prototype['compute_service_bereq_conn_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`.
+ * @member {Number} compute_service_bereq_tls_error
+ */
+Results.prototype['compute_service_bereq_tls_error'] = undefined;
+
+/**
+ * Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`.
+ * @member {Number} compute_service_bereq_http_error
+ */
+Results.prototype['compute_service_bereq_http_error'] = undefined;
 
 /**
  * @member {String} service_id

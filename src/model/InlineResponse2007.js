@@ -11,12 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import SuccessfulResponseAsObject from './SuccessfulResponseAsObject';
+import PaginationMeta from './PaginationMeta';
+import Script from './Script';
 
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 15.1.0
+ * @version 16.0.0
  */
 class InlineResponse2007 {
     /**
@@ -48,10 +49,10 @@ class InlineResponse2007 {
             obj = obj || new InlineResponse2007();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SuccessfulResponseAsObject]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Script]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = ApiClient.convertToType(data['meta'], Object);
+                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -61,13 +62,12 @@ class InlineResponse2007 {
 }
 
 /**
- * @member {Array.<module:model/SuccessfulResponseAsObject>} data
+ * @member {Array.<module:model/Script>} data
  */
 InlineResponse2007.prototype['data'] = undefined;
 
 /**
- * Meta for the pagination.
- * @member {Object} meta
+ * @member {module:model/PaginationMeta} meta
  */
 InlineResponse2007.prototype['meta'] = undefined;
 
