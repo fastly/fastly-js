@@ -346,6 +346,7 @@ Class | Method | Description
 *Fastly.LoggingElasticsearchApi* | [**getLogElasticsearch**](docs/LoggingElasticsearchApi.md#getLogElasticsearch) | Get an Elasticsearch log endpoint
 *Fastly.LoggingElasticsearchApi* | [**listLogElasticsearch**](docs/LoggingElasticsearchApi.md#listLogElasticsearch) | List Elasticsearch log endpoints
 *Fastly.LoggingElasticsearchApi* | [**updateLogElasticsearch**](docs/LoggingElasticsearchApi.md#updateLogElasticsearch) | Update an Elasticsearch log endpoint
+*Fastly.LoggingEndpointErrorsApi* | [**getLogEndpointErrors**](docs/LoggingEndpointErrorsApi.md#getLogEndpointErrors) | Stream Log Endpoint Errors
 *Fastly.LoggingFtpApi* | [**createLogFtp**](docs/LoggingFtpApi.md#createLogFtp) | Create an FTP log endpoint
 *Fastly.LoggingFtpApi* | [**deleteLogFtp**](docs/LoggingFtpApi.md#deleteLogFtp) | Delete an FTP log endpoint
 *Fastly.LoggingFtpApi* | [**getLogFtp**](docs/LoggingFtpApi.md#getLogFtp) | Get an FTP log endpoint

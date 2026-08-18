@@ -17,7 +17,7 @@ import InlineResponse20015 from '../model/InlineResponse20015';
 /**
 * DomainOwnerships service.
 * @module api/DomainOwnershipsApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class DomainOwnershipsApi {
 

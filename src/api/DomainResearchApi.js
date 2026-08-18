@@ -18,7 +18,7 @@ import Status from '../model/Status';
 /**
 * DomainResearch service.
 * @module api/DomainResearchApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class DomainResearchApi {
 

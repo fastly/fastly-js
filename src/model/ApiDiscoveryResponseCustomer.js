@@ -16,7 +16,7 @@ import ApiDiscoveryResponseCustomerCustomer from './ApiDiscoveryResponseCustomer
 /**
  * The ApiDiscoveryResponseCustomer model module.
  * @module model/ApiDiscoveryResponseCustomer
- * @version 16.0.0
+ * @version 16.1.0
  */
 class ApiDiscoveryResponseCustomer {
     /**

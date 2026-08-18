@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PlatformMetadata model module.
  * @module model/PlatformMetadata
- * @version 16.0.0
+ * @version 16.1.0
  */
 class PlatformMetadata {
     /**

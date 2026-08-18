@@ -17,7 +17,7 @@ import PlatformMetricsResponse from '../model/PlatformMetricsResponse';
 /**
 * MetricsPlatform service.
 * @module api/MetricsPlatformApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class MetricsPlatformApi {
 

@@ -239,7 +239,9 @@ import Environment from './model/Environment';
 import EnvironmentName from './model/EnvironmentName';
 import EomInvoiceResponse from './model/EomInvoiceResponse';
 import Error from './model/Error';
+import ErrorResponse from './model/ErrorResponse';
 import ErrorResponseData from './model/ErrorResponseData';
+import ErrorResponseErrors from './model/ErrorResponseErrors';
 import Event from './model/Event';
 import EventAttributes from './model/EventAttributes';
 import EventData from './model/EventData';
@@ -390,6 +392,8 @@ import LogAggregationsGetResponseMeta from './model/LogAggregationsGetResponseMe
 import LogAggregationsGetResponseMetaFilters from './model/LogAggregationsGetResponseMetaFilters';
 import LogAggregationsResult from './model/LogAggregationsResult';
 import LogAggregationsValueField from './model/LogAggregationsValueField';
+import LogError from './model/LogError';
+import LogErrorBatch from './model/LogErrorBatch';
 import LogExplorerInsightsResponseBodyEnable from './model/LogExplorerInsightsResponseBodyEnable';
 import LogExplorerInsightsResponseBodyGetAllServices from './model/LogExplorerInsightsResponseBodyGetAllServices';
 import LogExplorerInsightsResponseCustomer from './model/LogExplorerInsightsResponseCustomer';
@@ -1003,6 +1007,7 @@ import LoggingCloudfilesApi from './api/LoggingCloudfilesApi';
 import LoggingDatadogApi from './api/LoggingDatadogApi';
 import LoggingDigitaloceanApi from './api/LoggingDigitaloceanApi';
 import LoggingElasticsearchApi from './api/LoggingElasticsearchApi';
+import LoggingEndpointErrorsApi from './api/LoggingEndpointErrorsApi';
 import LoggingFtpApi from './api/LoggingFtpApi';
 import LoggingGcsApi from './api/LoggingGcsApi';
 import LoggingGrafanacloudlogsApi from './api/LoggingGrafanacloudlogsApi';
@@ -1121,7 +1126,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 16.0.0
+* @version 16.1.0
 */
 export {
     /**
@@ -2493,10 +2498,22 @@ export {
     Error,
 
     /**
+     * The ErrorResponse model constructor.
+     * @property {module:model/ErrorResponse}
+     */
+    ErrorResponse,
+
+    /**
      * The ErrorResponseData model constructor.
      * @property {module:model/ErrorResponseData}
      */
     ErrorResponseData,
+
+    /**
+     * The ErrorResponseErrors model constructor.
+     * @property {module:model/ErrorResponseErrors}
+     */
+    ErrorResponseErrors,
 
     /**
      * The Event model constructor.
@@ -3397,6 +3414,18 @@ export {
      * @property {module:model/LogAggregationsValueField}
      */
     LogAggregationsValueField,
+
+    /**
+     * The LogError model constructor.
+     * @property {module:model/LogError}
+     */
+    LogError,
+
+    /**
+     * The LogErrorBatch model constructor.
+     * @property {module:model/LogErrorBatch}
+     */
+    LogErrorBatch,
 
     /**
      * The LogExplorerInsightsResponseBodyEnable model constructor.
@@ -7075,6 +7104,12 @@ export {
     * @property {module:api/LoggingElasticsearchApi}
     */
     LoggingElasticsearchApi,
+
+    /**
+    * The LoggingEndpointErrorsApi service constructor.
+    * @property {module:api/LoggingEndpointErrorsApi}
+    */
+    LoggingEndpointErrorsApi,
 
     /**
     * The LoggingFtpApi service constructor.

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttackSource model module.
  * @module model/AttackSource
- * @version 16.0.0
+ * @version 16.1.0
  */
 class AttackSource {
     /**

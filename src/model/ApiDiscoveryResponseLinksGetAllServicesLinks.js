@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApiDiscoveryResponseLinksGetAllServicesLinks model module.
  * @module model/ApiDiscoveryResponseLinksGetAllServicesLinks
- * @version 16.0.0
+ * @version 16.1.0
  */
 class ApiDiscoveryResponseLinksGetAllServicesLinks {
     /**

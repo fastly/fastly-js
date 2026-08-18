@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreUpsertBatch model module.
  * @module model/KvStoreUpsertBatch
- * @version 16.0.0
+ * @version 16.1.0
  */
 class KvStoreUpsertBatch {
     /**

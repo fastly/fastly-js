@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGrafanacloudlogsResponse model module.
  * @module model/LoggingGrafanacloudlogsResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class LoggingGrafanacloudlogsResponse {
     /**

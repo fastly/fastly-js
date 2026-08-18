@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationCreateExtra model module.
  * @module model/OperationCreateExtra
- * @version 16.0.0
+ * @version 16.1.0
  */
 class OperationCreateExtra {
     /**

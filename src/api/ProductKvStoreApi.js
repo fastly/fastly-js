@@ -17,7 +17,7 @@ import KvStoreResponseBodyEnable from '../model/KvStoreResponseBodyEnable';
 /**
 * ProductKvStore service.
 * @module api/ProductKvStoreApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class ProductKvStoreApi {
 

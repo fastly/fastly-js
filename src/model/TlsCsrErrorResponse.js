@@ -16,7 +16,7 @@ import ErrorResponseData from './ErrorResponseData';
 /**
  * The TlsCsrErrorResponse model module.
  * @module model/TlsCsrErrorResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class TlsCsrErrorResponse {
     /**

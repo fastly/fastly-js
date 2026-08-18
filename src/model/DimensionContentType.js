@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionContentType model module.
  * @module model/DimensionContentType
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DimensionContentType {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PathResponseAllOf model module.
  * @module model/PathResponseAllOf
- * @version 16.0.0
+ * @version 16.1.0
  */
 class PathResponseAllOf {
     /**

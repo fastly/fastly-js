@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingHoneycombAdditional model module.
  * @module model/LoggingHoneycombAdditional
- * @version 16.0.0
+ * @version 16.1.0
  */
 class LoggingHoneycombAdditional {
     /**

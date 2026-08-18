@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 16.0.0
+ * @version 16.1.0
  */
 class RealtimeMeasurements {
     /**
@@ -1054,6 +1054,12 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('compute_service_bereq_http_error')) {
                 obj['compute_service_bereq_http_error'] = ApiClient.convertToType(data['compute_service_bereq_http_error'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_pats_issued')) {
+                obj['bot_challenges_pats_issued'] = ApiClient.convertToType(data['bot_challenges_pats_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_pats_succeeded')) {
+                obj['bot_challenges_pats_succeeded'] = ApiClient.convertToType(data['bot_challenges_pats_succeeded'], 'Number');
             }
         }
         return obj;
@@ -3077,6 +3083,18 @@ RealtimeMeasurements.prototype['compute_service_bereq_tls_error'] = undefined;
  * @member {Number} compute_service_bereq_http_error
  */
 RealtimeMeasurements.prototype['compute_service_bereq_http_error'] = undefined;
+
+/**
+ * Number of Private Access Token challenges issued.
+ * @member {Number} bot_challenges_pats_issued
+ */
+RealtimeMeasurements.prototype['bot_challenges_pats_issued'] = undefined;
+
+/**
+ * Number of successful Private Access Token challenge solutions processed.
+ * @member {Number} bot_challenges_pats_succeeded
+ */
+RealtimeMeasurements.prototype['bot_challenges_pats_succeeded'] = undefined;
 
 
 

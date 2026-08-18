@@ -17,7 +17,7 @@ import AgentKeyMeta from './AgentKeyMeta';
 /**
  * The InlineResponse20019 model module.
  * @module model/InlineResponse20019
- * @version 16.0.0
+ * @version 16.1.0
  */
 class InlineResponse20019 {
     /**

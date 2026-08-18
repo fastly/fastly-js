@@ -20,7 +20,7 @@ import LoggingPlacement from '../model/LoggingPlacement';
 /**
 * LoggingKinesis service.
 * @module api/LoggingKinesisApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class LoggingKinesisApi {
 

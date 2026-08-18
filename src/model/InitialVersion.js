@@ -16,7 +16,7 @@ import InitialVersionPath from './InitialVersionPath';
 /**
  * The InitialVersion model module.
  * @module model/InitialVersion
- * @version 16.0.0
+ * @version 16.1.0
  */
 class InitialVersion {
     /**

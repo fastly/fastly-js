@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesMisses model module.
  * @module model/ValuesMisses
- * @version 16.0.0
+ * @version 16.1.0
  */
 class ValuesMisses {
     /**

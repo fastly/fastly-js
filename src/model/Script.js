@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Script model module.
  * @module model/Script
- * @version 16.0.0
+ * @version 16.1.0
  */
 class Script {
     /**

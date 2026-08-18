@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The DomainResponse model module.
  * @module model/DomainResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DomainResponse {
     /**

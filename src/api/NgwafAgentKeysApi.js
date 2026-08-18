@@ -17,7 +17,7 @@ import InlineResponse20019 from '../model/InlineResponse20019';
 /**
 * NgwafAgentKeys service.
 * @module api/NgwafAgentKeysApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class NgwafAgentKeysApi {
 

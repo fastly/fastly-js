@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The DdosProtectionResponseService model module.
  * @module model/DdosProtectionResponseService
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DdosProtectionResponseService {
     /**

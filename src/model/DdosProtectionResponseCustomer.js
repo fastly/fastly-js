@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The DdosProtectionResponseCustomer model module.
  * @module model/DdosProtectionResponseCustomer
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DdosProtectionResponseCustomer {
     /**

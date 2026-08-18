@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorMeasurements model module.
  * @module model/DomainInspectorMeasurements
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DomainInspectorMeasurements {
     /**
@@ -427,6 +427,24 @@ class DomainInspectorMeasurements {
             }
             if (data.hasOwnProperty('compute_resp_status_5xx')) {
                 obj['compute_resp_status_5xx'] = ApiClient.convertToType(data['compute_resp_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('http2')) {
+                obj['http2'] = ApiClient.convertToType(data['http2'], 'Number');
+            }
+            if (data.hasOwnProperty('http3')) {
+                obj['http3'] = ApiClient.convertToType(data['http3'], 'Number');
+            }
+            if (data.hasOwnProperty('tls_v10')) {
+                obj['tls_v10'] = ApiClient.convertToType(data['tls_v10'], 'Number');
+            }
+            if (data.hasOwnProperty('tls_v11')) {
+                obj['tls_v11'] = ApiClient.convertToType(data['tls_v11'], 'Number');
+            }
+            if (data.hasOwnProperty('tls_v12')) {
+                obj['tls_v12'] = ApiClient.convertToType(data['tls_v12'], 'Number');
+            }
+            if (data.hasOwnProperty('tls_v13')) {
+                obj['tls_v13'] = ApiClient.convertToType(data['tls_v13'], 'Number');
             }
         }
         return obj;
@@ -1196,6 +1214,42 @@ DomainInspectorMeasurements.prototype['compute_resp_status_530'] = undefined;
  * @member {Number} compute_resp_status_5xx
  */
 DomainInspectorMeasurements.prototype['compute_resp_status_5xx'] = undefined;
+
+/**
+ * Number of requests received over HTTP/2.
+ * @member {Number} http2
+ */
+DomainInspectorMeasurements.prototype['http2'] = undefined;
+
+/**
+ * Number of requests received over HTTP/3.
+ * @member {Number} http3
+ */
+DomainInspectorMeasurements.prototype['http3'] = undefined;
+
+/**
+ * Number of requests received over TLS 1.0.
+ * @member {Number} tls_v10
+ */
+DomainInspectorMeasurements.prototype['tls_v10'] = undefined;
+
+/**
+ * Number of requests received over TLS 1.1.
+ * @member {Number} tls_v11
+ */
+DomainInspectorMeasurements.prototype['tls_v11'] = undefined;
+
+/**
+ * Number of requests received over TLS 1.2.
+ * @member {Number} tls_v12
+ */
+DomainInspectorMeasurements.prototype['tls_v12'] = undefined;
+
+/**
+ * Number of requests received over TLS 1.3.
+ * @member {Number} tls_v13
+ */
+DomainInspectorMeasurements.prototype['tls_v13'] = undefined;
 
 
 

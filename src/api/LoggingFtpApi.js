@@ -18,7 +18,7 @@ import LoggingFtpResponse from '../model/LoggingFtpResponse';
 /**
 * LoggingFtp service.
 * @module api/LoggingFtpApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class LoggingFtpApi {
 

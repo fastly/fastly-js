@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionDevice model module.
  * @module model/DimensionDevice
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DimensionDevice {
     /**

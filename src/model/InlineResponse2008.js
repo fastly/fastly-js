@@ -17,7 +17,7 @@ import Policy from './Policy';
 /**
  * The InlineResponse2008 model module.
  * @module model/InlineResponse2008
- * @version 16.0.0
+ * @version 16.1.0
  */
 class InlineResponse2008 {
     /**

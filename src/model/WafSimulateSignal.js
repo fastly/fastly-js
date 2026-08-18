@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafSimulateSignal model module.
  * @module model/WafSimulateSignal
- * @version 16.0.0
+ * @version 16.1.0
  */
 class WafSimulateSignal {
     /**

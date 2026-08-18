@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The FanoutResponseService model module.
  * @module model/FanoutResponseService
- * @version 16.0.0
+ * @version 16.1.0
  */
 class FanoutResponseService {
     /**

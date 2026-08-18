@@ -18,7 +18,7 @@ import LoggingBigqueryResponse from '../model/LoggingBigqueryResponse';
 /**
 * LoggingBigquery service.
 * @module api/LoggingBigqueryApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class LoggingBigqueryApi {
 

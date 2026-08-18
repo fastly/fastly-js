@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessKeyResponse model module.
  * @module model/AccessKeyResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class AccessKeyResponse {
     /**

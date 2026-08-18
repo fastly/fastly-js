@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestBodyForCreate model module.
  * @module model/RequestBodyForCreate
- * @version 16.0.0
+ * @version 16.1.0
  */
 class RequestBodyForCreate {
     /**

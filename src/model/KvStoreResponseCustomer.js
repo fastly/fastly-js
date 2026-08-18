@@ -16,7 +16,7 @@ import AiAcceleratorResponseCustomerCustomer from './AiAcceleratorResponseCustom
 /**
  * The KvStoreResponseCustomer model module.
  * @module model/KvStoreResponseCustomer
- * @version 16.0.0
+ * @version 16.1.0
  */
 class KvStoreResponseCustomer {
     /**

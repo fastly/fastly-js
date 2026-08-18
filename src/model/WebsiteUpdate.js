@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebsiteUpdate model module.
  * @module model/WebsiteUpdate
- * @version 16.0.0
+ * @version 16.1.0
  */
 class WebsiteUpdate {
     /**

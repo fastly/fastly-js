@@ -17,7 +17,7 @@ import PaginationMeta from './PaginationMeta';
 /**
  * The InlineResponse20011 model module.
  * @module model/InlineResponse20011
- * @version 16.0.0
+ * @version 16.1.0
  */
 class InlineResponse20011 {
     /**

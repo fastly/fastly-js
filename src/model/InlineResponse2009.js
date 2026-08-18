@@ -17,7 +17,7 @@ import Report from './Report';
 /**
  * The InlineResponse2009 model module.
  * @module model/InlineResponse2009
- * @version 16.0.0
+ * @version 16.1.0
  */
 class InlineResponse2009 {
     /**

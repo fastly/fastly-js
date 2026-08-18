@@ -34,7 +34,7 @@ import WebsiteUpdate from '../model/WebsiteUpdate';
 /**
 * ClientSideProtection service.
 * @module api/ClientSideProtectionApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class ClientSideProtectionApi {
 

@@ -16,7 +16,7 @@ import KvStoreBatchResponseErrors from './KvStoreBatchResponseErrors';
 /**
  * The KvStoreBatchResponse model module.
  * @module model/KvStoreBatchResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class KvStoreBatchResponse {
     /**

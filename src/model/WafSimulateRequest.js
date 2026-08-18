@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafSimulateRequest model module.
  * @module model/WafSimulateRequest
- * @version 16.0.0
+ * @version 16.1.0
  */
 class WafSimulateRequest {
     /**

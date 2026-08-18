@@ -21,7 +21,7 @@ import KvStoreResponseProductProduct from './KvStoreResponseProductProduct';
 /**
  * The KvStoreResponseBodyEnable model module.
  * @module model/KvStoreResponseBodyEnable
- * @version 16.0.0
+ * @version 16.1.0
  */
 class KvStoreResponseBodyEnable {
     /**

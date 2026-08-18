@@ -23,7 +23,7 @@ import BotManagementResponseService from './BotManagementResponseService';
 /**
  * The BotManagementResponseConfigure model module.
  * @module model/BotManagementResponseConfigure
- * @version 16.0.0
+ * @version 16.1.0
  */
 class BotManagementResponseConfigure {
     /**

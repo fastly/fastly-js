@@ -17,7 +17,7 @@ import DomainResearchResponseBodyEnable from '../model/DomainResearchResponseBod
 /**
 * ProductDomainResearch service.
 * @module api/ProductDomainResearchApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class ProductDomainResearchApi {
 

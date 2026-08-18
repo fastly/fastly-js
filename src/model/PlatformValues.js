@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PlatformValues model module.
  * @module model/PlatformValues
- * @version 16.0.0
+ * @version 16.1.0
  */
 class PlatformValues {
     /**

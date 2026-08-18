@@ -16,7 +16,7 @@ import WafSimulateSignal from './WafSimulateSignal';
 /**
  * The WafSimulateResponse model module.
  * @module model/WafSimulateResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class WafSimulateResponse {
     /**

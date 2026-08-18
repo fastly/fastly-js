@@ -30,7 +30,7 @@ import TagGet from '../model/TagGet';
 /**
 * ApisecurityOperations service.
 * @module api/ApisecurityOperationsApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class ApisecurityOperationsApi {
 

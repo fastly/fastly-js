@@ -16,7 +16,7 @@ import ApiDiscoveryResponseLinksGetAllServicesLinks from './ApiDiscoveryResponse
 /**
  * The ApiDiscoveryResponseLinksGetAllServices model module.
  * @module model/ApiDiscoveryResponseLinksGetAllServices
- * @version 16.0.0
+ * @version 16.1.0
  */
 class ApiDiscoveryResponseLinksGetAllServices {
     /**

@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The OriginInspectorResponseService model module.
  * @module model/OriginInspectorResponseService
- * @version 16.0.0
+ * @version 16.1.0
  */
 class OriginInspectorResponseService {
     /**

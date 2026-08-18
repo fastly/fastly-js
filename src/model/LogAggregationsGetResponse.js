@@ -17,7 +17,7 @@ import LogAggregationsResult from './LogAggregationsResult';
 /**
  * The LogAggregationsGetResponse model module.
  * @module model/LogAggregationsGetResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class LogAggregationsGetResponse {
     /**

@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The NgwafResponseService model module.
  * @module model/NgwafResponseService
- * @version 16.0.0
+ * @version 16.1.0
  */
 class NgwafResponseService {
     /**

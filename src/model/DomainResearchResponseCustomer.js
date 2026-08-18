@@ -16,7 +16,7 @@ import AiAcceleratorResponseCustomerCustomer from './AiAcceleratorResponseCustom
 /**
  * The DomainResearchResponseCustomer model module.
  * @module model/DomainResearchResponseCustomer
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DomainResearchResponseCustomer {
     /**

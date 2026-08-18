@@ -22,7 +22,7 @@ import HistoricalUsageServiceResponse from '../model/HistoricalUsageServiceRespo
 /**
 * Historical service.
 * @module api/HistoricalApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class HistoricalApi {
 

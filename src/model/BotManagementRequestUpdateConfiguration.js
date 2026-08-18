@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotManagementRequestUpdateConfiguration model module.
  * @module model/BotManagementRequestUpdateConfiguration
- * @version 16.0.0
+ * @version 16.1.0
  */
 class BotManagementRequestUpdateConfiguration {
     /**

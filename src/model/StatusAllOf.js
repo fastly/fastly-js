@@ -16,7 +16,7 @@ import Offer from './Offer';
 /**
  * The StatusAllOf model module.
  * @module model/StatusAllOf
- * @version 16.0.0
+ * @version 16.1.0
  */
 class StatusAllOf {
     /**

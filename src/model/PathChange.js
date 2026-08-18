@@ -17,7 +17,7 @@ import RuleResponse from './RuleResponse';
 /**
  * The PathChange model module.
  * @module model/PathChange
- * @version 16.0.0
+ * @version 16.1.0
  */
 class PathChange {
     /**

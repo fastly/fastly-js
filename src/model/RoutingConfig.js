@@ -16,7 +16,7 @@ import InitialVersion from './InitialVersion';
 /**
  * The RoutingConfig model module.
  * @module model/RoutingConfig
- * @version 16.0.0
+ * @version 16.1.0
  */
 class RoutingConfig {
     /**

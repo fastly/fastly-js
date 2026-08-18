@@ -16,7 +16,7 @@ import NotificationConfig from './NotificationConfig';
 /**
  * The Notification model module.
  * @module model/Notification
- * @version 16.0.0
+ * @version 16.1.0
  */
 class Notification {
     /**

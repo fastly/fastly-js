@@ -17,7 +17,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The PathResponse model module.
  * @module model/PathResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class PathResponse {
     /**

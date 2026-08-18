@@ -17,7 +17,7 @@ import DomainInspector from '../model/DomainInspector';
 /**
 * DomainInspectorRealtime service.
 * @module api/DomainInspectorRealtimeApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class DomainInspectorRealtimeApi {
 

@@ -18,7 +18,7 @@ import RoutingConfigCondition from './RoutingConfigCondition';
 /**
  * The RuleCreate model module.
  * @module model/RuleCreate
- * @version 16.0.0
+ * @version 16.1.0
  */
 class RuleCreate {
     /**

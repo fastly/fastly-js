@@ -17,7 +17,7 @@ import Script from './Script';
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 16.0.0
+ * @version 16.1.0
  */
 class InlineResponse2007 {
     /**

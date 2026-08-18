@@ -16,7 +16,7 @@ import ActionType from './ActionType';
 /**
  * The Action model module.
  * @module model/Action
- * @version 16.0.0
+ * @version 16.1.0
  */
 class Action {
     /**

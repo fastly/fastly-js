@@ -17,7 +17,7 @@ import SchemasVersionResponse from './SchemasVersionResponse';
 /**
  * The ServiceListResponseAllOf model module.
  * @module model/ServiceListResponseAllOf
- * @version 16.0.0
+ * @version 16.1.0
  */
 class ServiceListResponseAllOf {
     /**

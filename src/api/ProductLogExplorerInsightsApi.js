@@ -18,7 +18,7 @@ import LogExplorerInsightsResponseBodyGetAllServices from '../model/LogExplorerI
 /**
 * ProductLogExplorerInsights service.
 * @module api/ProductLogExplorerInsightsApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class ProductLogExplorerInsightsApi {
 

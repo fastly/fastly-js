@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HttpResponseFormat model module.
  * @module model/HttpResponseFormat
- * @version 16.0.0
+ * @version 16.1.0
  */
 class HttpResponseFormat {
     /**

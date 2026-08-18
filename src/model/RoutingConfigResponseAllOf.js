@@ -16,7 +16,7 @@ import RoutingConfigState from './RoutingConfigState';
 /**
  * The RoutingConfigResponseAllOf model module.
  * @module model/RoutingConfigResponseAllOf
- * @version 16.0.0
+ * @version 16.1.0
  */
 class RoutingConfigResponseAllOf {
     /**

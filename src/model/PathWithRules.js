@@ -17,7 +17,7 @@ import RuleResponse from './RuleResponse';
 /**
  * The PathWithRules model module.
  * @module model/PathWithRules
- * @version 16.0.0
+ * @version 16.1.0
  */
 class PathWithRules {
     /**

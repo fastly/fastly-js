@@ -18,7 +18,7 @@ import ListSignalReport from '../model/ListSignalReport';
 /**
 * NgwafReports service.
 * @module api/NgwafReportsApi
-* @version 16.0.0
+* @version 16.1.0
 */
 export default class NgwafReportsApi {
 

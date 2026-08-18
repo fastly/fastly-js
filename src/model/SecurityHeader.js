@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecurityHeader model module.
  * @module model/SecurityHeader
- * @version 16.0.0
+ * @version 16.1.0
  */
 class SecurityHeader {
     /**

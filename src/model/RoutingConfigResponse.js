@@ -18,7 +18,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The RoutingConfigResponse model module.
  * @module model/RoutingConfigResponse
- * @version 16.0.0
+ * @version 16.1.0
  */
 class RoutingConfigResponse {
     /**

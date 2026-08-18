@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BrotliCompressionResponseProductProduct model module.
  * @module model/BrotliCompressionResponseProductProduct
- * @version 16.0.0
+ * @version 16.1.0
  */
 class BrotliCompressionResponseProductProduct {
     /**

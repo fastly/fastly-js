@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionAttributeValue model module.
  * @module model/DdosProtectionAttributeValue
- * @version 16.0.0
+ * @version 16.1.0
  */
 class DdosProtectionAttributeValue {
     /**
