@@ -20,7 +20,7 @@ import ListCustomerAddressesResponse from '../model/ListCustomerAddressesRespons
 /**
 * CustomerAddresses service.
 * @module api/CustomerAddressesApi
-* @version 16.1.0
+* @version 16.2.0
 */
 export default class CustomerAddressesApi {
 

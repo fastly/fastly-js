@@ -18,7 +18,7 @@ import FanoutResponseBodyGetAllServices from '../model/FanoutResponseBodyGetAllS
 /**
 * ProductFanout service.
 * @module api/ProductFanoutApi
-* @version 16.1.0
+* @version 16.2.0
 */
 export default class ProductFanoutApi {
 

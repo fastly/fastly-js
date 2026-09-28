@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Position model module.
  * @module model/Position
- * @version 16.1.0
+ * @version 16.2.0
  */
 class Position {
     /**

@@ -16,7 +16,7 @@ import OperationBulkCreateOperations from './OperationBulkCreateOperations';
 /**
  * The OperationBulkCreate model module.
  * @module model/OperationBulkCreate
- * @version 16.1.0
+ * @version 16.2.0
  */
 class OperationBulkCreate {
     /**

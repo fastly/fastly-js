@@ -16,7 +16,7 @@ import OriginInspectorResponseProductProduct from './OriginInspectorResponseProd
 /**
  * The OriginInspectorResponseProduct model module.
  * @module model/OriginInspectorResponseProduct
- * @version 16.1.0
+ * @version 16.2.0
  */
 class OriginInspectorResponseProduct {
     /**

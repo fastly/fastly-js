@@ -18,7 +18,7 @@ import RealtimeEntryRecorded from './RealtimeEntryRecorded';
 /**
  * The RealtimeEntry model module.
  * @module model/RealtimeEntry
- * @version 16.1.0
+ * @version 16.2.0
  */
 class RealtimeEntry {
     /**

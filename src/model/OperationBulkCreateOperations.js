@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationBulkCreateOperations model module.
  * @module model/OperationBulkCreateOperations
- * @version 16.1.0
+ * @version 16.2.0
  */
 class OperationBulkCreateOperations {
     /**

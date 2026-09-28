@@ -22,7 +22,7 @@ import DdosProtectionResponseProductProduct from './DdosProtectionResponseProduc
 /**
  * The DdosProtectionResponseBodyGetAllServices model module.
  * @module model/DdosProtectionResponseBodyGetAllServices
- * @version 16.1.0
+ * @version 16.2.0
  */
 class DdosProtectionResponseBodyGetAllServices {
     /**

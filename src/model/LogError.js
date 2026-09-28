@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogError model module.
  * @module model/LogError
- * @version 16.1.0
+ * @version 16.2.0
  */
 class LogError {
     /**

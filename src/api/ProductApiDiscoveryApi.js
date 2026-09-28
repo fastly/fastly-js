@@ -18,7 +18,7 @@ import ApiDiscoveryResponseEnable from '../model/ApiDiscoveryResponseEnable';
 /**
 * ProductApiDiscovery service.
 * @module api/ProductApiDiscoveryApi
-* @version 16.1.0
+* @version 16.2.0
 */
 export default class ProductApiDiscoveryApi {
 

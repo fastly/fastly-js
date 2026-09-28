@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 16.1.0
+ * @version 16.2.0
  */
 class Results {
     /**
@@ -268,6 +268,12 @@ class Results {
             }
             if (data.hasOwnProperty('imgopto')) {
                 obj['imgopto'] = ApiClient.convertToType(data['imgopto'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_input_image_bytes')) {
+                obj['imgopto_input_image_bytes'] = ApiClient.convertToType(data['imgopto_input_image_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_output_image_bytes')) {
+                obj['imgopto_output_image_bytes'] = ApiClient.convertToType(data['imgopto_output_image_bytes'], 'Number');
             }
             if (data.hasOwnProperty('imgopto_resp_body_bytes')) {
                 obj['imgopto_resp_body_bytes'] = ApiClient.convertToType(data['imgopto_resp_body_bytes'], 'Number');
@@ -1082,6 +1088,45 @@ class Results {
             if (data.hasOwnProperty('bot_challenges_pats_succeeded')) {
                 obj['bot_challenges_pats_succeeded'] = ApiClient.convertToType(data['bot_challenges_pats_succeeded'], 'Number');
             }
+            if (data.hasOwnProperty('bot_edge_requests_headless_count')) {
+                obj['bot_edge_requests_headless_count'] = ApiClient.convertToType(data['bot_edge_requests_headless_count'], 'Number');
+            }
+            if (data.hasOwnProperty('status_499')) {
+                obj['status_499'] = ApiClient.convertToType(data['status_499'], 'Number');
+            }
+            if (data.hasOwnProperty('arc_requests')) {
+                obj['arc_requests'] = ApiClient.convertToType(data['arc_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_checked')) {
+                obj['ddos_challenge_complete_tokens_checked'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_checked'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_passed')) {
+                obj['ddos_challenge_complete_tokens_passed'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_passed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_failed')) {
+                obj['ddos_challenge_complete_tokens_failed'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_starts')) {
+                obj['ddos_challenge_starts'] = ApiClient.convertToType(data['ddos_challenge_starts'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_issued')) {
+                obj['ddos_challenge_complete_tokens_issued'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_issued')) {
+                obj['ddos_challenges_issued'] = ApiClient.convertToType(data['ddos_challenges_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_succeeded')) {
+                obj['ddos_challenges_succeeded'] = ApiClient.convertToType(data['ddos_challenges_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_failed')) {
+                obj['ddos_challenges_failed'] = ApiClient.convertToType(data['ddos_challenges_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_pats_issued')) {
+                obj['ddos_challenges_pats_issued'] = ApiClient.convertToType(data['ddos_challenges_pats_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_pats_succeeded')) {
+                obj['ddos_challenges_pats_succeeded'] = ApiClient.convertToType(data['ddos_challenges_pats_succeeded'], 'Number');
+            }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
@@ -1538,6 +1583,18 @@ Results.prototype['attack_resp_synth_bytes'] = undefined;
  * @member {Number} imgopto
  */
 Results.prototype['imgopto'] = undefined;
+
+/**
+ * The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer).
+ * @member {Number} imgopto_input_image_bytes
+ */
+Results.prototype['imgopto_input_image_bytes'] = undefined;
+
+/**
+ * The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer).
+ * @member {Number} imgopto_output_image_bytes
+ */
+Results.prototype['imgopto_output_image_bytes'] = undefined;
 
 /**
  * Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic.
@@ -3164,6 +3221,84 @@ Results.prototype['bot_challenges_pats_issued'] = undefined;
  * @member {Number} bot_challenges_pats_succeeded
  */
 Results.prototype['bot_challenges_pats_succeeded'] = undefined;
+
+/**
+ * Number of edge requests where a headless bot was detected.
+ * @member {Number} bot_edge_requests_headless_count
+ */
+Results.prototype['bot_edge_requests_headless_count'] = undefined;
+
+/**
+ * Number of responses sent with status code 499 (Client Disconnected).
+ * @member {Number} status_499
+ */
+Results.prototype['status_499'] = undefined;
+
+/**
+ * Number of requests received by AI Runtime Control.
+ * @member {Number} arc_requests
+ */
+Results.prototype['arc_requests'] = undefined;
+
+/**
+ * The number of challenge-complete tokens checked while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_complete_tokens_checked
+ */
+Results.prototype['ddos_challenge_complete_tokens_checked'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_complete_tokens_passed
+ */
+Results.prototype['ddos_challenge_complete_tokens_passed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_complete_tokens_failed
+ */
+Results.prototype['ddos_challenge_complete_tokens_failed'] = undefined;
+
+/**
+ * The number of challenge-start tokens created while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_starts
+ */
+Results.prototype['ddos_challenge_starts'] = undefined;
+
+/**
+ * Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+ * @member {Number} ddos_challenge_complete_tokens_issued
+ */
+Results.prototype['ddos_challenge_complete_tokens_issued'] = undefined;
+
+/**
+ * Number of challenges issued from a DDoS action.
+ * @member {Number} ddos_challenges_issued
+ */
+Results.prototype['ddos_challenges_issued'] = undefined;
+
+/**
+ * Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution.
+ * @member {Number} ddos_challenges_succeeded
+ */
+Results.prototype['ddos_challenges_succeeded'] = undefined;
+
+/**
+ * Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution.
+ * @member {Number} ddos_challenges_failed
+ */
+Results.prototype['ddos_challenges_failed'] = undefined;
+
+/**
+ * Number of Private Access Token challenges issued as a result of a DDoS action.
+ * @member {Number} ddos_challenges_pats_issued
+ */
+Results.prototype['ddos_challenges_pats_issued'] = undefined;
+
+/**
+ * Number of successful Private Access Token challenge solutions processed as a result of a DDoS action.
+ * @member {Number} ddos_challenges_pats_succeeded
+ */
+Results.prototype['ddos_challenges_pats_succeeded'] = undefined;
 
 /**
  * @member {String} service_id

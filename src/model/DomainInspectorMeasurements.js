@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorMeasurements model module.
  * @module model/DomainInspectorMeasurements
- * @version 16.1.0
+ * @version 16.2.0
  */
 class DomainInspectorMeasurements {
     /**
@@ -445,6 +445,9 @@ class DomainInspectorMeasurements {
             }
             if (data.hasOwnProperty('tls_v13')) {
                 obj['tls_v13'] = ApiClient.convertToType(data['tls_v13'], 'Number');
+            }
+            if (data.hasOwnProperty('status_499')) {
+                obj['status_499'] = ApiClient.convertToType(data['status_499'], 'Number');
             }
         }
         return obj;
@@ -1250,6 +1253,12 @@ DomainInspectorMeasurements.prototype['tls_v12'] = undefined;
  * @member {Number} tls_v13
  */
 DomainInspectorMeasurements.prototype['tls_v13'] = undefined;
+
+/**
+ * Number of responses sent with status code 499 (Client Disconnected).
+ * @member {Number} status_499
+ */
+DomainInspectorMeasurements.prototype['status_499'] = undefined;
 
 
 

@@ -22,7 +22,7 @@ import LogExplorerInsightsResponseProductProduct from './LogExplorerInsightsResp
 /**
  * The LogExplorerInsightsResponseBodyGetAllServices model module.
  * @module model/LogExplorerInsightsResponseBodyGetAllServices
- * @version 16.1.0
+ * @version 16.2.0
  */
 class LogExplorerInsightsResponseBodyGetAllServices {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DiscoveredOperationBase model module.
  * @module model/DiscoveredOperationBase
- * @version 16.1.0
+ * @version 16.2.0
  */
 class DiscoveredOperationBase {
     /**
