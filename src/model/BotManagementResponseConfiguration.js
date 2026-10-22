@@ -16,7 +16,7 @@ import BotManagementResponseConfigurationConfiguration from './BotManagementResp
 /**
  * The BotManagementResponseConfiguration model module.
  * @module model/BotManagementResponseConfiguration
- * @version 16.1.0
+ * @version 17.0.0
  */
 class BotManagementResponseConfiguration {
     /**

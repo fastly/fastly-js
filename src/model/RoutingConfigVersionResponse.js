@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoutingConfigVersionResponse model module.
  * @module model/RoutingConfigVersionResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class RoutingConfigVersionResponse {
     /**

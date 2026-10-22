@@ -15,11 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationTokenErrorResponse model module.
  * @module model/AutomationTokenErrorResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class AutomationTokenErrorResponse {
     /**
      * Constructs a new <code>AutomationTokenErrorResponse</code>.
+     * Error response format used by automation token endpoints.
      * @alias module:model/AutomationTokenErrorResponse
      */
     constructor() { 

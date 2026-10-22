@@ -16,7 +16,7 @@ import DomainResearchResponseProductProduct from './DomainResearchResponseProduc
 /**
  * The DomainResearchResponseProduct model module.
  * @module model/DomainResearchResponseProduct
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DomainResearchResponseProduct {
     /**

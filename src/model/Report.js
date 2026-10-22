@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Report model module.
  * @module model/Report
- * @version 16.1.0
+ * @version 17.0.0
  */
 class Report {
     /**

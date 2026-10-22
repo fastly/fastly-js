@@ -16,7 +16,7 @@ import PaginationCursorMeta from './PaginationCursorMeta';
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 16.1.0
+ * @version 17.0.0
  */
 class InlineResponse20018 {
     /**

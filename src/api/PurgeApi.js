@@ -18,7 +18,7 @@ import PurgeResponse from '../model/PurgeResponse';
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 16.1.0
+* @version 17.0.0
 */
 export default class PurgeApi {
 
@@ -43,6 +43,7 @@ export default class PurgeApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
+     * @param {module:model/String} [options.fastly_purge_environment] - Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
      * @param {String} [options.surrogate_key] - Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified.
      * @param {module:model/PurgeResponse} [options.purge_response]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
@@ -63,6 +64,7 @@ export default class PurgeApi {
       };
       let headerParams = {
         'fastly-soft-purge': options['fastly_soft_purge'],
+        'fastly-purge-environment': options['fastly_purge_environment'],
         'surrogate-key': options['surrogate_key']
       };
       let formParams = {
@@ -93,6 +95,7 @@ export default class PurgeApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
+     * @param {module:model/String} [options.fastly_purge_environment] - Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
      * @param {String} [options.surrogate_key] - Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified.
      * @param {module:model/PurgeResponse} [options.purge_response]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
@@ -108,6 +111,7 @@ export default class PurgeApi {
      * Instant Purge everything from a service.  Purge-all requests cannot be done in soft mode and will always immediately invalidate all cached content associated with the service. To do a soft-purge-all, consider applying a constant [surrogate key](https://www.fastly.com/documentation/guides/full-site-delivery/purging/working-with-surrogate-keys/) tag (e.g., `\"all\"`) to all objects. 
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {module:model/String} [options.fastly_purge_environment] - Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     purgeAllWithHttpInfo(options = {}) {
@@ -125,6 +129,7 @@ export default class PurgeApi {
       let queryParams = {
       };
       let headerParams = {
+        'fastly-purge-environment': options['fastly_purge_environment']
       };
       let formParams = {
       };
@@ -153,6 +158,7 @@ export default class PurgeApi {
      * Instant Purge everything from a service.  Purge-all requests cannot be done in soft mode and will always immediately invalidate all cached content associated with the service. To do a soft-purge-all, consider applying a constant [surrogate key](https://www.fastly.com/documentation/guides/full-site-delivery/purging/working-with-surrogate-keys/) tag (e.g., `\"all\"`) to all objects. 
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {module:model/String} [options.fastly_purge_environment] - Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     purgeAll(options = {}) {
@@ -230,6 +236,7 @@ export default class PurgeApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.surrogate_key - Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
      * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
+     * @param {module:model/String} [options.fastly_purge_environment] - Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PurgeResponse} and HTTP response
      */
     purgeTagWithHttpInfo(options = {}) {
@@ -253,7 +260,8 @@ export default class PurgeApi {
       let queryParams = {
       };
       let headerParams = {
-        'fastly-soft-purge': options['fastly_soft_purge']
+        'fastly-soft-purge': options['fastly_soft_purge'],
+        'fastly-purge-environment': options['fastly_purge_environment']
       };
       let formParams = {
       };
@@ -284,6 +292,7 @@ export default class PurgeApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.surrogate_key - Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
      * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
+     * @param {module:model/String} [options.fastly_purge_environment] - Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PurgeResponse}
      */
     purgeTag(options = {}) {

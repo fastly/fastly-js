@@ -16,7 +16,7 @@ import IamV1RoleResponse from './IamV1RoleResponse';
 /**
  * The IamV1RoleListResponse model module.
  * @module model/IamV1RoleListResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class IamV1RoleListResponse {
     /**

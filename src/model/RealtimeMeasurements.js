@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 16.1.0
+ * @version 17.0.0
  */
 class RealtimeMeasurements {
     /**
@@ -208,6 +208,12 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('otfp_deliver_time')) {
                 obj['otfp_deliver_time'] = ApiClient.convertToType(data['otfp_deliver_time'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_input_image_bytes')) {
+                obj['imgopto_input_image_bytes'] = ApiClient.convertToType(data['imgopto_input_image_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_output_image_bytes')) {
+                obj['imgopto_output_image_bytes'] = ApiClient.convertToType(data['imgopto_output_image_bytes'], 'Number');
             }
             if (data.hasOwnProperty('imgopto_resp_header_bytes')) {
                 obj['imgopto_resp_header_bytes'] = ApiClient.convertToType(data['imgopto_resp_header_bytes'], 'Number');
@@ -1061,6 +1067,93 @@ class RealtimeMeasurements {
             if (data.hasOwnProperty('bot_challenges_pats_succeeded')) {
                 obj['bot_challenges_pats_succeeded'] = ApiClient.convertToType(data['bot_challenges_pats_succeeded'], 'Number');
             }
+            if (data.hasOwnProperty('bot_edge_requests_headless_count')) {
+                obj['bot_edge_requests_headless_count'] = ApiClient.convertToType(data['bot_edge_requests_headless_count'], 'Number');
+            }
+            if (data.hasOwnProperty('status_499')) {
+                obj['status_499'] = ApiClient.convertToType(data['status_499'], 'Number');
+            }
+            if (data.hasOwnProperty('arc_requests')) {
+                obj['arc_requests'] = ApiClient.convertToType(data['arc_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_checked')) {
+                obj['ddos_challenge_complete_tokens_checked'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_checked'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_passed')) {
+                obj['ddos_challenge_complete_tokens_passed'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_passed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_failed')) {
+                obj['ddos_challenge_complete_tokens_failed'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_starts')) {
+                obj['ddos_challenge_starts'] = ApiClient.convertToType(data['ddos_challenge_starts'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenge_complete_tokens_issued')) {
+                obj['ddos_challenge_complete_tokens_issued'] = ApiClient.convertToType(data['ddos_challenge_complete_tokens_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_issued')) {
+                obj['ddos_challenges_issued'] = ApiClient.convertToType(data['ddos_challenges_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_succeeded')) {
+                obj['ddos_challenges_succeeded'] = ApiClient.convertToType(data['ddos_challenges_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_failed')) {
+                obj['ddos_challenges_failed'] = ApiClient.convertToType(data['ddos_challenges_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_pats_issued')) {
+                obj['ddos_challenges_pats_issued'] = ApiClient.convertToType(data['ddos_challenges_pats_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_challenges_pats_succeeded')) {
+                obj['ddos_challenges_pats_succeeded'] = ApiClient.convertToType(data['ddos_challenges_pats_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('arc_ai_firewall_requests')) {
+                obj['arc_ai_firewall_requests'] = ApiClient.convertToType(data['arc_ai_firewall_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('arc_ai_firewall_blocked')) {
+                obj['arc_ai_firewall_blocked'] = ApiClient.convertToType(data['arc_ai_firewall_blocked'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_challenge_complete_tokens_issued')) {
+                obj['bot_edge_challenge_complete_tokens_issued'] = ApiClient.convertToType(data['bot_edge_challenge_complete_tokens_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_challenges_issued')) {
+                obj['bot_edge_challenges_issued'] = ApiClient.convertToType(data['bot_edge_challenges_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_challenges_succeeded')) {
+                obj['bot_edge_challenges_succeeded'] = ApiClient.convertToType(data['bot_edge_challenges_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_challenges_failed')) {
+                obj['bot_edge_challenges_failed'] = ApiClient.convertToType(data['bot_edge_challenges_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_challenges_pats_issued')) {
+                obj['bot_edge_challenges_pats_issued'] = ApiClient.convertToType(data['bot_edge_challenges_pats_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_edge_challenges_pats_succeeded')) {
+                obj['bot_edge_challenges_pats_succeeded'] = ApiClient.convertToType(data['bot_edge_challenges_pats_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('netprotect_gre_sent_bytes')) {
+                obj['netprotect_gre_sent_bytes'] = ApiClient.convertToType(data['netprotect_gre_sent_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('netprotect_gre_sent_packets')) {
+                obj['netprotect_gre_sent_packets'] = ApiClient.convertToType(data['netprotect_gre_sent_packets'], 'Number');
+            }
+            if (data.hasOwnProperty('netprotect_received_bytes')) {
+                obj['netprotect_received_bytes'] = ApiClient.convertToType(data['netprotect_received_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('netprotect_received_packets')) {
+                obj['netprotect_received_packets'] = ApiClient.convertToType(data['netprotect_received_packets'], 'Number');
+            }
+            if (data.hasOwnProperty('netprotect_firewall_dropped_bytes')) {
+                obj['netprotect_firewall_dropped_bytes'] = ApiClient.convertToType(data['netprotect_firewall_dropped_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('netprotect_firewall_dropped_packets')) {
+                obj['netprotect_firewall_dropped_packets'] = ApiClient.convertToType(data['netprotect_firewall_dropped_packets'], 'Number');
+            }
+            if (data.hasOwnProperty('api_enforcement_allowed_requests_count')) {
+                obj['api_enforcement_allowed_requests_count'] = ApiClient.convertToType(data['api_enforcement_allowed_requests_count'], 'Number');
+            }
+            if (data.hasOwnProperty('api_enforcement_flagged_requests_count')) {
+                obj['api_enforcement_flagged_requests_count'] = ApiClient.convertToType(data['api_enforcement_flagged_requests_count'], 'Number');
+            }
         }
         return obj;
     }
@@ -1391,6 +1484,18 @@ RealtimeMeasurements.prototype['otfp_shield_time'] = undefined;
  * @member {Number} otfp_deliver_time
  */
 RealtimeMeasurements.prototype['otfp_deliver_time'] = undefined;
+
+/**
+ * The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer).
+ * @member {Number} imgopto_input_image_bytes
+ */
+RealtimeMeasurements.prototype['imgopto_input_image_bytes'] = undefined;
+
+/**
+ * The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer).
+ * @member {Number} imgopto_output_image_bytes
+ */
+RealtimeMeasurements.prototype['imgopto_output_image_bytes'] = undefined;
 
 /**
  * Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic.
@@ -3095,6 +3200,180 @@ RealtimeMeasurements.prototype['bot_challenges_pats_issued'] = undefined;
  * @member {Number} bot_challenges_pats_succeeded
  */
 RealtimeMeasurements.prototype['bot_challenges_pats_succeeded'] = undefined;
+
+/**
+ * Number of edge requests where a headless bot was detected.
+ * @member {Number} bot_edge_requests_headless_count
+ */
+RealtimeMeasurements.prototype['bot_edge_requests_headless_count'] = undefined;
+
+/**
+ * Number of responses sent with status code 499 (Client Disconnected).
+ * @member {Number} status_499
+ */
+RealtimeMeasurements.prototype['status_499'] = undefined;
+
+/**
+ * Number of requests received by AI Runtime Control.
+ * @member {Number} arc_requests
+ */
+RealtimeMeasurements.prototype['arc_requests'] = undefined;
+
+/**
+ * The number of challenge-complete tokens checked while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_complete_tokens_checked
+ */
+RealtimeMeasurements.prototype['ddos_challenge_complete_tokens_checked'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_complete_tokens_passed
+ */
+RealtimeMeasurements.prototype['ddos_challenge_complete_tokens_passed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_complete_tokens_failed
+ */
+RealtimeMeasurements.prototype['ddos_challenge_complete_tokens_failed'] = undefined;
+
+/**
+ * The number of challenge-start tokens created while enforcing DDoS protection rules.
+ * @member {Number} ddos_challenge_starts
+ */
+RealtimeMeasurements.prototype['ddos_challenge_starts'] = undefined;
+
+/**
+ * Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+ * @member {Number} ddos_challenge_complete_tokens_issued
+ */
+RealtimeMeasurements.prototype['ddos_challenge_complete_tokens_issued'] = undefined;
+
+/**
+ * Number of challenges issued from a DDoS action.
+ * @member {Number} ddos_challenges_issued
+ */
+RealtimeMeasurements.prototype['ddos_challenges_issued'] = undefined;
+
+/**
+ * Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution.
+ * @member {Number} ddos_challenges_succeeded
+ */
+RealtimeMeasurements.prototype['ddos_challenges_succeeded'] = undefined;
+
+/**
+ * Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution.
+ * @member {Number} ddos_challenges_failed
+ */
+RealtimeMeasurements.prototype['ddos_challenges_failed'] = undefined;
+
+/**
+ * Number of Private Access Token challenges issued as a result of a DDoS action.
+ * @member {Number} ddos_challenges_pats_issued
+ */
+RealtimeMeasurements.prototype['ddos_challenges_pats_issued'] = undefined;
+
+/**
+ * Number of successful Private Access Token challenge solutions processed as a result of a DDoS action.
+ * @member {Number} ddos_challenges_pats_succeeded
+ */
+RealtimeMeasurements.prototype['ddos_challenges_pats_succeeded'] = undefined;
+
+/**
+ * Number of requests received by AI Firewall in AI Runtime Control.
+ * @member {Number} arc_ai_firewall_requests
+ */
+RealtimeMeasurements.prototype['arc_ai_firewall_requests'] = undefined;
+
+/**
+ * Number of requests blocked by AI Firewall in AI Runtime Control.
+ * @member {Number} arc_ai_firewall_blocked
+ */
+RealtimeMeasurements.prototype['arc_ai_firewall_blocked'] = undefined;
+
+/**
+ * The number of challenge-complete tokens issued as a result of a ContentGuard action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+ * @member {Number} bot_edge_challenge_complete_tokens_issued
+ */
+RealtimeMeasurements.prototype['bot_edge_challenge_complete_tokens_issued'] = undefined;
+
+/**
+ * The number of challenges issued as a result of a ContentGuard action.
+ * @member {Number} bot_edge_challenges_issued
+ */
+RealtimeMeasurements.prototype['bot_edge_challenges_issued'] = undefined;
+
+/**
+ * The number of successful challenge solutions processed as a result of a ContentGuard action. For example, a correct CAPTCHA solution.
+ * @member {Number} bot_edge_challenges_succeeded
+ */
+RealtimeMeasurements.prototype['bot_edge_challenges_succeeded'] = undefined;
+
+/**
+ * The number of failed challenge solutions processed as a result of a ContentGuard action. For example, an incorrect CAPTCHA solution.
+ * @member {Number} bot_edge_challenges_failed
+ */
+RealtimeMeasurements.prototype['bot_edge_challenges_failed'] = undefined;
+
+/**
+ * The number of Private Access Token challenges issued as a result of a ContentGuard action.
+ * @member {Number} bot_edge_challenges_pats_issued
+ */
+RealtimeMeasurements.prototype['bot_edge_challenges_pats_issued'] = undefined;
+
+/**
+ * The number of successful Private Access Token challenge solutions processed as a result of a ContentGuard action.
+ * @member {Number} bot_edge_challenges_pats_succeeded
+ */
+RealtimeMeasurements.prototype['bot_edge_challenges_pats_succeeded'] = undefined;
+
+/**
+ * Number of bytes sent via GRE tunnel.
+ * @member {Number} netprotect_gre_sent_bytes
+ */
+RealtimeMeasurements.prototype['netprotect_gre_sent_bytes'] = undefined;
+
+/**
+ * Number of packets sent via GRE tunnel.
+ * @member {Number} netprotect_gre_sent_packets
+ */
+RealtimeMeasurements.prototype['netprotect_gre_sent_packets'] = undefined;
+
+/**
+ * Number of ingress bytes received for network protection.
+ * @member {Number} netprotect_received_bytes
+ */
+RealtimeMeasurements.prototype['netprotect_received_bytes'] = undefined;
+
+/**
+ * Number of ingress packets received for network protection.
+ * @member {Number} netprotect_received_packets
+ */
+RealtimeMeasurements.prototype['netprotect_received_packets'] = undefined;
+
+/**
+ * Number of bytes dropped by network protection firewall.
+ * @member {Number} netprotect_firewall_dropped_bytes
+ */
+RealtimeMeasurements.prototype['netprotect_firewall_dropped_bytes'] = undefined;
+
+/**
+ * Number of packets dropped by network protection firewall.
+ * @member {Number} netprotect_firewall_dropped_packets
+ */
+RealtimeMeasurements.prototype['netprotect_firewall_dropped_packets'] = undefined;
+
+/**
+ * Number of requests allowed after evaluation by the API Enforcement engine.
+ * @member {Number} api_enforcement_allowed_requests_count
+ */
+RealtimeMeasurements.prototype['api_enforcement_allowed_requests_count'] = undefined;
+
+/**
+ * Number of requests flagged after evaluation by the API Enforcement engine.
+ * @member {Number} api_enforcement_flagged_requests_count
+ */
+RealtimeMeasurements.prototype['api_enforcement_flagged_requests_count'] = undefined;
 
 
 

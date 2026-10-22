@@ -17,7 +17,7 @@ import ConditionType from './ConditionType';
 /**
  * The RoutingConfigCondition model module.
  * @module model/RoutingConfigCondition
- * @version 16.1.0
+ * @version 17.0.0
  */
 class RoutingConfigCondition {
     /**

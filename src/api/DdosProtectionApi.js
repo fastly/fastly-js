@@ -27,7 +27,7 @@ import InlineResponse20013 from '../model/InlineResponse20013';
 /**
 * DdosProtection service.
 * @module api/DdosProtectionApi
-* @version 16.1.0
+* @version 17.0.0
 */
 export default class DdosProtectionApi {
 

@@ -17,7 +17,7 @@ import RoutingConfigResponse from './RoutingConfigResponse';
 /**
  * The RoutingConfigsResponse model module.
  * @module model/RoutingConfigsResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class RoutingConfigsResponse {
     /**

@@ -16,12 +16,14 @@ import AutomationTokenCreateRequest from '../model/AutomationTokenCreateRequest'
 import AutomationTokenCreateResponse from '../model/AutomationTokenCreateResponse';
 import AutomationTokenErrorResponse from '../model/AutomationTokenErrorResponse';
 import AutomationTokenResponse from '../model/AutomationTokenResponse';
+import AutomationTokenUnversionedErrorResponse from '../model/AutomationTokenUnversionedErrorResponse';
+import AutomationTokenWorkspacesResponse from '../model/AutomationTokenWorkspacesResponse';
 import InlineResponse2004 from '../model/InlineResponse2004';
 
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 16.1.0
+* @version 17.0.0
 */
 export default class AutomationTokensApi {
 
@@ -63,7 +65,7 @@ export default class AutomationTokensApi {
 
       let authNames = ['token'];
       let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let accepts = ['application/json', 'application/problem+json'];
       let returnType = AutomationTokenCreateResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
@@ -211,6 +213,70 @@ export default class AutomationTokensApi {
      */
     getAutomationTokensIdServices(options = {}) {
       return this.getAutomationTokensIdServicesWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).
+     * @param {Object} options
+     * @param {String} options.id - The alphanumeric string identifying the automation token.
+     * @param {Number} [options.limit=20] - Maximum number of workspaces to return per page.
+     * @param {String} [options.cursor] - Pagination cursor from a previous response. Pass the `next_cursor` value to retrieve the next page, or `previous_cursor` to go back.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AutomationTokenWorkspacesResponse} and HTTP response
+     */
+    getAutomationTokensIdWorkspacesWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'id' is set.
+      if (options['id'] === undefined || options['id'] === null) {
+        throw new Error("Missing the required parameter 'id'.");
+      }
+
+      let pathParams = {
+        'id': options['id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+        'limit': options['limit'],
+        'cursor': options['cursor']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/problem+json'];
+      let returnType = AutomationTokenWorkspacesResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/automation-tokens/{id}/workspaces', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).
+     * @param {Object} options
+     * @param {String} options.id - The alphanumeric string identifying the automation token.
+     * @param {Number} [options.limit=20] - Maximum number of workspaces to return per page.
+     * @param {String} [options.cursor] - Pagination cursor from a previous response. Pass the `next_cursor` value to retrieve the next page, or `previous_cursor` to go back.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AutomationTokenWorkspacesResponse}
+     */
+    getAutomationTokensIdWorkspaces(options = {}) {
+      return this.getAutomationTokensIdWorkspacesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

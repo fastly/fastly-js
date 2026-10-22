@@ -17,7 +17,7 @@ import RoutingConfigCondition from './RoutingConfigCondition';
 /**
  * The RuleResponseAllOf model module.
  * @module model/RuleResponseAllOf
- * @version 16.1.0
+ * @version 17.0.0
  */
 class RuleResponseAllOf {
     /**

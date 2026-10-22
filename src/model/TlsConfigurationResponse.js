@@ -16,7 +16,7 @@ import TlsConfigurationResponseData from './TlsConfigurationResponseData';
 /**
  * The TlsConfigurationResponse model module.
  * @module model/TlsConfigurationResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class TlsConfigurationResponse {
     /**

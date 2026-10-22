@@ -17,7 +17,7 @@ import DictionaryItem from './DictionaryItem';
 /**
  * The BulkUpdateDictionaryItem model module.
  * @module model/BulkUpdateDictionaryItem
- * @version 16.1.0
+ * @version 17.0.0
  */
 class BulkUpdateDictionaryItem {
     /**
@@ -69,7 +69,7 @@ class BulkUpdateDictionaryItem {
 }
 
 /**
- * Item key, maximum 256 characters.
+ * Item key, maximum 255 characters.
  * @member {String} item_key
  */
 BulkUpdateDictionaryItem.prototype['item_key'] = undefined;
@@ -88,7 +88,7 @@ BulkUpdateDictionaryItem.prototype['op'] = undefined;
 
 // Implement DictionaryItem interface:
 /**
- * Item key, maximum 256 characters.
+ * Item key, maximum 255 characters.
  * @member {String} item_key
  */
 DictionaryItem.prototype['item_key'] = undefined;

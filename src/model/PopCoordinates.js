@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PopCoordinates model module.
  * @module model/PopCoordinates
- * @version 16.1.0
+ * @version 17.0.0
  */
 class PopCoordinates {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 16.1.0
+ * @version 17.0.0
  */
 class EventAttributes {
     /**
@@ -449,6 +449,228 @@ EventAttributes['EventTypeEnum'] = {
      * @const
      */
     "logging.update": "logging.update",
+
+    /**
+     * value: "ngwaf.agent_key.create"
+     * @const
+     */
+    "ngwaf.agent_key.create": "ngwaf.agent_key.create",
+
+    /**
+     * value: "ngwaf.agent_key.delete"
+     * @const
+     */
+    "ngwaf.agent_key.delete": "ngwaf.agent_key.delete",
+
+    /**
+     * value: "ngwaf.agent_key.update"
+     * @const
+     */
+    "ngwaf.agent_key.update": "ngwaf.agent_key.update",
+
+    /**
+     * value: "ngwaf.custom_signal.create"
+     * @const
+     */
+    "ngwaf.custom_signal.create": "ngwaf.custom_signal.create",
+
+    /**
+     * value: "ngwaf.custom_signal.delete"
+     * @const
+     */
+    "ngwaf.custom_signal.delete": "ngwaf.custom_signal.delete",
+
+    /**
+     * value: "ngwaf.custom_signal.update"
+     * @const
+     */
+    "ngwaf.custom_signal.update": "ngwaf.custom_signal.update",
+
+    /**
+     * value: "ngwaf.dashboard.create"
+     * @const
+     */
+    "ngwaf.dashboard.create": "ngwaf.dashboard.create",
+
+    /**
+     * value: "ngwaf.dashboard.delete"
+     * @const
+     */
+    "ngwaf.dashboard.delete": "ngwaf.dashboard.delete",
+
+    /**
+     * value: "ngwaf.dashboard.update"
+     * @const
+     */
+    "ngwaf.dashboard.update": "ngwaf.dashboard.update",
+
+    /**
+     * value: "ngwaf.default_dashboard.update"
+     * @const
+     */
+    "ngwaf.default_dashboard.update": "ngwaf.default_dashboard.update",
+
+    /**
+     * value: "ngwaf.event.update"
+     * @const
+     */
+    "ngwaf.event.update": "ngwaf.event.update",
+
+    /**
+     * value: "ngwaf.header_link.create"
+     * @const
+     */
+    "ngwaf.header_link.create": "ngwaf.header_link.create",
+
+    /**
+     * value: "ngwaf.header_link.delete"
+     * @const
+     */
+    "ngwaf.header_link.delete": "ngwaf.header_link.delete",
+
+    /**
+     * value: "ngwaf.header_link.update"
+     * @const
+     */
+    "ngwaf.header_link.update": "ngwaf.header_link.update",
+
+    /**
+     * value: "ngwaf.list.create"
+     * @const
+     */
+    "ngwaf.list.create": "ngwaf.list.create",
+
+    /**
+     * value: "ngwaf.list.delete"
+     * @const
+     */
+    "ngwaf.list.delete": "ngwaf.list.delete",
+
+    /**
+     * value: "ngwaf.list.update"
+     * @const
+     */
+    "ngwaf.list.update": "ngwaf.list.update",
+
+    /**
+     * value: "ngwaf.rate_limited_source.bulk_delete"
+     * @const
+     */
+    "ngwaf.rate_limited_source.bulk_delete": "ngwaf.rate_limited_source.bulk_delete",
+
+    /**
+     * value: "ngwaf.rate_limited_source.delete"
+     * @const
+     */
+    "ngwaf.rate_limited_source.delete": "ngwaf.rate_limited_source.delete",
+
+    /**
+     * value: "ngwaf.redaction.create"
+     * @const
+     */
+    "ngwaf.redaction.create": "ngwaf.redaction.create",
+
+    /**
+     * value: "ngwaf.redaction.delete"
+     * @const
+     */
+    "ngwaf.redaction.delete": "ngwaf.redaction.delete",
+
+    /**
+     * value: "ngwaf.redaction.update"
+     * @const
+     */
+    "ngwaf.redaction.update": "ngwaf.redaction.update",
+
+    /**
+     * value: "ngwaf.request_report.create"
+     * @const
+     */
+    "ngwaf.request_report.create": "ngwaf.request_report.create",
+
+    /**
+     * value: "ngwaf.rule.create"
+     * @const
+     */
+    "ngwaf.rule.create": "ngwaf.rule.create",
+
+    /**
+     * value: "ngwaf.rule.delete"
+     * @const
+     */
+    "ngwaf.rule.delete": "ngwaf.rule.delete",
+
+    /**
+     * value: "ngwaf.rule.update"
+     * @const
+     */
+    "ngwaf.rule.update": "ngwaf.rule.update",
+
+    /**
+     * value: "ngwaf.threshold.create"
+     * @const
+     */
+    "ngwaf.threshold.create": "ngwaf.threshold.create",
+
+    /**
+     * value: "ngwaf.threshold.delete"
+     * @const
+     */
+    "ngwaf.threshold.delete": "ngwaf.threshold.delete",
+
+    /**
+     * value: "ngwaf.threshold.update"
+     * @const
+     */
+    "ngwaf.threshold.update": "ngwaf.threshold.update",
+
+    /**
+     * value: "ngwaf.virtual_patch.update"
+     * @const
+     */
+    "ngwaf.virtual_patch.update": "ngwaf.virtual_patch.update",
+
+    /**
+     * value: "ngwaf.workspace.create"
+     * @const
+     */
+    "ngwaf.workspace.create": "ngwaf.workspace.create",
+
+    /**
+     * value: "ngwaf.workspace.delete"
+     * @const
+     */
+    "ngwaf.workspace.delete": "ngwaf.workspace.delete",
+
+    /**
+     * value: "ngwaf.workspace.update"
+     * @const
+     */
+    "ngwaf.workspace.update": "ngwaf.workspace.update",
+
+    /**
+     * value: "ngwaf.workspace_alert.create"
+     * @const
+     */
+    "ngwaf.workspace_alert.create": "ngwaf.workspace_alert.create",
+
+    /**
+     * value: "ngwaf.workspace_alert.delete"
+     * @const
+     */
+    "ngwaf.workspace_alert.delete": "ngwaf.workspace_alert.delete",
+
+    /**
+     * value: "ngwaf.workspace_alert.update"
+     * @const
+     */
+    "ngwaf.workspace_alert.update": "ngwaf.workspace_alert.update",
+
+    /**
+     * value: "ngwaf.workspace_alert_key.update"
+     * @const
+     */
+    "ngwaf.workspace_alert_key.update": "ngwaf.workspace_alert_key.update",
 
     /**
      * value: "pool.create"

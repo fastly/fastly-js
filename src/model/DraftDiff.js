@@ -17,7 +17,7 @@ import PathWithRules from './PathWithRules';
 /**
  * The DraftDiff model module.
  * @module model/DraftDiff
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DraftDiff {
     /**

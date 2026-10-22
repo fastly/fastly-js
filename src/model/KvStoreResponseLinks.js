@@ -16,7 +16,7 @@ import KvStoreResponseLinksLinks from './KvStoreResponseLinksLinks';
 /**
  * The KvStoreResponseLinks model module.
  * @module model/KvStoreResponseLinks
- * @version 16.1.0
+ * @version 17.0.0
  */
 class KvStoreResponseLinks {
     /**

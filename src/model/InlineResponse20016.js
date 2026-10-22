@@ -16,7 +16,7 @@ import Suggestion from './Suggestion';
 /**
  * The InlineResponse20016 model module.
  * @module model/InlineResponse20016
- * @version 16.1.0
+ * @version 17.0.0
  */
 class InlineResponse20016 {
     /**

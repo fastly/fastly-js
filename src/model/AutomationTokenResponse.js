@@ -13,13 +13,14 @@
 import ApiClient from '../ApiClient';
 import AutomationToken from './AutomationToken';
 import AutomationTokenResponseAllOf from './AutomationTokenResponseAllOf';
+import AutomationTokenRole from './AutomationTokenRole';
 import ReadOnlyCustomerId from './ReadOnlyCustomerId';
 import ReadOnlyId from './ReadOnlyId';
 
 /**
  * The AutomationTokenResponse model module.
  * @module model/AutomationTokenResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class AutomationTokenResponse {
     /**
@@ -60,8 +61,20 @@ class AutomationTokenResponse {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
             }
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], [AutomationTokenRole]);
+            }
             if (data.hasOwnProperty('services')) {
                 obj['services'] = ApiClient.convertToType(data['services'], ['String']);
+            }
+            if (data.hasOwnProperty('limit_services')) {
+                obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
+            }
+            if (data.hasOwnProperty('limit_workspaces')) {
+                obj['limit_workspaces'] = ApiClient.convertToType(data['limit_workspaces'], 'Boolean');
+            }
+            if (data.hasOwnProperty('workspaces')) {
+                obj['workspaces'] = ApiClient.convertToType(data['workspaces'], ['String']);
             }
             if (data.hasOwnProperty('scope')) {
                 obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
@@ -109,10 +122,34 @@ AutomationTokenResponse.prototype['name'] = undefined;
 AutomationTokenResponse.prototype['role'] = undefined;
 
 /**
- * (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. 
+ * All roles assigned to the token. Each role includes an `id` and `name`.
+ * @member {Array.<module:model/AutomationTokenRole>} roles
+ */
+AutomationTokenResponse.prototype['roles'] = undefined;
+
+/**
+ * The service IDs of the services the token has access to. Empty when `limit_services` is `false` (full access) or when the token has no service access.
  * @member {Array.<String>} services
  */
 AutomationTokenResponse.prototype['services'] = undefined;
+
+/**
+ * When `true`, the token is restricted to only the services in the `services` array. When `false`, the token has access to all services.
+ * @member {Boolean} limit_services
+ */
+AutomationTokenResponse.prototype['limit_services'] = undefined;
+
+/**
+ * When `true`, the token is restricted to only the workspaces in the `workspaces` array. When `false`, the token has access to all workspaces. Only applies to roles that support workspace access.
+ * @member {Boolean} limit_workspaces
+ */
+AutomationTokenResponse.prototype['limit_workspaces'] = undefined;
+
+/**
+ * The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access.
+ * @member {Array.<String>} workspaces
+ */
+AutomationTokenResponse.prototype['workspaces'] = undefined;
 
 /**
  * A space-delimited list of authorization scope.
@@ -175,15 +212,35 @@ AutomationTokenResponse.prototype['created_at'] = undefined;
  */
 AutomationToken.prototype['name'] = undefined;
 /**
- * The role on the token.
+ * The primary role on the token. For tokens with multiple roles, this returns the highest-priority role for backwards compatibility.
  * @member {module:model/AutomationToken.RoleEnum} role
  */
 AutomationToken.prototype['role'] = undefined;
 /**
- * (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. 
+ * All roles assigned to the token. Each role includes an `id` and `name`.
+ * @member {Array.<module:model/AutomationTokenRole>} roles
+ */
+AutomationToken.prototype['roles'] = undefined;
+/**
+ * The service IDs of the services the token has access to. Empty when `limit_services` is `false` (full access) or when the token has no service access.
  * @member {Array.<String>} services
  */
 AutomationToken.prototype['services'] = undefined;
+/**
+ * When `true`, the token is restricted to only the services in the `services` array. When `false`, the token has access to all services.
+ * @member {Boolean} limit_services
+ */
+AutomationToken.prototype['limit_services'] = undefined;
+/**
+ * When `true`, the token is restricted to only the workspaces in the `workspaces` array. When `false`, the token has access to all workspaces. Only applies to roles that support workspace access.
+ * @member {Boolean} limit_workspaces
+ */
+AutomationToken.prototype['limit_workspaces'] = undefined;
+/**
+ * The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access.
+ * @member {Array.<String>} workspaces
+ */
+AutomationToken.prototype['workspaces'] = undefined;
 /**
  * A space-delimited list of authorization scope.
  * @member {module:model/AutomationToken.ScopeEnum} scope

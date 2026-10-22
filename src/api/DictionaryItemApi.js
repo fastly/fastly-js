@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * DictionaryItem service.
 * @module api/DictionaryItemApi
-* @version 16.1.0
+* @version 17.0.0
 */
 export default class DictionaryItemApi {
 
@@ -111,7 +111,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_key] - Item key, maximum 255 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
      */
@@ -166,7 +166,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_key] - Item key, maximum 255 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
      */
@@ -182,7 +182,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteDictionaryItemWithHttpInfo(options = {}) {
@@ -239,7 +239,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteDictionaryItem(options = {}) {
@@ -254,7 +254,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
      */
     getDictionaryItemWithHttpInfo(options = {}) {
@@ -311,7 +311,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
      */
     getDictionaryItem(options = {}) {
@@ -403,8 +403,8 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
-     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
+     * @param {String} [options.item_key] - Item key, maximum 255 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
      */
@@ -464,8 +464,8 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
-     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
+     * @param {String} [options.item_key] - Item key, maximum 255 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
      */
@@ -481,8 +481,8 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
-     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
+     * @param {String} [options.item_key] - Item key, maximum 255 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
      */
@@ -542,8 +542,8 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
-     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} options.dictionary_item_key - Item key, maximum 255 characters.
+     * @param {String} [options.item_key] - Item key, maximum 255 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
      */

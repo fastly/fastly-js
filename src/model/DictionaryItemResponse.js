@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The DictionaryItemResponse model module.
  * @module model/DictionaryItemResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DictionaryItemResponse {
     /**
@@ -84,7 +84,7 @@ class DictionaryItemResponse {
 }
 
 /**
- * Item key, maximum 256 characters.
+ * Item key, maximum 255 characters.
  * @member {String} item_key
  */
 DictionaryItemResponse.prototype['item_key'] = undefined;
@@ -126,7 +126,7 @@ DictionaryItemResponse.prototype['service_id'] = undefined;
 
 // Implement DictionaryItem interface:
 /**
- * Item key, maximum 256 characters.
+ * Item key, maximum 255 characters.
  * @member {String} item_key
  */
 DictionaryItem.prototype['item_key'] = undefined;

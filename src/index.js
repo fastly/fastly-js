@@ -31,6 +31,12 @@ import AiAcceleratorResponseLinks from './model/AiAcceleratorResponseLinks';
 import AiAcceleratorResponseLinksLinks from './model/AiAcceleratorResponseLinksLinks';
 import AiAcceleratorResponseProduct from './model/AiAcceleratorResponseProduct';
 import AiAcceleratorResponseProductProduct from './model/AiAcceleratorResponseProductProduct';
+import AiRuntimeControlResponseBodyEnable from './model/AiRuntimeControlResponseBodyEnable';
+import AiRuntimeControlResponseCustomer from './model/AiRuntimeControlResponseCustomer';
+import AiRuntimeControlResponseLinks from './model/AiRuntimeControlResponseLinks';
+import AiRuntimeControlResponseLinksLinks from './model/AiRuntimeControlResponseLinksLinks';
+import AiRuntimeControlResponseProduct from './model/AiRuntimeControlResponseProduct';
+import AiRuntimeControlResponseProductProduct from './model/AiRuntimeControlResponseProductProduct';
 import ApexRedirect from './model/ApexRedirect';
 import ApexRedirectAllOf from './model/ApexRedirectAllOf';
 import ApiDiscoveryResponseBodyGetAllServices from './model/ApiDiscoveryResponseBodyGetAllServices';
@@ -46,18 +52,64 @@ import ApiDiscoveryResponseProduct from './model/ApiDiscoveryResponseProduct';
 import ApiDiscoveryResponseProductProduct from './model/ApiDiscoveryResponseProductProduct';
 import ApiDiscoveryResponseService from './model/ApiDiscoveryResponseService';
 import ApiDiscoveryResponseServiceService from './model/ApiDiscoveryResponseServiceService';
+import ArcBedrockSetupResponse from './model/ArcBedrockSetupResponse';
+import ArcCreateVirtualKeyResponse from './model/ArcCreateVirtualKeyResponse';
+import ArcError from './model/ArcError';
+import ArcFailoverTarget from './model/ArcFailoverTarget';
+import ArcGetProviderConnectionResponse from './model/ArcGetProviderConnectionResponse';
+import ArcGetProviderConnectionResponseExtra from './model/ArcGetProviderConnectionResponseExtra';
+import ArcModel from './model/ArcModel';
+import ArcModelsMeta from './model/ArcModelsMeta';
+import ArcModelsResponse from './model/ArcModelsResponse';
+import ArcProvider from './model/ArcProvider';
+import ArcProviderConnectionApiKey from './model/ArcProviderConnectionApiKey';
+import ArcProviderConnectionAwsIam from './model/ArcProviderConnectionAwsIam';
+import ArcProviderConnectionListItemResponse from './model/ArcProviderConnectionListItemResponse';
+import ArcProviderConnectionListItemResponseExtra from './model/ArcProviderConnectionListItemResponseExtra';
+import ArcProviderConnectionRequest from './model/ArcProviderConnectionRequest';
+import ArcProviderConnectionResponse from './model/ArcProviderConnectionResponse';
+import ArcProviderConnectionsMeta from './model/ArcProviderConnectionsMeta';
+import ArcProviderConnectionsResponse from './model/ArcProviderConnectionsResponse';
+import ArcProvidersMeta from './model/ArcProvidersMeta';
+import ArcProvidersResponse from './model/ArcProvidersResponse';
+import ArcRotateVirtualKeyRequest from './model/ArcRotateVirtualKeyRequest';
+import ArcRotateVirtualKeyResponse from './model/ArcRotateVirtualKeyResponse';
+import ArcSession from './model/ArcSession';
+import ArcSessionLogEntry from './model/ArcSessionLogEntry';
+import ArcSessionsMeta from './model/ArcSessionsMeta';
+import ArcSessionsResponse from './model/ArcSessionsResponse';
+import ArcUpdateProviderConnectionRequest from './model/ArcUpdateProviderConnectionRequest';
+import ArcUpdateVirtualKeyRequest from './model/ArcUpdateVirtualKeyRequest';
+import ArcUpdateVirtualKeyResponse from './model/ArcUpdateVirtualKeyResponse';
+import ArcUsageMetric from './model/ArcUsageMetric';
+import ArcUsageMetricsMeta from './model/ArcUsageMetricsMeta';
+import ArcUsageMetricsResponse from './model/ArcUsageMetricsResponse';
+import ArcVirtualKey from './model/ArcVirtualKey';
+import ArcVirtualKeyFailoverRequest from './model/ArcVirtualKeyFailoverRequest';
+import ArcVirtualKeyFailoverResponse from './model/ArcVirtualKeyFailoverResponse';
+import ArcVirtualKeyListItemResponse from './model/ArcVirtualKeyListItemResponse';
+import ArcVirtualKeyListItemResponseExtra from './model/ArcVirtualKeyListItemResponseExtra';
+import ArcVirtualKeyResponse from './model/ArcVirtualKeyResponse';
+import ArcVirtualKeyResponseExtra from './model/ArcVirtualKeyResponseExtra';
+import ArcVirtualKeysMeta from './model/ArcVirtualKeysMeta';
+import ArcVirtualKeysResponse from './model/ArcVirtualKeysResponse';
 import AsyncResponse from './model/AsyncResponse';
 import AttackReport from './model/AttackReport';
 import AttackSignal from './model/AttackSignal';
 import AttackSource from './model/AttackSource';
 import AutomationToken from './model/AutomationToken';
 import AutomationTokenCreateRequest from './model/AutomationTokenCreateRequest';
-import AutomationTokenCreateRequestAttributes from './model/AutomationTokenCreateRequestAttributes';
 import AutomationTokenCreateResponse from './model/AutomationTokenCreateResponse';
 import AutomationTokenCreateResponseAllOf from './model/AutomationTokenCreateResponseAllOf';
 import AutomationTokenErrorResponse from './model/AutomationTokenErrorResponse';
 import AutomationTokenResponse from './model/AutomationTokenResponse';
 import AutomationTokenResponseAllOf from './model/AutomationTokenResponseAllOf';
+import AutomationTokenRole from './model/AutomationTokenRole';
+import AutomationTokenUnversionedError from './model/AutomationTokenUnversionedError';
+import AutomationTokenUnversionedErrorResponse from './model/AutomationTokenUnversionedErrorResponse';
+import AutomationTokenWorkspace from './model/AutomationTokenWorkspace';
+import AutomationTokenWorkspacesMeta from './model/AutomationTokenWorkspacesMeta';
+import AutomationTokenWorkspacesResponse from './model/AutomationTokenWorkspacesResponse';
 import AwsRegion from './model/AwsRegion';
 import Backend from './model/Backend';
 import BackendResponse from './model/BackendResponse';
@@ -69,6 +121,29 @@ import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
 import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
+import BotManagementAction from './model/BotManagementAction';
+import BotManagementBot from './model/BotManagementBot';
+import BotManagementBotAction from './model/BotManagementBotAction';
+import BotManagementBotResponse from './model/BotManagementBotResponse';
+import BotManagementBotResponseExtra from './model/BotManagementBotResponseExtra';
+import BotManagementBotsResponse from './model/BotManagementBotsResponse';
+import BotManagementCategoriesResponse from './model/BotManagementCategoriesResponse';
+import BotManagementCategory from './model/BotManagementCategory';
+import BotManagementCategoryResponse from './model/BotManagementCategoryResponse';
+import BotManagementCategoryResponseExtra from './model/BotManagementCategoryResponseExtra';
+import BotManagementError from './model/BotManagementError';
+import BotManagementInvalidRequestError from './model/BotManagementInvalidRequestError';
+import BotManagementInvalidRequestErrorExtra from './model/BotManagementInvalidRequestErrorExtra';
+import BotManagementMeta from './model/BotManagementMeta';
+import BotManagementNotAllowedError from './model/BotManagementNotAllowedError';
+import BotManagementNotAllowedErrorExtra from './model/BotManagementNotAllowedErrorExtra';
+import BotManagementNotAuthenticatedError from './model/BotManagementNotAuthenticatedError';
+import BotManagementNotAuthenticatedErrorExtra from './model/BotManagementNotAuthenticatedErrorExtra';
+import BotManagementNotFoundError from './model/BotManagementNotFoundError';
+import BotManagementNotFoundErrorExtra from './model/BotManagementNotFoundErrorExtra';
+import BotManagementProtectionMode from './model/BotManagementProtectionMode';
+import BotManagementRateLimitError from './model/BotManagementRateLimitError';
+import BotManagementRateLimitErrorExtra from './model/BotManagementRateLimitErrorExtra';
 import BotManagementRequestUpdateConfiguration from './model/BotManagementRequestUpdateConfiguration';
 import BotManagementResponseBodyEnable from './model/BotManagementResponseBodyEnable';
 import BotManagementResponseBodyGetAllServices from './model/BotManagementResponseBodyGetAllServices';
@@ -85,6 +160,16 @@ import BotManagementResponseLinksLinks from './model/BotManagementResponseLinksL
 import BotManagementResponseProduct from './model/BotManagementResponseProduct';
 import BotManagementResponseProductProduct from './model/BotManagementResponseProductProduct';
 import BotManagementResponseService from './model/BotManagementResponseService';
+import BotManagementWorkspace from './model/BotManagementWorkspace';
+import BotManagementWorkspaceBotResponse from './model/BotManagementWorkspaceBotResponse';
+import BotManagementWorkspaceBotResponseExtra from './model/BotManagementWorkspaceBotResponseExtra';
+import BotManagementWorkspaceBotsResponse from './model/BotManagementWorkspaceBotsResponse';
+import BotManagementWorkspaceResponse from './model/BotManagementWorkspaceResponse';
+import BotManagementWorkspaceResponseExtra from './model/BotManagementWorkspaceResponseExtra';
+import BotManagementWorkspacesResponse from './model/BotManagementWorkspacesResponse';
+import BotRequestMetricsDataItem from './model/BotRequestMetricsDataItem';
+import BotRequestMetricsMetadata from './model/BotRequestMetricsMetadata';
+import BotRequestMetricsResponse from './model/BotRequestMetricsResponse';
 import BrotliCompressionResponseBodyEnable from './model/BrotliCompressionResponseBodyEnable';
 import BrotliCompressionResponseBodyGetAllServices from './model/BrotliCompressionResponseBodyGetAllServices';
 import BrotliCompressionResponseCustomer from './model/BrotliCompressionResponseCustomer';
@@ -503,6 +588,54 @@ import MutualAuthenticationResponseData from './model/MutualAuthenticationRespon
 import MutualAuthenticationResponseDataAllOf from './model/MutualAuthenticationResponseDataAllOf';
 import MutualAuthenticationsResponse from './model/MutualAuthenticationsResponse';
 import MutualAuthenticationsResponseAllOf from './model/MutualAuthenticationsResponseAllOf';
+import NetworkProtectConflict from './model/NetworkProtectConflict';
+import NetworkProtectConflictError from './model/NetworkProtectConflictError';
+import NetworkProtectEndpoint from './model/NetworkProtectEndpoint';
+import NetworkProtectEndpointCreate from './model/NetworkProtectEndpointCreate';
+import NetworkProtectEndpointPolicy from './model/NetworkProtectEndpointPolicy';
+import NetworkProtectEndpointResponse from './model/NetworkProtectEndpointResponse';
+import NetworkProtectEndpointResponseFields from './model/NetworkProtectEndpointResponseFields';
+import NetworkProtectEndpointUpdate from './model/NetworkProtectEndpointUpdate';
+import NetworkProtectEndpointsResponse from './model/NetworkProtectEndpointsResponse';
+import NetworkProtectErrorDetail from './model/NetworkProtectErrorDetail';
+import NetworkProtectInvalidRequest from './model/NetworkProtectInvalidRequest';
+import NetworkProtectListMeta from './model/NetworkProtectListMeta';
+import NetworkProtectLoaStatus from './model/NetworkProtectLoaStatus';
+import NetworkProtectNetwork from './model/NetworkProtectNetwork';
+import NetworkProtectNetworkCreate from './model/NetworkProtectNetworkCreate';
+import NetworkProtectNetworkResponse from './model/NetworkProtectNetworkResponse';
+import NetworkProtectNetworkResponseFields from './model/NetworkProtectNetworkResponseFields';
+import NetworkProtectNetworkUpdate from './model/NetworkProtectNetworkUpdate';
+import NetworkProtectNetworksResponse from './model/NetworkProtectNetworksResponse';
+import NetworkProtectPolicyEndpoint from './model/NetworkProtectPolicyEndpoint';
+import NetworkProtectPrefixList from './model/NetworkProtectPrefixList';
+import NetworkProtectPrefixListCreate from './model/NetworkProtectPrefixListCreate';
+import NetworkProtectPrefixListFamily from './model/NetworkProtectPrefixListFamily';
+import NetworkProtectPrefixListResponse from './model/NetworkProtectPrefixListResponse';
+import NetworkProtectPrefixListResponseFields from './model/NetworkProtectPrefixListResponseFields';
+import NetworkProtectPrefixListUpdate from './model/NetworkProtectPrefixListUpdate';
+import NetworkProtectPrefixListsResponse from './model/NetworkProtectPrefixListsResponse';
+import NetworkProtectRegion from './model/NetworkProtectRegion';
+import NetworkProtectRoaStatus from './model/NetworkProtectRoaStatus';
+import NetworkProtectRule from './model/NetworkProtectRule';
+import NetworkProtectRuleAction from './model/NetworkProtectRuleAction';
+import NetworkProtectRuleDestinationPorts from './model/NetworkProtectRuleDestinationPorts';
+import NetworkProtectRuleIpProtocol from './model/NetworkProtectRuleIpProtocol';
+import NetworkProtectRuleMatchDestinationIp from './model/NetworkProtectRuleMatchDestinationIp';
+import NetworkProtectRuleMatchDestinationPorts from './model/NetworkProtectRuleMatchDestinationPorts';
+import NetworkProtectRuleMatchIpProtocol from './model/NetworkProtectRuleMatchIpProtocol';
+import NetworkProtectRuleMatchSourcePorts from './model/NetworkProtectRuleMatchSourcePorts';
+import NetworkProtectRuleMatchSourcePrefixList from './model/NetworkProtectRuleMatchSourcePrefixList';
+import NetworkProtectRuleResponse from './model/NetworkProtectRuleResponse';
+import NetworkProtectRuleSet from './model/NetworkProtectRuleSet';
+import NetworkProtectRuleSetCreate from './model/NetworkProtectRuleSetCreate';
+import NetworkProtectRuleSetDefaultAction from './model/NetworkProtectRuleSetDefaultAction';
+import NetworkProtectRuleSetResponse from './model/NetworkProtectRuleSetResponse';
+import NetworkProtectRuleSetResponseFields from './model/NetworkProtectRuleSetResponseFields';
+import NetworkProtectRuleSetUpdate from './model/NetworkProtectRuleSetUpdate';
+import NetworkProtectRuleSetsResponse from './model/NetworkProtectRuleSetsResponse';
+import NetworkProtectRuleSourcePorts from './model/NetworkProtectRuleSourcePorts';
+import NetworkProtectRuleTimestamps from './model/NetworkProtectRuleTimestamps';
 import NgwafRequestEnable from './model/NgwafRequestEnable';
 import NgwafRequestUpdateConfiguration from './model/NgwafRequestUpdateConfiguration';
 import NgwafResponseBodyGetAllServices from './model/NgwafResponseBodyGetAllServices';
@@ -955,6 +1088,11 @@ import WsMessageFormat from './model/WsMessageFormat';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
 import AclsInComputeApi from './api/AclsInComputeApi';
+import AiRuntimeControlProviderConnectionsApi from './api/AiRuntimeControlProviderConnectionsApi';
+import AiRuntimeControlProvidersApi from './api/AiRuntimeControlProvidersApi';
+import AiRuntimeControlSessionsApi from './api/AiRuntimeControlSessionsApi';
+import AiRuntimeControlUsageMetricsApi from './api/AiRuntimeControlUsageMetricsApi';
+import AiRuntimeControlVirtualKeysApi from './api/AiRuntimeControlVirtualKeysApi';
 import ApexRedirectApi from './api/ApexRedirectApi';
 import ApisecurityOperationsApi from './api/ApisecurityOperationsApi';
 import AutomationTokensApi from './api/AutomationTokensApi';
@@ -962,6 +1100,8 @@ import BackendApi from './api/BackendApi';
 import BillingAddressApi from './api/BillingAddressApi';
 import BillingInvoicesApi from './api/BillingInvoicesApi';
 import BillingUsageMetricsApi from './api/BillingUsageMetricsApi';
+import BotManagementApi from './api/BotManagementApi';
+import BotRequestsMetricsApi from './api/BotRequestsMetricsApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
 import ClientSideProtectionApi from './api/ClientSideProtectionApi';
 import ConditionApi from './api/ConditionApi';
@@ -1032,6 +1172,7 @@ import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MetricsPlatformApi from './api/MetricsPlatformApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import NetworkProtectApi from './api/NetworkProtectApi';
 import NgwafAgentKeysApi from './api/NgwafAgentKeysApi';
 import NgwafReportsApi from './api/NgwafReportsApi';
 import NgwafSimulateApi from './api/NgwafSimulateApi';
@@ -1045,6 +1186,7 @@ import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
 import ProductAiAcceleratorApi from './api/ProductAiAcceleratorApi';
+import ProductAiRuntimeControlApi from './api/ProductAiRuntimeControlApi';
 import ProductApiDiscoveryApi from './api/ProductApiDiscoveryApi';
 import ProductBotManagementApi from './api/ProductBotManagementApi';
 import ProductBrotliCompressionApi from './api/ProductBrotliCompressionApi';
@@ -1126,7 +1268,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 16.1.0
+* @version 17.0.0
 */
 export {
     /**
@@ -1250,6 +1392,42 @@ export {
     AiAcceleratorResponseProductProduct,
 
     /**
+     * The AiRuntimeControlResponseBodyEnable model constructor.
+     * @property {module:model/AiRuntimeControlResponseBodyEnable}
+     */
+    AiRuntimeControlResponseBodyEnable,
+
+    /**
+     * The AiRuntimeControlResponseCustomer model constructor.
+     * @property {module:model/AiRuntimeControlResponseCustomer}
+     */
+    AiRuntimeControlResponseCustomer,
+
+    /**
+     * The AiRuntimeControlResponseLinks model constructor.
+     * @property {module:model/AiRuntimeControlResponseLinks}
+     */
+    AiRuntimeControlResponseLinks,
+
+    /**
+     * The AiRuntimeControlResponseLinksLinks model constructor.
+     * @property {module:model/AiRuntimeControlResponseLinksLinks}
+     */
+    AiRuntimeControlResponseLinksLinks,
+
+    /**
+     * The AiRuntimeControlResponseProduct model constructor.
+     * @property {module:model/AiRuntimeControlResponseProduct}
+     */
+    AiRuntimeControlResponseProduct,
+
+    /**
+     * The AiRuntimeControlResponseProductProduct model constructor.
+     * @property {module:model/AiRuntimeControlResponseProductProduct}
+     */
+    AiRuntimeControlResponseProductProduct,
+
+    /**
      * The ApexRedirect model constructor.
      * @property {module:model/ApexRedirect}
      */
@@ -1340,6 +1518,252 @@ export {
     ApiDiscoveryResponseServiceService,
 
     /**
+     * The ArcBedrockSetupResponse model constructor.
+     * @property {module:model/ArcBedrockSetupResponse}
+     */
+    ArcBedrockSetupResponse,
+
+    /**
+     * The ArcCreateVirtualKeyResponse model constructor.
+     * @property {module:model/ArcCreateVirtualKeyResponse}
+     */
+    ArcCreateVirtualKeyResponse,
+
+    /**
+     * The ArcError model constructor.
+     * @property {module:model/ArcError}
+     */
+    ArcError,
+
+    /**
+     * The ArcFailoverTarget model constructor.
+     * @property {module:model/ArcFailoverTarget}
+     */
+    ArcFailoverTarget,
+
+    /**
+     * The ArcGetProviderConnectionResponse model constructor.
+     * @property {module:model/ArcGetProviderConnectionResponse}
+     */
+    ArcGetProviderConnectionResponse,
+
+    /**
+     * The ArcGetProviderConnectionResponseExtra model constructor.
+     * @property {module:model/ArcGetProviderConnectionResponseExtra}
+     */
+    ArcGetProviderConnectionResponseExtra,
+
+    /**
+     * The ArcModel model constructor.
+     * @property {module:model/ArcModel}
+     */
+    ArcModel,
+
+    /**
+     * The ArcModelsMeta model constructor.
+     * @property {module:model/ArcModelsMeta}
+     */
+    ArcModelsMeta,
+
+    /**
+     * The ArcModelsResponse model constructor.
+     * @property {module:model/ArcModelsResponse}
+     */
+    ArcModelsResponse,
+
+    /**
+     * The ArcProvider model constructor.
+     * @property {module:model/ArcProvider}
+     */
+    ArcProvider,
+
+    /**
+     * The ArcProviderConnectionApiKey model constructor.
+     * @property {module:model/ArcProviderConnectionApiKey}
+     */
+    ArcProviderConnectionApiKey,
+
+    /**
+     * The ArcProviderConnectionAwsIam model constructor.
+     * @property {module:model/ArcProviderConnectionAwsIam}
+     */
+    ArcProviderConnectionAwsIam,
+
+    /**
+     * The ArcProviderConnectionListItemResponse model constructor.
+     * @property {module:model/ArcProviderConnectionListItemResponse}
+     */
+    ArcProviderConnectionListItemResponse,
+
+    /**
+     * The ArcProviderConnectionListItemResponseExtra model constructor.
+     * @property {module:model/ArcProviderConnectionListItemResponseExtra}
+     */
+    ArcProviderConnectionListItemResponseExtra,
+
+    /**
+     * The ArcProviderConnectionRequest model constructor.
+     * @property {module:model/ArcProviderConnectionRequest}
+     */
+    ArcProviderConnectionRequest,
+
+    /**
+     * The ArcProviderConnectionResponse model constructor.
+     * @property {module:model/ArcProviderConnectionResponse}
+     */
+    ArcProviderConnectionResponse,
+
+    /**
+     * The ArcProviderConnectionsMeta model constructor.
+     * @property {module:model/ArcProviderConnectionsMeta}
+     */
+    ArcProviderConnectionsMeta,
+
+    /**
+     * The ArcProviderConnectionsResponse model constructor.
+     * @property {module:model/ArcProviderConnectionsResponse}
+     */
+    ArcProviderConnectionsResponse,
+
+    /**
+     * The ArcProvidersMeta model constructor.
+     * @property {module:model/ArcProvidersMeta}
+     */
+    ArcProvidersMeta,
+
+    /**
+     * The ArcProvidersResponse model constructor.
+     * @property {module:model/ArcProvidersResponse}
+     */
+    ArcProvidersResponse,
+
+    /**
+     * The ArcRotateVirtualKeyRequest model constructor.
+     * @property {module:model/ArcRotateVirtualKeyRequest}
+     */
+    ArcRotateVirtualKeyRequest,
+
+    /**
+     * The ArcRotateVirtualKeyResponse model constructor.
+     * @property {module:model/ArcRotateVirtualKeyResponse}
+     */
+    ArcRotateVirtualKeyResponse,
+
+    /**
+     * The ArcSession model constructor.
+     * @property {module:model/ArcSession}
+     */
+    ArcSession,
+
+    /**
+     * The ArcSessionLogEntry model constructor.
+     * @property {module:model/ArcSessionLogEntry}
+     */
+    ArcSessionLogEntry,
+
+    /**
+     * The ArcSessionsMeta model constructor.
+     * @property {module:model/ArcSessionsMeta}
+     */
+    ArcSessionsMeta,
+
+    /**
+     * The ArcSessionsResponse model constructor.
+     * @property {module:model/ArcSessionsResponse}
+     */
+    ArcSessionsResponse,
+
+    /**
+     * The ArcUpdateProviderConnectionRequest model constructor.
+     * @property {module:model/ArcUpdateProviderConnectionRequest}
+     */
+    ArcUpdateProviderConnectionRequest,
+
+    /**
+     * The ArcUpdateVirtualKeyRequest model constructor.
+     * @property {module:model/ArcUpdateVirtualKeyRequest}
+     */
+    ArcUpdateVirtualKeyRequest,
+
+    /**
+     * The ArcUpdateVirtualKeyResponse model constructor.
+     * @property {module:model/ArcUpdateVirtualKeyResponse}
+     */
+    ArcUpdateVirtualKeyResponse,
+
+    /**
+     * The ArcUsageMetric model constructor.
+     * @property {module:model/ArcUsageMetric}
+     */
+    ArcUsageMetric,
+
+    /**
+     * The ArcUsageMetricsMeta model constructor.
+     * @property {module:model/ArcUsageMetricsMeta}
+     */
+    ArcUsageMetricsMeta,
+
+    /**
+     * The ArcUsageMetricsResponse model constructor.
+     * @property {module:model/ArcUsageMetricsResponse}
+     */
+    ArcUsageMetricsResponse,
+
+    /**
+     * The ArcVirtualKey model constructor.
+     * @property {module:model/ArcVirtualKey}
+     */
+    ArcVirtualKey,
+
+    /**
+     * The ArcVirtualKeyFailoverRequest model constructor.
+     * @property {module:model/ArcVirtualKeyFailoverRequest}
+     */
+    ArcVirtualKeyFailoverRequest,
+
+    /**
+     * The ArcVirtualKeyFailoverResponse model constructor.
+     * @property {module:model/ArcVirtualKeyFailoverResponse}
+     */
+    ArcVirtualKeyFailoverResponse,
+
+    /**
+     * The ArcVirtualKeyListItemResponse model constructor.
+     * @property {module:model/ArcVirtualKeyListItemResponse}
+     */
+    ArcVirtualKeyListItemResponse,
+
+    /**
+     * The ArcVirtualKeyListItemResponseExtra model constructor.
+     * @property {module:model/ArcVirtualKeyListItemResponseExtra}
+     */
+    ArcVirtualKeyListItemResponseExtra,
+
+    /**
+     * The ArcVirtualKeyResponse model constructor.
+     * @property {module:model/ArcVirtualKeyResponse}
+     */
+    ArcVirtualKeyResponse,
+
+    /**
+     * The ArcVirtualKeyResponseExtra model constructor.
+     * @property {module:model/ArcVirtualKeyResponseExtra}
+     */
+    ArcVirtualKeyResponseExtra,
+
+    /**
+     * The ArcVirtualKeysMeta model constructor.
+     * @property {module:model/ArcVirtualKeysMeta}
+     */
+    ArcVirtualKeysMeta,
+
+    /**
+     * The ArcVirtualKeysResponse model constructor.
+     * @property {module:model/ArcVirtualKeysResponse}
+     */
+    ArcVirtualKeysResponse,
+
+    /**
      * The AsyncResponse model constructor.
      * @property {module:model/AsyncResponse}
      */
@@ -1376,12 +1800,6 @@ export {
     AutomationTokenCreateRequest,
 
     /**
-     * The AutomationTokenCreateRequestAttributes model constructor.
-     * @property {module:model/AutomationTokenCreateRequestAttributes}
-     */
-    AutomationTokenCreateRequestAttributes,
-
-    /**
      * The AutomationTokenCreateResponse model constructor.
      * @property {module:model/AutomationTokenCreateResponse}
      */
@@ -1410,6 +1828,42 @@ export {
      * @property {module:model/AutomationTokenResponseAllOf}
      */
     AutomationTokenResponseAllOf,
+
+    /**
+     * The AutomationTokenRole model constructor.
+     * @property {module:model/AutomationTokenRole}
+     */
+    AutomationTokenRole,
+
+    /**
+     * The AutomationTokenUnversionedError model constructor.
+     * @property {module:model/AutomationTokenUnversionedError}
+     */
+    AutomationTokenUnversionedError,
+
+    /**
+     * The AutomationTokenUnversionedErrorResponse model constructor.
+     * @property {module:model/AutomationTokenUnversionedErrorResponse}
+     */
+    AutomationTokenUnversionedErrorResponse,
+
+    /**
+     * The AutomationTokenWorkspace model constructor.
+     * @property {module:model/AutomationTokenWorkspace}
+     */
+    AutomationTokenWorkspace,
+
+    /**
+     * The AutomationTokenWorkspacesMeta model constructor.
+     * @property {module:model/AutomationTokenWorkspacesMeta}
+     */
+    AutomationTokenWorkspacesMeta,
+
+    /**
+     * The AutomationTokenWorkspacesResponse model constructor.
+     * @property {module:model/AutomationTokenWorkspacesResponse}
+     */
+    AutomationTokenWorkspacesResponse,
 
     /**
      * The AwsRegion model constructor.
@@ -1476,6 +1930,144 @@ export {
      * @property {module:model/BillingAddressVerificationErrorResponseErrors}
      */
     BillingAddressVerificationErrorResponseErrors,
+
+    /**
+     * The BotManagementAction model constructor.
+     * @property {module:model/BotManagementAction}
+     */
+    BotManagementAction,
+
+    /**
+     * The BotManagementBot model constructor.
+     * @property {module:model/BotManagementBot}
+     */
+    BotManagementBot,
+
+    /**
+     * The BotManagementBotAction model constructor.
+     * @property {module:model/BotManagementBotAction}
+     */
+    BotManagementBotAction,
+
+    /**
+     * The BotManagementBotResponse model constructor.
+     * @property {module:model/BotManagementBotResponse}
+     */
+    BotManagementBotResponse,
+
+    /**
+     * The BotManagementBotResponseExtra model constructor.
+     * @property {module:model/BotManagementBotResponseExtra}
+     */
+    BotManagementBotResponseExtra,
+
+    /**
+     * The BotManagementBotsResponse model constructor.
+     * @property {module:model/BotManagementBotsResponse}
+     */
+    BotManagementBotsResponse,
+
+    /**
+     * The BotManagementCategoriesResponse model constructor.
+     * @property {module:model/BotManagementCategoriesResponse}
+     */
+    BotManagementCategoriesResponse,
+
+    /**
+     * The BotManagementCategory model constructor.
+     * @property {module:model/BotManagementCategory}
+     */
+    BotManagementCategory,
+
+    /**
+     * The BotManagementCategoryResponse model constructor.
+     * @property {module:model/BotManagementCategoryResponse}
+     */
+    BotManagementCategoryResponse,
+
+    /**
+     * The BotManagementCategoryResponseExtra model constructor.
+     * @property {module:model/BotManagementCategoryResponseExtra}
+     */
+    BotManagementCategoryResponseExtra,
+
+    /**
+     * The BotManagementError model constructor.
+     * @property {module:model/BotManagementError}
+     */
+    BotManagementError,
+
+    /**
+     * The BotManagementInvalidRequestError model constructor.
+     * @property {module:model/BotManagementInvalidRequestError}
+     */
+    BotManagementInvalidRequestError,
+
+    /**
+     * The BotManagementInvalidRequestErrorExtra model constructor.
+     * @property {module:model/BotManagementInvalidRequestErrorExtra}
+     */
+    BotManagementInvalidRequestErrorExtra,
+
+    /**
+     * The BotManagementMeta model constructor.
+     * @property {module:model/BotManagementMeta}
+     */
+    BotManagementMeta,
+
+    /**
+     * The BotManagementNotAllowedError model constructor.
+     * @property {module:model/BotManagementNotAllowedError}
+     */
+    BotManagementNotAllowedError,
+
+    /**
+     * The BotManagementNotAllowedErrorExtra model constructor.
+     * @property {module:model/BotManagementNotAllowedErrorExtra}
+     */
+    BotManagementNotAllowedErrorExtra,
+
+    /**
+     * The BotManagementNotAuthenticatedError model constructor.
+     * @property {module:model/BotManagementNotAuthenticatedError}
+     */
+    BotManagementNotAuthenticatedError,
+
+    /**
+     * The BotManagementNotAuthenticatedErrorExtra model constructor.
+     * @property {module:model/BotManagementNotAuthenticatedErrorExtra}
+     */
+    BotManagementNotAuthenticatedErrorExtra,
+
+    /**
+     * The BotManagementNotFoundError model constructor.
+     * @property {module:model/BotManagementNotFoundError}
+     */
+    BotManagementNotFoundError,
+
+    /**
+     * The BotManagementNotFoundErrorExtra model constructor.
+     * @property {module:model/BotManagementNotFoundErrorExtra}
+     */
+    BotManagementNotFoundErrorExtra,
+
+    /**
+     * The BotManagementProtectionMode model constructor.
+     * @property {module:model/BotManagementProtectionMode}
+     */
+    BotManagementProtectionMode,
+
+    /**
+     * The BotManagementRateLimitError model constructor.
+     * @property {module:model/BotManagementRateLimitError}
+     */
+    BotManagementRateLimitError,
+
+    /**
+     * The BotManagementRateLimitErrorExtra model constructor.
+     * @property {module:model/BotManagementRateLimitErrorExtra}
+     */
+    BotManagementRateLimitErrorExtra,
 
     /**
      * The BotManagementRequestUpdateConfiguration model constructor.
@@ -1572,6 +2164,66 @@ export {
      * @property {module:model/BotManagementResponseService}
      */
     BotManagementResponseService,
+
+    /**
+     * The BotManagementWorkspace model constructor.
+     * @property {module:model/BotManagementWorkspace}
+     */
+    BotManagementWorkspace,
+
+    /**
+     * The BotManagementWorkspaceBotResponse model constructor.
+     * @property {module:model/BotManagementWorkspaceBotResponse}
+     */
+    BotManagementWorkspaceBotResponse,
+
+    /**
+     * The BotManagementWorkspaceBotResponseExtra model constructor.
+     * @property {module:model/BotManagementWorkspaceBotResponseExtra}
+     */
+    BotManagementWorkspaceBotResponseExtra,
+
+    /**
+     * The BotManagementWorkspaceBotsResponse model constructor.
+     * @property {module:model/BotManagementWorkspaceBotsResponse}
+     */
+    BotManagementWorkspaceBotsResponse,
+
+    /**
+     * The BotManagementWorkspaceResponse model constructor.
+     * @property {module:model/BotManagementWorkspaceResponse}
+     */
+    BotManagementWorkspaceResponse,
+
+    /**
+     * The BotManagementWorkspaceResponseExtra model constructor.
+     * @property {module:model/BotManagementWorkspaceResponseExtra}
+     */
+    BotManagementWorkspaceResponseExtra,
+
+    /**
+     * The BotManagementWorkspacesResponse model constructor.
+     * @property {module:model/BotManagementWorkspacesResponse}
+     */
+    BotManagementWorkspacesResponse,
+
+    /**
+     * The BotRequestMetricsDataItem model constructor.
+     * @property {module:model/BotRequestMetricsDataItem}
+     */
+    BotRequestMetricsDataItem,
+
+    /**
+     * The BotRequestMetricsMetadata model constructor.
+     * @property {module:model/BotRequestMetricsMetadata}
+     */
+    BotRequestMetricsMetadata,
+
+    /**
+     * The BotRequestMetricsResponse model constructor.
+     * @property {module:model/BotRequestMetricsResponse}
+     */
+    BotRequestMetricsResponse,
 
     /**
      * The BrotliCompressionResponseBodyEnable model constructor.
@@ -4080,6 +4732,294 @@ export {
      * @property {module:model/MutualAuthenticationsResponseAllOf}
      */
     MutualAuthenticationsResponseAllOf,
+
+    /**
+     * The NetworkProtectConflict model constructor.
+     * @property {module:model/NetworkProtectConflict}
+     */
+    NetworkProtectConflict,
+
+    /**
+     * The NetworkProtectConflictError model constructor.
+     * @property {module:model/NetworkProtectConflictError}
+     */
+    NetworkProtectConflictError,
+
+    /**
+     * The NetworkProtectEndpoint model constructor.
+     * @property {module:model/NetworkProtectEndpoint}
+     */
+    NetworkProtectEndpoint,
+
+    /**
+     * The NetworkProtectEndpointCreate model constructor.
+     * @property {module:model/NetworkProtectEndpointCreate}
+     */
+    NetworkProtectEndpointCreate,
+
+    /**
+     * The NetworkProtectEndpointPolicy model constructor.
+     * @property {module:model/NetworkProtectEndpointPolicy}
+     */
+    NetworkProtectEndpointPolicy,
+
+    /**
+     * The NetworkProtectEndpointResponse model constructor.
+     * @property {module:model/NetworkProtectEndpointResponse}
+     */
+    NetworkProtectEndpointResponse,
+
+    /**
+     * The NetworkProtectEndpointResponseFields model constructor.
+     * @property {module:model/NetworkProtectEndpointResponseFields}
+     */
+    NetworkProtectEndpointResponseFields,
+
+    /**
+     * The NetworkProtectEndpointUpdate model constructor.
+     * @property {module:model/NetworkProtectEndpointUpdate}
+     */
+    NetworkProtectEndpointUpdate,
+
+    /**
+     * The NetworkProtectEndpointsResponse model constructor.
+     * @property {module:model/NetworkProtectEndpointsResponse}
+     */
+    NetworkProtectEndpointsResponse,
+
+    /**
+     * The NetworkProtectErrorDetail model constructor.
+     * @property {module:model/NetworkProtectErrorDetail}
+     */
+    NetworkProtectErrorDetail,
+
+    /**
+     * The NetworkProtectInvalidRequest model constructor.
+     * @property {module:model/NetworkProtectInvalidRequest}
+     */
+    NetworkProtectInvalidRequest,
+
+    /**
+     * The NetworkProtectListMeta model constructor.
+     * @property {module:model/NetworkProtectListMeta}
+     */
+    NetworkProtectListMeta,
+
+    /**
+     * The NetworkProtectLoaStatus model constructor.
+     * @property {module:model/NetworkProtectLoaStatus}
+     */
+    NetworkProtectLoaStatus,
+
+    /**
+     * The NetworkProtectNetwork model constructor.
+     * @property {module:model/NetworkProtectNetwork}
+     */
+    NetworkProtectNetwork,
+
+    /**
+     * The NetworkProtectNetworkCreate model constructor.
+     * @property {module:model/NetworkProtectNetworkCreate}
+     */
+    NetworkProtectNetworkCreate,
+
+    /**
+     * The NetworkProtectNetworkResponse model constructor.
+     * @property {module:model/NetworkProtectNetworkResponse}
+     */
+    NetworkProtectNetworkResponse,
+
+    /**
+     * The NetworkProtectNetworkResponseFields model constructor.
+     * @property {module:model/NetworkProtectNetworkResponseFields}
+     */
+    NetworkProtectNetworkResponseFields,
+
+    /**
+     * The NetworkProtectNetworkUpdate model constructor.
+     * @property {module:model/NetworkProtectNetworkUpdate}
+     */
+    NetworkProtectNetworkUpdate,
+
+    /**
+     * The NetworkProtectNetworksResponse model constructor.
+     * @property {module:model/NetworkProtectNetworksResponse}
+     */
+    NetworkProtectNetworksResponse,
+
+    /**
+     * The NetworkProtectPolicyEndpoint model constructor.
+     * @property {module:model/NetworkProtectPolicyEndpoint}
+     */
+    NetworkProtectPolicyEndpoint,
+
+    /**
+     * The NetworkProtectPrefixList model constructor.
+     * @property {module:model/NetworkProtectPrefixList}
+     */
+    NetworkProtectPrefixList,
+
+    /**
+     * The NetworkProtectPrefixListCreate model constructor.
+     * @property {module:model/NetworkProtectPrefixListCreate}
+     */
+    NetworkProtectPrefixListCreate,
+
+    /**
+     * The NetworkProtectPrefixListFamily model constructor.
+     * @property {module:model/NetworkProtectPrefixListFamily}
+     */
+    NetworkProtectPrefixListFamily,
+
+    /**
+     * The NetworkProtectPrefixListResponse model constructor.
+     * @property {module:model/NetworkProtectPrefixListResponse}
+     */
+    NetworkProtectPrefixListResponse,
+
+    /**
+     * The NetworkProtectPrefixListResponseFields model constructor.
+     * @property {module:model/NetworkProtectPrefixListResponseFields}
+     */
+    NetworkProtectPrefixListResponseFields,
+
+    /**
+     * The NetworkProtectPrefixListUpdate model constructor.
+     * @property {module:model/NetworkProtectPrefixListUpdate}
+     */
+    NetworkProtectPrefixListUpdate,
+
+    /**
+     * The NetworkProtectPrefixListsResponse model constructor.
+     * @property {module:model/NetworkProtectPrefixListsResponse}
+     */
+    NetworkProtectPrefixListsResponse,
+
+    /**
+     * The NetworkProtectRegion model constructor.
+     * @property {module:model/NetworkProtectRegion}
+     */
+    NetworkProtectRegion,
+
+    /**
+     * The NetworkProtectRoaStatus model constructor.
+     * @property {module:model/NetworkProtectRoaStatus}
+     */
+    NetworkProtectRoaStatus,
+
+    /**
+     * The NetworkProtectRule model constructor.
+     * @property {module:model/NetworkProtectRule}
+     */
+    NetworkProtectRule,
+
+    /**
+     * The NetworkProtectRuleAction model constructor.
+     * @property {module:model/NetworkProtectRuleAction}
+     */
+    NetworkProtectRuleAction,
+
+    /**
+     * The NetworkProtectRuleDestinationPorts model constructor.
+     * @property {module:model/NetworkProtectRuleDestinationPorts}
+     */
+    NetworkProtectRuleDestinationPorts,
+
+    /**
+     * The NetworkProtectRuleIpProtocol model constructor.
+     * @property {module:model/NetworkProtectRuleIpProtocol}
+     */
+    NetworkProtectRuleIpProtocol,
+
+    /**
+     * The NetworkProtectRuleMatchDestinationIp model constructor.
+     * @property {module:model/NetworkProtectRuleMatchDestinationIp}
+     */
+    NetworkProtectRuleMatchDestinationIp,
+
+    /**
+     * The NetworkProtectRuleMatchDestinationPorts model constructor.
+     * @property {module:model/NetworkProtectRuleMatchDestinationPorts}
+     */
+    NetworkProtectRuleMatchDestinationPorts,
+
+    /**
+     * The NetworkProtectRuleMatchIpProtocol model constructor.
+     * @property {module:model/NetworkProtectRuleMatchIpProtocol}
+     */
+    NetworkProtectRuleMatchIpProtocol,
+
+    /**
+     * The NetworkProtectRuleMatchSourcePorts model constructor.
+     * @property {module:model/NetworkProtectRuleMatchSourcePorts}
+     */
+    NetworkProtectRuleMatchSourcePorts,
+
+    /**
+     * The NetworkProtectRuleMatchSourcePrefixList model constructor.
+     * @property {module:model/NetworkProtectRuleMatchSourcePrefixList}
+     */
+    NetworkProtectRuleMatchSourcePrefixList,
+
+    /**
+     * The NetworkProtectRuleResponse model constructor.
+     * @property {module:model/NetworkProtectRuleResponse}
+     */
+    NetworkProtectRuleResponse,
+
+    /**
+     * The NetworkProtectRuleSet model constructor.
+     * @property {module:model/NetworkProtectRuleSet}
+     */
+    NetworkProtectRuleSet,
+
+    /**
+     * The NetworkProtectRuleSetCreate model constructor.
+     * @property {module:model/NetworkProtectRuleSetCreate}
+     */
+    NetworkProtectRuleSetCreate,
+
+    /**
+     * The NetworkProtectRuleSetDefaultAction model constructor.
+     * @property {module:model/NetworkProtectRuleSetDefaultAction}
+     */
+    NetworkProtectRuleSetDefaultAction,
+
+    /**
+     * The NetworkProtectRuleSetResponse model constructor.
+     * @property {module:model/NetworkProtectRuleSetResponse}
+     */
+    NetworkProtectRuleSetResponse,
+
+    /**
+     * The NetworkProtectRuleSetResponseFields model constructor.
+     * @property {module:model/NetworkProtectRuleSetResponseFields}
+     */
+    NetworkProtectRuleSetResponseFields,
+
+    /**
+     * The NetworkProtectRuleSetUpdate model constructor.
+     * @property {module:model/NetworkProtectRuleSetUpdate}
+     */
+    NetworkProtectRuleSetUpdate,
+
+    /**
+     * The NetworkProtectRuleSetsResponse model constructor.
+     * @property {module:model/NetworkProtectRuleSetsResponse}
+     */
+    NetworkProtectRuleSetsResponse,
+
+    /**
+     * The NetworkProtectRuleSourcePorts model constructor.
+     * @property {module:model/NetworkProtectRuleSourcePorts}
+     */
+    NetworkProtectRuleSourcePorts,
+
+    /**
+     * The NetworkProtectRuleTimestamps model constructor.
+     * @property {module:model/NetworkProtectRuleTimestamps}
+     */
+    NetworkProtectRuleTimestamps,
 
     /**
      * The NgwafRequestEnable model constructor.
@@ -6794,6 +7734,36 @@ export {
     AclsInComputeApi,
 
     /**
+    * The AiRuntimeControlProviderConnectionsApi service constructor.
+    * @property {module:api/AiRuntimeControlProviderConnectionsApi}
+    */
+    AiRuntimeControlProviderConnectionsApi,
+
+    /**
+    * The AiRuntimeControlProvidersApi service constructor.
+    * @property {module:api/AiRuntimeControlProvidersApi}
+    */
+    AiRuntimeControlProvidersApi,
+
+    /**
+    * The AiRuntimeControlSessionsApi service constructor.
+    * @property {module:api/AiRuntimeControlSessionsApi}
+    */
+    AiRuntimeControlSessionsApi,
+
+    /**
+    * The AiRuntimeControlUsageMetricsApi service constructor.
+    * @property {module:api/AiRuntimeControlUsageMetricsApi}
+    */
+    AiRuntimeControlUsageMetricsApi,
+
+    /**
+    * The AiRuntimeControlVirtualKeysApi service constructor.
+    * @property {module:api/AiRuntimeControlVirtualKeysApi}
+    */
+    AiRuntimeControlVirtualKeysApi,
+
+    /**
     * The ApexRedirectApi service constructor.
     * @property {module:api/ApexRedirectApi}
     */
@@ -6834,6 +7804,18 @@ export {
     * @property {module:api/BillingUsageMetricsApi}
     */
     BillingUsageMetricsApi,
+
+    /**
+    * The BotManagementApi service constructor.
+    * @property {module:api/BotManagementApi}
+    */
+    BotManagementApi,
+
+    /**
+    * The BotRequestsMetricsApi service constructor.
+    * @property {module:api/BotRequestsMetricsApi}
+    */
+    BotRequestsMetricsApi,
 
     /**
     * The CacheSettingsApi service constructor.
@@ -7256,6 +8238,12 @@ export {
     MutualAuthenticationApi,
 
     /**
+    * The NetworkProtectApi service constructor.
+    * @property {module:api/NetworkProtectApi}
+    */
+    NetworkProtectApi,
+
+    /**
     * The NgwafAgentKeysApi service constructor.
     * @property {module:api/NgwafAgentKeysApi}
     */
@@ -7332,6 +8320,12 @@ export {
     * @property {module:api/ProductAiAcceleratorApi}
     */
     ProductAiAcceleratorApi,
+
+    /**
+    * The ProductAiRuntimeControlApi service constructor.
+    * @property {module:api/ProductAiRuntimeControlApi}
+    */
+    ProductAiRuntimeControlApi,
 
     /**
     * The ProductApiDiscoveryApi service constructor.

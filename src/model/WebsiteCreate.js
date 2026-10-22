@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebsiteCreate model module.
  * @module model/WebsiteCreate
- * @version 16.1.0
+ * @version 17.0.0
  */
 class WebsiteCreate {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionRequestUpdateConfiguration model module.
  * @module model/DdosProtectionRequestUpdateConfiguration
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DdosProtectionRequestUpdateConfiguration {
     /**
@@ -91,7 +91,13 @@ DdosProtectionRequestUpdateConfiguration['ModeEnum'] = {
      * value: "block"
      * @const
      */
-    "block": "block"
+    "block": "block",
+
+    /**
+     * value: "client_challenge"
+     * @const
+     */
+    "client_challenge": "client_challenge"
 };
 
 

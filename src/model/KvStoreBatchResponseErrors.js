@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreBatchResponseErrors model module.
  * @module model/KvStoreBatchResponseErrors
- * @version 16.1.0
+ * @version 17.0.0
  */
 class KvStoreBatchResponseErrors {
     /**

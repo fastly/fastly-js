@@ -13,6 +13,7 @@
 import ApiClient from '../ApiClient';
 import AutomationToken from './AutomationToken';
 import AutomationTokenCreateResponseAllOf from './AutomationTokenCreateResponseAllOf';
+import AutomationTokenRole from './AutomationTokenRole';
 import ReadOnlyCustomerId from './ReadOnlyCustomerId';
 import ReadOnlyId from './ReadOnlyId';
 import ReadOnlyUserId from './ReadOnlyUserId';
@@ -20,7 +21,7 @@ import ReadOnlyUserId from './ReadOnlyUserId';
 /**
  * The AutomationTokenCreateResponse model module.
  * @module model/AutomationTokenCreateResponse
- * @version 16.1.0
+ * @version 17.0.0
  */
 class AutomationTokenCreateResponse {
     /**
@@ -61,8 +62,20 @@ class AutomationTokenCreateResponse {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
             }
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], [AutomationTokenRole]);
+            }
             if (data.hasOwnProperty('services')) {
                 obj['services'] = ApiClient.convertToType(data['services'], ['String']);
+            }
+            if (data.hasOwnProperty('limit_services')) {
+                obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
+            }
+            if (data.hasOwnProperty('limit_workspaces')) {
+                obj['limit_workspaces'] = ApiClient.convertToType(data['limit_workspaces'], 'Boolean');
+            }
+            if (data.hasOwnProperty('workspaces')) {
+                obj['workspaces'] = ApiClient.convertToType(data['workspaces'], ['String']);
             }
             if (data.hasOwnProperty('scope')) {
                 obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
@@ -108,16 +121,40 @@ class AutomationTokenCreateResponse {
 AutomationTokenCreateResponse.prototype['name'] = undefined;
 
 /**
- * The role on the token.
+ * The primary role on the token. For tokens with multiple roles, this returns the highest-priority role for backwards compatibility.
  * @member {module:model/AutomationTokenCreateResponse.RoleEnum} role
  */
 AutomationTokenCreateResponse.prototype['role'] = undefined;
 
 /**
- * (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. 
+ * All roles assigned to the token. Each role includes an `id` and `name`.
+ * @member {Array.<module:model/AutomationTokenRole>} roles
+ */
+AutomationTokenCreateResponse.prototype['roles'] = undefined;
+
+/**
+ * The service IDs of the services the token has access to. Empty when `limit_services` is `false` (full access) or when the token has no service access.
  * @member {Array.<String>} services
  */
 AutomationTokenCreateResponse.prototype['services'] = undefined;
+
+/**
+ * When `true`, the token is restricted to only the services in the `services` array. When `false`, the token has access to all services.
+ * @member {Boolean} limit_services
+ */
+AutomationTokenCreateResponse.prototype['limit_services'] = undefined;
+
+/**
+ * When `true`, the token is restricted to only the workspaces in the `workspaces` array. When `false`, the token has access to all workspaces. Only applies to roles that support workspace access.
+ * @member {Boolean} limit_workspaces
+ */
+AutomationTokenCreateResponse.prototype['limit_workspaces'] = undefined;
+
+/**
+ * The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access.
+ * @member {Array.<String>} workspaces
+ */
+AutomationTokenCreateResponse.prototype['workspaces'] = undefined;
 
 /**
  * A space-delimited list of authorization scope.
@@ -184,15 +221,35 @@ AutomationTokenCreateResponse.prototype['user_agent'] = undefined;
  */
 AutomationToken.prototype['name'] = undefined;
 /**
- * The role on the token.
+ * The primary role on the token. For tokens with multiple roles, this returns the highest-priority role for backwards compatibility.
  * @member {module:model/AutomationToken.RoleEnum} role
  */
 AutomationToken.prototype['role'] = undefined;
 /**
- * (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. 
+ * All roles assigned to the token. Each role includes an `id` and `name`.
+ * @member {Array.<module:model/AutomationTokenRole>} roles
+ */
+AutomationToken.prototype['roles'] = undefined;
+/**
+ * The service IDs of the services the token has access to. Empty when `limit_services` is `false` (full access) or when the token has no service access.
  * @member {Array.<String>} services
  */
 AutomationToken.prototype['services'] = undefined;
+/**
+ * When `true`, the token is restricted to only the services in the `services` array. When `false`, the token has access to all services.
+ * @member {Boolean} limit_services
+ */
+AutomationToken.prototype['limit_services'] = undefined;
+/**
+ * When `true`, the token is restricted to only the workspaces in the `workspaces` array. When `false`, the token has access to all workspaces. Only applies to roles that support workspace access.
+ * @member {Boolean} limit_workspaces
+ */
+AutomationToken.prototype['limit_workspaces'] = undefined;
+/**
+ * The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access.
+ * @member {Array.<String>} workspaces
+ */
+AutomationToken.prototype['workspaces'] = undefined;
 /**
  * A space-delimited list of authorization scope.
  * @member {module:model/AutomationToken.ScopeEnum} scope
@@ -267,7 +324,43 @@ AutomationTokenCreateResponse['RoleEnum'] = {
      * value: "user"
      * @const
      */
-    "user": "user"
+    "user": "user",
+
+    /**
+     * value: "ngwaf_user_imported"
+     * @const
+     */
+    "ngwaf_user_imported": "ngwaf_user_imported",
+
+    /**
+     * value: "ngwaf_admin_imported"
+     * @const
+     */
+    "ngwaf_admin_imported": "ngwaf_admin_imported",
+
+    /**
+     * value: "ngwaf_owner_imported"
+     * @const
+     */
+    "ngwaf_owner_imported": "ngwaf_owner_imported",
+
+    /**
+     * value: "ngwaf_observer_imported"
+     * @const
+     */
+    "ngwaf_observer_imported": "ngwaf_observer_imported",
+
+    /**
+     * value: "tls_admin"
+     * @const
+     */
+    "tls_admin": "tls_admin",
+
+    /**
+     * value: "tls_viewer"
+     * @const
+     */
+    "tls_viewer": "tls_viewer"
 };
 
 

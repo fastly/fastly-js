@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScriptUpdate model module.
  * @module model/ScriptUpdate
- * @version 16.1.0
+ * @version 17.0.0
  */
 class ScriptUpdate {
     /**

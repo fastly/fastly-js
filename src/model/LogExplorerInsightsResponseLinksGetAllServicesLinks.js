@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogExplorerInsightsResponseLinksGetAllServicesLinks model module.
  * @module model/LogExplorerInsightsResponseLinksGetAllServicesLinks
- * @version 16.1.0
+ * @version 17.0.0
  */
 class LogExplorerInsightsResponseLinksGetAllServicesLinks {
     /**

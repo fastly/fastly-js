@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DraftUpdate model module.
  * @module model/DraftUpdate
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DraftUpdate {
     /**

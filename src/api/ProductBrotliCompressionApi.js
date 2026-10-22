@@ -18,7 +18,7 @@ import BrotliCompressionResponseBodyGetAllServices from '../model/BrotliCompress
 /**
 * ProductBrotliCompression service.
 * @module api/ProductBrotliCompressionApi
-* @version 16.1.0
+* @version 17.0.0
 */
 export default class ProductBrotliCompressionApi {
 

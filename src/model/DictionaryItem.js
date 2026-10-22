@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DictionaryItem model module.
  * @module model/DictionaryItem
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DictionaryItem {
     /**
@@ -60,7 +60,7 @@ class DictionaryItem {
 }
 
 /**
- * Item key, maximum 256 characters.
+ * Item key, maximum 255 characters.
  * @member {String} item_key
  */
 DictionaryItem.prototype['item_key'] = undefined;

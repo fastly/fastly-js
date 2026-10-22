@@ -17,7 +17,7 @@ import AttackSource from './AttackSource';
 /**
  * The AttackReport model module.
  * @module model/AttackReport
- * @version 16.1.0
+ * @version 17.0.0
  */
 class AttackReport {
     /**

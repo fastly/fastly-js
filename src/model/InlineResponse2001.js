@@ -17,7 +17,7 @@ import Meta from './Meta';
 /**
  * The InlineResponse2001 model module.
  * @module model/InlineResponse2001
- * @version 16.1.0
+ * @version 17.0.0
  */
 class InlineResponse2001 {
     /**

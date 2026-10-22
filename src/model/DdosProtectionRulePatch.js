@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionRulePatch model module.
  * @module model/DdosProtectionRulePatch
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DdosProtectionRulePatch {
     /**
@@ -57,7 +57,7 @@ class DdosProtectionRulePatch {
 }
 
 /**
- * Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+ * Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service.
  * @member {String} action
  * @default 'default'
  */

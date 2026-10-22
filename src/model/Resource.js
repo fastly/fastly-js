@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Resource model module.
  * @module model/Resource
- * @version 16.1.0
+ * @version 17.0.0
  */
 class Resource {
     /**

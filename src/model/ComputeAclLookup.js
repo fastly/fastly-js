@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclLookup model module.
  * @module model/ComputeAclLookup
- * @version 16.1.0
+ * @version 17.0.0
  */
 class ComputeAclLookup {
     /**

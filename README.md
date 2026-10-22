@@ -83,6 +83,25 @@ Class | Method | Description
 *Fastly.AclsInComputeApi* | [**computeAclListAclsSAclId**](docs/AclsInComputeApi.md#computeAclListAclsSAclId) | Describe an ACL
 *Fastly.AclsInComputeApi* | [**computeAclLookupAcls**](docs/AclsInComputeApi.md#computeAclLookupAcls) | Lookup an ACL
 *Fastly.AclsInComputeApi* | [**computeAclUpdateAcls**](docs/AclsInComputeApi.md#computeAclUpdateAcls) | Update an ACL
+*Fastly.AiRuntimeControlProviderConnectionsApi* | [**arcCreateProviderConnection**](docs/AiRuntimeControlProviderConnectionsApi.md#arcCreateProviderConnection) | Create a provider connection
+*Fastly.AiRuntimeControlProviderConnectionsApi* | [**arcDeleteProviderConnection**](docs/AiRuntimeControlProviderConnectionsApi.md#arcDeleteProviderConnection) | Delete a provider connection
+*Fastly.AiRuntimeControlProviderConnectionsApi* | [**arcGetProviderConnection**](docs/AiRuntimeControlProviderConnectionsApi.md#arcGetProviderConnection) | Get a provider connection
+*Fastly.AiRuntimeControlProviderConnectionsApi* | [**arcListProviderConnections**](docs/AiRuntimeControlProviderConnectionsApi.md#arcListProviderConnections) | List provider connections
+*Fastly.AiRuntimeControlProviderConnectionsApi* | [**arcUpdateProviderConnection**](docs/AiRuntimeControlProviderConnectionsApi.md#arcUpdateProviderConnection) | Update a provider connection
+*Fastly.AiRuntimeControlProvidersApi* | [**arcGetBedrockSetup**](docs/AiRuntimeControlProvidersApi.md#arcGetBedrockSetup) | Get Bedrock setup information
+*Fastly.AiRuntimeControlProvidersApi* | [**arcGetModelsForProvider**](docs/AiRuntimeControlProvidersApi.md#arcGetModelsForProvider) | Get models for a provider
+*Fastly.AiRuntimeControlProvidersApi* | [**arcGetSupportedProviders**](docs/AiRuntimeControlProvidersApi.md#arcGetSupportedProviders) | Get supported providers
+*Fastly.AiRuntimeControlSessionsApi* | [**arcGetSessionLogs**](docs/AiRuntimeControlSessionsApi.md#arcGetSessionLogs) | Get session logs
+*Fastly.AiRuntimeControlUsageMetricsApi* | [**arcExportUsageMetrics**](docs/AiRuntimeControlUsageMetricsApi.md#arcExportUsageMetrics) | Export usage metrics
+*Fastly.AiRuntimeControlUsageMetricsApi* | [**arcGetUsageMetrics**](docs/AiRuntimeControlUsageMetricsApi.md#arcGetUsageMetrics) | Get usage metrics
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcCreateVirtualKey**](docs/AiRuntimeControlVirtualKeysApi.md#arcCreateVirtualKey) | Create a virtual key
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcDeleteVirtualKey**](docs/AiRuntimeControlVirtualKeysApi.md#arcDeleteVirtualKey) | Delete a virtual key
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcGetVirtualKey**](docs/AiRuntimeControlVirtualKeysApi.md#arcGetVirtualKey) | Get a virtual key
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcGetVirtualKeyFailover**](docs/AiRuntimeControlVirtualKeysApi.md#arcGetVirtualKeyFailover) | Get a virtual key&#39;s failover policy
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcListVirtualKeys**](docs/AiRuntimeControlVirtualKeysApi.md#arcListVirtualKeys) | List virtual keys
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcRotateVirtualKey**](docs/AiRuntimeControlVirtualKeysApi.md#arcRotateVirtualKey) | Rotate a virtual key
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcUpdateVirtualKey**](docs/AiRuntimeControlVirtualKeysApi.md#arcUpdateVirtualKey) | Update a virtual key
+*Fastly.AiRuntimeControlVirtualKeysApi* | [**arcUpdateVirtualKeyFailover**](docs/AiRuntimeControlVirtualKeysApi.md#arcUpdateVirtualKeyFailover) | Update a virtual key&#39;s failover policy
 *Fastly.ApexRedirectApi* | [**createApexRedirect**](docs/ApexRedirectApi.md#createApexRedirect) | Create an apex redirect
 *Fastly.ApexRedirectApi* | [**deleteApexRedirect**](docs/ApexRedirectApi.md#deleteApexRedirect) | Delete an apex redirect
 *Fastly.ApexRedirectApi* | [**getApexRedirect**](docs/ApexRedirectApi.md#getApexRedirect) | Get an apex redirect
@@ -105,6 +124,7 @@ Class | Method | Description
 *Fastly.AutomationTokensApi* | [**createAutomationToken**](docs/AutomationTokensApi.md#createAutomationToken) | Create Automation Token
 *Fastly.AutomationTokensApi* | [**getAutomationTokenId**](docs/AutomationTokensApi.md#getAutomationTokenId) | Retrieve an Automation Token by ID
 *Fastly.AutomationTokensApi* | [**getAutomationTokensIdServices**](docs/AutomationTokensApi.md#getAutomationTokensIdServices) | List Automation Token Services
+*Fastly.AutomationTokensApi* | [**getAutomationTokensIdWorkspaces**](docs/AutomationTokensApi.md#getAutomationTokensIdWorkspaces) | List Automation Token Workspaces
 *Fastly.AutomationTokensApi* | [**listAutomationTokens**](docs/AutomationTokensApi.md#listAutomationTokens) | List Customer Automation Tokens
 *Fastly.AutomationTokensApi* | [**revokeAutomationTokenId**](docs/AutomationTokensApi.md#revokeAutomationTokenId) | Revoke an Automation Token by ID
 *Fastly.BackendApi* | [**createBackend**](docs/BackendApi.md#createBackend) | Create a backend
@@ -121,6 +141,17 @@ Class | Method | Description
 *Fastly.BillingInvoicesApi* | [**listInvoices**](docs/BillingInvoicesApi.md#listInvoices) | List of invoices.
 *Fastly.BillingUsageMetricsApi* | [**getServiceLevelUsage**](docs/BillingUsageMetricsApi.md#getServiceLevelUsage) | Retrieve service-level usage metrics for services with non-zero usage units.
 *Fastly.BillingUsageMetricsApi* | [**getUsageMetrics**](docs/BillingUsageMetricsApi.md#getUsageMetrics) | Get monthly usage metrics
+*Fastly.BotManagementApi* | [**botManagementGetBot**](docs/BotManagementApi.md#botManagementGetBot) | Get a bot
+*Fastly.BotManagementApi* | [**botManagementGetCategory**](docs/BotManagementApi.md#botManagementGetCategory) | Get a category
+*Fastly.BotManagementApi* | [**botManagementGetWorkspace**](docs/BotManagementApi.md#botManagementGetWorkspace) | Get a workspace
+*Fastly.BotManagementApi* | [**botManagementListBots**](docs/BotManagementApi.md#botManagementListBots) | List all bots in a workspace
+*Fastly.BotManagementApi* | [**botManagementListCategories**](docs/BotManagementApi.md#botManagementListCategories) | List categories
+*Fastly.BotManagementApi* | [**botManagementListCategoryBots**](docs/BotManagementApi.md#botManagementListCategoryBots) | List bots in a category
+*Fastly.BotManagementApi* | [**botManagementListWorkspaces**](docs/BotManagementApi.md#botManagementListWorkspaces) | List workspaces
+*Fastly.BotManagementApi* | [**botManagementUpdateBot**](docs/BotManagementApi.md#botManagementUpdateBot) | Set a bot action
+*Fastly.BotManagementApi* | [**botManagementUpdateCategory**](docs/BotManagementApi.md#botManagementUpdateCategory) | Set a category action
+*Fastly.BotManagementApi* | [**botManagementUpdateWorkspace**](docs/BotManagementApi.md#botManagementUpdateWorkspace) | Update a workspace
+*Fastly.BotRequestsMetricsApi* | [**getBotRequestMetricsServiceHistorical**](docs/BotRequestsMetricsApi.md#getBotRequestMetricsServiceHistorical) | Get per-service historical time series metrics for bot requests broken down by bot-type.
 *Fastly.CacheSettingsApi* | [**createCacheSettings**](docs/CacheSettingsApi.md#createCacheSettings) | Create a cache settings object
 *Fastly.CacheSettingsApi* | [**deleteCacheSettings**](docs/CacheSettingsApi.md#deleteCacheSettings) | Delete a cache settings object
 *Fastly.CacheSettingsApi* | [**getCacheSettings**](docs/CacheSettingsApi.md#getCacheSettings) | Get a cache settings object
@@ -457,12 +488,33 @@ Class | Method | Description
 *Fastly.LoggingSyslogApi* | [**getLogSyslog**](docs/LoggingSyslogApi.md#getLogSyslog) | Get a syslog log endpoint
 *Fastly.LoggingSyslogApi* | [**listLogSyslog**](docs/LoggingSyslogApi.md#listLogSyslog) | List Syslog log endpoints
 *Fastly.LoggingSyslogApi* | [**updateLogSyslog**](docs/LoggingSyslogApi.md#updateLogSyslog) | Update a syslog log endpoint
-*Fastly.MetricsPlatformApi* | [**getPlatformMetricsServiceHistorical**](docs/MetricsPlatformApi.md#getPlatformMetricsServiceHistorical) | Get historical time series metrics for a single service
+*Fastly.MetricsPlatformApi* | [**getPlatformMetricsAggregateHistorical**](docs/MetricsPlatformApi.md#getPlatformMetricsAggregateHistorical) | Get aggregated historical time series metrics for all entities
+*Fastly.MetricsPlatformApi* | [**getPlatformMetricsEntityHistorical**](docs/MetricsPlatformApi.md#getPlatformMetricsEntityHistorical) | Get historical time series metrics for a single entity.
 *Fastly.MutualAuthenticationApi* | [**createMutualTlsAuthentication**](docs/MutualAuthenticationApi.md#createMutualTlsAuthentication) | Create a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**deleteMutualTls**](docs/MutualAuthenticationApi.md#deleteMutualTls) | Delete a Mutual TLS
 *Fastly.MutualAuthenticationApi* | [**getMutualAuthentication**](docs/MutualAuthenticationApi.md#getMutualAuthentication) | Get a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**listMutualAuthentications**](docs/MutualAuthenticationApi.md#listMutualAuthentications) | List Mutual Authentications
 *Fastly.MutualAuthenticationApi* | [**patchMutualAuthentication**](docs/MutualAuthenticationApi.md#patchMutualAuthentication) | Update a Mutual Authentication
+*Fastly.NetworkProtectApi* | [**createNetworkProtectEndpoint**](docs/NetworkProtectApi.md#createNetworkProtectEndpoint) | Create a Network Protect endpoint
+*Fastly.NetworkProtectApi* | [**createNetworkProtectNetwork**](docs/NetworkProtectApi.md#createNetworkProtectNetwork) | Create a Network Protect network
+*Fastly.NetworkProtectApi* | [**createNetworkProtectPrefixList**](docs/NetworkProtectApi.md#createNetworkProtectPrefixList) | Create a Network Protect prefix list
+*Fastly.NetworkProtectApi* | [**createNetworkProtectRuleSet**](docs/NetworkProtectApi.md#createNetworkProtectRuleSet) | Create a Network Protect rule set
+*Fastly.NetworkProtectApi* | [**deleteNetworkProtectEndpoint**](docs/NetworkProtectApi.md#deleteNetworkProtectEndpoint) | Delete a Network Protect endpoint
+*Fastly.NetworkProtectApi* | [**deleteNetworkProtectNetwork**](docs/NetworkProtectApi.md#deleteNetworkProtectNetwork) | Delete a Network Protect network
+*Fastly.NetworkProtectApi* | [**deleteNetworkProtectPrefixList**](docs/NetworkProtectApi.md#deleteNetworkProtectPrefixList) | Delete a Network Protect prefix list
+*Fastly.NetworkProtectApi* | [**deleteNetworkProtectRuleSet**](docs/NetworkProtectApi.md#deleteNetworkProtectRuleSet) | Delete a Network Protect rule set
+*Fastly.NetworkProtectApi* | [**getNetworkProtectEndpoint**](docs/NetworkProtectApi.md#getNetworkProtectEndpoint) | Get a Network Protect endpoint
+*Fastly.NetworkProtectApi* | [**getNetworkProtectNetwork**](docs/NetworkProtectApi.md#getNetworkProtectNetwork) | Get a Network Protect network
+*Fastly.NetworkProtectApi* | [**getNetworkProtectPrefixList**](docs/NetworkProtectApi.md#getNetworkProtectPrefixList) | Get a Network Protect prefix list
+*Fastly.NetworkProtectApi* | [**getNetworkProtectRuleSet**](docs/NetworkProtectApi.md#getNetworkProtectRuleSet) | Get a Network Protect rule set
+*Fastly.NetworkProtectApi* | [**listNetworkProtectEndpoints**](docs/NetworkProtectApi.md#listNetworkProtectEndpoints) | List Network Protect endpoints
+*Fastly.NetworkProtectApi* | [**listNetworkProtectNetworks**](docs/NetworkProtectApi.md#listNetworkProtectNetworks) | List Network Protect networks
+*Fastly.NetworkProtectApi* | [**listNetworkProtectPrefixLists**](docs/NetworkProtectApi.md#listNetworkProtectPrefixLists) | List Network Protect prefix lists
+*Fastly.NetworkProtectApi* | [**listNetworkProtectRuleSets**](docs/NetworkProtectApi.md#listNetworkProtectRuleSets) | List Network Protect rule sets
+*Fastly.NetworkProtectApi* | [**updateNetworkProtectEndpoint**](docs/NetworkProtectApi.md#updateNetworkProtectEndpoint) | Update a Network Protect endpoint
+*Fastly.NetworkProtectApi* | [**updateNetworkProtectNetwork**](docs/NetworkProtectApi.md#updateNetworkProtectNetwork) | Update a Network Protect network
+*Fastly.NetworkProtectApi* | [**updateNetworkProtectPrefixList**](docs/NetworkProtectApi.md#updateNetworkProtectPrefixList) | Update a Network Protect prefix list
+*Fastly.NetworkProtectApi* | [**updateNetworkProtectRuleSet**](docs/NetworkProtectApi.md#updateNetworkProtectRuleSet) | Update a Network Protect rule set
 *Fastly.NgwafAgentKeysApi* | [**ngwafListAgentKeys**](docs/NgwafAgentKeysApi.md#ngwafListAgentKeys) | List agent keys for a workspace
 *Fastly.NgwafReportsApi* | [**getAttacksReport**](docs/NgwafReportsApi.md#getAttacksReport) | Get attacks report
 *Fastly.NgwafReportsApi* | [**getSignalsReport**](docs/NgwafReportsApi.md#getSignalsReport) | Get signals report
@@ -493,6 +545,9 @@ Class | Method | Description
 *Fastly.ProductAiAcceleratorApi* | [**disableProductAiAccelerator**](docs/ProductAiAcceleratorApi.md#disableProductAiAccelerator) | Disable product
 *Fastly.ProductAiAcceleratorApi* | [**enableAiAccelerator**](docs/ProductAiAcceleratorApi.md#enableAiAccelerator) | Enable product
 *Fastly.ProductAiAcceleratorApi* | [**getAiAccelerator**](docs/ProductAiAcceleratorApi.md#getAiAccelerator) | Get product enablement status
+*Fastly.ProductAiRuntimeControlApi* | [**disableProductAiRuntimeControl**](docs/ProductAiRuntimeControlApi.md#disableProductAiRuntimeControl) | Disable product
+*Fastly.ProductAiRuntimeControlApi* | [**enableProductAiRuntimeControl**](docs/ProductAiRuntimeControlApi.md#enableProductAiRuntimeControl) | Enable product
+*Fastly.ProductAiRuntimeControlApi* | [**getProductAiRuntimeControl**](docs/ProductAiRuntimeControlApi.md#getProductAiRuntimeControl) | Get product enablement status
 *Fastly.ProductApiDiscoveryApi* | [**disableProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#disableProductApiDiscovery) | Disable product
 *Fastly.ProductApiDiscoveryApi* | [**enableProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#enableProductApiDiscovery) | Enable product
 *Fastly.ProductApiDiscoveryApi* | [**getProductApiDiscovery**](docs/ProductApiDiscoveryApi.md#getProductApiDiscovery) | Get product enablement status
@@ -718,6 +773,14 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/dns/v1/tsig-keys`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/dns/v1/zones/{zone_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/v1/zones`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/iam/v1/organizations/{organization_id}/accounts`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/iam/v1/organizations/{organization_id}/invitations/{invitation_id}/notifications`](https://www.fastly.com/documentation/reference/api/) (POST)
+- [`/iam/v1/organizations/{organization_id}/invitations/{invitation_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
+- [`/iam/v1/organizations/{organization_id}/invitations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/iam/v1/organizations/{organization_id}/options`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
+- [`/iam/v1/organizations/{organization_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
+- [`/model/{modelId}/invoke-with-response-stream`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
+- [`/model/{modelId}/invoke`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
 - [`/ngwaf/v1/default-dashboards`](https://www.fastly.com/documentation/reference/api/ngwaf/custom-dashboards) (GET)
 - [`/ngwaf/v1/lists/{listId}`](https://www.fastly.com/documentation/reference/api/ngwaf/lists) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/lists) (GET, POST)
@@ -735,6 +798,7 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}/test`](https://www.fastly.com/documentation/reference/api/ngwaf/workspace-alerts/) (POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/workspace-alerts/) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts`](https://www.fastly.com/documentation/reference/api/ngwaf/workspace-alerts/) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/challenge-settings`](https://www.fastly.com/documentation/reference/api/ngwaf/challenge-settings) (GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/dashboards/{dashboard_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/custom-dashboards) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/dashboards`](https://www.fastly.com/documentation/reference/api/ngwaf/custom-dashboards) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/default-dashboard`](https://www.fastly.com/documentation/reference/api/ngwaf/custom-dashboards) (GET, PUT)
@@ -780,9 +844,16 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/tls/activations`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET)
 - [`/tls/configurations/{tls_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/tls/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/v1/audio/speech`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
+- [`/v1/audio/transcriptions`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
 - [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/h`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
+- [`/v1/chat/completions`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
+- [`/v1/messages/count_tokens`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
+- [`/v1/messages`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
+- [`/v1/models`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (GET)
+- [`/v1/responses`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)
 
 
 If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]

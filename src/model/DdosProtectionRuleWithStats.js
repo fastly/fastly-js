@@ -18,7 +18,7 @@ import DdosProtectionTrafficStats from './DdosProtectionTrafficStats';
 /**
  * The DdosProtectionRuleWithStats model module.
  * @module model/DdosProtectionRuleWithStats
- * @version 16.1.0
+ * @version 17.0.0
  */
 class DdosProtectionRuleWithStats {
     /**
@@ -127,7 +127,7 @@ DdosProtectionRuleWithStats.prototype['id'] = undefined;
 DdosProtectionRuleWithStats.prototype['name'] = undefined;
 
 /**
- * Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+ * Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service.
  * @member {String} action
  * @default 'default'
  */
@@ -209,7 +209,7 @@ DdosProtectionRule.prototype['id'] = undefined;
  */
 DdosProtectionRule.prototype['name'] = undefined;
 /**
- * Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+ * Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service.
  * @member {String} action
  * @default 'default'
  */

@@ -31,7 +31,7 @@ import VersionsResponse from '../model/VersionsResponse';
 /**
 * DmRoutingConfigs service.
 * @module api/DmRoutingConfigsApi
-* @version 16.1.0
+* @version 17.0.0
 */
 export default class DmRoutingConfigsApi {
 

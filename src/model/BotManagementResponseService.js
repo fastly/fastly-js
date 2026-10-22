@@ -16,7 +16,7 @@ import ApiDiscoveryResponseServiceService from './ApiDiscoveryResponseServiceSer
 /**
  * The BotManagementResponseService model module.
  * @module model/BotManagementResponseService
- * @version 16.1.0
+ * @version 17.0.0
  */
 class BotManagementResponseService {
     /**
