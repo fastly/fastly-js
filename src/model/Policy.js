@@ -16,7 +16,7 @@ import Directive from './Directive';
 /**
  * The Policy model module.
  * @module model/Policy
- * @version 17.0.0
+ * @version 17.1.0
  */
 class Policy {
     /**

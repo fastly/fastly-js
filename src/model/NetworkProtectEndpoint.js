@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NetworkProtectEndpoint model module.
  * @module model/NetworkProtectEndpoint
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectEndpoint {
     /**

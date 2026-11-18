@@ -17,7 +17,7 @@ import StarResponseAllOf from './StarResponseAllOf';
 /**
  * The StarResponse model module.
  * @module model/StarResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class StarResponse {
     /**

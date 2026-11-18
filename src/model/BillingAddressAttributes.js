@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingAddressAttributes model module.
  * @module model/BillingAddressAttributes
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BillingAddressAttributes {
     /**

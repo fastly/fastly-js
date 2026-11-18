@@ -16,7 +16,7 @@ import ArcFailoverTarget from './ArcFailoverTarget';
 /**
  * The ArcVirtualKeyFailoverRequest model module.
  * @module model/ArcVirtualKeyFailoverRequest
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcVirtualKeyFailoverRequest {
     /**

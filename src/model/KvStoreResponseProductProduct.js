@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KvStoreResponseProductProduct model module.
  * @module model/KvStoreResponseProductProduct
- * @version 17.0.0
+ * @version 17.1.0
  */
 class KvStoreResponseProductProduct {
     /**

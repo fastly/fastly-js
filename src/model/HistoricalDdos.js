@@ -17,7 +17,7 @@ import PlatformDdosDataItems from './PlatformDdosDataItems';
 /**
  * The HistoricalDdos model module.
  * @module model/HistoricalDdos
- * @version 17.0.0
+ * @version 17.1.0
  */
 class HistoricalDdos {
     /**

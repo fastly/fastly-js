@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NetworkProtectErrorDetail model module.
  * @module model/NetworkProtectErrorDetail
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectErrorDetail {
     /**

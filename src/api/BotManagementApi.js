@@ -17,6 +17,7 @@ import BotManagementBotResponse from '../model/BotManagementBotResponse';
 import BotManagementBotsResponse from '../model/BotManagementBotsResponse';
 import BotManagementCategoriesResponse from '../model/BotManagementCategoriesResponse';
 import BotManagementCategory from '../model/BotManagementCategory';
+import BotManagementCategoryBots from '../model/BotManagementCategoryBots';
 import BotManagementCategoryResponse from '../model/BotManagementCategoryResponse';
 import BotManagementInvalidRequestError from '../model/BotManagementInvalidRequestError';
 import BotManagementNotAllowedError from '../model/BotManagementNotAllowedError';
@@ -31,7 +32,7 @@ import BotManagementWorkspacesResponse from '../model/BotManagementWorkspacesRes
 /**
 * BotManagement service.
 * @module api/BotManagementApi
-* @version 17.0.0
+* @version 17.1.0
 */
 export default class BotManagementApi {
 
@@ -311,7 +312,7 @@ export default class BotManagementApi {
     }
 
     /**
-     * List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
+     * List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category that is set to `inherit`. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
      * @param {Object} options
      * @param {String} options.workspace_id - The ID of the bot management workspace.
      * @param {Number} [options.limit=100] - Limit how many results are returned.
@@ -360,7 +361,7 @@ export default class BotManagementApi {
     }
 
     /**
-     * List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
+     * List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category that is set to `inherit`. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
      * @param {Object} options
      * @param {String} options.workspace_id - The ID of the bot management workspace.
      * @param {Number} [options.limit=100] - Limit how many results are returned.
@@ -584,7 +585,7 @@ export default class BotManagementApi {
     }
 
     /**
-     * Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.
+     * Set the default action for a bot category. Bots set to `inherit` follow this action. Bots with their own action keep it. To remove every bot's own action in the category, use [set the action for all bots in a category](#bot-management-update-category-bots).
      * @param {Object} options
      * @param {String} options.workspace_id - The ID of the bot management workspace.
      * @param {String} options.category_id - The ID of the bot category.
@@ -640,7 +641,7 @@ export default class BotManagementApi {
     }
 
     /**
-     * Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.
+     * Set the default action for a bot category. Bots set to `inherit` follow this action. Bots with their own action keep it. To remove every bot's own action in the category, use [set the action for all bots in a category](#bot-management-update-category-bots).
      * @param {Object} options
      * @param {String} options.workspace_id - The ID of the bot management workspace.
      * @param {String} options.category_id - The ID of the bot category.
@@ -649,6 +650,77 @@ export default class BotManagementApi {
      */
     botManagementUpdateCategory(options = {}) {
       return this.botManagementUpdateCategoryWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Set the action for every bot in a category. Setting `inherit` removes each bot's own action, so every bot follows the category's action. The category's own action is unchanged. The update applies to every bot in the category or to none, and repeating it gives the same result. The response lists every bot in the category, including bots that already inherited, and is not paginated.
+     * @param {Object} options
+     * @param {String} options.workspace_id - The ID of the bot management workspace.
+     * @param {String} options.category_id - The ID of the bot category.
+     * @param {module:model/BotManagementCategoryBots} options.bot_management_category_bots
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BotManagementBotsResponse} and HTTP response
+     */
+    botManagementUpdateCategoryBotsWithHttpInfo(options = {}) {
+      let postBody = options['bot_management_category_bots'];
+      // Verify the required parameter 'workspace_id' is set.
+      if (options['workspace_id'] === undefined || options['workspace_id'] === null) {
+        throw new Error("Missing the required parameter 'workspace_id'.");
+      }
+      // Verify the required parameter 'category_id' is set.
+      if (options['category_id'] === undefined || options['category_id'] === null) {
+        throw new Error("Missing the required parameter 'category_id'.");
+      }
+      // Verify the required parameter 'bot_management_category_bots' is set.
+      if (options['bot_management_category_bots'] === undefined || options['bot_management_category_bots'] === null) {
+        throw new Error("Missing the required parameter 'bot_management_category_bots'.");
+      }
+
+      let pathParams = {
+        'workspace_id': options['workspace_id'],
+        'category_id': options['category_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json', 'application/problem+json'];
+      let returnType = BotManagementBotsResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots', 'PATCH',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Set the action for every bot in a category. Setting `inherit` removes each bot's own action, so every bot follows the category's action. The category's own action is unchanged. The update applies to every bot in the category or to none, and repeating it gives the same result. The response lists every bot in the category, including bots that already inherited, and is not paginated.
+     * @param {Object} options
+     * @param {String} options.workspace_id - The ID of the bot management workspace.
+     * @param {String} options.category_id - The ID of the bot category.
+     * @param {module:model/BotManagementCategoryBots} options.bot_management_category_bots
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BotManagementBotsResponse}
+     */
+    botManagementUpdateCategoryBots(options = {}) {
+      return this.botManagementUpdateCategoryBotsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

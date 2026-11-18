@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorResponseLinksGetAllServicesLinks model module.
  * @module model/OriginInspectorResponseLinksGetAllServicesLinks
- * @version 17.0.0
+ * @version 17.1.0
  */
 class OriginInspectorResponseLinksGetAllServicesLinks {
     /**

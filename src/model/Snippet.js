@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 17.0.0
+ * @version 17.1.0
  */
 class Snippet {
     /**

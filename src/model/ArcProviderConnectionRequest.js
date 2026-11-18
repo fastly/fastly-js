@@ -17,7 +17,7 @@ import ArcProviderConnectionAwsIam from './ArcProviderConnectionAwsIam';
 /**
  * The ArcProviderConnectionRequest model module.
  * @module model/ArcProviderConnectionRequest
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcProviderConnectionRequest {
     /**

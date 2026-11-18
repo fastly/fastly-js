@@ -17,7 +17,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The DdosProtectionRule model module.
  * @module model/DdosProtectionRule
- * @version 17.0.0
+ * @version 17.1.0
  */
 class DdosProtectionRule {
     /**
@@ -87,6 +87,9 @@ class DdosProtectionRule {
             }
             if (data.hasOwnProperty('source_ip_prefix')) {
                 obj['source_ip_prefix'] = ApiClient.convertToType(data['source_ip_prefix'], 'String');
+            }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
             if (data.hasOwnProperty('additional_attributes')) {
                 obj['additional_attributes'] = ApiClient.convertToType(data['additional_attributes'], ['String']);
@@ -172,6 +175,12 @@ DdosProtectionRule.prototype['asn'] = undefined;
 DdosProtectionRule.prototype['source_ip_prefix'] = undefined;
 
 /**
+ * URL path attribute.
+ * @member {String} path
+ */
+DdosProtectionRule.prototype['path'] = undefined;
+
+/**
  * Attribute category for additional, unlisted attributes used in a rule.
  * @member {Array.<String>} additional_attributes
  */
@@ -241,6 +250,11 @@ DdosProtectionRuleAllOf.prototype['asn'] = undefined;
  * @member {String} source_ip_prefix
  */
 DdosProtectionRuleAllOf.prototype['source_ip_prefix'] = undefined;
+/**
+ * URL path attribute.
+ * @member {String} path
+ */
+DdosProtectionRuleAllOf.prototype['path'] = undefined;
 /**
  * Attribute category for additional, unlisted attributes used in a rule.
  * @member {Array.<String>} additional_attributes

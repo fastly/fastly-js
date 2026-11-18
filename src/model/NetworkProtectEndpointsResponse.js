@@ -17,7 +17,7 @@ import NetworkProtectListMeta from './NetworkProtectListMeta';
 /**
  * The NetworkProtectEndpointsResponse model module.
  * @module model/NetworkProtectEndpointsResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectEndpointsResponse {
     /**

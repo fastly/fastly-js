@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 17.0.0
+ * @version 17.1.0
  */
 class Results {
     /**
@@ -1174,6 +1174,12 @@ class Results {
             }
             if (data.hasOwnProperty('api_enforcement_flagged_requests_count')) {
                 obj['api_enforcement_flagged_requests_count'] = ApiClient.convertToType(data['api_enforcement_flagged_requests_count'], 'Number');
+            }
+            if (data.hasOwnProperty('origin_fetch_iam_success_count')) {
+                obj['origin_fetch_iam_success_count'] = ApiClient.convertToType(data['origin_fetch_iam_success_count'], 'Number');
+            }
+            if (data.hasOwnProperty('origin_fetch_iam_failure_count')) {
+                obj['origin_fetch_iam_failure_count'] = ApiClient.convertToType(data['origin_fetch_iam_failure_count'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -3443,6 +3449,18 @@ Results.prototype['api_enforcement_allowed_requests_count'] = undefined;
  * @member {Number} api_enforcement_flagged_requests_count
  */
 Results.prototype['api_enforcement_flagged_requests_count'] = undefined;
+
+/**
+ * Count of successful IAM authenticated backend requests.
+ * @member {Number} origin_fetch_iam_success_count
+ */
+Results.prototype['origin_fetch_iam_success_count'] = undefined;
+
+/**
+ * Count of failed IAM authenticated backend requests.
+ * @member {Number} origin_fetch_iam_failure_count
+ */
+Results.prototype['origin_fetch_iam_failure_count'] = undefined;
 
 /**
  * @member {String} service_id

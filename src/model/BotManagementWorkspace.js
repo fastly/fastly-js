@@ -16,7 +16,7 @@ import BotManagementProtectionMode from './BotManagementProtectionMode';
 /**
  * The BotManagementWorkspace model module.
  * @module model/BotManagementWorkspace
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementWorkspace {
     /**

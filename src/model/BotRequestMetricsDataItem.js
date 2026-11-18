@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotRequestMetricsDataItem model module.
  * @module model/BotRequestMetricsDataItem
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotRequestMetricsDataItem {
     /**

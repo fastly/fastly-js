@@ -16,7 +16,7 @@ import AiAcceleratorResponseCustomerCustomer from './AiAcceleratorResponseCustom
 /**
  * The AiRuntimeControlResponseCustomer model module.
  * @module model/AiRuntimeControlResponseCustomer
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AiRuntimeControlResponseCustomer {
     /**

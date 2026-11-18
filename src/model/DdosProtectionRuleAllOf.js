@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionRuleAllOf model module.
  * @module model/DdosProtectionRuleAllOf
- * @version 17.0.0
+ * @version 17.1.0
  */
 class DdosProtectionRuleAllOf {
     /**
@@ -75,6 +75,9 @@ class DdosProtectionRuleAllOf {
             }
             if (data.hasOwnProperty('source_ip_prefix')) {
                 obj['source_ip_prefix'] = ApiClient.convertToType(data['source_ip_prefix'], 'String');
+            }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
             if (data.hasOwnProperty('additional_attributes')) {
                 obj['additional_attributes'] = ApiClient.convertToType(data['additional_attributes'], ['String']);
@@ -146,6 +149,12 @@ DdosProtectionRuleAllOf.prototype['asn'] = undefined;
  * @member {String} source_ip_prefix
  */
 DdosProtectionRuleAllOf.prototype['source_ip_prefix'] = undefined;
+
+/**
+ * URL path attribute.
+ * @member {String} path
+ */
+DdosProtectionRuleAllOf.prototype['path'] = undefined;
 
 /**
  * Attribute category for additional, unlisted attributes used in a rule.

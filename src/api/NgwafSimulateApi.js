@@ -18,7 +18,7 @@ import WafSimulateResponse from '../model/WafSimulateResponse';
 /**
 * NgwafSimulate service.
 * @module api/NgwafSimulateApi
-* @version 17.0.0
+* @version 17.1.0
 */
 export default class NgwafSimulateApi {
 

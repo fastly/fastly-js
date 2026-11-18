@@ -16,7 +16,7 @@ import DomainInspectorResponseProductProduct from './DomainInspectorResponseProd
 /**
  * The DomainInspectorResponseProduct model module.
  * @module model/DomainInspectorResponseProduct
- * @version 17.0.0
+ * @version 17.1.0
  */
 class DomainInspectorResponseProduct {
     /**

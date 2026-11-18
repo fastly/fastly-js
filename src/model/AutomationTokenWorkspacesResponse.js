@@ -17,7 +17,7 @@ import AutomationTokenWorkspacesMeta from './AutomationTokenWorkspacesMeta';
 /**
  * The AutomationTokenWorkspacesResponse model module.
  * @module model/AutomationTokenWorkspacesResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AutomationTokenWorkspacesResponse {
     /**

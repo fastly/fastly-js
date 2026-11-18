@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NetworkProtectRuleMatchSourcePrefixList model module.
  * @module model/NetworkProtectRuleMatchSourcePrefixList
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectRuleMatchSourcePrefixList {
     /**

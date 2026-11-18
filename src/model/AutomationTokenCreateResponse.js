@@ -21,7 +21,7 @@ import ReadOnlyUserId from './ReadOnlyUserId';
 /**
  * The AutomationTokenCreateResponse model module.
  * @module model/AutomationTokenCreateResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AutomationTokenCreateResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationTokenUnversionedError model module.
  * @module model/AutomationTokenUnversionedError
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AutomationTokenUnversionedError {
     /**

@@ -18,7 +18,7 @@ import BotManagementCategoryResponseExtra from './BotManagementCategoryResponseE
 /**
  * The BotManagementCategoryResponse model module.
  * @module model/BotManagementCategoryResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementCategoryResponse {
     /**

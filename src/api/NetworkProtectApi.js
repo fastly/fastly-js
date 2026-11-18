@@ -34,7 +34,7 @@ import NetworkProtectRuleSetsResponse from '../model/NetworkProtectRuleSetsRespo
 /**
 * NetworkProtect service.
 * @module api/NetworkProtectApi
-* @version 17.0.0
+* @version 17.1.0
 */
 export default class NetworkProtectApi {
 

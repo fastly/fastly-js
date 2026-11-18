@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationBulkAddTags model module.
  * @module model/OperationBulkAddTags
- * @version 17.0.0
+ * @version 17.1.0
  */
 class OperationBulkAddTags {
     /**

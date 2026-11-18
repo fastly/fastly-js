@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotManagementRateLimitErrorExtra model module.
  * @module model/BotManagementRateLimitErrorExtra
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementRateLimitErrorExtra {
     /**

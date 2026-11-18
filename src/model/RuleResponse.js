@@ -19,7 +19,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The RuleResponse model module.
  * @module model/RuleResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class RuleResponse {
     /**

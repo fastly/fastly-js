@@ -17,7 +17,7 @@ import NetworkProtectRegion from './NetworkProtectRegion';
 /**
  * The NetworkProtectEndpointPolicy model module.
  * @module model/NetworkProtectEndpointPolicy
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectEndpointPolicy {
     /**

@@ -17,7 +17,7 @@ import SecurityHeader from './SecurityHeader';
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 17.0.0
+ * @version 17.1.0
  */
 class InlineResponse20010 {
     /**

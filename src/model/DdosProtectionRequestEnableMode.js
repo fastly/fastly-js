@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DdosProtectionRequestEnableMode model module.
  * @module model/DdosProtectionRequestEnableMode
- * @version 17.0.0
+ * @version 17.1.0
  */
 class DdosProtectionRequestEnableMode {
     /**

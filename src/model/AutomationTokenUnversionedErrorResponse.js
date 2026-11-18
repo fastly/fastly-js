@@ -16,7 +16,7 @@ import AutomationTokenUnversionedError from './AutomationTokenUnversionedError';
 /**
  * The AutomationTokenUnversionedErrorResponse model module.
  * @module model/AutomationTokenUnversionedErrorResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AutomationTokenUnversionedErrorResponse {
     /**

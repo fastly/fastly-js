@@ -17,7 +17,7 @@ import BotRequestMetricsMetadata from './BotRequestMetricsMetadata';
 /**
  * The BotRequestMetricsResponse model module.
  * @module model/BotRequestMetricsResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotRequestMetricsResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotManagementInvalidRequestErrorExtra model module.
  * @module model/BotManagementInvalidRequestErrorExtra
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementInvalidRequestErrorExtra {
     /**

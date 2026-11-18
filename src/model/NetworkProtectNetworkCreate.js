@@ -16,7 +16,7 @@ import NetworkProtectEndpointPolicy from './NetworkProtectEndpointPolicy';
 /**
  * The NetworkProtectNetworkCreate model module.
  * @module model/NetworkProtectNetworkCreate
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectNetworkCreate {
     /**

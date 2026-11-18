@@ -16,7 +16,7 @@ import ArcSessionLogEntry from './ArcSessionLogEntry';
 /**
  * The ArcSession model module.
  * @module model/ArcSession
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcSession {
     /**

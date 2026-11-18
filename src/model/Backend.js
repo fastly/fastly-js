@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 17.0.0
+ * @version 17.1.0
  */
 class Backend {
     /**
@@ -75,6 +75,21 @@ class Backend {
             }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
+            }
+            if (data.hasOwnProperty('iam_external_id')) {
+                obj['iam_external_id'] = ApiClient.convertToType(data['iam_external_id'], 'String');
+            }
+            if (data.hasOwnProperty('iam_product')) {
+                obj['iam_product'] = ApiClient.convertToType(data['iam_product'], 'String');
+            }
+            if (data.hasOwnProperty('iam_region')) {
+                obj['iam_region'] = ApiClient.convertToType(data['iam_region'], 'String');
+            }
+            if (data.hasOwnProperty('iam_role')) {
+                obj['iam_role'] = ApiClient.convertToType(data['iam_role'], 'String');
+            }
+            if (data.hasOwnProperty('iam_vendor')) {
+                obj['iam_vendor'] = ApiClient.convertToType(data['iam_vendor'], 'String');
             }
             if (data.hasOwnProperty('ipv4')) {
                 obj['ipv4'] = ApiClient.convertToType(data['ipv4'], 'String');
@@ -229,6 +244,36 @@ Backend.prototype['healthcheck'] = undefined;
  * @member {String} hostname
  */
 Backend.prototype['hostname'] = undefined;
+
+/**
+ * If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set.
+ * @member {String} iam_external_id
+ */
+Backend.prototype['iam_external_id'] = undefined;
+
+/**
+ * If the backend is using IAM authentication, the IAM signature will use this as the product element.
+ * @member {String} iam_product
+ */
+Backend.prototype['iam_product'] = undefined;
+
+/**
+ * If the backend is using IAM authentication, this region will be used for signing and access.
+ * @member {String} iam_region
+ */
+Backend.prototype['iam_region'] = undefined;
+
+/**
+ * If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor.
+ * @member {String} iam_role
+ */
+Backend.prototype['iam_role'] = undefined;
+
+/**
+ * A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value.
+ * @member {module:model/Backend.IamVendorEnum} iam_vendor
+ */
+Backend.prototype['iam_vendor'] = undefined;
 
 /**
  * IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -410,6 +455,21 @@ Backend.prototype['weight'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>iam_vendor</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Backend['IamVendorEnum'] = {
+
+    /**
+     * value: "aws"
+     * @const
+     */
+    "aws": "aws"
+};
 
 
 

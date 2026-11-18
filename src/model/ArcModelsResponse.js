@@ -17,7 +17,7 @@ import ArcModelsMeta from './ArcModelsMeta';
 /**
  * The ArcModelsResponse model module.
  * @module model/ArcModelsResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcModelsResponse {
     /**

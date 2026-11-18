@@ -17,7 +17,7 @@ import Values from './Values';
 /**
  * The DomainInspectorEntry model module.
  * @module model/DomainInspectorEntry
- * @version 17.0.0
+ * @version 17.1.0
  */
 class DomainInspectorEntry {
     /**

@@ -17,7 +17,7 @@ import NetworkProtectRoaStatus from './NetworkProtectRoaStatus';
 /**
  * The NetworkProtectNetworkResponseFields model module.
  * @module model/NetworkProtectNetworkResponseFields
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectNetworkResponseFields {
     /**

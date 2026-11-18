@@ -17,7 +17,7 @@ import BotManagementMeta from './BotManagementMeta';
 /**
  * The BotManagementCategoriesResponse model module.
  * @module model/BotManagementCategoriesResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementCategoriesResponse {
     /**

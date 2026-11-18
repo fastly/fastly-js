@@ -16,7 +16,7 @@ import Notification from './Notification';
 /**
  * The Page model module.
  * @module model/Page
- * @version 17.0.0
+ * @version 17.1.0
  */
 class Page {
     /**

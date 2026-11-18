@@ -16,7 +16,7 @@ import AutomationTokenRole from './AutomationTokenRole';
 /**
  * The AutomationToken model module.
  * @module model/AutomationToken
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AutomationToken {
     /**

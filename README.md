@@ -150,6 +150,7 @@ Class | Method | Description
 *Fastly.BotManagementApi* | [**botManagementListWorkspaces**](docs/BotManagementApi.md#botManagementListWorkspaces) | List workspaces
 *Fastly.BotManagementApi* | [**botManagementUpdateBot**](docs/BotManagementApi.md#botManagementUpdateBot) | Set a bot action
 *Fastly.BotManagementApi* | [**botManagementUpdateCategory**](docs/BotManagementApi.md#botManagementUpdateCategory) | Set a category action
+*Fastly.BotManagementApi* | [**botManagementUpdateCategoryBots**](docs/BotManagementApi.md#botManagementUpdateCategoryBots) | Set the action for all bots in a category
 *Fastly.BotManagementApi* | [**botManagementUpdateWorkspace**](docs/BotManagementApi.md#botManagementUpdateWorkspace) | Update a workspace
 *Fastly.BotRequestsMetricsApi* | [**getBotRequestMetricsServiceHistorical**](docs/BotRequestsMetricsApi.md#getBotRequestMetricsServiceHistorical) | Get per-service historical time series metrics for bot requests broken down by bot-type.
 *Fastly.CacheSettingsApi* | [**createCacheSettings**](docs/CacheSettingsApi.md#createCacheSettings) | Create a cache settings object
@@ -777,6 +778,8 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/iam/v1/organizations/{organization_id}/invitations/{invitation_id}/notifications`](https://www.fastly.com/documentation/reference/api/) (POST)
 - [`/iam/v1/organizations/{organization_id}/invitations/{invitation_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/iam/v1/organizations/{organization_id}/invitations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/iam/v1/organizations/{organization_id}/memberships/{membership_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/iam/v1/organizations/{organization_id}/memberships`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/iam/v1/organizations/{organization_id}/options`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/iam/v1/organizations/{organization_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/model/{modelId}/invoke-with-response-stream`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)

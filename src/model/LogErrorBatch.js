@@ -16,7 +16,7 @@ import LogError from './LogError';
 /**
  * The LogErrorBatch model module.
  * @module model/LogErrorBatch
- * @version 17.0.0
+ * @version 17.1.0
  */
 class LogErrorBatch {
     /**

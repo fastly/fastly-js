@@ -18,7 +18,7 @@ import DdosProtectionTrafficStats from './DdosProtectionTrafficStats';
 /**
  * The DdosProtectionRuleWithStats model module.
  * @module model/DdosProtectionRuleWithStats
- * @version 17.0.0
+ * @version 17.1.0
  */
 class DdosProtectionRuleWithStats {
     /**
@@ -88,6 +88,9 @@ class DdosProtectionRuleWithStats {
             }
             if (data.hasOwnProperty('source_ip_prefix')) {
                 obj['source_ip_prefix'] = ApiClient.convertToType(data['source_ip_prefix'], 'String');
+            }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
             if (data.hasOwnProperty('additional_attributes')) {
                 obj['additional_attributes'] = ApiClient.convertToType(data['additional_attributes'], ['String']);
@@ -176,6 +179,12 @@ DdosProtectionRuleWithStats.prototype['asn'] = undefined;
 DdosProtectionRuleWithStats.prototype['source_ip_prefix'] = undefined;
 
 /**
+ * URL path attribute.
+ * @member {String} path
+ */
+DdosProtectionRuleWithStats.prototype['path'] = undefined;
+
+/**
  * Attribute category for additional, unlisted attributes used in a rule.
  * @member {Array.<String>} additional_attributes
  */
@@ -249,6 +258,11 @@ DdosProtectionRule.prototype['asn'] = undefined;
  * @member {String} source_ip_prefix
  */
 DdosProtectionRule.prototype['source_ip_prefix'] = undefined;
+/**
+ * URL path attribute.
+ * @member {String} path
+ */
+DdosProtectionRule.prototype['path'] = undefined;
 /**
  * Attribute category for additional, unlisted attributes used in a rule.
  * @member {Array.<String>} additional_attributes

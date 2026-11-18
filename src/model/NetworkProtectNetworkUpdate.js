@@ -16,7 +16,7 @@ import NetworkProtectEndpointPolicy from './NetworkProtectEndpointPolicy';
 /**
  * The NetworkProtectNetworkUpdate model module.
  * @module model/NetworkProtectNetworkUpdate
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectNetworkUpdate {
     /**

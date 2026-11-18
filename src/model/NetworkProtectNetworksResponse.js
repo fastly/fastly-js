@@ -17,7 +17,7 @@ import NetworkProtectNetworkResponse from './NetworkProtectNetworkResponse';
 /**
  * The NetworkProtectNetworksResponse model module.
  * @module model/NetworkProtectNetworksResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectNetworksResponse {
     /**

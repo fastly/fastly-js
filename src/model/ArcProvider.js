@@ -16,7 +16,7 @@ import ArcModel from './ArcModel';
 /**
  * The ArcProvider model module.
  * @module model/ArcProvider
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcProvider {
     /**

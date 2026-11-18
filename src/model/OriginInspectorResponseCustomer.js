@@ -16,7 +16,7 @@ import BotManagementResponseCustomerCustomer from './BotManagementResponseCustom
 /**
  * The OriginInspectorResponseCustomer model module.
  * @module model/OriginInspectorResponseCustomer
- * @version 17.0.0
+ * @version 17.1.0
  */
 class OriginInspectorResponseCustomer {
     /**

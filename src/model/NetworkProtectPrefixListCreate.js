@@ -16,7 +16,7 @@ import NetworkProtectPrefixListFamily from './NetworkProtectPrefixListFamily';
 /**
  * The NetworkProtectPrefixListCreate model module.
  * @module model/NetworkProtectPrefixListCreate
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectPrefixListCreate {
     /**

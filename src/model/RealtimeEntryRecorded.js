@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeEntryRecorded model module.
  * @module model/RealtimeEntryRecorded
- * @version 17.0.0
+ * @version 17.1.0
  */
 class RealtimeEntryRecorded {
     /**

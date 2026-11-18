@@ -129,6 +129,8 @@ import BotManagementBotResponseExtra from './model/BotManagementBotResponseExtra
 import BotManagementBotsResponse from './model/BotManagementBotsResponse';
 import BotManagementCategoriesResponse from './model/BotManagementCategoriesResponse';
 import BotManagementCategory from './model/BotManagementCategory';
+import BotManagementCategoryBots from './model/BotManagementCategoryBots';
+import BotManagementCategoryBotsAction from './model/BotManagementCategoryBotsAction';
 import BotManagementCategoryResponse from './model/BotManagementCategoryResponse';
 import BotManagementCategoryResponseExtra from './model/BotManagementCategoryResponseExtra';
 import BotManagementError from './model/BotManagementError';
@@ -1268,7 +1270,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 17.0.0
+* @version 17.1.0
 */
 export {
     /**
@@ -1978,6 +1980,18 @@ export {
      * @property {module:model/BotManagementCategory}
      */
     BotManagementCategory,
+
+    /**
+     * The BotManagementCategoryBots model constructor.
+     * @property {module:model/BotManagementCategoryBots}
+     */
+    BotManagementCategoryBots,
+
+    /**
+     * The BotManagementCategoryBotsAction model constructor.
+     * @property {module:model/BotManagementCategoryBotsAction}
+     */
+    BotManagementCategoryBotsAction,
 
     /**
      * The BotManagementCategoryResponse model constructor.

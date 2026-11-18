@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ArcProviderConnectionAwsIam model module.
  * @module model/ArcProviderConnectionAwsIam
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcProviderConnectionAwsIam {
     /**

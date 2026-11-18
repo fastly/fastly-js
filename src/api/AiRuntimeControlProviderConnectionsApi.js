@@ -22,7 +22,7 @@ import ArcUpdateProviderConnectionRequest from '../model/ArcUpdateProviderConnec
 /**
 * AiRuntimeControlProviderConnections service.
 * @module api/AiRuntimeControlProviderConnectionsApi
-* @version 17.0.0
+* @version 17.1.0
 */
 export default class AiRuntimeControlProviderConnectionsApi {
 

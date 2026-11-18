@@ -18,7 +18,7 @@ import BotManagementWorkspaceResponseExtra from './BotManagementWorkspaceRespons
 /**
  * The BotManagementWorkspaceResponse model module.
  * @module model/BotManagementWorkspaceResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementWorkspaceResponse {
     /**

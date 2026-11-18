@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ArcVirtualKeysMeta model module.
  * @module model/ArcVirtualKeysMeta
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcVirtualKeysMeta {
     /**

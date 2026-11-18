@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateResponseObjectRequest model module.
  * @module model/CreateResponseObjectRequest
- * @version 17.0.0
+ * @version 17.1.0
  */
 class CreateResponseObjectRequest {
     /**

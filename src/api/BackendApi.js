@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 17.0.0
+* @version 17.1.0
 */
 export default class BackendApi {
 
@@ -53,6 +53,11 @@ export default class BackendApi {
      * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
+     * @param {String} [options.iam_external_id] - If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set.
+     * @param {String} [options.iam_product] - If the backend is using IAM authentication, the IAM signature will use this as the product element.
+     * @param {String} [options.iam_region] - If the backend is using IAM authentication, this region will be used for signing and access.
+     * @param {String} [options.iam_role] - If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor.
+     * @param {module:model/String} [options.iam_vendor] - A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
@@ -116,6 +121,11 @@ export default class BackendApi {
         'fetch_timeout': options['fetch_timeout'],
         'healthcheck': options['healthcheck'],
         'hostname': options['hostname'],
+        'iam_external_id': options['iam_external_id'],
+        'iam_product': options['iam_product'],
+        'iam_region': options['iam_region'],
+        'iam_role': options['iam_role'],
+        'iam_vendor': options['iam_vendor'],
         'ipv4': options['ipv4'],
         'ipv6': options['ipv6'],
         'keepalive_time': options['keepalive_time'],
@@ -182,6 +192,11 @@ export default class BackendApi {
      * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
+     * @param {String} [options.iam_external_id] - If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set.
+     * @param {String} [options.iam_product] - If the backend is using IAM authentication, the IAM signature will use this as the product element.
+     * @param {String} [options.iam_region] - If the backend is using IAM authentication, this region will be used for signing and access.
+     * @param {String} [options.iam_role] - If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor.
+     * @param {module:model/String} [options.iam_vendor] - A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
@@ -445,6 +460,11 @@ export default class BackendApi {
      * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
+     * @param {String} [options.iam_external_id] - If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set.
+     * @param {String} [options.iam_product] - If the backend is using IAM authentication, the IAM signature will use this as the product element.
+     * @param {String} [options.iam_region] - If the backend is using IAM authentication, this region will be used for signing and access.
+     * @param {String} [options.iam_role] - If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor.
+     * @param {module:model/String} [options.iam_vendor] - A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
@@ -513,6 +533,11 @@ export default class BackendApi {
         'fetch_timeout': options['fetch_timeout'],
         'healthcheck': options['healthcheck'],
         'hostname': options['hostname'],
+        'iam_external_id': options['iam_external_id'],
+        'iam_product': options['iam_product'],
+        'iam_region': options['iam_region'],
+        'iam_role': options['iam_role'],
+        'iam_vendor': options['iam_vendor'],
         'ipv4': options['ipv4'],
         'ipv6': options['ipv6'],
         'keepalive_time': options['keepalive_time'],
@@ -580,6 +605,11 @@ export default class BackendApi {
      * @param {Number} [options.fetch_timeout] - Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
+     * @param {String} [options.iam_external_id] - If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set.
+     * @param {String} [options.iam_product] - If the backend is using IAM authentication, the IAM signature will use this as the product element.
+     * @param {String} [options.iam_region] - If the backend is using IAM authentication, this region will be used for signing and access.
+     * @param {String} [options.iam_role] - If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor.
+     * @param {module:model/String} [options.iam_vendor] - A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {Number} [options.keepalive_time] - How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.

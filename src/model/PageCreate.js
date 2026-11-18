@@ -16,7 +16,7 @@ import Notification from './Notification';
 /**
  * The PageCreate model module.
  * @module model/PageCreate
- * @version 17.0.0
+ * @version 17.1.0
  */
 class PageCreate {
     /**

@@ -18,7 +18,7 @@ import NetworkProtectPrefixListResponseFields from './NetworkProtectPrefixListRe
 /**
  * The NetworkProtectPrefixListResponse model module.
  * @module model/NetworkProtectPrefixListResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class NetworkProtectPrefixListResponse {
     /**

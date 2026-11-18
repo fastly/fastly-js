@@ -17,7 +17,7 @@ import RuleResponse from './RuleResponse';
 /**
  * The RulesResponse model module.
  * @module model/RulesResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class RulesResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ArcVirtualKeyListItemResponseExtra model module.
  * @module model/ArcVirtualKeyListItemResponseExtra
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcVirtualKeyListItemResponseExtra {
     /**

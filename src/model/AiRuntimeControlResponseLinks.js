@@ -16,7 +16,7 @@ import AiRuntimeControlResponseLinksLinks from './AiRuntimeControlResponseLinksL
 /**
  * The AiRuntimeControlResponseLinks model module.
  * @module model/AiRuntimeControlResponseLinks
- * @version 17.0.0
+ * @version 17.1.0
  */
 class AiRuntimeControlResponseLinks {
     /**

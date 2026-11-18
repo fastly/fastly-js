@@ -16,7 +16,7 @@ import TypeTlsActivation from './TypeTlsActivation';
 /**
  * The RelationshipMemberTlsActivation model module.
  * @module model/RelationshipMemberTlsActivation
- * @version 17.0.0
+ * @version 17.1.0
  */
 class RelationshipMemberTlsActivation {
     /**

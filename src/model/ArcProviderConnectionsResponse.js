@@ -17,7 +17,7 @@ import ArcProviderConnectionsMeta from './ArcProviderConnectionsMeta';
 /**
  * The ArcProviderConnectionsResponse model module.
  * @module model/ArcProviderConnectionsResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcProviderConnectionsResponse {
     /**

@@ -17,7 +17,7 @@ import ArcVirtualKeyResponseExtra from './ArcVirtualKeyResponseExtra';
 /**
  * The ArcVirtualKeyResponse model module.
  * @module model/ArcVirtualKeyResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ArcVirtualKeyResponse {
     /**

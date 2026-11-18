@@ -21,7 +21,7 @@ import VersionResponse from '../model/VersionResponse';
 /**
 * Version service.
 * @module api/VersionApi
-* @version 17.0.0
+* @version 17.1.0
 */
 export default class VersionApi {
 

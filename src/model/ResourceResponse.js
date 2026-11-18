@@ -19,7 +19,7 @@ import TypeResource from './TypeResource';
 /**
  * The ResourceResponse model module.
  * @module model/ResourceResponse
- * @version 17.0.0
+ * @version 17.1.0
  */
 class ResourceResponse {
     /**

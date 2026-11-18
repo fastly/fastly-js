@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BotManagementWorkspaceBotResponseExtra model module.
  * @module model/BotManagementWorkspaceBotResponseExtra
- * @version 17.0.0
+ * @version 17.1.0
  */
 class BotManagementWorkspaceBotResponseExtra {
     /**
